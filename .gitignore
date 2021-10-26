@@ -103,5 +103,5 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-Secret/
+BlindCafe-iOS/BlindCafe/Configuration/Secret/
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
