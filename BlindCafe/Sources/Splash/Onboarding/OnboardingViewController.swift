@@ -15,20 +15,12 @@ class OnboardingViewController: UIViewController {
     var nowPage: Int = 0
     
     @IBAction func skipButton(_ sender: Any) {
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        
-        self.present(vc, animated: true)
+        changeRootViewController(LoginViewController())
     }
     
     @IBAction func nextButton(_ sender: Any) {
         if nowPage == 3 {
-            let vc = LoginViewController()
-            vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            
-            self.present(vc, animated: true)
+            changeRootViewController(LoginViewController())
         }
         else {
             nowPage += 1

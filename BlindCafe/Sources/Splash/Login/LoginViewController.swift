@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                 
                 _ = oauthToken
                 
-                let vc = BaseTabBarController()
+                let vc = PolicyViewController()
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve
                 
