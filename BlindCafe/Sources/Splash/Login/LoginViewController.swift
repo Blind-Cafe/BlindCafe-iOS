@@ -10,9 +10,9 @@ import AuthenticationServices
 import KakaoSDKAuth
 import KakaoSDKUser
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
-    @IBOutlet weak var loginStackView: UIStackView!
+    @IBOutlet weak var appleLoginView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,8 @@ class LoginViewController: UIViewController {
         let button = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
         button.addTarget(self, action: #selector(appleLoginHandler), for: .touchUpInside)
         
-        loginStackView.addArrangedSubview(button)
+        appleLoginView.addSubview(button)
+        button.frame = CGRect(x: 0, y: 0, width: appleLoginView.frame.width, height: appleLoginView.frame.height)
     }
     
     @objc func appleLoginHandler() {
@@ -44,22 +45,17 @@ class LoginViewController: UIViewController {
             else {
                 print("loginWithKakaoAccount() success.")
                 
-                /*let input = KakaoLoginInput(accessToken: oauthToken!.accessToken)
-                KakaoLoginDataManager().kakaoLogin(input, viewController: self)*/
+                self.showIndicator()
+                let input = KakaoLoginInput(token: oauthToken!.accessToken)
+                KakaoLoginDataManager().kakaoLogin(input, viewController: self)
                 
-                print(oauthToken?.accessToken, "액세스 토큰")
+                print(input)
+                print(oauthToken!.accessToken, "액세스 토큰")
                 
                 _ = oauthToken
-                
-                let vc = PolicyViewController()
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                
-                self.present(vc, animated: true)
             }
         }
     }
-    
 }
 
 extension LoginViewController: ASAuthorizationControllerDelegate {
@@ -78,6 +74,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 print("identityToken: \(identityToken)")
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
+                self.showIndicator()
+                let input = AppleLoginInput(token: tokenString)
+                AppleLoginDataManager().appleLogin(input, viewController: self)
             }
             
             print("useridentifier: \(userIdentifier)")
@@ -94,11 +93,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             break
         }
         
-        let vc = BaseTabBarController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
         
-        self.present(vc, animated: true)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
@@ -109,5 +104,23 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
+    }
+}
+
+extension LoginViewController {
+    func didLogin(code: String, jwt: String){
+        self.dismissIndicator()
+        //UserDefaults.standard.set(String(result.id!), forKey: "UserIdKey")
+        let vc = AgreementViewController()
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        navController.modalTransitionStyle = .crossDissolve
+        
+        self.present(navController, animated: true)
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
 }

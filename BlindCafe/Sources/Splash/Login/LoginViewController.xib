@@ -1,53 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
-                <outlet property="loginStackView" destination="WkP-4p-nk8" id="7rx-oG-h67"/>
+                <outlet property="appleLoginView" destination="dke-EE-zxN" id="Cww-wW-ONx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WkP-4p-nk8">
-                    <rect key="frame" x="57" y="707" width="300" height="45"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="300" id="Hlk-ZJ-Qg2"/>
-                        <constraint firstAttribute="height" constant="45" id="mpF-SY-CDR"/>
-                    </constraints>
-                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dB-gZ-3XR">
-                    <rect key="frame" x="57" y="652" width="300" height="45"/>
-                    <state key="normal" image="kakaologinbutton"/>
+                    <rect key="frame" x="15.666666666666657" y="575" width="359" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="359" id="6f2-fn-we9"/>
+                        <constraint firstAttribute="height" constant="54" id="uyB-Jh-q6f"/>
+                    </constraints>
+                    <state key="normal" image="kakaoLoginLargeWide"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.conerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="kakaoLoginButton:" destination="-1" eventType="touchUpInside" id="D18-5r-WVH"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dke-EE-zxN">
+                    <rect key="frame" x="15.666666666666657" y="656" width="359" height="54"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.56897345732186111" green="0.69174631508134254" blue="0.63112517832317194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="WkP-4p-nk8" firstAttribute="top" secondItem="8dB-gZ-3XR" secondAttribute="bottom" constant="10" id="CIV-dU-Pub"/>
+                <constraint firstItem="dke-EE-zxN" firstAttribute="height" secondItem="8dB-gZ-3XR" secondAttribute="height" id="9Yo-if-QNt"/>
                 <constraint firstItem="8dB-gZ-3XR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fbk-4W-Swh"/>
-                <constraint firstItem="WkP-4p-nk8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QHX-Th-jUe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WkP-4p-nk8" secondAttribute="bottom" constant="110" id="cKM-DD-hH2"/>
+                <constraint firstItem="dke-EE-zxN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bhG-9s-LJX"/>
+                <constraint firstItem="dke-EE-zxN" firstAttribute="top" secondItem="8dB-gZ-3XR" secondAttribute="bottom" constant="27" id="irb-dS-jtt"/>
+                <constraint firstItem="dke-EE-zxN" firstAttribute="width" secondItem="8dB-gZ-3XR" secondAttribute="width" id="qUg-4q-oJ0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dke-EE-zxN" secondAttribute="bottom" constant="100" id="tKz-Nj-Vcd"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-477" y="22"/>
         </view>
     </objects>
     <resources>
-        <image name="kakaologinbutton" width="300" height="45"/>
+        <image name="kakaoLoginLargeWide" width="359" height="54"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

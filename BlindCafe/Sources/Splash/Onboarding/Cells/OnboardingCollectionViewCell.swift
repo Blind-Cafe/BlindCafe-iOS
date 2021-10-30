@@ -10,9 +10,11 @@ import UIKit
 class OnboardingCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var onboardingImage: UIImageView!
+    @IBOutlet weak var textImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = .mainBlack
     }
 
 }

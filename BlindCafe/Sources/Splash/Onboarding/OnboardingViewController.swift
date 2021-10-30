@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: BaseViewController {
 
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     
@@ -27,16 +27,29 @@ class OnboardingViewController: UIViewController {
             self.pageControl.currentPage = nowPage
             onboardingCollectionView.scrollToItem(at: IndexPath(item: nowPage, section: 0), at: .right, animated: true)
         }
+        pageChange()
     }
     
     var images = ["onboarding1", "onboarding2", "onboarding3", "onboarding4"]
-    
+    var textImages = ["onboardingtext1", "onboardingtext2", "onboardingtext3", "onboardingtext4"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.register(UINib(nibName: "OnboardingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
+        pageChange()
+    }
+    
+    func pageChange() {
+        if #available(iOS 14.0, *) {
+            pageControl.setIndicatorImage(UIImage(named: "indicator2"), forPage: nowPage)
+            for i in 0...3 {
+                if i != nowPage {
+                    pageControl.setIndicatorImage(UIImage(named: "indicator1"), forPage: i)
+                }
+            }
+        }
     }
 }
 
@@ -48,6 +61,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCollectionViewCell", for: indexPath) as! OnboardingCollectionViewCell
         cell.onboardingImage.image = UIImage(named: images[indexPath.row])
+        cell.textImage.image = UIImage(named: textImages[indexPath.row])
         return cell
     }
     
@@ -59,5 +73,6 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         let page = Int(targetContentOffset.pointee.x / self.view.bounds.width)
         self.pageControl.currentPage = page
         nowPage = page
+        pageChange()
     }
 }
