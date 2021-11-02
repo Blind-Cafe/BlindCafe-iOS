@@ -60,6 +60,30 @@ extension UIViewController {
         )
     }
     
+    // MARK: 커스텀 하단 경고창
+    func presentBottomAlert(name: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
+        let alertView = UIImageView(image: UIImage(named: name))
+        alertView.isHidden = true
+        
+        self.view.addSubview(alertView)
+        alertView.snp.makeConstraints { make in
+            make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-82)
+            make.centerX.equalToSuperview()
+        }
+        
+        alertView.alpha = 1.0
+        alertView.isHidden = false
+        UIImageView.animate(
+            withDuration: 2.0,
+            delay: 1.0,
+            options: .curveEaseIn,
+            animations: { alertView.alpha = 0 },
+            completion: { _ in
+                alertView.removeFromSuperview()
+            }
+        )
+    }
+    
     // MARK: 인디케이터 표시
     func showIndicator() {
         IndicatorView.shared.show()

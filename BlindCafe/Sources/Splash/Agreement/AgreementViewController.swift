@@ -28,7 +28,8 @@ class AgreementViewController: BaseViewController {
     }
     
     @IBAction func okayButton(_ sender: Any) {
-        navigationController?.pushViewController(SetProfile1ViewController(), animated: true)
+        navigationController?.pushViewController(
+            InitInterestViewController(), animated: true)
     }
     
     override func viewDidLoad() {

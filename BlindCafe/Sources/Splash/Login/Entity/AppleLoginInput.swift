@@ -7,4 +7,5 @@
 
 struct AppleLoginInput: Encodable {
     var token: String
+    var deviceId: String
 }

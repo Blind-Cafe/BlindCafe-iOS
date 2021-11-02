@@ -7,4 +7,5 @@
 
 struct KakaoLoginInput: Encodable {
     var token: String
+    var deviceId: String
 }
