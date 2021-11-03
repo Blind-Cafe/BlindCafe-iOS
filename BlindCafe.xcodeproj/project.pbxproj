@@ -53,6 +53,9 @@
 		CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */; };
 		CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */; };
 		CDD149DD273185EF002B2897 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149DC273185EF002B2897 /* UITextField.swift */; };
+		CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */; };
+		CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0C32732478C008367F3 /* ChattingViewController.swift */; };
+		CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C42732478C008367F3 /* ChattingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +110,10 @@
 		CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Bold.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
 		CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GHANACHOCOLATE.TTF; path = ../../../../../../../Downloads/GHANACHOCOLATE.TTF; sourceTree = "<group>"; };
 		CDD149DC273185EF002B2897 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDF8A0C32732478C008367F3 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		CDF8A0C42732478C008367F3 /* ChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingViewController.xib; sourceTree = "<group>"; };
+		F44303AD68DB09BAD42D0B43 /* Pods-BlindCafe.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlindCafe.inhouse.xcconfig"; path = "Target Support Files/Pods-BlindCafe/Pods-BlindCafe.inhouse.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +141,7 @@
 			children = (
 				842749AD4B6D11BB002063B0 /* Pods-BlindCafe.debug.xcconfig */,
 				7093578DB156614D4972D7A7 /* Pods-BlindCafe.release.xcconfig */,
+				F44303AD68DB09BAD42D0B43 /* Pods-BlindCafe.inhouse.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				CD15093C271F07A90020BD41 /* Assets.xcassets */,
 				CD15093E271F07A90020BD41 /* LaunchScreen.storyboard */,
 				CD150941271F07A90020BD41 /* Info.plist */,
+				CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */,
 			);
 			path = BlindCafe;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 		CD1509512720FBE00020BD41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CDF8A0C227324772008367F3 /* Chatting */,
 				CD6AA9E3272163C500DA6013 /* HomeViewController.swift */,
 				CD6AA9E4272163C500DA6013 /* HomeViewController.xib */,
 			);
@@ -378,6 +388,23 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		CDF8A0C227324772008367F3 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				CDF8A0C72732CA2A008367F3 /* Cells */,
+				CDF8A0C32732478C008367F3 /* ChattingViewController.swift */,
+				CDF8A0C42732478C008367F3 /* ChattingViewController.xib */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		CDF8A0C72732CA2A008367F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,8 +473,10 @@
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
 				CD0C06B8272D85AB0020E858 /* InitInterestViewController.xib in Resources */,
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
+				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */,
+				CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */,
 				CD6AA9F12724484F00DA6013 /* MatchedViewController.xib in Resources */,
 				CD6AA9FF2726F3ED00DA6013 /* OnboardingCollectionViewCell.xib in Resources */,
 				CD15094D272063E60020BD41 /* LoginViewController.xib in Resources */,
@@ -513,6 +542,7 @@
 				CD79E99127291DBF0025CF1B /* KakaoLoginInput.swift in Sources */,
 				CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */,
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
+				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
 				CD6AA9F42724486200DA6013 /* MyPageViewController.swift in Sources */,
 				CD79E99A272BD2370025CF1B /* AppleLoginResponse.swift in Sources */,
@@ -778,7 +808,7 @@
 		};
 		CD79E99E272BFD080025CF1B /* Inhouse */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 842749AD4B6D11BB002063B0 /* Pods-BlindCafe.debug.xcconfig */;
+			baseConfigurationReference = F44303AD68DB09BAD42D0B43 /* Pods-BlindCafe.inhouse.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

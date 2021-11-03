@@ -9,6 +9,10 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBAction func toChatting(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

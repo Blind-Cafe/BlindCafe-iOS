@@ -11,4 +11,7 @@ target 'BlindCafe' do
   pod 'KakaoSDK'
   pod 'SnapKit', '~> 5.0.0'
 
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+
 end

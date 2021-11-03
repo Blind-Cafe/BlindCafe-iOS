@@ -8,6 +8,7 @@
 import UIKit
 import AuthenticationServices
 import KakaoSDKCommon
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }*/
         
         KakaoSDKCommon.initSDK(appKey: KakaoKey.KAKAO_NATIVE_KEY)
+        FirebaseApp.configure()
         
         return true
     }

@@ -20,6 +20,8 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.isTranslucent = false
+        UITabBar.appearance().backgroundColor = .black2
         
         let homeNavController = UINavigationController(rootViewController: homeViewController)
         let matchedNavController = UINavigationController(rootViewController: matchedViewController)

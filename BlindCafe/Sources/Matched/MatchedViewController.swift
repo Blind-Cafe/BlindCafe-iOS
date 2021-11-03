@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MatchedViewController: UIViewController {
+class MatchedViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
