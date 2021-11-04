@@ -13,5 +13,6 @@ target 'BlindCafe' do
 
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 
 end

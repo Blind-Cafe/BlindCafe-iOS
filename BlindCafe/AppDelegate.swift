@@ -9,6 +9,8 @@ import UIKit
 import AuthenticationServices
 import KakaoSDKCommon
 import Firebase
+import UserNotifications
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KakaoSDKCommon.initSDK(appKey: KakaoKey.KAKAO_NATIVE_KEY)
         FirebaseApp.configure()
         
+        Messaging.messaging().delegate = self
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
+            if granted {
+                print("알림 등록이 완료되었습니다.")
+            }
+        }
+        application.registerForRemoteNotifications()
+        
         return true
     }
 
@@ -58,3 +72,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        //이 값을 서버로
+        print("FCM Token: \(fcmToken)")
+    }
+}

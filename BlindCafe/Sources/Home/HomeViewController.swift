@@ -10,7 +10,11 @@ import UIKit
 class HomeViewController: BaseViewController {
 
     @IBAction func toChatting(_ sender: Any) {
+        let vc = ChattingViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
         
+        self.present(vc, animated: true)
     }
     
     override func viewDidLoad() {

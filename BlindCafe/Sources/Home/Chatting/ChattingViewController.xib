@@ -57,33 +57,47 @@
                     <rect key="frame" x="0.0" y="88" width="390" height="670"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-VE-Lwg">
-                    <rect key="frame" x="16" y="786" width="67" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-VE-Lwg">
+                    <rect key="frame" x="18" y="762" width="44" height="44"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="photobutton"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3L-vA-yu0">
+                    <rect key="frame" x="62" y="762" width="44" height="44"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="recordbutton"/>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chattingfield" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-nL-FP1">
+                    <rect key="frame" x="112" y="764.66666666666663" width="262" height="39"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Ss1-1j-Aui" firstAttribute="leading" secondItem="nN4-4y-h6g" secondAttribute="trailing" constant="0.20000000000000001" id="3yg-IG-aWg"/>
+                <constraint firstAttribute="bottom" secondItem="LOR-VE-Lwg" secondAttribute="bottom" constant="38" id="96c-Uw-3DF"/>
                 <constraint firstItem="9lv-dT-Vl0" firstAttribute="leading" secondItem="gKQ-T5-SMQ" secondAttribute="trailing" constant="1" id="AoS-mQ-q6t"/>
                 <constraint firstItem="nN4-4y-h6g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="FYI-qa-UcY"/>
                 <constraint firstItem="3sO-Qq-y4Z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="G5r-o4-LZl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K1V-nL-FP1" secondAttribute="trailing" constant="16" id="IOh-2u-gJa"/>
                 <constraint firstItem="prC-Dd-ofr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MdW-7G-101"/>
                 <constraint firstItem="7gD-fW-6ax" firstAttribute="top" secondItem="3sO-Qq-y4Z" secondAttribute="bottom" id="N43-A4-U95"/>
                 <constraint firstItem="Ss1-1j-Aui" firstAttribute="centerY" secondItem="nN4-4y-h6g" secondAttribute="centerY" id="XbE-Oc-OiE"/>
                 <constraint firstItem="3sO-Qq-y4Z" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bEY-F1-UBb"/>
                 <constraint firstItem="7gD-fW-6ax" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bfY-Wx-Fn0"/>
                 <constraint firstItem="gKQ-T5-SMQ" firstAttribute="centerY" secondItem="nN4-4y-h6g" secondAttribute="centerY" id="csv-cP-Qf1"/>
+                <constraint firstItem="LOR-VE-Lwg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="d7o-2Y-0O2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9lv-dT-Vl0" secondAttribute="trailing" constant="16" id="f93-15-fOT"/>
                 <constraint firstItem="3sO-Qq-y4Z" firstAttribute="top" secondItem="prC-Dd-ofr" secondAttribute="bottom" id="gxm-QD-vhK"/>
                 <constraint firstItem="7gD-fW-6ax" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hfm-iI-ieA"/>
                 <constraint firstItem="prC-Dd-ofr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hjR-Tn-7ID"/>
+                <constraint firstItem="K1V-nL-FP1" firstAttribute="centerY" secondItem="LOR-VE-Lwg" secondAttribute="centerY" id="ibG-NK-qUo"/>
                 <constraint firstItem="nN4-4y-h6g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="jgq-AV-W9G"/>
                 <constraint firstItem="prC-Dd-ofr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lvF-fE-ceS"/>
                 <constraint firstAttribute="bottom" secondItem="7gD-fW-6ax" secondAttribute="bottom" id="nSG-ZE-lEc"/>
+                <constraint firstItem="Y3L-vA-yu0" firstAttribute="leading" secondItem="LOR-VE-Lwg" secondAttribute="trailing" id="rtW-er-mm0"/>
                 <constraint firstItem="9lv-dT-Vl0" firstAttribute="centerY" secondItem="nN4-4y-h6g" secondAttribute="centerY" id="ugX-nh-Kiq"/>
+                <constraint firstItem="Y3L-vA-yu0" firstAttribute="centerY" secondItem="LOR-VE-Lwg" secondAttribute="centerY" id="wWU-0j-4go"/>
             </constraints>
             <point key="canvasLocation" x="136.92307692307691" y="90.284360189573462"/>
         </view>
@@ -91,9 +105,12 @@
     <resources>
         <image name="backbutton" width="44" height="44"/>
         <image name="bellbutton" width="44" height="44"/>
+        <image name="chattingfield" width="262" height="39"/>
         <image name="chattingtop" width="390" height="88"/>
         <image name="chattingview" width="390" height="86"/>
         <image name="menubutton" width="44" height="44"/>
+        <image name="photobutton" width="44" height="44"/>
+        <image name="recordbutton" width="44" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
