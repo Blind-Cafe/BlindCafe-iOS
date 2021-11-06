@@ -49,6 +49,7 @@ class InitInterestViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.setImage(UIImage(named: "profilenextbutton"), for: .normal)
+        dismissKeyboardWhenTappedAround()
     }
 
 

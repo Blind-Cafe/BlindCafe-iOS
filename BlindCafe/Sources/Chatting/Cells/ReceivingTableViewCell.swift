@@ -9,9 +9,13 @@ import UIKit
 
 class ReceivingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = .mainBlack
+        message.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

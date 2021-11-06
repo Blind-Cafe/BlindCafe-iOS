@@ -12,5 +12,5 @@ struct KakaoKey {
 }
 
 struct Token {
-    static var token: String = ""
+    static var jwtToken: String = ""
 }

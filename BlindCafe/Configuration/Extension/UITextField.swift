@@ -14,7 +14,7 @@ extension UITextField {
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let done: UIBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(self.doneButtonAction))
-        done.tintColor = .mainBlack
+        done.tintColor = .black2
         done.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "SpoqaHanSansNeo-Medium", size: 17)!], for: .normal)
         let items = [flexSpace, done]
         doneToolbar.items = items

@@ -19,7 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let win = UIWindow(windowScene: windowScene)
-        let controller = BaseTabBarController()
+        
+        var controller: UIViewController?
+        
+        if Token.jwtToken == "" {
+            controller = OnboardingViewController()
+        }
+        else {
+            controller = BaseTabBarController()
+        }
         //let navController = UINavigationController(rootViewController: controller)
         win.rootViewController = controller
         win.makeKeyAndVisible()

@@ -77,6 +77,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 self.showIndicator()
                 let input = AppleLoginInput(token: tokenString, deviceId: UIDevice.current.identifierForVendor!.uuidString)
                 AppleLoginDataManager().appleLogin(input, viewController: self)
+                print(input)
             }
             
             print("useridentifier: \(userIdentifier)")
@@ -110,7 +111,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 extension LoginViewController {
     func didLogin(code: String, jwt: String){
         self.dismissIndicator()
-        Token.token = jwt
+        Token.jwtToken = jwt
         //UserDefaults.standard.set(String(result.id!), forKey: "UserIdKey")
         let vc = AgreementViewController()
         let navController = UINavigationController(rootViewController: vc)

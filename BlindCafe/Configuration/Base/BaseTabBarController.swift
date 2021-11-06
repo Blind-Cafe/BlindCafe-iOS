@@ -10,17 +10,18 @@ import UIKit
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
 
     let homeViewController = HomeViewController()
-    let homeTabBarItem = UITabBarItem(title: "Home", image: nil, tag: 0)
+    let homeTabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeitem"), tag: 0)
 
     let matchedViewController = MatchedViewController()
-    let matchedTabBarItem = UITabBarItem(title: "매칭완료", image: nil, tag: 1)
+    let matchedTabBarItem = UITabBarItem(title: "매칭완료", image: UIImage(named: "matcheditem"), tag: 1)
     
     let mypageViewController = MyPageViewController()
-    let mypageTabBarItem = UITabBarItem(title: "마이페이지", image: nil, tag: 2)
+    let mypageTabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "mypageitem"), tag: 2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.isTranslucent = false
+        tabBar.barTintColor = .mainGreen
         UITabBar.appearance().backgroundColor = .black2
         
         let homeNavController = UINavigationController(rootViewController: homeViewController)

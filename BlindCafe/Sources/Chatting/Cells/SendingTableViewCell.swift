@@ -8,10 +8,15 @@
 import UIKit
 
 class SendingTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var messageView: UIImageView!
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = .mainBlack
+        message.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

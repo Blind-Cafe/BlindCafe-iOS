@@ -66,9 +66,11 @@ class InitAgeGenderViewController: BaseViewController {
         super.viewDidLoad()
         agealert.isHidden = true
         ageTextField.font = .SpoqaSans(.regular, size: 17)
-        ageTextField.addDoneButtonOnKeyboard()
+        //ageTextField.addDoneButtonOnKeyboard()
         ageTextField.addTarget(self, action: #selector(ifFocused), for: .touchDown)
         ageTextField.delegate = self
+        
+        dismissKeyboardWhenTappedAround()
     }
     
     @objc func ifFocused() {
