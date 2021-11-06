@@ -46,6 +46,7 @@
 		CD79E998272BD18F0025CF1B /* AppleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E997272BD18F0025CF1B /* AppleLoginInput.swift */; };
 		CD79E99A272BD2370025CF1B /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E999272BD2370025CF1B /* AppleLoginResponse.swift */; };
 		CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */; };
+		CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B49A32736BAE600940809 /* ProgressBar.swift */; };
 		CDA5BBDC2735710B00E4120C /* UIToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA5BBDB2735710B00E4120C /* UIToolbar.swift */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
@@ -108,6 +109,7 @@
 		CD79E997272BD18F0025CF1B /* AppleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginInput.swift; sourceTree = "<group>"; };
 		CD79E999272BD2370025CF1B /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
+		CD7B49A32736BAE600940809 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CDA5BBDB2735710B00E4120C /* UIToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbar.swift; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				CD6AA9E3272163C500DA6013 /* HomeViewController.swift */,
 				CD6AA9E4272163C500DA6013 /* HomeViewController.xib */,
+				CD7B49A32736BAE600940809 /* ProgressBar.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
+				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
 				CD79E998272BD18F0025CF1B /* AppleLoginInput.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,

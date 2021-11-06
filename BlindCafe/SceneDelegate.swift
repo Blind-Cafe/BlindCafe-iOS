@@ -22,12 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var controller: UIViewController?
         
-        if Token.jwtToken == "" {
+        /*if Token.jwtToken == "" {
             controller = OnboardingViewController()
         }
         else {
             controller = BaseTabBarController()
-        }
+        }*/
+        controller = BaseTabBarController()
         //let navController = UINavigationController(rootViewController: controller)
         win.rootViewController = controller
         win.makeKeyAndVisible()

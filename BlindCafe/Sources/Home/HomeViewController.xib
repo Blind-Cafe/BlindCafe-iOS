@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,19 +19,51 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z43-DO-HJX">
-                    <rect key="frame" x="153" y="682" width="85" height="31"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchingbackground" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-7e-8Nh">
+                    <rect key="frame" x="0.0" y="44" width="390" height="595"/>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0NU-Ia-Br4" customClass="ProgressBar" customModule="BlindCafe" customModuleProvider="target">
+                    <rect key="frame" x="59" y="180" width="272" height="272"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="채팅방으로"/>
-                    <connections>
-                        <action selector="toChatting:" destination="-1" eventType="touchUpInside" id="9sX-DE-de7"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z43-DO-HJX">
+                            <rect key="frame" x="37" y="37" width="198" height="198"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="homebutton"/>
+                            <connections>
+                                <action selector="toChatting:" destination="-1" eventType="touchUpInside" id="9sX-DE-de7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="136"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blindcafe" translatesAutoresizingMaskIntoConstraints="NO" id="kfX-gA-kGf">
+                    <rect key="frame" x="145" y="60" width="100" height="20"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="112" y="82"/>
+            <constraints>
+                <constraint firstItem="kfX-gA-kGf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="BP4-v9-t0E"/>
+                <constraint firstItem="1h0-7e-8Nh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mes-1a-6fO"/>
+                <constraint firstItem="1h0-7e-8Nh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n6C-25-2xb"/>
+                <constraint firstItem="kfX-gA-kGf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yJx-CV-dLp"/>
+            </constraints>
+            <point key="canvasLocation" x="110.76923076923076" y="81.753554502369667"/>
         </view>
     </objects>
+    <resources>
+        <image name="blindcafe" width="100" height="20"/>
+        <image name="homebutton" width="216" height="216"/>
+        <image name="matchingbackground" width="390" height="595"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

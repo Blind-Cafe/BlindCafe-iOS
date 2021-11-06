@@ -25,4 +25,5 @@ extension UIColor {
     class var mainBlack: UIColor { UIColor(hex: 0x2d2d2d) }
     class var mainGreen: UIColor { UIColor(hex: 0xbbd2b6) }
     class var black2: UIColor { UIColor(hex: 0x373737) }
+    class var pale: UIColor { UIColor(hex: 0xf8ede3)}
 }
