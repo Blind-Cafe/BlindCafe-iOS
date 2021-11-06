@@ -27,7 +27,15 @@ class ChattingViewController: BaseViewController {
     @IBAction func bellButton(_ sender: Any) {
     }
     @IBAction func menuButton(_ sender: Any) {
+        if menuView.isHidden {
+            menuView.isHidden = false
+        }
+        else {
+            menuView.isHidden = true
+        }
     }
+    @IBOutlet weak var menuView: UIView!
+    
     
     //TableView
     @IBOutlet weak var chatTableView: UITableView!
@@ -53,6 +61,8 @@ class ChattingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuView.isHidden = true
 
         self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint?.constant
         enableKeyboardHideOnTap()
@@ -105,6 +115,17 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var isAfter = true
+        if indexPath.row > 0 {
+            if messages[indexPath.row - 1].sender == messages[indexPath.row].sender {
+                isAfter = true
+            }
+            else {
+                isAfter = false
+            }
+        }
+        
+        
         let message = messages[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SendingTableViewCell", for: indexPath) as! SendingTableViewCell
@@ -113,11 +134,27 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         if message.sender == "." {
             cell.selectionStyle = .none
             cell.message.text = message.body
+            
+            if isAfter {
+                cell.topConstraint.constant = 4
+            }
+            else {
+                cell.topConstraint.constant = 12
+            }
+            
             return cell
         }
         else {
             cell1.selectionStyle = .none
             cell1.message.text = message.body
+            
+            if isAfter {
+                cell1.topConstraint.constant = 4
+            }
+            else {
+                cell1.topConstraint.constant = 12
+            }
+            
             return cell1
         }
     }

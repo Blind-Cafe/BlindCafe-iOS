@@ -11,6 +11,8 @@ class ReceivingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         

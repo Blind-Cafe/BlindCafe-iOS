@@ -32,7 +32,10 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZC-F5-9o3">
-                        <rect key="frame" x="86.5" y="53.5" width="28.5" height="13.5"/>
+                        <rect key="frame" x="86.5" y="50" width="28.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Gtg-bu-fO0"/>
+                        </constraints>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -61,6 +64,7 @@
             <connections>
                 <outlet property="message" destination="wRW-81-Qqp" id="bNH-UB-FmA"/>
                 <outlet property="timeLabel" destination="7ZC-F5-9o3" id="n1j-7U-xwp"/>
+                <outlet property="topConstraint" destination="DKf-kb-Bf0" id="QgN-yA-yw2"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="78.683035714285708"/>
         </tableViewCell>
