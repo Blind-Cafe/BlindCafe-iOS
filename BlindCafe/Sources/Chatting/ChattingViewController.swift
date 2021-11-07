@@ -36,6 +36,15 @@ class ChattingViewController: BaseViewController {
     }
     @IBOutlet weak var menuView: UIView!
     
+    @IBAction func reportButton(_ sender: Any) {
+        let vc = ReportViewController()
+        
+        present(vc, animated: false)
+        
+    }
+    @IBAction func leaveroomButton(_ sender: Any) {
+    }
+    
     
     //TableView
     @IBOutlet weak var chatTableView: UITableView!
@@ -222,9 +231,21 @@ extension ChattingViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        dismissKeyboardWhenTappedAround()
+        dismissWhenTappedAround()
         
        }
+    
+    func dismissWhenTappedAround() {
+        let tap: UITapGestureRecognizer =
+            UITapGestureRecognizer(target: self, action: #selector(self.dismissAll))
+//        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissAll() {
+        self.view.endEditing(false)
+        self.menuView.isHidden = true
+    }
 
     @objc func keyboardWillShow(notification: NSNotification) {
 

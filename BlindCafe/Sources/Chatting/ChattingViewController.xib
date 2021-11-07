@@ -177,6 +177,9 @@
                                     </fragment>
                                 </attributedString>
                             </state>
+                            <connections>
+                                <action selector="reportButton:" destination="-1" eventType="touchUpInside" id="8Yv-Ed-jQj"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-qv-gIr">
                             <rect key="frame" x="2" y="91" width="140" height="44"/>
@@ -196,6 +199,9 @@
                                     </fragment>
                                 </attributedString>
                             </state>
+                            <connections>
+                                <action selector="leaveroomButton:" destination="-1" eventType="touchUpInside" id="f4a-Xq-cDa"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.ttf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController" customModule="BlindCafe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-n2-PQb">
+                    <rect key="frame" x="18" y="189" width="354" height="494"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-F6-rnq">
+                            <rect key="frame" x="20" y="21" width="31" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="lMj-aY-QWf"/>
+                                <constraint firstAttribute="width" constant="31" id="ldN-MC-APx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고사유를 체크해주시면 확인 후 운영진에서 해당유저에게 제재하겠습니다. 회원님의 신고는 익명으로 처리됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZh-Jb-1Mt">
+                            <rect key="frame" x="20" y="46" width="317" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="aYV-8F-gQL"/>
+                                <constraint firstAttribute="width" constant="317" id="mFy-SR-w7Y"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                            <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="욕설, 모욕등의 불쾌한 발언 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNb-LB-oea">
+                            <rect key="frame" x="20" y="119" width="194" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="POA-ZI-ZNH"/>
+                                <constraint firstAttribute="width" constant="194" id="h3a-ZU-cCg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과도한 성적 발언" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYZ-Ku-r8x">
+                            <rect key="frame" x="20" y="168" width="182" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="182" id="ahA-wC-BQN"/>
+                                <constraint firstAttribute="height" constant="22" id="x39-Qf-IT6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 요구 및 만남 강요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nP6-xL-rRM">
+                            <rect key="frame" x="20" y="217" width="223" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="DEN-6k-Cgi"/>
+                                <constraint firstAttribute="width" constant="223" id="d0O-LC-EgK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미성년자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lF-QT-sJK">
+                            <rect key="frame" x="20" y="266" width="66" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="66" id="laR-ZU-pLU"/>
+                                <constraint firstAttribute="height" constant="22" id="vLV-Mn-KOG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도배성 메세지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uF-Oo-0Cs">
+                            <rect key="frame" x="20" y="315" width="107" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="IEE-66-0JV"/>
+                                <constraint firstAttribute="width" constant="107" id="SMR-Mr-QhB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGo-Ww-ZRc">
+                            <rect key="frame" x="293" y="206" width="44" height="44"/>
+                            <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="checkbutton1"/>
+                            <state key="selected" image="selectedcheckbutton">
+                                <color key="titleColor" name="AccentColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yQ-g3-jeB">
+                            <rect key="frame" x="293" y="108" width="44" height="44"/>
+                            <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="checkbutton1"/>
+                            <state key="selected" image="selectedcheckbutton">
+                                <color key="titleColor" name="AccentColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gz-nz-45T">
+                            <rect key="frame" x="293" y="157" width="44" height="44"/>
+                            <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="checkbutton1"/>
+                            <state key="selected" image="selectedcheckbutton">
+                                <color key="titleColor" name="AccentColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bek-KF-mOY">
+                            <rect key="frame" x="293" y="255" width="44" height="44"/>
+                            <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="checkbutton1"/>
+                            <state key="selected" image="selectedcheckbutton">
+                                <color key="titleColor" name="AccentColor"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-Bk-z0V">
+                            <rect key="frame" x="293" y="304" width="44" height="44"/>
+                            <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="checkbutton1"/>
+                            <state key="selected" image="selectedcheckbutton">
+                                <color key="titleColor" name="AccentColor"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적절한 신고 선택지가 없으실 땐 저희에게 언제든지 연락주세요 (blindcafeapp@gmail.com) " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-Jj-X4r">
+                            <rect key="frame" x="17" y="378" width="300" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="Iid-mx-aMy"/>
+                                <constraint firstAttribute="height" constant="39" id="Tva-Mb-0Tc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                            <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baI-eI-CQh">
+                            <rect key="frame" x="34" y="437" width="112" height="44"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="dismissbutton"/>
+                            <connections>
+                                <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="9Pu-Fm-6Qj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pm9-96-qV9">
+                            <rect key="frame" x="208" y="437" width="112" height="44"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="reportbutton"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertline" translatesAutoresizingMaskIntoConstraints="NO" id="LjG-Hc-QEw">
+                            <rect key="frame" x="14.333333333333343" y="426" width="325.33333333333326" height="1"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="354" id="12T-Lh-lnj"/>
+                        <constraint firstAttribute="trailing" secondItem="pm9-96-qV9" secondAttribute="trailing" constant="34" id="2W3-8S-uax"/>
+                        <constraint firstAttribute="height" constant="494" id="4wi-vg-yC7"/>
+                        <constraint firstAttribute="bottom" secondItem="baI-eI-CQh" secondAttribute="bottom" constant="13" id="7wW-R0-NCy"/>
+                        <constraint firstItem="3lF-QT-sJK" firstAttribute="top" secondItem="nP6-xL-rRM" secondAttribute="bottom" constant="27" id="7z9-9O-M4s"/>
+                        <constraint firstAttribute="trailing" secondItem="5yQ-g3-jeB" secondAttribute="trailing" constant="17" id="AQZ-sL-bV2"/>
+                        <constraint firstAttribute="bottom" secondItem="LjG-Hc-QEw" secondAttribute="bottom" constant="67" id="AmZ-Yx-8nu"/>
+                        <constraint firstItem="Bag-F6-rnq" firstAttribute="top" secondItem="4rK-n2-PQb" secondAttribute="top" constant="21" id="CJt-yy-Vuf"/>
+                        <constraint firstAttribute="trailing" secondItem="iGo-Ww-ZRc" secondAttribute="trailing" constant="17" id="CMa-Vr-ZgH"/>
+                        <constraint firstItem="mNb-LB-oea" firstAttribute="leading" secondItem="4rK-n2-PQb" secondAttribute="leading" constant="20" id="F4l-rK-YrT"/>
+                        <constraint firstItem="iGo-Ww-ZRc" firstAttribute="centerY" secondItem="nP6-xL-rRM" secondAttribute="centerY" id="H5x-Qo-iq8"/>
+                        <constraint firstItem="nP6-xL-rRM" firstAttribute="top" secondItem="NYZ-Ku-r8x" secondAttribute="bottom" constant="27" id="Hl6-Qr-SSA"/>
+                        <constraint firstItem="NYZ-Ku-r8x" firstAttribute="leading" secondItem="mNb-LB-oea" secondAttribute="leading" id="JRn-LZ-a8x"/>
+                        <constraint firstItem="5yQ-g3-jeB" firstAttribute="centerY" secondItem="mNb-LB-oea" secondAttribute="centerY" id="Lhm-2g-3db"/>
+                        <constraint firstItem="LjG-Hc-QEw" firstAttribute="top" secondItem="xBI-Jj-X4r" secondAttribute="bottom" constant="9" id="OKp-hx-qny"/>
+                        <constraint firstAttribute="trailing" secondItem="bek-KF-mOY" secondAttribute="trailing" constant="17" id="Oeb-pY-fw4"/>
+                        <constraint firstItem="nP6-xL-rRM" firstAttribute="leading" secondItem="mNb-LB-oea" secondAttribute="leading" id="POd-fI-7zW"/>
+                        <constraint firstItem="8Gz-nz-45T" firstAttribute="centerY" secondItem="NYZ-Ku-r8x" secondAttribute="centerY" id="PoP-K7-oGo"/>
+                        <constraint firstItem="3lF-QT-sJK" firstAttribute="leading" secondItem="nP6-xL-rRM" secondAttribute="leading" id="XcW-iu-RaM"/>
+                        <constraint firstItem="7uF-Oo-0Cs" firstAttribute="leading" secondItem="mNb-LB-oea" secondAttribute="leading" id="YM4-ss-15c"/>
+                        <constraint firstItem="LjG-Hc-QEw" firstAttribute="centerX" secondItem="4rK-n2-PQb" secondAttribute="centerX" id="Zz7-8y-xUV"/>
+                        <constraint firstItem="mZh-Jb-1Mt" firstAttribute="leading" secondItem="4rK-n2-PQb" secondAttribute="leading" constant="20" id="d7Q-6I-xJd"/>
+                        <constraint firstItem="mZh-Jb-1Mt" firstAttribute="top" secondItem="Bag-F6-rnq" secondAttribute="bottom" constant="3" id="eVu-9b-Eqe"/>
+                        <constraint firstItem="Bag-F6-rnq" firstAttribute="leading" secondItem="4rK-n2-PQb" secondAttribute="leading" constant="20" id="hFN-bs-jz8"/>
+                        <constraint firstItem="NYZ-Ku-r8x" firstAttribute="top" secondItem="mNb-LB-oea" secondAttribute="bottom" constant="27" id="i4k-jw-fZX"/>
+                        <constraint firstItem="bek-KF-mOY" firstAttribute="centerY" secondItem="3lF-QT-sJK" secondAttribute="centerY" id="iqs-cv-bU6"/>
+                        <constraint firstItem="mNb-LB-oea" firstAttribute="top" secondItem="mZh-Jb-1Mt" secondAttribute="bottom" constant="35" id="lVC-lt-FGk"/>
+                        <constraint firstAttribute="trailing" secondItem="pfk-Bk-z0V" secondAttribute="trailing" constant="17" id="m1p-oj-wGN"/>
+                        <constraint firstItem="xBI-Jj-X4r" firstAttribute="leading" secondItem="4rK-n2-PQb" secondAttribute="leading" constant="17" id="qEl-ya-dba"/>
+                        <constraint firstAttribute="trailing" secondItem="8Gz-nz-45T" secondAttribute="trailing" constant="17" id="t3x-iS-ZLz"/>
+                        <constraint firstItem="7uF-Oo-0Cs" firstAttribute="top" secondItem="3lF-QT-sJK" secondAttribute="bottom" constant="27" id="vlK-t8-pdu"/>
+                        <constraint firstItem="baI-eI-CQh" firstAttribute="leading" secondItem="4rK-n2-PQb" secondAttribute="leading" constant="34" id="weF-0N-nJa"/>
+                        <constraint firstAttribute="bottom" secondItem="pm9-96-qV9" secondAttribute="bottom" constant="13" id="weS-Kp-p9o"/>
+                        <constraint firstItem="pfk-Bk-z0V" firstAttribute="centerY" secondItem="7uF-Oo-0Cs" secondAttribute="centerY" id="wkC-EA-oPP"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4rK-n2-PQb" secondAttribute="bottom" constant="161" id="SRU-Ms-tga"/>
+                <constraint firstItem="4rK-n2-PQb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gQ5-8P-MFe"/>
+            </constraints>
+            <point key="canvasLocation" x="162" y="100"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alertline" width="325.66665649414062" height="1"/>
+        <image name="checkbutton1" width="44" height="44"/>
+        <image name="dismissbutton" width="112" height="44"/>
+        <image name="reportbutton" width="112" height="44"/>
+        <image name="selectedcheckbutton" width="44" height="44"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
