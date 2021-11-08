@@ -19,7 +19,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
+                <outlet property="reportNextButton" destination="pm9-96-qV9" id="6kV-tc-8jt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="reportButtons" destination="5yQ-g3-jeB" collectionClass="NSMutableArray" id="DoY-z6-j9J"/>
+                <outletCollection property="reportButtons" destination="8Gz-nz-45T" collectionClass="NSMutableArray" id="Bt9-mW-mhu"/>
+                <outletCollection property="reportButtons" destination="iGo-Ww-ZRc" collectionClass="NSMutableArray" id="hdh-Hq-gxv"/>
+                <outletCollection property="reportButtons" destination="bek-KF-mOY" collectionClass="NSMutableArray" id="xHm-XV-jz2"/>
+                <outletCollection property="reportButtons" destination="pfk-Bk-z0V" collectionClass="NSMutableArray" id="h5N-Rd-eEi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -107,6 +113,9 @@
                             <state key="selected" image="selectedcheckbutton">
                                 <color key="titleColor" name="AccentColor"/>
                             </state>
+                            <connections>
+                                <action selector="reportButtonSelected:" destination="-1" eventType="touchUpInside" id="Rsf-xS-F66"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yQ-g3-jeB">
                             <rect key="frame" x="293" y="108" width="44" height="44"/>
@@ -115,6 +124,9 @@
                             <state key="selected" image="selectedcheckbutton">
                                 <color key="titleColor" name="AccentColor"/>
                             </state>
+                            <connections>
+                                <action selector="reportButtonSelected:" destination="-1" eventType="touchUpInside" id="QSq-HU-1pL"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gz-nz-45T">
                             <rect key="frame" x="293" y="157" width="44" height="44"/>
@@ -123,6 +135,9 @@
                             <state key="selected" image="selectedcheckbutton">
                                 <color key="titleColor" name="AccentColor"/>
                             </state>
+                            <connections>
+                                <action selector="reportButtonSelected:" destination="-1" eventType="touchUpInside" id="UrO-7M-P1J"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bek-KF-mOY">
                             <rect key="frame" x="293" y="255" width="44" height="44"/>
@@ -131,6 +146,9 @@
                             <state key="selected" image="selectedcheckbutton">
                                 <color key="titleColor" name="AccentColor"/>
                             </state>
+                            <connections>
+                                <action selector="reportButtonSelected:" destination="-1" eventType="touchUpInside" id="ATX-8y-7Bd"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-Bk-z0V">
                             <rect key="frame" x="293" y="304" width="44" height="44"/>
@@ -139,6 +157,9 @@
                             <state key="selected" image="selectedcheckbutton">
                                 <color key="titleColor" name="AccentColor"/>
                             </state>
+                            <connections>
+                                <action selector="reportButtonSelected:" destination="-1" eventType="touchUpInside" id="XbC-bV-Uef"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="적절한 신고 선택지가 없으실 땐 저희에게 언제든지 연락주세요 (blindcafeapp@gmail.com) " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-Jj-X4r">
                             <rect key="frame" x="17" y="378" width="300" height="39"/>
@@ -162,6 +183,9 @@
                             <rect key="frame" x="208" y="437" width="112" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="reportbutton"/>
+                            <connections>
+                                <action selector="reportNextButton:" destination="-1" eventType="touchUpInside" id="orb-Sa-Mdn"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertline" translatesAutoresizingMaskIntoConstraints="NO" id="LjG-Hc-QEw">
                             <rect key="frame" x="14.333333333333343" y="426" width="325.33333333333326" height="1"/>

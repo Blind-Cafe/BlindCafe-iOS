@@ -7,10 +7,12 @@
 
 import UIKit
 import FirebaseFirestore
+import PhotosUI
 
 struct Message {
     let sender: String
     let body: String
+    let time: String
 }
 
 class ChattingViewController: BaseViewController {
@@ -56,6 +58,7 @@ class ChattingViewController: BaseViewController {
     
     @IBOutlet weak var photoButton: UIButton!
     @IBAction func photoButton(_ sender: Any) {
+        askPermissionPhoto()
     }
     @IBOutlet weak var recordButton: UIButton!
     @IBAction func recordButton(_ sender: Any) {
@@ -117,6 +120,48 @@ class ChattingViewController: BaseViewController {
     
 }
 
+//MARK: 갤러리
+extension ChattingViewController: PHPickerViewControllerDelegate{
+    
+    func askPermissionPhoto() {
+        PHPhotoLibrary.requestAuthorization({ (status) in
+            if status == PHAuthorizationStatus.authorized {
+                self.showPhotoLibrary()
+            } else {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            }
+        })
+    }
+    
+    func showPhotoLibrary() {
+        var config = PHPickerConfiguration()
+        config.selectionLimit = 5
+        config.filter = .images
+        
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    if let image = image as? UIImage {
+                        picker.dismiss(animated: false, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+}
+
 //MARK: TableView
 extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,6 +188,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         if message.sender == "." {
             cell.selectionStyle = .none
             cell.message.text = message.body
+            cell.timeLabel.text = message.time
             
             if isAfter {
                 cell.topConstraint.constant = 4
@@ -156,6 +202,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             cell1.selectionStyle = .none
             cell1.message.text = message.body
+            cell1.timeLabel.text = message.time
             
             if isAfter {
                 cell1.topConstraint.constant = 4
@@ -208,8 +255,9 @@ extension ChattingViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         snapshotDocuments.forEach { (doc) in
                             let data = doc.data()
-                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String {
-                                self.messages.append(Message(sender: sender, body: body))
+                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp {
+                                let time = self.timeFormatter(timestamp: timestamp)
+                                self.messages.append(Message(sender: sender, body: body, time: time))
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
@@ -221,6 +269,15 @@ extension ChattingViewController {
                 }
                 
             }
+    }
+    
+    func timeFormatter(timestamp: Timestamp) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "a HH:mm"
+        //let date = Date(timeIntervalSince1970: dd)
+        let date = timestamp.dateValue()
+        return dateFormatter.string(from: date)
     }
 }
 

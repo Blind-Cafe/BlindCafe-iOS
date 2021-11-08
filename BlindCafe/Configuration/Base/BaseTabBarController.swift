@@ -10,13 +10,10 @@ import UIKit
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
 
     let homeViewController = HomeViewController()
-    let homeTabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeitem"), tag: 0)
 
     let matchedViewController = MatchedViewController()
-    let matchedTabBarItem = UITabBarItem(title: "매칭완료", image: UIImage(named: "matcheditem"), tag: 1)
     
     let mypageViewController = MyPageViewController()
-    let mypageTabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(named: "mypageitem"), tag: 2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +25,12 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         let matchedNavController = UINavigationController(rootViewController: matchedViewController)
         let mypageNavController = UINavigationController(rootViewController: mypageViewController)
         
-        homeNavController.tabBarItem = homeTabBarItem
-        matchedNavController.tabBarItem = matchedTabBarItem
-        mypageNavController.tabBarItem = mypageTabBarItem
+        homeNavController.tabBarItem.image = UIImage(named: "homeitem")
+        homeNavController.tabBarItem.selectedImage = UIImage(named: "homeitemselected")
+        matchedNavController.tabBarItem.image = UIImage(named: "matcheditem")
+        matchedNavController.tabBarItem.selectedImage = UIImage(named: "matcheditemselected")
+        mypageNavController.tabBarItem.image = UIImage(named: "mypageitem")
+        mypageNavController.tabBarItem.selectedImage = UIImage(named: "mypageitemselected")
         
         
         self.viewControllers = [homeNavController, matchedNavController, mypageNavController]

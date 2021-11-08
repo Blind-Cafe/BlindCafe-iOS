@@ -88,6 +88,7 @@
                             <rect key="frame" x="18" y="3.6666666666666288" width="44" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="photoenabled"/>
+                            <state key="disabled" image="photobutton"/>
                             <connections>
                                 <action selector="photoButton:" destination="-1" eventType="touchUpInside" id="lnM-X2-Qeh"/>
                             </connections>
@@ -96,6 +97,7 @@
                             <rect key="frame" x="62" y="3.6666666666666288" width="44" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="recordenabled"/>
+                            <state key="disabled" image="recordbutton"/>
                             <connections>
                                 <action selector="recordButton:" destination="-1" eventType="touchUpInside" id="Zy8-xg-ODy"/>
                             </connections>
@@ -261,7 +263,9 @@
         <image name="chattingtop" width="390" height="88"/>
         <image name="leftroom" width="44" height="44"/>
         <image name="menubutton" width="44" height="44"/>
+        <image name="photobutton" width="44" height="44"/>
         <image name="photoenabled" width="44" height="44"/>
+        <image name="recordbutton" width="44" height="44"/>
         <image name="recordenabled" width="44" height="44"/>
         <image name="report" width="44" height="44"/>
         <image name="sendbutton" width="53" height="37"/>
