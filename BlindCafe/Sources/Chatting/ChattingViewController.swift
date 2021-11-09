@@ -7,7 +7,8 @@
 
 import UIKit
 import FirebaseFirestore
-import PhotosUI
+import Photos
+import Alamofire
 
 struct Message {
     let sender: String
@@ -58,7 +59,9 @@ class ChattingViewController: BaseViewController {
     
     @IBOutlet weak var photoButton: UIButton!
     @IBAction func photoButton(_ sender: Any) {
-        askPermissionPhoto()
+        let vc = PhotoViewController()
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
     }
     @IBOutlet weak var recordButton: UIButton!
     @IBAction func recordButton(_ sender: Any) {
@@ -121,45 +124,8 @@ class ChattingViewController: BaseViewController {
 }
 
 //MARK: 갤러리
-extension ChattingViewController: PHPickerViewControllerDelegate{
+extension ChattingViewController {
     
-    func askPermissionPhoto() {
-        PHPhotoLibrary.requestAuthorization({ (status) in
-            if status == PHAuthorizationStatus.authorized {
-                self.showPhotoLibrary()
-            } else {
-                if let url = URL(string: UIApplication.openSettingsURLString) {
-                    if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                }
-            }
-        })
-    }
-    
-    func showPhotoLibrary() {
-        var config = PHPickerConfiguration()
-        config.selectionLimit = 5
-        config.filter = .images
-        
-        let picker = PHPickerViewController(configuration: config)
-        picker.delegate = self
-        
-        present(picker, animated: true, completion: nil)
-    }
-    
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
-            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-                DispatchQueue.main.async {
-                    guard let self = self else { return }
-                    if let image = image as? UIImage {
-                        picker.dismiss(animated: false, completion: nil)
-                    }
-                }
-            }
-        }
-    }
 }
 
 //MARK: TableView

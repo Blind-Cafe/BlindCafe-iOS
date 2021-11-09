@@ -11,12 +11,16 @@ import KakaoSDKCommon
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import Photos
+
+var allPhotos : PHFetchResult<PHAsset>? = nil
+var photocount = Int()
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
 
@@ -36,6 +40,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 break
             }
         }*/
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .authorized:
+                let fetchOptions = PHFetchOptions()
+                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                fetchOptions.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+                allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                photocount = allPhotos?.count ?? 0
+            case .denied, .restricted:
+                print("Not allowed")
+            case .notDetermined:
+                print("not determined yet")
+            @unknown default:
+                print("error")
+            }
+        }
         
         KakaoSDKCommon.initSDK(appKey: KakaoKey.KAKAO_NATIVE_KEY)
         FirebaseApp.configure()

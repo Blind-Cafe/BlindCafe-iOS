@@ -34,7 +34,7 @@ class ProgressBar: UIView {
         gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.5)
         
-        gradientLayer.colors = [UIColor.mainGreen.cgColor, UIColor.pale.cgColor]
+        gradientLayer.colors = [UIColor.pale.cgColor, UIColor.lightsage.cgColor, UIColor.mainGreen.cgColor]
         gradientLayer.frame = rect
         gradientLayer.mask = foregroundLayer
         

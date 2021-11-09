@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="photoCollectionViewCell" customModule="BlindCafe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JGn-za-Rnn">
+                        <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soi-vm-Ks5">
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JGn-za-Rnn" secondAttribute="trailing" id="82C-Rn-glH"/>
+                <constraint firstItem="soi-vm-Ks5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FBV-4f-XdX"/>
+                <constraint firstItem="soi-vm-Ks5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NMW-Gl-e61"/>
+                <constraint firstItem="JGn-za-Rnn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uqu-wf-QqE"/>
+                <constraint firstItem="JGn-za-Rnn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hPq-Vi-x6t"/>
+                <constraint firstAttribute="bottom" secondItem="JGn-za-Rnn" secondAttribute="bottom" id="qSe-H6-jgQ"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="JGn-za-Rnn" id="SzJ-yB-6L5"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="98"/>
+        </collectionViewCell>
+    </objects>
+</document>
