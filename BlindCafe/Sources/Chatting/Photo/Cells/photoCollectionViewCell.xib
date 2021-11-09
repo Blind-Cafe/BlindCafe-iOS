@@ -20,25 +20,32 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JGn-za-Rnn">
                         <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soi-vm-Ks5">
-                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoselect" translatesAutoresizingMaskIntoConstraints="NO" id="mlF-1u-rOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="DdO-PR-z2C"/>
+                            <constraint firstAttribute="width" constant="44" id="enx-Ke-FCj"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="mlF-1u-rOJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="47G-NN-Fsl"/>
                 <constraint firstAttribute="trailing" secondItem="JGn-za-Rnn" secondAttribute="trailing" id="82C-Rn-glH"/>
-                <constraint firstItem="soi-vm-Ks5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FBV-4f-XdX"/>
-                <constraint firstItem="soi-vm-Ks5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NMW-Gl-e61"/>
+                <constraint firstItem="mlF-1u-rOJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J0f-pq-fPw"/>
                 <constraint firstItem="JGn-za-Rnn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uqu-wf-QqE"/>
                 <constraint firstItem="JGn-za-Rnn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hPq-Vi-x6t"/>
                 <constraint firstAttribute="bottom" secondItem="JGn-za-Rnn" secondAttribute="bottom" id="qSe-H6-jgQ"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="JGn-za-Rnn" id="SzJ-yB-6L5"/>
+                <outlet property="photoSelectButton" destination="mlF-1u-rOJ" id="pe4-RM-wcJ"/>
             </connections>
             <point key="canvasLocation" x="139" y="98"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="photoselect" width="44" height="44"/>
+    </resources>
 </document>

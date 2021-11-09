@@ -15,8 +15,36 @@ struct AlbumModel {
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet weak var sendButton: UIButton!
+    @IBAction func sendButton(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var galleryButton: UIButton!
+    @IBAction func galleryButton(_ sender: UIButton) {
+        if selectedIndex.count != 0 {
+            for i in 0...(selectedIndex.count - 1) {
+                let cell1 = photoCollectionView.cellForItem(at: selectedIndex[i]) as! photoCollectionViewCell
+                cell1.photoSelectButton.image = UIImage(named: "photoselect")
+            }
+        }
+        selectedIndex.removeAll()
+        if sender.isEnabled == true {
+            sender.isEnabled = false
+            albumListTableView.isHidden = false
+            photoCollectionView.isHidden = true
+        }
+        else {
+            sender.isEnabled = true
+            albumListTableView.isHidden = true
+            photoCollectionView.isHidden = false
+        }
+    }
+    
     @IBOutlet weak var albumListTableView: UITableView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    var selectedIndex: [IndexPath] = []
+    var photoNumber: [Int] = [1, 2, 3, 4, 5]
     
     var album: [AlbumModel] = [AlbumModel]()
     var albumIndex = 0
@@ -25,6 +53,9 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .charcol
+        
+        sendButton.isHidden = true
+        galleryButton.isEnabled = false
         
         albumListTableView.delegate = self
         albumListTableView.dataSource = self
@@ -65,6 +96,7 @@ class PhotoViewController: UIViewController {
     }
 }
 
+//MARK: TableView
 extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return album.count
@@ -73,6 +105,7 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "albumListTableViewCell", for: indexPath) as! albumListTableViewCell
         
+        cell.backgroundColor = .charcol
         cell.albumName.text = album[indexPath.row].name
         if album[indexPath.row].photoAssets.firstObject?.thumbnailImage != nil {
             cell.thumbnailImage.image = album[indexPath.row].photoAssets.firstObject!.thumbnailImage
@@ -87,9 +120,11 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
         photoCollectionView.reloadData()
         tableView.isHidden = true
         photoCollectionView.isHidden = false
+        galleryButton.isEnabled = true
     }
 }
 
+//MARK: CollectionView
 extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return album[albumIndex].photoAssets.count
@@ -106,11 +141,45 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! photoCollectionViewCell
         
+        if selectedIndex.count < 5 {
+            if !selectedIndex.contains(indexPath) {
+                selectedIndex.append(indexPath)
+                let index = selectedIndex.firstIndex(of: indexPath)
+                cell.photoSelectButton.image = UIImage(named: "photo\(String(index! + 1))")
+                print("photo\(String(index! + 1))")
+            }
+            else {
+                selectedIndex.removeAll(where: { $0 == indexPath} )
+                cell.photoSelectButton.image = UIImage(named: "photoselect")
+                if selectedIndex.count != 0 {
+                    for i in 0...(selectedIndex.count - 1) {
+                        let cell1 = collectionView.cellForItem(at: selectedIndex[i]) as! photoCollectionViewCell
+                        cell1.photoSelectButton.image = UIImage(named: "photo\(String(i + 1))")
+                    }
+                }
+            }
+        }
+        else {
+            selectedIndex.removeAll(where: { $0 == indexPath} )
+            cell.photoSelectButton.image = UIImage(named: "photoselect")
+            for i in 0...(selectedIndex.count - 1) {
+                let cell1 = collectionView.cellForItem(at: selectedIndex[i]) as! photoCollectionViewCell
+                cell1.photoSelectButton.image = UIImage(named: "photo\(String(i + 1))")
+            }
+        }
+        
+        if selectedIndex.count != 0 {
+            sendButton.isHidden = false
+        }
+        else {
+            sendButton.isHidden = true
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.size.width / 3) - 7, height: (view.frame.size.width / 3) - 7)
+        return CGSize(width: (view.frame.size.width / 3) - 4, height: (view.frame.size.width / 3) - 4)
     }
     
 }

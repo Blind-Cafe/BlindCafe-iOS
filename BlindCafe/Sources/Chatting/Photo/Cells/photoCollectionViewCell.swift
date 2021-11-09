@@ -11,10 +11,12 @@ import Photos
 class photoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var photoSelectButton: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .charcol
+        photoSelectButton.image = UIImage(named: "photoselect")
     }
     
     func fetchImage(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize) {
