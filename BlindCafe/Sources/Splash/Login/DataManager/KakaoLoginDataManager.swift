@@ -8,14 +8,14 @@
 import Alamofire
 
 class KakaoLoginDataManager {
-    func kakaoLogin(_ parameters: KakaoLoginInput, viewController: LoginViewController) {
+    func kakaoLogin(_ parameters: LoginInput, viewController: LoginViewController) {
         AF.request("\(Constant.BASE_URL)/api/kakao", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
             .validate()
-            .responseDecodable(of: KakaoLoginResponse.self) { response in
+            .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     if response.code == "1000" || response.code == "1001" {
-                        viewController.didLogin(code: response.code, jwt: response.jwt!)
+                        viewController.didLogin(result: response)
                     }
                     else {
                         viewController.failedToRequest(message: response.message)

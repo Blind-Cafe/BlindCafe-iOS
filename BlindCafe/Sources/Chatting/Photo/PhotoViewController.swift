@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import FirebaseStorage
 
 struct AlbumModel {
     let name: String
@@ -14,9 +15,33 @@ struct AlbumModel {
 }
 
 class PhotoViewController: UIViewController {
-
+    
+    let storage = Storage.storage()
+    
     @IBOutlet weak var sendButton: UIButton!
     @IBAction func sendButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        for i in 0...(photoList.count - 1) {
+            uploadimage(img: photoList[i])
+        }
+    }
+    
+    func uploadimage(img: UIImage) {
+        var data = Data()
+        data = img.jpegData(compressionQuality: 0.8)!
+        let time = Int64(Date().timeIntervalSince1970 * 1000)
+        let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                print("성공")
+            }
+        }
+        ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
     }
     
     @IBOutlet weak var galleryButton: UIButton!
@@ -45,6 +70,8 @@ class PhotoViewController: UIViewController {
     
     var selectedIndex: [IndexPath] = []
     var photoNumber: [Int] = [1, 2, 3, 4, 5]
+    
+    var photoList: [UIImage] = []
     
     var album: [AlbumModel] = [AlbumModel]()
     var albumIndex = 0
@@ -146,12 +173,14 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if selectedIndex.count < 5 {
             if !selectedIndex.contains(indexPath) {
                 selectedIndex.append(indexPath)
+                photoList.append(cell.imageView.image!)
                 let index = selectedIndex.firstIndex(of: indexPath)
                 cell.photoSelectButton.image = UIImage(named: "photo\(String(index! + 1))")
                 print("photo\(String(index! + 1))")
             }
             else {
                 selectedIndex.removeAll(where: { $0 == indexPath} )
+                photoList.removeAll(where: { $0 == cell.imageView.image! })
                 cell.photoSelectButton.image = UIImage(named: "photoselect")
                 if selectedIndex.count != 0 {
                     for i in 0...(selectedIndex.count - 1) {
@@ -163,6 +192,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         else {
             selectedIndex.removeAll(where: { $0 == indexPath} )
+            photoList.removeAll(where: { $0 == cell.imageView.image! })
             cell.photoSelectButton.image = UIImage(named: "photoselect")
             for i in 0...(selectedIndex.count - 1) {
                 let cell1 = collectionView.cellForItem(at: selectedIndex[i]) as! photoCollectionViewCell

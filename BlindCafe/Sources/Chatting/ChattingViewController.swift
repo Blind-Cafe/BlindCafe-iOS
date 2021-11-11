@@ -9,11 +9,13 @@ import UIKit
 import FirebaseFirestore
 import Photos
 import Alamofire
+import FirebaseStorageUI
 
 struct Message {
     let sender: String
     let body: String
     let time: String
+    let type: Int
 }
 
 class ChattingViewController: BaseViewController {
@@ -67,10 +69,9 @@ class ChattingViewController: BaseViewController {
     @IBAction func recordButton(_ sender: Any) {
     }
     @IBOutlet weak var chattingField: UIImageView!
-    @IBOutlet weak var chattingTextField: UITextField!
+    @IBOutlet weak var chattingTextField: UITextView!
     @IBOutlet weak var sendButton: UIButton!
-    @IBAction func sendButton(_ sender: Any) {
-    }
+   
     
     @IBOutlet weak var chattingFieldConstraint: NSLayoutConstraint!
     
@@ -82,15 +83,15 @@ class ChattingViewController: BaseViewController {
         self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint?.constant
         enableKeyboardHideOnTap()
         
-        chatTableView.register(UINib(nibName: "SendingTableViewCell", bundle: nil), forCellReuseIdentifier: "SendingTableViewCell")
-        chatTableView.register(UINib(nibName: "ReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "ReceivingTableViewCell")
+        chatTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTableViewCell")
+        chatTableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.separatorStyle = .none
         chatTableView.backgroundColor = .mainBlack
         
-        self.chattingTextField.addTarget(self, action: #selector(textFieldDidChange(_sender:)), for: .editingChanged)
+        chattingTextField.delegate = self
         
         if chattingTextField.text == "" {
             sendButton.isEnabled = false
@@ -123,9 +124,26 @@ class ChattingViewController: BaseViewController {
     
 }
 
-//MARK: 갤러리
-extension ChattingViewController {
-    
+extension ChattingViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if chattingTextField.text == "" {
+            sendButton.isEnabled = false
+            photoButton.isHidden = false
+            recordButton.isHidden = false
+        }
+        else {
+            sendButton.isEnabled = true
+            photoButton.isHidden = true
+            recordButton.isHidden = true
+        }
+        
+        if chattingTextField.text != "" {
+            chattingFieldConstraint.constant = 18
+        }
+        else {
+            chattingFieldConstraint.constant = 112
+        }
+    }
 }
 
 //MARK: TableView
@@ -145,39 +163,89 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        
         let message = messages[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SendingTableViewCell", for: indexPath) as! SendingTableViewCell
-        let cell1 = tableView.dequeueReusableCell(withIdentifier: "ReceivingTableViewCell", for: indexPath) as! ReceivingTableViewCell
-        
-        if message.sender == "." {
+        if message.type == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as! TextTableViewCell
             cell.selectionStyle = .none
-            cell.message.text = message.body
-            cell.timeLabel.text = message.time
             
-            if isAfter {
-                cell.topConstraint.constant = 4
+            if message.sender == "." {
+                cell.receivingMessageView.isHidden = true
+                cell.receivingStackView.isHidden = true
+                cell.receivingTime.isHidden = true
+                cell.sendingMessageView.isHidden = false
+                cell.sendingStackView.isHidden = false
+                cell.sendingTime.isHidden = false
+                
+                cell.sendingMessageLabel.text = message.body
+                cell.sendingTime.text = message.time
+                
+                if isAfter {
+                    cell.sendingTopConstraint.constant = 4
+                }
+                else {
+                    cell.sendingTopConstraint.constant = 12
+                }
             }
             else {
-                cell.topConstraint.constant = 12
+                cell.sendingMessageView.isHidden = true
+                cell.sendingStackView.isHidden = true
+                cell.sendingTime.isHidden = true
+                cell.receivingMessageView.isHidden = false
+                cell.receivingStackView.isHidden = false
+                cell.receivingTime.isHidden = false
+                
+                cell.receivingMessageLabel.text = message.body
+                cell.receivingTime.text = message.time
+                
+                if isAfter {
+                    cell.receivingTopConstraint.constant = 4
+                }
+                else {
+                    cell.receivingTopConstraint.constant = 12
+                }
             }
+            return cell
+        }
+        else if message.type == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
+            cell.selectionStyle = .none
             
+            let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
+            //let width = image.accessibilityFrame.size
+            //let height = image.accessibilityFrame
+            
+            //cell.setwidthheight(width: width, height: height)
+            
+            //print(width)
+            //print(height)
+            
+            if message.sender == "." {
+                cell.receivingImageView.isHidden = true
+                cell.receivingTime.isHidden = true
+                cell.sendingImageView.isHidden = false
+                cell.sendingTime.isHidden = false
+                
+                cell.sendingImageView.sd_setImage(with: image)
+        
+                cell.sendingTime.text = message.time
+                cell.sendingImageView.sizeToFit()
+            }
+            else {
+                cell.sendingImageView.isHidden = true
+                cell.sendingTime.isHidden = true
+                cell.receivingImageView.isHidden = false
+                cell.receivingTime.isHidden = false
+                
+                cell.receivingImageView.sd_setImage(with: image)
+                
+                cell.receivingTime.text = message.time
+                cell.receivingImageView.sizeToFit()
+            }
             return cell
         }
         else {
-            cell1.selectionStyle = .none
-            cell1.message.text = message.body
-            cell1.timeLabel.text = message.time
-            
-            if isAfter {
-                cell1.topConstraint.constant = 4
-            }
-            else {
-                cell1.topConstraint.constant = 12
-            }
-            
-            return cell1
+            return UITableViewCell()
         }
     }
     
@@ -186,30 +254,46 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: Firestore 채팅
 extension ChattingViewController {
     @IBAction func sendMessage(_ sender: Any) {
-        if let messageBody = chattingTextField.text {
-            db.collection("Rooms/-/Messages").addDocument(data: [
-                "contents": messageBody,
-                "senderName": ".",
-                "senderUid": ".",
-                "timestamp": Date(),
-                "type": 0
-            ]) { (error) in
-                if let e = error {
-                    print(e.localizedDescription)
-                } else {
-                    print("Success save data")
-                    
-                    DispatchQueue.main.async {
-                        self.chattingTextField.text = ""
+        if chattingTextField.text != nil && !chattingTextField.text!.isEmpty {
+            if let messageBody = chattingTextField.text {
+                db.collection("Rooms/-/Messages").addDocument(data: [
+                    "contents": messageBody,
+                    "senderName": ".",
+                    "senderUid": ".",
+                    "timestamp": Date(),
+                    "type": 1
+                ]) { (error) in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        print("Success save data")
+                        
+                        DispatchQueue.main.async {
+                            self.chattingTextField.text = ""
+                        }
                     }
                 }
             }
         }
-        
-        print(Date())
     }
     
-    private func loadMessages() {
+    func send(contents: String, type: Int) {
+        db.collection("Rooms/-/Messages").addDocument(data: [
+            "contents": contents,
+            "senderName": ".",
+            "senderUid": ".",
+            "timestamp": Date(),
+            "type": type
+        ]) { (error) in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                print("Success save data")
+            }
+        }
+    }
+    
+    func loadMessages() {
         db.collection("Rooms/-/Messages")
             .order(by: "timestamp")
             .addSnapshotListener { (querySnapshot, error) in
@@ -221,9 +305,9 @@ extension ChattingViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         snapshotDocuments.forEach { (doc) in
                             let data = doc.data()
-                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp {
+                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
                                 let time = self.timeFormatter(timestamp: timestamp)
-                                self.messages.append(Message(sender: sender, body: body, time: time))
+                                self.messages.append(Message(sender: sender, body: body, time: time, type: type))
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
@@ -236,6 +320,7 @@ extension ChattingViewController {
                 
             }
     }
+    
     
     func timeFormatter(timestamp: Timestamp) -> String {
         let dateFormatter = DateFormatter()
@@ -255,7 +340,6 @@ extension ChattingViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         dismissWhenTappedAround()
-        
        }
     
     func dismissWhenTappedAround() {

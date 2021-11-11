@@ -12,5 +12,5 @@ struct KakaoKey {
 }
 
 struct Token {
-    static var jwtToken: String = ""
+    static var jwtToken: String = UserDefaults.standard.string(forKey: "UserJwt") ?? ""
 }

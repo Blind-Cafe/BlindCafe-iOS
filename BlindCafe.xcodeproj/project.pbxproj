@@ -31,6 +31,8 @@
 		CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29717E273A1DB100B034F1 /* albumListTableViewCell.swift */; };
 		CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD29717F273A1DB100B034F1 /* albumListTableViewCell.xib */; };
 		CD297185273A35F000B034F1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD297184273A35F000B034F1 /* PHAsset.swift */; };
+		CD386C9D273CB8ED002D5187 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */; };
+		CD386C9E273CB8ED002D5187 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */; };
 		CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9E3272163C500DA6013 /* HomeViewController.swift */; };
 		CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9E4272163C500DA6013 /* HomeViewController.xib */; };
 		CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */; };
@@ -50,8 +52,6 @@
 		CD79E99127291DBF0025CF1B /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */; };
 		CD79E99327291DE90025CF1B /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */; };
 		CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E995272920AE0025CF1B /* IndicatorView.swift */; };
-		CD79E998272BD18F0025CF1B /* AppleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E997272BD18F0025CF1B /* AppleLoginInput.swift */; };
-		CD79E99A272BD2370025CF1B /* AppleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E999272BD2370025CF1B /* AppleLoginResponse.swift */; };
 		CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */; };
 		CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B49A32736BAE600940809 /* ProgressBar.swift */; };
 		CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CB9D9273819E7004620BB /* ReportViewController.swift */; };
@@ -67,10 +67,8 @@
 		CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */; };
 		CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0C32732478C008367F3 /* ChattingViewController.swift */; };
 		CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C42732478C008367F3 /* ChattingViewController.xib */; };
-		CDF8A0CA2734CFC0008367F3 /* SendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0C82734CFC0008367F3 /* SendingTableViewCell.swift */; };
-		CDF8A0CB2734CFC0008367F3 /* SendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C92734CFC0008367F3 /* SendingTableViewCell.xib */; };
-		CDF8A0CE2734CFD3008367F3 /* ReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0CC2734CFD3008367F3 /* ReceivingTableViewCell.swift */; };
-		CDF8A0CF2734CFD3008367F3 /* ReceivingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0CD2734CFD3008367F3 /* ReceivingTableViewCell.xib */; };
+		CDF8A0CE2734CFD3008367F3 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0CC2734CFD3008367F3 /* TextTableViewCell.swift */; };
+		CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0CD2734CFD3008367F3 /* TextTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +101,8 @@
 		CD29717E273A1DB100B034F1 /* albumListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumListTableViewCell.swift; sourceTree = "<group>"; };
 		CD29717F273A1DB100B034F1 /* albumListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = albumListTableViewCell.xib; sourceTree = "<group>"; };
 		CD297184273A35F000B034F1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
+		CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
 		CD6AA9E3272163C500DA6013 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD6AA9E4272163C500DA6013 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +122,6 @@
 		CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginInput.swift; sourceTree = "<group>"; };
 		CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
 		CD79E995272920AE0025CF1B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		CD79E997272BD18F0025CF1B /* AppleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginInput.swift; sourceTree = "<group>"; };
-		CD79E999272BD2370025CF1B /* AppleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginResponse.swift; sourceTree = "<group>"; };
 		CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
 		CD7B49A32736BAE600940809 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CD7CB9D9273819E7004620BB /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -139,10 +137,8 @@
 		CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDF8A0C32732478C008367F3 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		CDF8A0C42732478C008367F3 /* ChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingViewController.xib; sourceTree = "<group>"; };
-		CDF8A0C82734CFC0008367F3 /* SendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingTableViewCell.swift; sourceTree = "<group>"; };
-		CDF8A0C92734CFC0008367F3 /* SendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendingTableViewCell.xib; sourceTree = "<group>"; };
-		CDF8A0CC2734CFD3008367F3 /* ReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingTableViewCell.swift; sourceTree = "<group>"; };
-		CDF8A0CD2734CFD3008367F3 /* ReceivingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivingTableViewCell.xib; sourceTree = "<group>"; };
+		CDF8A0CC2734CFD3008367F3 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		CDF8A0CD2734CFD3008367F3 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		F44303AD68DB09BAD42D0B43 /* Pods-BlindCafe.inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlindCafe.inhouse.xcconfig"; path = "Target Support Files/Pods-BlindCafe/Pods-BlindCafe.inhouse.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,8 +412,6 @@
 			children = (
 				CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */,
 				CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */,
-				CD79E997272BD18F0025CF1B /* AppleLoginInput.swift */,
-				CD79E999272BD2370025CF1B /* AppleLoginResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -466,10 +460,10 @@
 		CDF8A0C72732CA2A008367F3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CDF8A0C82734CFC0008367F3 /* SendingTableViewCell.swift */,
-				CDF8A0C92734CFC0008367F3 /* SendingTableViewCell.xib */,
-				CDF8A0CC2734CFD3008367F3 /* ReceivingTableViewCell.swift */,
-				CDF8A0CD2734CFD3008367F3 /* ReceivingTableViewCell.xib */,
+				CDF8A0CC2734CFD3008367F3 /* TextTableViewCell.swift */,
+				CDF8A0CD2734CFD3008367F3 /* TextTableViewCell.xib */,
+				CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */,
+				CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -533,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD386C9E273CB8ED002D5187 /* ImageTableViewCell.xib in Resources */,
 				CD6AA9F52724486200DA6013 /* MyPageViewController.xib in Resources */,
 				CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */,
 				CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */,
@@ -541,7 +536,6 @@
 				CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
 				CD0C06B8272D85AB0020E858 /* InitInterestViewController.xib in Resources */,
-				CDF8A0CB2734CFC0008367F3 /* SendingTableViewCell.xib in Resources */,
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
@@ -554,7 +548,7 @@
 				CD15094D272063E60020BD41 /* LoginViewController.xib in Resources */,
 				CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */,
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
-				CDF8A0CF2734CFD3008367F3 /* ReceivingTableViewCell.xib in Resources */,
+				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
 				CD29717D273A157500B034F1 /* photoCollectionViewCell.xib in Resources */,
 				CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */,
 				CD6AA9FA27266B1B00DA6013 /* OnboardingViewController.xib in Resources */,
@@ -613,19 +607,17 @@
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
-				CD79E998272BD18F0025CF1B /* AppleLoginInput.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,
 				CD79E99127291DBF0025CF1B /* KakaoLoginInput.swift in Sources */,
-				CDF8A0CE2734CFD3008367F3 /* ReceivingTableViewCell.swift in Sources */,
+				CDF8A0CE2734CFD3008367F3 /* TextTableViewCell.swift in Sources */,
 				CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */,
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
 				CD297185273A35F000B034F1 /* PHAsset.swift in Sources */,
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
 				CD6AA9F42724486200DA6013 /* MyPageViewController.swift in Sources */,
-				CD79E99A272BD2370025CF1B /* AppleLoginResponse.swift in Sources */,
 				CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */,
 				CD79E987272852F90025CF1B /* Constant.swift in Sources */,
 				CD79E99327291DE90025CF1B /* KakaoLoginResponse.swift in Sources */,
@@ -633,9 +625,9 @@
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
+				CD386C9D273CB8ED002D5187 /* ImageTableViewCell.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
-				CDF8A0CA2734CFC0008367F3 /* SendingTableViewCell.swift in Sources */,
 				CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,

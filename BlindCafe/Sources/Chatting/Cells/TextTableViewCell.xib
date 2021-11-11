@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="KGk-i7-Jjw" customClass="TextTableViewCell" customModule="BlindCafe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="receiving" translatesAutoresizingMaskIntoConstraints="NO" id="zPG-aq-HL5">
+                        <rect key="frame" x="22" y="4" width="58.5" height="63"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UkD-Lt-zGd">
+                        <rect key="frame" x="32" y="11" width="38.5" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRW-81-Qqp">
+                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="49"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                <color key="textColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZC-F5-9o3">
+                        <rect key="frame" x="83.5" y="50" width="28.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Gtg-bu-fO0"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="SpoqaHanSansNeo-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sending" translatesAutoresizingMaskIntoConstraints="NO" id="1MZ-w9-x51">
+                        <rect key="frame" x="275.5" y="4" width="58.5" height="63"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MJY-u3-685">
+                        <rect key="frame" x="285.5" y="11" width="38.5" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7W-Qz-ihX">
+                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="49"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqm-A1-nOo">
+                        <rect key="frame" x="244" y="50" width="28.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Nid-ks-XJi"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="11" name="SpoqaHanSansNeo-Regular"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UkD-Lt-zGd" firstAttribute="leading" secondItem="zPG-aq-HL5" secondAttribute="leading" constant="10" id="5bh-PZ-Z1r"/>
+                    <constraint firstAttribute="trailing" secondItem="1MZ-w9-x51" secondAttribute="trailing" constant="22" id="BIu-SW-hNu"/>
+                    <constraint firstItem="zPG-aq-HL5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="DKf-kb-Bf0"/>
+                    <constraint firstItem="1MZ-w9-x51" firstAttribute="trailing" secondItem="MJY-u3-685" secondAttribute="trailing" constant="10" id="Dcw-Cj-dWz"/>
+                    <constraint firstItem="1MZ-w9-x51" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Fav-Tx-55t"/>
+                    <constraint firstItem="zPG-aq-HL5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="JYe-82-Grj"/>
+                    <constraint firstItem="zPG-aq-HL5" firstAttribute="trailing" secondItem="UkD-Lt-zGd" secondAttribute="trailing" constant="10" id="PKo-VD-lFU"/>
+                    <constraint firstItem="1MZ-w9-x51" firstAttribute="leading" secondItem="vqm-A1-nOo" secondAttribute="trailing" constant="3" id="PfQ-P4-w88"/>
+                    <constraint firstItem="1MZ-w9-x51" firstAttribute="bottom" secondItem="MJY-u3-685" secondAttribute="bottom" constant="7" id="Qt4-KH-SNl"/>
+                    <constraint firstItem="zPG-aq-HL5" firstAttribute="bottom" secondItem="UkD-Lt-zGd" secondAttribute="bottom" constant="7" id="X9q-YZ-EFi"/>
+                    <constraint firstAttribute="bottom" secondItem="zPG-aq-HL5" secondAttribute="bottom" constant="4" id="ZPM-Ae-zzk"/>
+                    <constraint firstItem="1MZ-w9-x51" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="110" id="dZY-D3-7HX"/>
+                    <constraint firstItem="UkD-Lt-zGd" firstAttribute="top" secondItem="zPG-aq-HL5" secondAttribute="top" constant="7" id="e55-B0-6rS"/>
+                    <constraint firstItem="MJY-u3-685" firstAttribute="leading" secondItem="1MZ-w9-x51" secondAttribute="leading" constant="10" id="eHj-S3-e5p"/>
+                    <constraint firstAttribute="bottom" secondItem="1MZ-w9-x51" secondAttribute="bottom" constant="4" id="fWj-xB-Dgr"/>
+                    <constraint firstItem="7ZC-F5-9o3" firstAttribute="bottom" secondItem="zPG-aq-HL5" secondAttribute="bottom" id="jUD-do-toL"/>
+                    <constraint firstItem="MJY-u3-685" firstAttribute="top" secondItem="1MZ-w9-x51" secondAttribute="top" constant="7" id="kNs-vp-G5g"/>
+                    <constraint firstItem="vqm-A1-nOo" firstAttribute="bottom" secondItem="1MZ-w9-x51" secondAttribute="bottom" id="kaf-l3-aQr"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zPG-aq-HL5" secondAttribute="trailing" constant="110" id="tfG-Vl-o29"/>
+                    <constraint firstItem="7ZC-F5-9o3" firstAttribute="leading" secondItem="zPG-aq-HL5" secondAttribute="trailing" constant="3" id="x1Z-U3-fBJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="receivingMessageLabel" destination="wRW-81-Qqp" id="cAh-3o-SFE"/>
+                <outlet property="receivingMessageView" destination="zPG-aq-HL5" id="3tm-X7-KMc"/>
+                <outlet property="receivingStackView" destination="UkD-Lt-zGd" id="p0X-1I-vlj"/>
+                <outlet property="receivingTime" destination="7ZC-F5-9o3" id="X2q-2g-4Rm"/>
+                <outlet property="receivingTopConstraint" destination="DKf-kb-Bf0" id="Ol7-WT-QsX"/>
+                <outlet property="sendingMessageLabel" destination="x7W-Qz-ihX" id="0o6-pf-mFs"/>
+                <outlet property="sendingMessageView" destination="1MZ-w9-x51" id="VfN-Gs-0yz"/>
+                <outlet property="sendingStackView" destination="MJY-u3-685" id="g5X-gh-Uos"/>
+                <outlet property="sendingTime" destination="vqm-A1-nOo" id="9gP-Ie-d3B"/>
+                <outlet property="sendingTopConstraint" destination="Fav-Tx-55t" id="xai-ep-7ga"/>
+            </connections>
+            <point key="canvasLocation" x="82.608695652173921" y="65.959821428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="receiving" width="34.5" height="34.5"/>
+        <image name="sending" width="34.5" height="35.5"/>
+    </resources>
+</document>

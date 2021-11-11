@@ -46,7 +46,7 @@ class LoginViewController: BaseViewController {
                 print("loginWithKakaoAccount() success.")
                 
                 self.showIndicator()
-                let input = KakaoLoginInput(token: oauthToken!.accessToken, deviceId: UIDevice.current.identifierForVendor!.uuidString)
+                let input = LoginInput(token: oauthToken!.accessToken, deviceId: UIDevice.current.identifierForVendor!.uuidString)
                 KakaoLoginDataManager().kakaoLogin(input, viewController: self)
                 
                 print(input)
@@ -75,7 +75,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
                 self.showIndicator()
-                let input = AppleLoginInput(token: tokenString, deviceId: UIDevice.current.identifierForVendor!.uuidString)
+                let input = LoginInput(token: tokenString, deviceId: UIDevice.current.identifierForVendor!.uuidString)
                 AppleLoginDataManager().appleLogin(input, viewController: self)
                 print(input)
             }
@@ -109,15 +109,15 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 }
 
 extension LoginViewController {
-    func didLogin(code: String, jwt: String){
+    func didLogin(result: LoginResponse){
         self.dismissIndicator()
-        Token.jwtToken = jwt
-        //UserDefaults.standard.set(String(result.id!), forKey: "UserIdKey")
+        Token.jwtToken = result.jwt!
+        UserDefaults.standard.set(result.jwt, forKey: "UserJwt")
+        UserDefaults.standard.set(result.id, forKey: "UserID")
         let vc = AgreementViewController()
         let navController = UINavigationController(rootViewController: vc)
         navController.modalPresentationStyle = .fullScreen
         navController.modalTransitionStyle = .crossDissolve
-        
         self.present(navController, animated: true)
     }
     

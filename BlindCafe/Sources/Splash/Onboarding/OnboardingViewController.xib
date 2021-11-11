@@ -35,7 +35,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-9k-rEl">
-                    <rect key="frame" x="108.66666666666667" y="682" width="172.66666666666663" height="25"/>
+                    <rect key="frame" x="108.66666666666667" y="682" width="172.66666666666663" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="ECf-ic-T9G"/>
+                    </constraints>
                     <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" red="0.73333333333333328" green="0.82352941176470584" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
@@ -68,13 +71,15 @@
                 <constraint firstItem="sEK-hl-RuG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6sx-Hr-f34"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CWI-6h-ZFs" secondAttribute="trailing" constant="16" id="9g4-Pk-bGf"/>
                 <constraint firstItem="Ma9-9k-rEl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Las-Km-gsO"/>
-                <constraint firstItem="Ma9-9k-rEl" firstAttribute="top" secondItem="sEK-hl-RuG" secondAttribute="bottom" constant="40" id="TsR-vl-jEh"/>
                 <constraint firstItem="gZG-fg-mpp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YBS-UC-1hS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ma9-9k-rEl" secondAttribute="bottom" constant="40" id="bP1-1O-LGq"/>
                 <constraint firstItem="LeQ-NA-CgY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cEg-IO-S9x"/>
+                <constraint firstItem="Ma9-9k-rEl" firstAttribute="top" secondItem="sEK-hl-RuG" secondAttribute="bottom" priority="250" constant="40" id="djy-mE-h90"/>
                 <constraint firstItem="gZG-fg-mpp" firstAttribute="centerY" secondItem="CWI-6h-ZFs" secondAttribute="centerY" id="hBE-rT-XmE"/>
                 <constraint firstItem="LeQ-NA-CgY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="l8T-Rp-oij"/>
                 <constraint firstItem="sEK-hl-RuG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="lt6-86-HDk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CWI-6h-ZFs" secondAttribute="bottom" constant="20" id="npb-Xr-PVC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Ma9-9k-rEl" secondAttribute="bottom" constant="118" id="rja-NM-P1o"/>
                 <constraint firstItem="Ma9-9k-rEl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t72-u0-Gdm"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>

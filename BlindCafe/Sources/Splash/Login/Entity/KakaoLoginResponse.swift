@@ -5,9 +5,10 @@
 //  Created by 권하은 on 2021/10/27.
 //
 
-struct KakaoLoginResponse: Decodable {
+struct LoginResponse: Decodable {
     var code: String
     var message: String
     var jwt: String?
+    var id: Int?
 }
 

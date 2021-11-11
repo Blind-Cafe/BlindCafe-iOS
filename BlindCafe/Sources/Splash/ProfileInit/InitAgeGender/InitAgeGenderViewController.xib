@@ -26,8 +26,11 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-gC-gkW">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-gC-gkW">
                     <rect key="frame" x="103.66666666666669" y="141" width="183" height="176"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="176" id="zwS-Zi-RuI"/>
+                    </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileinittitle" translatesAutoresizingMaskIntoConstraints="NO" id="01b-L3-j4G">
                     <rect key="frame" x="143" y="54" width="104" height="24"/>
@@ -40,8 +43,11 @@
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="bJQ-BU-TyY"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="fov-zm-23R">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="fov-zm-23R">
                     <rect key="frame" x="19" y="317" width="352" height="527"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="527" id="9Am-SW-dNq"/>
+                    </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-9w-Tka">
                     <rect key="frame" x="36" y="335" width="80" height="19"/>
@@ -113,27 +119,32 @@
                 <constraint firstItem="01b-L3-j4G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3PS-vw-zGP"/>
                 <constraint firstItem="ZEP-Jj-MQc" firstAttribute="centerY" secondItem="Hlx-pC-eRf" secondAttribute="centerY" id="5Eu-df-Swk"/>
                 <constraint firstAttribute="bottom" secondItem="fov-zm-23R" secondAttribute="bottom" id="5SM-Pb-RMQ"/>
-                <constraint firstItem="fov-zm-23R" firstAttribute="top" secondItem="vc8-gC-gkW" secondAttribute="bottom" id="6Ej-zm-tI7"/>
                 <constraint firstItem="DQg-1h-edJ" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="6FG-MU-vMV"/>
-                <constraint firstItem="jhg-9w-Tka" firstAttribute="top" secondItem="vc8-gC-gkW" secondAttribute="bottom" constant="18" id="80C-C6-5WX"/>
                 <constraint firstItem="Y3Z-7n-pja" firstAttribute="centerX" secondItem="OMO-9S-sGw" secondAttribute="centerX" id="8Ov-zN-M5u"/>
                 <constraint firstItem="Cr4-3q-dKC" firstAttribute="top" secondItem="OMO-9S-sGw" secondAttribute="bottom" constant="44" id="8qG-jk-xlQ"/>
+                <constraint firstItem="bZ2-bw-ktI" firstAttribute="top" relation="lessThanOrEqual" secondItem="Hlx-pC-eRf" secondAttribute="bottom" constant="67" id="9bh-cc-X8l"/>
                 <constraint firstItem="8IP-3L-75I" firstAttribute="centerY" secondItem="01b-L3-j4G" secondAttribute="centerY" id="Bde-c8-NvP"/>
-                <constraint firstAttribute="bottom" secondItem="xXs-MC-cpV" secondAttribute="bottom" constant="50" id="DKo-s0-UsY"/>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="xXs-MC-cpV" secondAttribute="bottom" constant="50" id="DKo-s0-UsY"/>
                 <constraint firstItem="MNc-cA-gHW" firstAttribute="top" secondItem="DQg-1h-edJ" secondAttribute="bottom" constant="10" id="DcA-qN-iv9"/>
                 <constraint firstItem="xXs-MC-cpV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Dm4-S3-Dah"/>
                 <constraint firstItem="fov-zm-23R" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E3c-8D-Hl6"/>
                 <constraint firstItem="OMO-9S-sGw" firstAttribute="top" secondItem="MNc-cA-gHW" secondAttribute="bottom" constant="5" id="KHq-S2-zMz"/>
+                <constraint firstItem="vc8-gC-gkW" firstAttribute="top" relation="lessThanOrEqual" secondItem="01b-L3-j4G" secondAttribute="bottom" constant="63" id="KNl-zj-ktW"/>
+                <constraint firstItem="vc8-gC-gkW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="01b-L3-j4G" secondAttribute="bottom" constant="15" id="KOm-UT-fWt"/>
+                <constraint firstItem="jhg-9w-Tka" firstAttribute="top" secondItem="fov-zm-23R" secondAttribute="top" constant="18" id="NxJ-sq-dcT"/>
                 <constraint firstItem="8IP-3L-75I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="OKh-sX-UbD"/>
                 <constraint firstItem="OMO-9S-sGw" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="QII-OG-85h"/>
                 <constraint firstItem="jhg-9w-Tka" firstAttribute="leading" secondItem="fov-zm-23R" secondAttribute="leading" constant="17" id="RHe-Ks-beT"/>
                 <constraint firstItem="bZ2-bw-ktI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a7b-ip-OrB"/>
-                <constraint firstItem="01b-L3-j4G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="aGt-0w-Jpt"/>
+                <constraint firstItem="01b-L3-j4G" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="aGt-0w-Jpt"/>
+                <constraint firstItem="01b-L3-j4G" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="acO-bg-IW3"/>
                 <constraint firstItem="F6v-an-SXX" firstAttribute="top" secondItem="OMO-9S-sGw" secondAttribute="bottom" constant="3" id="at6-Zc-HPL"/>
                 <constraint firstItem="vc8-gC-gkW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bcz-Ga-L1R"/>
                 <constraint firstItem="DQg-1h-edJ" firstAttribute="top" secondItem="jhg-9w-Tka" secondAttribute="bottom" constant="16" id="caf-Pa-Y69"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xXs-MC-cpV" secondAttribute="bottom" constant="16" id="eIJ-Oh-Ob3"/>
                 <constraint firstItem="Cr4-3q-dKC" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="hay-Vm-hiD"/>
                 <constraint firstItem="Hlx-pC-eRf" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="iX9-jy-M13"/>
+                <constraint firstItem="fov-zm-23R" firstAttribute="top" secondItem="vc8-gC-gkW" secondAttribute="bottom" id="lnr-wE-vf8"/>
                 <constraint firstItem="Hlx-pC-eRf" firstAttribute="top" secondItem="Cr4-3q-dKC" secondAttribute="bottom" constant="10" id="o2N-BH-2sK"/>
                 <constraint firstItem="F6v-an-SXX" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="pGg-eK-UQI"/>
                 <constraint firstItem="ZEP-Jj-MQc" firstAttribute="leading" secondItem="Hlx-pC-eRf" secondAttribute="trailing" constant="10" id="pS6-cc-bfw"/>
