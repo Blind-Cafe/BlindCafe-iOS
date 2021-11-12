@@ -41,17 +41,14 @@ class InitInterestViewController: BaseOnboardingViewController {
         }
     }
     
-    
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.setImage(UIImage(named: "profilenextbutton"), for: .normal)
         dismissKeyboardWhenTappedAround()
+        
+        setBackButton()
     }
 
-
+    
 
 }

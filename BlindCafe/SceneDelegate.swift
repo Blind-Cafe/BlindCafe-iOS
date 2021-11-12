@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else {
             controller = BaseTabBarController()
         }*/
-        controller = BaseTabBarController()
+        controller = OnboardingViewController()
         //let navController = UINavigationController(rootViewController: controller)
         win.rootViewController = controller
         win.makeKeyAndVisible()

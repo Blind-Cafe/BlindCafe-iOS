@@ -119,13 +119,11 @@ class ChattingViewController: BaseViewController {
         backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
         let addBackButton = UIBarButtonItem(customView: backButton)
         
-        
-        
         self.navigationItem.setLeftBarButtonItems([addBackButton], animated: false)
     }
     
     @objc func popToVC() {
-        navigationController?.popToRootViewController(animated: false)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func textFieldDidChange(_sender: Any?) {

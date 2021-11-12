@@ -58,10 +58,6 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
         
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         agealert.isHidden = true
@@ -71,6 +67,8 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
         ageTextField.delegate = self
         
         dismissKeyboardWhenTappedAround()
+        
+        setBackButton()
     }
     
     @objc func ifFocused() {

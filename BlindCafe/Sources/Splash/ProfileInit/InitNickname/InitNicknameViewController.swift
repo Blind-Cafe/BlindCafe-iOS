@@ -62,15 +62,13 @@ class InitNicknameViewController: BaseOnboardingViewController {
         
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nicknameTextField.font = .SpoqaSans(.regular, size: 13)
         nicknameTextField.addDoneButtonOnKeyboard()
         nicknameTextField.addTarget(self, action: #selector(ifFocused), for: .touchDown)
+        
+        setBackButton()
     }
     
     @objc func ifFocused() {
