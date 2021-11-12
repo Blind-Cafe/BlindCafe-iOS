@@ -28,20 +28,7 @@ class ChattingViewController: BaseViewController {
     let storageRef = Storage.storage().reference()
 
     //Top
-    @IBAction func backButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBOutlet weak var partnerNickname: UILabel!
-    @IBAction func bellButton(_ sender: Any) {
-    }
-    @IBAction func menuButton(_ sender: Any) {
-        if menuView.isHidden {
-            menuView.isHidden = false
-        }
-        else {
-            menuView.isHidden = true
-        }
-    }
+    
     @IBOutlet weak var menuView: UIView!
     
     @IBAction func reportButton(_ sender: Any) {
@@ -108,6 +95,7 @@ class ChattingViewController: BaseViewController {
         navigationbarCustom(title: "당")
     }
     
+    //MARK: NavigationBar
     func navigationbarCustom(title: String) {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.tintColor = .veryLightPink
@@ -119,11 +107,46 @@ class ChattingViewController: BaseViewController {
         backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
         let addBackButton = UIBarButtonItem(customView: backButton)
         
-        self.navigationItem.setLeftBarButtonItems([addBackButton], animated: false)
+        let nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 24))
+        nameLabel.numberOfLines = 1
+        nameLabel.textAlignment = .left
+        nameLabel.font = UIFont.SpoqaSans(.bold, size: 16)
+        nameLabel.textColor = .veryLightPink
+        nameLabel.text = title
+        nameLabel.sizeToFit()
+        let addNameLabel = UIBarButtonItem(customView: nameLabel)
+        
+        let bellButton: UIButton = UIButton()
+        bellButton.setImage(UIImage(named: "bellbutton"), for: .normal)
+        bellButton.addTarget(self, action: #selector(bellButtonAction), for: .touchUpInside)
+        bellButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        let addBellButton = UIBarButtonItem(customView: bellButton)
+        
+        let menuButton: UIButton = UIButton()
+        menuButton.setImage(UIImage(named: "menubutton"), for: .normal)
+        menuButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
+        menuButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        let addMenuButton = UIBarButtonItem(customView: menuButton)
+        
+        self.navigationItem.setLeftBarButtonItems([addBackButton, addNameLabel], animated: false)
+        self.navigationItem.setRightBarButtonItems([addMenuButton, addBellButton], animated: false)
     }
     
     @objc func popToVC() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func bellButtonAction() {
+        
+    }
+    
+    @objc func menuButtonAction() {
+        if menuView.isHidden {
+            menuView.isHidden = false
+        }
+        else {
+            menuView.isHidden = true
+        }
     }
     
     @objc func textFieldDidChange(_sender: Any?) {
