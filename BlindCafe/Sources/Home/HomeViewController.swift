@@ -13,10 +13,12 @@ class HomeViewController: BaseViewController {
     
     @IBAction func toChatting(_ sender: Any) {
         let vc = ChattingViewController()
-        vc.modalPresentationStyle = .fullScreen
+        /*vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         
-        self.present(vc, animated: true)
+        self.present(vc, animated: true)*/
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     //Timer
@@ -28,6 +30,8 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.isHidden = false
         
         
         guard let startTime = startTime else {

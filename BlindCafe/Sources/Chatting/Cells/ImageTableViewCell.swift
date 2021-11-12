@@ -21,7 +21,6 @@ class ImageTableViewCell: UITableViewCell {
         backgroundColor = .mainBlack
         receivingImageView.cornerRadius = 10
         sendingImageView.cornerRadius = 10
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,7 +42,7 @@ class ImageTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        sendingImageView.sizeToFit()
-        receivingImageView.sizeToFit()
+        //sendingImageView.sizeToFit()
+        //receivingImageView.sizeToFit()
     }
 }

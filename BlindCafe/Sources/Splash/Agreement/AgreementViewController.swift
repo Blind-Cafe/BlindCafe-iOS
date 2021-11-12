@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AgreementViewController: BaseViewController {
+class AgreementViewController: BaseOnboardingViewController {
 
     @IBOutlet weak var checkbox1: UIButton!
     @IBOutlet weak var checkbox2: UIButton!

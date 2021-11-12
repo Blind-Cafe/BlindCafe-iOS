@@ -33,7 +33,7 @@ class PhotoViewController: UIViewController {
         let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+        let uploadTask = storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -41,7 +41,12 @@ class PhotoViewController: UIViewController {
                 print("성공")
             }
         }
-        ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
+        _ = uploadTask.observe(.success) {snapshot in
+            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
+        }
+        
+        
+        //ChattingViewController().loadMessages()
     }
     
     @IBOutlet weak var galleryButton: UIButton!

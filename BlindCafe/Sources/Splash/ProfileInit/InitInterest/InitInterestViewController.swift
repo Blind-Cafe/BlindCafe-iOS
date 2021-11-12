@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitInterestViewController: BaseViewController {
+class InitInterestViewController: BaseOnboardingViewController {
     
     var selectedButtons: Int = 0
     

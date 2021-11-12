@@ -14,7 +14,7 @@ class AppleLoginDataManager {
             .responseDecodable(of: LoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    if response.code == "1000" || response.code == "1001" {
+                    if response.code == "990" || response.code == "991" || response.code == "992" {
                         viewController.didLogin(result: response)
                     }
                     else {

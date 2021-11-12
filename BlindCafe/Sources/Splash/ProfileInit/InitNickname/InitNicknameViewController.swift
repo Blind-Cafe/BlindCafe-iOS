@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitNicknameViewController: BaseViewController {
+class InitNicknameViewController: BaseOnboardingViewController {
 
     @IBOutlet weak var nicknameImage: UIImageView!
     @IBOutlet weak var nicknameTextField: UITextField!

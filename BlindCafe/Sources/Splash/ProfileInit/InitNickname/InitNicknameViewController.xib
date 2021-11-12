@@ -22,43 +22,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xu7-VU-9Yq">
-                    <rect key="frame" x="4" y="-167" width="44" height="466"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="backbutton"/>
-                    <connections>
-                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="fG9-z2-h2P"/>
-                    </connections>
-                </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileinittitle" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-Wa-Pn0">
-                    <rect key="frame" x="143" y="54" width="104" height="24"/>
-                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="1va-QN-2Dt">
-                    <rect key="frame" x="103.66666666666669" y="141" width="183" height="176"/>
+                    <rect key="frame" x="103.66666666666669" y="53" width="183" height="176"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-IS-Thw">
-                    <rect key="frame" x="19" y="317" width="352" height="527"/>
+                    <rect key="frame" x="19" y="229" width="352" height="527"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="23" translatesAutoresizingMaskIntoConstraints="NO" id="esF-g4-9uB">
-                    <rect key="frame" x="36" y="335" width="80" height="19"/>
+                    <rect key="frame" x="36" y="247" width="80" height="19"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asknickname" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-Ua-Lrj">
-                    <rect key="frame" x="36" y="370" width="282" height="22"/>
+                    <rect key="frame" x="36" y="282" width="282" height="22"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nicknamefield" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-gG-p1H">
-                    <rect key="frame" x="36" y="402" width="318" height="44"/>
+                    <rect key="frame" x="36" y="314" width="318" height="44"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickname" translatesAutoresizingMaskIntoConstraints="NO" id="vvs-jo-fYO">
-                    <rect key="frame" x="44" y="450" width="212" height="17"/>
+                    <rect key="frame" x="44" y="362" width="212" height="17"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askother" translatesAutoresizingMaskIntoConstraints="NO" id="6sh-sS-vcI">
-                    <rect key="frame" x="36" y="490" width="282" height="22"/>
+                    <rect key="frame" x="36" y="402" width="282" height="22"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUh-bw-a3u">
-                    <rect key="frame" x="36" y="522" width="98" height="98"/>
+                    <rect key="frame" x="36" y="434" width="98" height="98"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="female3button"/>
                     <state key="selected" image="female3selected"/>
@@ -67,7 +56,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGi-uQ-ghH">
-                    <rect key="frame" x="145.66666666666666" y="522" width="99" height="99"/>
+                    <rect key="frame" x="145.66666666666666" y="434" width="99" height="99"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="male3button"/>
                     <state key="selected" image="male3selected"/>
@@ -76,7 +65,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cby-bQ-k6J">
-                    <rect key="frame" x="255" y="522" width="99" height="99"/>
+                    <rect key="frame" x="255" y="434" width="99" height="99"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="bothbutton"/>
                     <state key="selected" image="bothselected"/>
@@ -85,7 +74,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-yh-fmw">
-                    <rect key="frame" x="36" y="744" width="318" height="50"/>
+                    <rect key="frame" x="36" y="656" width="318" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profile2nextbutton"/>
                     <connections>
@@ -93,7 +82,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-mW-Gnl">
-                    <rect key="frame" x="51" y="412.33333333333331" width="261" height="19.666666666666686"/>
+                    <rect key="frame" x="51" y="324.33333333333331" width="261" height="19.666666666666686"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -110,14 +99,11 @@
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="GBr-Qf-eMc"/>
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="trailing" secondItem="Kcm-mW-Gnl" secondAttribute="trailing" constant="42" id="KRO-wG-hTX"/>
                 <constraint firstItem="uGN-Ua-Lrj" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="MlT-os-h5S"/>
-                <constraint firstItem="jJo-IS-Thw" firstAttribute="top" secondItem="Xu7-VU-9Yq" secondAttribute="bottom" constant="18" id="NKu-88-hi9"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="leading" secondItem="ee0-gG-p1H" secondAttribute="leading" constant="15" id="Of2-Eg-PSH"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="top" secondItem="1va-QN-2Dt" secondAttribute="bottom" id="QJw-4J-TyP"/>
                 <constraint firstItem="uGN-Ua-Lrj" firstAttribute="top" secondItem="esF-g4-9uB" secondAttribute="bottom" constant="16" id="Qcc-8L-fwr"/>
                 <constraint firstItem="vvs-jo-fYO" firstAttribute="top" secondItem="ee0-gG-p1H" secondAttribute="bottom" constant="4" id="RYY-Re-3Wp"/>
                 <constraint firstItem="pUh-bw-a3u" firstAttribute="top" secondItem="6sh-sS-vcI" secondAttribute="bottom" constant="10" id="SKW-bk-fvw"/>
-                <constraint firstItem="ST8-Wa-Pn0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="Uqs-I0-8tJ"/>
-                <constraint firstItem="ST8-Wa-Pn0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WMo-Fb-okX"/>
                 <constraint firstItem="Cby-bQ-k6J" firstAttribute="top" secondItem="oGi-uQ-ghH" secondAttribute="top" id="cl6-ue-GMs"/>
                 <constraint firstItem="6sh-sS-vcI" firstAttribute="top" secondItem="vvs-jo-fYO" secondAttribute="bottom" constant="23" id="fQU-uh-ffC"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="trailing" secondItem="Cby-bQ-k6J" secondAttribute="trailing" constant="17" id="gaV-T5-ZPB"/>
@@ -128,12 +114,12 @@
                 <constraint firstItem="6sh-sS-vcI" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="jVC-AW-6a0"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="centerY" secondItem="ee0-gG-p1H" secondAttribute="centerY" constant="-2" id="m0r-sC-dcK"/>
                 <constraint firstAttribute="bottom" secondItem="jJo-IS-Thw" secondAttribute="bottom" id="nL2-Pl-kgG"/>
-                <constraint firstItem="Xu7-VU-9Yq" firstAttribute="centerY" secondItem="ST8-Wa-Pn0" secondAttribute="centerY" id="rls-d7-gD8"/>
+                <constraint firstItem="1va-QN-2Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="53" id="pYm-5D-C7T"/>
                 <constraint firstItem="oGi-uQ-ghH" firstAttribute="top" secondItem="pUh-bw-a3u" secondAttribute="top" id="sJU-5X-Ygm"/>
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="top" secondItem="uGN-Ua-Lrj" secondAttribute="bottom" constant="10" id="u89-aW-Rqe"/>
-                <constraint firstItem="Xu7-VU-9Yq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="wvX-G9-hrj"/>
                 <constraint firstItem="1va-QN-2Dt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yf1-ks-lIg"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="114"/>
         </view>
     </objects>
@@ -141,7 +127,6 @@
         <image name="23" width="80" height="19"/>
         <image name="asknickname" width="282" height="22"/>
         <image name="askother" width="282" height="22"/>
-        <image name="backbutton" width="44" height="44"/>
         <image name="bothbutton" width="99" height="99"/>
         <image name="bothselected" width="99" height="99"/>
         <image name="female3button" width="98" height="98"/>
@@ -152,7 +137,6 @@
         <image name="nicknamefield" width="318" height="44"/>
         <image name="profile2nextbutton" width="318" height="50"/>
         <image name="profilebarista" width="182.66667175292969" height="176"/>
-        <image name="profileinittitle" width="104" height="24"/>
         <image name="profileview" width="352" height="527"/>
     </resources>
 </document>

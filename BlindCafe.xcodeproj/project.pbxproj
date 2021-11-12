@@ -33,6 +33,8 @@
 		CD297185273A35F000B034F1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD297184273A35F000B034F1 /* PHAsset.swift */; };
 		CD386C9D273CB8ED002D5187 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */; };
 		CD386C9E273CB8ED002D5187 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */; };
+		CD386CA0273D6845002D5187 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386C9F273D6844002D5187 /* UIImage.swift */; };
+		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9E3272163C500DA6013 /* HomeViewController.swift */; };
 		CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9E4272163C500DA6013 /* HomeViewController.xib */; };
 		CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */; };
@@ -103,6 +105,8 @@
 		CD297184273A35F000B034F1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		CD386C9F273D6844002D5187 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD6AA9E3272163C500DA6013 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD6AA9E4272163C500DA6013 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 			children = (
 				CD15095527214BC40020BD41 /* BaseViewController.swift */,
 				CD15095227210DCB0020BD41 /* BaseTabBarController.swift */,
+				CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				CDD149DC273185EF002B2897 /* UITextField.swift */,
 				CDA5BBDB2735710B00E4120C /* UIToolbar.swift */,
 				CD297184273A35F000B034F1 /* PHAsset.swift */,
+				CD386C9F273D6844002D5187 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 			files = (
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
+				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
@@ -635,6 +642,7 @@
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
 				CD6AA9FE2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift in Sources */,
+				CD386CA0273D6845002D5187 /* UIImage.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,

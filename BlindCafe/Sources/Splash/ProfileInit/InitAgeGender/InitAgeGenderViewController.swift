@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InitAgeGenderViewController: BaseViewController {
+class InitAgeGenderViewController: BaseOnboardingViewController {
 
     @IBOutlet weak var ageImage: UIImageView!
     @IBOutlet weak var ageTextField: UITextField!

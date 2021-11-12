@@ -17,9 +17,18 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = .mainBlack
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+        }
+        
         tabBar.isTranslucent = false
         tabBar.barTintColor = .mainGreen
         UITabBar.appearance().backgroundColor = .black2
+        view.backgroundColor = .mainBlack
         
         let homeNavController = UINavigationController(rootViewController: homeViewController)
         let matchedNavController = UINavigationController(rootViewController: matchedViewController)
@@ -36,6 +45,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         self.viewControllers = [homeNavController, matchedNavController, mypageNavController]
         
         self.delegate = self
+        
     }
 
 }

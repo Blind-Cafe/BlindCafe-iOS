@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingViewController: BaseViewController {
+class OnboardingViewController: BaseOnboardingViewController {
 
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     

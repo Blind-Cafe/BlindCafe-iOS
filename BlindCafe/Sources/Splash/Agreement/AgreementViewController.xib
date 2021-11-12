@@ -21,11 +21,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWY-kv-8Hd">
-                    <rect key="frame" x="326" y="223.66666666666666" width="44" height="43.999999999999972"/>
+                    <rect key="frame" x="326" y="110.66666666666666" width="44" height="44"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton">
@@ -36,7 +36,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMc-4p-kYY">
-                    <rect key="frame" x="326" y="298.66666666666669" width="44" height="44"/>
+                    <rect key="frame" x="326" y="185.66666666666669" width="44" height="44"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton"/>
                     <connections>
@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDn-aX-CzB">
-                    <rect key="frame" x="326" y="373.66666666666669" width="44" height="44"/>
+                    <rect key="frame" x="326" y="260.66666666666669" width="44" height="44"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton"/>
                     <connections>
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-jo-vmg">
-                    <rect key="frame" x="326" y="448" width="44" height="44"/>
+                    <rect key="frame" x="326" y="335" width="44" height="44"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton"/>
                     <connections>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-1b-Le4">
-                    <rect key="frame" x="17" y="740" width="356" height="50"/>
+                    <rect key="frame" x="17" y="627" width="356" height="75"/>
                     <state key="normal" image="enablenextbutton"/>
                     <state key="disabled" image="agreenextbutton"/>
                     <connections>
@@ -68,29 +68,28 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreementtitle" translatesAutoresizingMaskIntoConstraints="NO" id="l7S-rh-QOj">
-                    <rect key="frame" x="24" y="113" width="179" height="62"/>
+                    <rect key="frame" x="24" y="0.0" width="179" height="62"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="path" translatesAutoresizingMaskIntoConstraints="NO" id="CHw-IM-lxm">
-                    <rect key="frame" x="17" y="192" width="356" height="1"/>
+                    <rect key="frame" x="17" y="79" width="356" height="1"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement1" translatesAutoresizingMaskIntoConstraints="NO" id="phV-F3-wHX">
-                    <rect key="frame" x="24" y="222" width="260" height="47"/>
+                    <rect key="frame" x="24" y="109" width="260" height="47"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement2" translatesAutoresizingMaskIntoConstraints="NO" id="kSM-Fh-khf">
-                    <rect key="frame" x="24" y="297" width="259" height="47"/>
+                    <rect key="frame" x="24" y="184" width="259" height="47"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement3" translatesAutoresizingMaskIntoConstraints="NO" id="XV3-8V-9B6">
-                    <rect key="frame" x="24" y="372" width="260" height="47"/>
+                    <rect key="frame" x="24" y="259" width="260" height="47"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement4" translatesAutoresizingMaskIntoConstraints="NO" id="9aW-2j-PPz">
-                    <rect key="frame" x="24" y="458" width="225" height="24"/>
+                    <rect key="frame" x="24" y="345" width="225" height="24"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gfd-1b-Le4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9JB-89-S64"/>
-                <constraint firstItem="l7S-rh-QOj" firstAttribute="top" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="113" id="HF7-AU-AOF"/>
                 <constraint firstItem="phV-F3-wHX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="LVz-e4-OI2"/>
                 <constraint firstItem="xDn-aX-CzB" firstAttribute="centerY" secondItem="XV3-8V-9B6" secondAttribute="centerY" id="O7a-AY-84J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vNa-jo-vmg" secondAttribute="trailing" constant="20" id="OdM-H2-kSi"/>
@@ -109,11 +108,12 @@
                 <constraint firstItem="CHw-IM-lxm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iDj-US-AQV"/>
                 <constraint firstItem="QWY-kv-8Hd" firstAttribute="centerY" secondItem="phV-F3-wHX" secondAttribute="centerY" id="kBM-3i-0dC"/>
                 <constraint firstItem="XV3-8V-9B6" firstAttribute="top" secondItem="kSM-Fh-khf" secondAttribute="bottom" constant="28" id="kdL-l6-BdM"/>
-                <constraint firstItem="l7S-rh-QOj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="mF4-4b-2Su"/>
+                <constraint firstItem="l7S-rh-QOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mF4-4b-2Su"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QWY-kv-8Hd" secondAttribute="trailing" constant="20" id="oIV-mB-utq"/>
                 <constraint firstItem="kSM-Fh-khf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="qoH-ZE-uT7"/>
                 <constraint firstItem="phV-F3-wHX" firstAttribute="top" secondItem="CHw-IM-lxm" secondAttribute="bottom" constant="29" id="ryV-7m-lui"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="76"/>
         </view>
     </objects>

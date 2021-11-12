@@ -25,7 +25,8 @@ extension UIColor {
     class var mainBlack: UIColor { UIColor(hex: 0x2d2d2d) }
     class var mainGreen: UIColor { UIColor(hex: 0xbbd2b6) }
     class var black2: UIColor { UIColor(hex: 0x373737) }
-    class var charcol: UIColor { UIColor(hex: 0x48484a)}
-    class var pale: UIColor { UIColor(hex: 0xf8ede3)}
-    class var lightsage: UIColor { UIColor(hex: 0xcfd5c3)}
+    class var charcol: UIColor { UIColor(hex: 0x48484a) }
+    class var pale: UIColor { UIColor(hex: 0xf8ede3) }
+    class var lightsage: UIColor { UIColor(hex: 0xcfd5c3) }
+    class var veryLightPink: UIColor { UIColor(hex: 0xf3f3f3) }
 }

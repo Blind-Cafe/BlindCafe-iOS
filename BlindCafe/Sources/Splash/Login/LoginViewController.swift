@@ -10,7 +10,7 @@ import AuthenticationServices
 import KakaoSDKAuth
 import KakaoSDKUser
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseOnboardingViewController {
     
     @IBOutlet weak var appleLoginView: UIView!
     
@@ -116,9 +116,12 @@ extension LoginViewController {
         UserDefaults.standard.set(result.id, forKey: "UserID")
         let vc = AgreementViewController()
         let navController = UINavigationController(rootViewController: vc)
-        navController.modalPresentationStyle = .fullScreen
-        navController.modalTransitionStyle = .crossDissolve
-        self.present(navController, animated: true)
+        //navController.modalPresentationStyle = .fullScreen
+        //navController.modalTransitionStyle = .crossDissolve
+        navController.view.backgroundColor = .mainBlack
+        navController.navigationBar.isTranslucent = false
+        //self.present(navController, animated: true)
+        changeRootViewController(navController)
     }
     
     func failedToRequest(message: String) {

@@ -10,6 +10,7 @@ import FirebaseFirestore
 import Photos
 import Alamofire
 import FirebaseStorageUI
+import Firebase
 
 struct Message {
     let sender: String
@@ -23,6 +24,8 @@ class ChattingViewController: BaseViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = []
+    
+    let storageRef = Storage.storage().reference()
 
     //Top
     @IBAction func backButton(_ sender: Any) {
@@ -49,8 +52,7 @@ class ChattingViewController: BaseViewController {
     }
     @IBAction func leaveroomButton(_ sender: Any) {
     }
-    
-    
+
     //TableView
     @IBOutlet weak var chatTableView: UITableView!
     
@@ -78,6 +80,9 @@ class ChattingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .black2
+        
+        navigationController?.navigationBar.isHidden = false
         menuView.isHidden = true
 
         self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint?.constant
@@ -100,6 +105,27 @@ class ChattingViewController: BaseViewController {
         chattingTextField.textColor = .white
         
         loadMessages()
+        navigationbarCustom(title: "당")
+    }
+    
+    func navigationbarCustom(title: String) {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.tintColor = .veryLightPink
+        navigationController?.navigationBar.barTintColor = .mainBlack
+        
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backbutton"), for: .normal)
+        backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
+        let addBackButton = UIBarButtonItem(customView: backButton)
+        
+        
+        
+        self.navigationItem.setLeftBarButtonItems([addBackButton], animated: false)
+    }
+    
+    @objc func popToVC() {
+        navigationController?.popToRootViewController(animated: false)
     }
     
     @objc func textFieldDidChange(_sender: Any?) {
@@ -121,6 +147,7 @@ class ChattingViewController: BaseViewController {
             chattingFieldConstraint.constant = 112
         }
     }
+    
     
 }
 
@@ -212,13 +239,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             
             let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
-            //let width = image.accessibilityFrame.size
-            //let height = image.accessibilityFrame
-            
-            //cell.setwidthheight(width: width, height: height)
-            
-            //print(width)
-            //print(height)
             
             if message.sender == "." {
                 cell.receivingImageView.isHidden = true
@@ -229,7 +249,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingImageView.sd_setImage(with: image)
         
                 cell.sendingTime.text = message.time
-                cell.sendingImageView.sizeToFit()
             }
             else {
                 cell.sendingImageView.isHidden = true
@@ -240,7 +259,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingImageView.sd_setImage(with: image)
                 
                 cell.receivingTime.text = message.time
-                cell.receivingImageView.sizeToFit()
             }
             return cell
         }
@@ -325,7 +343,7 @@ extension ChattingViewController {
     func timeFormatter(timestamp: Timestamp) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR")
-        dateFormatter.dateFormat = "a HH:mm"
+        dateFormatter.dateFormat = "a hh:mm"
         //let date = Date(timeIntervalSince1970: dd)
         let date = timestamp.dateValue()
         return dateFormatter.string(from: date)
@@ -371,7 +389,7 @@ extension ChattingViewController {
             }, completion: nil)
         }
         else {
-            self.toolbarBottomConstraint?.constant = keyboardFrame.size.height - 35
+            self.toolbarBottomConstraint?.constant = keyboardFrame.size.height - 33
             self.view.layoutIfNeeded()
         }
         
@@ -389,12 +407,12 @@ extension ChattingViewController {
             let options = UIView.AnimationOptions(rawValue: UInt(curve.rawValue << 16))
             
             UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self.toolbarBottomConstraint.constant = 8
+                self.toolbarBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }, completion: nil)
         }
         else {
-            self.toolbarBottomConstraint.constant = 8
+            self.toolbarBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
         
