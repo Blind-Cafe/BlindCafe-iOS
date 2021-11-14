@@ -39,7 +39,7 @@ class ProgressBar: UIView {
         gradientLayer.mask = foregroundLayer
         
         layer.addSublayer(backgroundLayer)
-        //layer.addSublayer(gradientLayer)
+        layer.addSublayer(gradientLayer)
     }
     
     private func createCircularLayer(rect: CGRect, strokeColor: CGColor, fillColor: CGColor, lineWidth: CGFloat) -> CAShapeLayer {
@@ -68,6 +68,10 @@ class ProgressBar: UIView {
     
     private func didProgressUpdate() {
         foregroundLayer?.strokeEnd = progress
+    }
+    
+    func removeForegroundLayer() {
+        gradientLayer.removeFromSuperlayer()
     }
     
     func addForegroundLayer() {

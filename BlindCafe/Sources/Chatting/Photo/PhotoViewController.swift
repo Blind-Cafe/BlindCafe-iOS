@@ -28,7 +28,7 @@ class PhotoViewController: UIViewController {
     
     func uploadimage(img: UIImage) {
         var data = Data()
-        data = img.jpegData(compressionQuality: 0.8)!
+        data = img.pngData()!
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()
@@ -45,7 +45,7 @@ class PhotoViewController: UIViewController {
             ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
         }
         
-        
+        //uploadTask.removeAllObservers()
         //ChattingViewController().loadMessages()
     }
     

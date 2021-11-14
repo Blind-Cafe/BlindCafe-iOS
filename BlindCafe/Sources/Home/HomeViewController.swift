@@ -17,14 +17,30 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeButton: UIButton!
     @IBAction func homeButton(_ sender: Any) {
-        if status == "MATCHING" {
-            
+        switch status {
+        case "NONE":
+            print("nonebutton")
+        case "WAIT":
+            print("waitbutton")
+        case "FOUND":
+            let vc = SelectDrinkViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: false)
+        case "MATCHING":
+            let vc = ChattingViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: false)
+        case "FAILED_LEAVE_ROOM":
+            print("failedleaveroom")
+        case "FAILED_REPORT":
+            print("failedreport")
+        case "FAILED_WONT_EXCHANGE":
+            print("failedwontexchange")
+        default:
+            break
         }
-        let vc = ChattingViewController()
-        /*vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
         
-        self.present(vc, animated: true)*/
+        let vc = SelectDrinkViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -40,6 +56,8 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
+        
+        print(Token.jwtToken)
     
         guard let startTime = startTime else {
             setTimer(startTime: Date())
@@ -47,8 +65,6 @@ class HomeViewController: BaseViewController {
         }
         setTimer(startTime: startTime)
     }
-    
-    
 }
 
 extension HomeViewController {

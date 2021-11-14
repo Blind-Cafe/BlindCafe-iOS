@@ -9,11 +9,15 @@ import UIKit
 
 class DrinkCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var drinkButton: UIButton!
+    @IBOutlet weak var drinkImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
+    
 
 }

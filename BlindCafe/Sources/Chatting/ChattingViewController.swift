@@ -11,6 +11,7 @@ import Photos
 import Alamofire
 import FirebaseStorageUI
 import Firebase
+import SDWebImage
 
 struct Message {
     let sender: String
@@ -75,7 +76,8 @@ class ChattingViewController: BaseViewController {
         enableKeyboardHideOnTap()
         
         chatTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTableViewCell")
-        chatTableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTableViewCell")
+        chatTableView.register(UINib(nibName: "ImageSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageSendingTableViewCell")
+        chatTableView.register(UINib(nibName: "ImageReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageReceivingTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -254,32 +256,27 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         else if message.type == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as! ImageTableViewCell
-            cell.selectionStyle = .none
-            
             let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
             
             if message.sender == "." {
-                cell.receivingImageView.isHidden = true
-                cell.receivingTime.isHidden = true
-                cell.sendingImageView.isHidden = false
-                cell.sendingTime.isHidden = false
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSendingTableViewCell", for: indexPath) as! ImageSendingTableViewCell
+                cell.selectionStyle = .none
         
                 cell.sendingImageView.sd_setImage(with: image)
-                cell.sendingImageView.sizeToFit()
+                
                 cell.sendingTime.text = message.time
+                return cell
             }
             else {
-                cell.sendingImageView.isHidden = true
-                cell.sendingTime.isHidden = true
-                cell.receivingImageView.isHidden = false
-                cell.receivingTime.isHidden = false
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ImageReceivingTableViewCell", for: indexPath) as! ImageReceivingTableViewCell
+                cell.selectionStyle = .none
                 
                 cell.receivingImageView.sd_setImage(with: image)
-                cell.receivingImageView.sizeToFit()
+                
                 cell.receivingTime.text = message.time
+                return cell
             }
-            return cell
+            
         }
         else {
             return UITableViewCell()

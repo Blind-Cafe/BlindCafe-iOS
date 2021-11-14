@@ -13,6 +13,10 @@ class SelectDrinkViewController: BaseViewController {
     
     var page: Int = 0
     
+    var drinks = ["americano", "cafelatte", "cafemocha", "bubbletea", "mintchocolate", "strawberry", "bluelemonade", "greentea", "grapefruittea"]
+    
+    var selected: Int? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,9 +50,22 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DrinkCollectionViewCell", for: indexPath) as! DrinkCollectionViewCell
-        cell.drinkButton.setImage(UIImage(named: "americano"), for: .normal)
+        
+        if indexPath.row == selected {
+            cell.drinkImage.image = UIImage(named: "\(drinks[indexPath.row])selected")
+        }
+        else {
+            cell.drinkImage.image = UIImage(named: drinks[indexPath.row])
+        }
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selected = indexPath.row
+        drinkCollectionView.reloadData()
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath != [0, page] {
