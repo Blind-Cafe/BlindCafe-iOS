@@ -29,7 +29,7 @@ class AgreementViewController: BaseOnboardingViewController {
     
     @IBAction func okayButton(_ sender: Any) {
         navigationController?.pushViewController(
-            InitInterestViewController(), animated: true)
+            InitAgeGenderViewController(), animated: true)
     }
     
     override func viewDidLoad() {

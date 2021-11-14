@@ -61,7 +61,6 @@ class ChattingViewController: BaseViewController {
     @IBOutlet weak var chattingTextField: UITextView!
     @IBOutlet weak var sendButton: UIButton!
    
-    
     @IBOutlet weak var chattingFieldConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -107,7 +106,7 @@ class ChattingViewController: BaseViewController {
         backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
         let addBackButton = UIBarButtonItem(customView: backButton)
         
-        let nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 24))
+        let nameLabel = UILabel()
         nameLabel.numberOfLines = 1
         nameLabel.textAlignment = .left
         nameLabel.font = UIFont.SpoqaSans(.bold, size: 16)
@@ -119,21 +118,20 @@ class ChattingViewController: BaseViewController {
         let bellButton: UIButton = UIButton()
         bellButton.setImage(UIImage(named: "bellbutton"), for: .normal)
         bellButton.addTarget(self, action: #selector(bellButtonAction), for: .touchUpInside)
-        bellButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        let addBellButton = UIBarButtonItem(customView: bellButton)
         
         let menuButton: UIButton = UIButton()
         menuButton.setImage(UIImage(named: "menubutton"), for: .normal)
         menuButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
-        menuButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        let addMenuButton = UIBarButtonItem(customView: menuButton)
+        
+        let stackView = UIStackView.init(arrangedSubviews: [bellButton, menuButton])
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 0
+        let rightBarButton = UIBarButtonItem(customView: stackView)
         
         self.navigationItem.setLeftBarButtonItems([addBackButton, addNameLabel], animated: false)
-        self.navigationItem.setRightBarButtonItems([addMenuButton, addBellButton], animated: false)
-    }
-    
-    @objc func popToVC() {
-        navigationController?.popViewController(animated: true)
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
     @objc func bellButtonAction() {
@@ -266,9 +264,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingTime.isHidden = true
                 cell.sendingImageView.isHidden = false
                 cell.sendingTime.isHidden = false
-                
-                cell.sendingImageView.sd_setImage(with: image)
         
+                cell.sendingImageView.sd_setImage(with: image)
+                cell.sendingImageView.sizeToFit()
                 cell.sendingTime.text = message.time
             }
             else {
@@ -278,7 +276,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingTime.isHidden = false
                 
                 cell.receivingImageView.sd_setImage(with: image)
-                
+                cell.receivingImageView.sizeToFit()
                 cell.receivingTime.text = message.time
             }
             return cell
@@ -414,6 +412,8 @@ extension ChattingViewController {
             self.view.layoutIfNeeded()
         }
         
+        self.chatTableView.frame.origin.y =  -keyboardFrame.size.height + 32
+        
         textFieldDidChange(_sender: chattingTextField)
     }
 
@@ -436,6 +436,8 @@ extension ChattingViewController {
             self.toolbarBottomConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
+        
+        self.chatTableView.frame.origin.y =  0
         
         textFieldDidChange(_sender: chattingTextField)
     }

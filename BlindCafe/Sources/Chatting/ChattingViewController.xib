@@ -35,7 +35,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3sO-Qq-y4Z">
-                    <rect key="frame" x="0.0" y="88" width="390" height="671"/>
+                    <rect key="frame" x="0.0" y="88" width="390" height="670"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-XI-4VQ">
@@ -195,10 +195,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dXM-XI-4VQ" secondAttribute="bottom" id="H0s-tg-SjU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dXM-XI-4VQ" secondAttribute="trailing" id="LAf-x5-Hy0"/>
                 <constraint firstItem="Sdr-oO-m11" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NeR-oA-rnh"/>
+                <constraint firstAttribute="bottom" secondItem="3sO-Qq-y4Z" secondAttribute="bottom" constant="86" id="b3M-pG-hdo"/>
                 <constraint firstItem="3sO-Qq-y4Z" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bEY-F1-UBb"/>
                 <constraint firstItem="dXM-XI-4VQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dda-W3-U6h"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sdr-oO-m11" secondAttribute="trailing" constant="16" id="rdk-qS-qcY"/>
-                <constraint firstItem="dXM-XI-4VQ" firstAttribute="top" secondItem="3sO-Qq-y4Z" secondAttribute="bottom" id="xhE-Vg-32Y"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="136.92307692307691" y="90.284360189573462"/>

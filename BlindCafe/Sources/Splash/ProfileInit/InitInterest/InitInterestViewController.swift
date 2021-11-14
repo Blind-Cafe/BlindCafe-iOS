@@ -16,10 +16,12 @@ class InitInterestViewController: BaseOnboardingViewController {
     @IBAction func tasteAction(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
+            sender.tintColor = .buttonTint
             selectedButtons -= 1
         }
         else {
             sender.isSelected = true
+            sender.tintColor = .mainGreen
             selectedButtons += 1
         }
 
@@ -37,7 +39,7 @@ class InitInterestViewController: BaseOnboardingViewController {
             self.presentBottomAlert(name: "profile1error")
         }
         else if selectedButtons == 3 {
-            navigationController?.pushViewController(InitAgeGenderViewController(), animated: true)
+            navigationController?.pushViewController(InitDetailInterestViewController(), animated: true)
         }
     }
     

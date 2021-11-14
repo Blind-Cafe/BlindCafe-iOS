@@ -7,20 +7,28 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Light.ttf">
+            <string>SpoqaHanSansNeo-Light</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitInterestViewController">
             <connections>
                 <outlet property="nextButton" destination="YWI-3X-fBj" id="AD1-Uk-xXM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="tasteButtons" destination="add-7c-0kn" collectionClass="NSMutableArray" id="W3p-vg-ogT"/>
-                <outletCollection property="tasteButtons" destination="uQr-OV-IaE" collectionClass="NSMutableArray" id="8cY-A7-IfZ"/>
-                <outletCollection property="tasteButtons" destination="GUG-ue-okd" collectionClass="NSMutableArray" id="Toz-WO-EW4"/>
-                <outletCollection property="tasteButtons" destination="zkD-60-ICD" collectionClass="NSMutableArray" id="Iaf-8t-My8"/>
-                <outletCollection property="tasteButtons" destination="9Ux-BD-jJl" collectionClass="NSMutableArray" id="by6-78-jN8"/>
-                <outletCollection property="tasteButtons" destination="2uz-Qs-nnd" collectionClass="NSMutableArray" id="Y6F-I7-W78"/>
-                <outletCollection property="tasteButtons" destination="6GQ-av-1Vz" collectionClass="NSMutableArray" id="kTo-kq-ZLz"/>
-                <outletCollection property="tasteButtons" destination="OvY-KX-T5W" collectionClass="NSMutableArray" id="FsJ-hc-Cea"/>
-                <outletCollection property="tasteButtons" destination="NUB-Dh-3gd" collectionClass="NSMutableArray" id="lwe-p6-GbS"/>
+                <outletCollection property="tasteButtons" destination="Naw-Rc-DBZ" collectionClass="NSMutableArray" id="2N5-gi-6Jt"/>
+                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="AXf-AQ-OmS"/>
+                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="aGX-Is-yIv"/>
+                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="2Ca-6f-b52"/>
+                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="qfF-47-YV9"/>
+                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="7Wc-EU-5vq"/>
+                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="B8K-D0-HV7"/>
+                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="Qwp-Ic-ls7"/>
+                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="OAy-zc-VNa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,82 +36,148 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tasteview" translatesAutoresizingMaskIntoConstraints="NO" id="L9T-v5-7ZM">
-                    <rect key="frame" x="19" y="8" width="352" height="748"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="23" translatesAutoresizingMaskIntoConstraints="NO" id="4Hj-ZS-cPX">
-                    <rect key="frame" x="36" y="24" width="80" height="19"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text1" translatesAutoresizingMaskIntoConstraints="NO" id="CHm-xf-OQQ">
-                    <rect key="frame" x="36" y="53" width="282" height="24"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text2" translatesAutoresizingMaskIntoConstraints="NO" id="OIx-O7-ZnY">
-                    <rect key="frame" x="36" y="85" width="319" height="19"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="add-7c-0kn">
-                    <rect key="frame" x="36" y="149" width="93" height="93"/>
-                    <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="foodbutton"/>
-                    <state key="selected" image="foodselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="zsX-o5-g5I"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQr-OV-IaE">
-                    <rect key="frame" x="148" y="149" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="travelbutton"/>
-                    <state key="selected" image="travelselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="qmE-RU-SpL"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUG-ue-okd">
-                    <rect key="frame" x="260" y="149" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="gamebutton"/>
-                    <state key="selected" image="gameselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="R10-se-tbu"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkD-60-ICD">
-                    <rect key="frame" x="36" y="275" width="93" height="93"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="entertainmentbutton"/>
-                    <state key="selected" image="entertainmentselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="nvo-Wd-ybu"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GQ-av-1Vz">
-                    <rect key="frame" x="36" y="401" width="93" height="93"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="jobbutton"/>
-                    <state key="selected" image="jobselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="a42-IW-98Z"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-KX-T5W">
-                    <rect key="frame" x="148" y="401" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="animationbutton"/>
-                    <state key="selected" image="animationselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="hxa-ht-sTX"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-Dh-3gd">
-                    <rect key="frame" x="260" y="401" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="animalbutton"/>
-                    <state key="selected" image="animalselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="ot1-xR-0M3"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxy-ek-24y">
+                    <rect key="frame" x="19" y="225" width="352" height="531"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/3 단계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-hv-OFg">
+                            <rect key="frame" x="13.999999999999996" y="27" width="47.666666666666657" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="0Ej-Nl-NZS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                            <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3개의 관심사를 골라주세요 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKH-M0-JTU">
+                            <rect key="frame" x="14" y="54" width="182.33333333333334" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="My1-dB-hUA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꼼꼼하게 체크할 수록 나와 잘 맞는 상대를 만날 수 있답니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXi-Fs-EyC">
+                            <rect key="frame" x="14" y="79" width="318.33333333333331" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="PXP-Xw-18J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Light" family="Spoqa Han Sans Neo" pointSize="13"/>
+                            <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-Rc-DBZ">
+                            <rect key="frame" x="22" y="111" width="93" height="93"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="foodbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="fBb-4s-uvH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-sh-YHb">
+                            <rect key="frame" x="129" y="110.66666666666669" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="travelbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="L8n-JI-8Dk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-rh-WaO">
+                            <rect key="frame" x="236" y="110.66666666666669" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="gamebutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="8xp-dY-XND"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wO-za-dKe">
+                            <rect key="frame" x="129" y="213" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="sportsbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="bc8-ix-YqH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-27-D1G">
+                            <rect key="frame" x="236" y="213" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="financialbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="V7k-Cx-Mbf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGH-1V-SyS">
+                            <rect key="frame" x="22" y="213" width="93" height="93"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="entertainmentbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Jjz-m0-sh2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-hV-PVG">
+                            <rect key="frame" x="22" y="315" width="93" height="93"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="jobbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Gs1-f0-BRr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psN-EM-D1L">
+                            <rect key="frame" x="236" y="315" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="animalbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="1i3-0V-ZAE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-Hx-i3l">
+                            <rect key="frame" x="129" y="315" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="animationbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="wBP-EF-MOF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="3wO-za-dKe" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="top" id="0iA-MA-wjI"/>
+                        <constraint firstItem="bKH-M0-JTU" firstAttribute="leading" secondItem="p6e-hv-OFg" secondAttribute="leading" id="1xA-sR-fpC"/>
+                        <constraint firstItem="qXi-Fs-EyC" firstAttribute="leading" secondItem="bKH-M0-JTU" secondAttribute="leading" id="3EA-pC-9Q5"/>
+                        <constraint firstAttribute="trailing" secondItem="LhJ-27-D1G" secondAttribute="trailing" constant="22" id="6ei-Ic-ilF"/>
+                        <constraint firstAttribute="height" constant="531" id="GOp-rP-78n"/>
+                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="IT4-As-0kc"/>
+                        <constraint firstItem="p6e-hv-OFg" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="14" id="T9r-c4-6Za"/>
+                        <constraint firstItem="Naw-Rc-DBZ" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="13" id="Wuv-zF-MDG"/>
+                        <constraint firstAttribute="trailing" secondItem="BLq-rh-WaO" secondAttribute="trailing" constant="22" id="X72-Qw-U39"/>
+                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="X7b-yj-ysc"/>
+                        <constraint firstAttribute="width" constant="352" id="XID-nq-3mH"/>
+                        <constraint firstItem="jGH-1V-SyS" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="Z7k-Rd-r5q"/>
+                        <constraint firstAttribute="trailing" secondItem="psN-EM-D1L" secondAttribute="trailing" constant="22" id="bxe-Ll-hEP"/>
+                        <constraint firstItem="qXi-Fs-EyC" firstAttribute="top" secondItem="bKH-M0-JTU" secondAttribute="bottom" constant="1" id="d0a-V2-1aA"/>
+                        <constraint firstItem="bKH-M0-JTU" firstAttribute="top" secondItem="p6e-hv-OFg" secondAttribute="bottom" constant="8" id="hnw-AX-erR"/>
+                        <constraint firstItem="psN-EM-D1L" firstAttribute="top" secondItem="sZx-Hx-i3l" secondAttribute="top" id="jZ6-YL-uLS"/>
+                        <constraint firstItem="BLq-rh-WaO" firstAttribute="centerY" secondItem="dg0-sh-YHb" secondAttribute="centerY" id="mBU-K7-TzN"/>
+                        <constraint firstItem="p6e-hv-OFg" firstAttribute="top" secondItem="Wxy-ek-24y" secondAttribute="top" constant="27" id="qJG-Sc-FqH"/>
+                        <constraint firstItem="Naw-Rc-DBZ" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="qaH-3D-FaV"/>
+                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="rJh-4z-DVt"/>
+                        <constraint firstItem="dg0-sh-YHb" firstAttribute="centerY" secondItem="Naw-Rc-DBZ" secondAttribute="centerY" id="raN-fb-Rar"/>
+                        <constraint firstItem="jGH-1V-SyS" firstAttribute="top" secondItem="Naw-Rc-DBZ" secondAttribute="bottom" constant="9" id="u1b-1k-3xS"/>
+                        <constraint firstItem="dg0-sh-YHb" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="u8C-w2-BDO"/>
+                        <constraint firstItem="3wO-za-dKe" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="vD3-Mf-tw4"/>
+                        <constraint firstItem="LhJ-27-D1G" firstAttribute="top" secondItem="3wO-za-dKe" secondAttribute="top" id="vgt-Jf-qhm"/>
+                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="bottom" constant="9" id="xaI-dC-daC"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWI-3X-fBj">
                     <rect key="frame" x="36" y="654" width="318" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -113,88 +187,37 @@
                         <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="hg1-mV-KU5"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ux-BD-jJl">
-                    <rect key="frame" x="148" y="275" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="sportsbutton"/>
-                    <state key="selected" image="sportsselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="yun-S6-JaG"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-Qs-nnd">
-                    <rect key="frame" x="260" y="275" width="94" height="94"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="financialbutton"/>
-                    <state key="selected" image="financialselected"/>
-                    <connections>
-                        <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="G6g-9Y-bZa"/>
-                    </connections>
-                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="HAM-1O-JNe">
+                    <rect key="frame" x="103.66666666666669" y="52" width="183" height="176"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2uz-Qs-nnd" firstAttribute="top" secondItem="9Ux-BD-jJl" secondAttribute="top" id="1Bx-2W-fjK"/>
-                <constraint firstItem="NUB-Dh-3gd" firstAttribute="centerX" secondItem="2uz-Qs-nnd" secondAttribute="centerX" id="1r9-Nm-BDy"/>
-                <constraint firstItem="L9T-v5-7ZM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="4w4-zq-fGl"/>
-                <constraint firstItem="CHm-xf-OQQ" firstAttribute="top" secondItem="4Hj-ZS-cPX" secondAttribute="bottom" constant="10" id="6XN-Ro-dok"/>
-                <constraint firstItem="zkD-60-ICD" firstAttribute="top" secondItem="add-7c-0kn" secondAttribute="bottom" constant="33" id="C7A-lH-Xe7"/>
+                <constraint firstAttribute="bottom" secondItem="Wxy-ek-24y" secondAttribute="bottom" id="0AG-3r-9yL"/>
+                <constraint firstItem="HAM-1O-JNe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1KK-3c-VSW"/>
+                <constraint firstItem="Wxy-ek-24y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ARu-sY-K7b"/>
                 <constraint firstItem="YWI-3X-fBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DS0-Wv-Haj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L9T-v5-7ZM" secondAttribute="trailing" constant="19" id="EFj-MW-L9W"/>
-                <constraint firstItem="6GQ-av-1Vz" firstAttribute="centerX" secondItem="zkD-60-ICD" secondAttribute="centerX" id="FXG-l0-Ikq"/>
-                <constraint firstItem="uQr-OV-IaE" firstAttribute="top" secondItem="add-7c-0kn" secondAttribute="top" id="IM4-Rq-rgB"/>
-                <constraint firstItem="OIx-O7-ZnY" firstAttribute="top" secondItem="CHm-xf-OQQ" secondAttribute="bottom" constant="8" id="If7-3R-dnk"/>
-                <constraint firstItem="NUB-Dh-3gd" firstAttribute="top" secondItem="OvY-KX-T5W" secondAttribute="top" id="KBh-Sp-d2P"/>
-                <constraint firstItem="9Ux-BD-jJl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MRB-WO-W9L"/>
-                <constraint firstAttribute="bottom" secondItem="L9T-v5-7ZM" secondAttribute="bottom" id="MRJ-6y-ZGp"/>
-                <constraint firstItem="add-7c-0kn" firstAttribute="leading" secondItem="L9T-v5-7ZM" secondAttribute="leading" constant="17" id="NZu-OO-shp"/>
-                <constraint firstItem="add-7c-0kn" firstAttribute="top" secondItem="OIx-O7-ZnY" secondAttribute="bottom" constant="45" id="Ngg-wT-jAB"/>
-                <constraint firstItem="2uz-Qs-nnd" firstAttribute="centerX" secondItem="GUG-ue-okd" secondAttribute="centerX" id="QpZ-mB-Esl"/>
-                <constraint firstItem="9Ux-BD-jJl" firstAttribute="top" secondItem="zkD-60-ICD" secondAttribute="top" id="W0B-QE-C03"/>
-                <constraint firstItem="L9T-v5-7ZM" firstAttribute="trailing" secondItem="GUG-ue-okd" secondAttribute="trailing" constant="17" id="W6p-FY-etK"/>
-                <constraint firstItem="L9T-v5-7ZM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W7r-Hm-hJr"/>
-                <constraint firstItem="L9T-v5-7ZM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="a70-si-StS"/>
-                <constraint firstItem="4Hj-ZS-cPX" firstAttribute="leading" secondItem="L9T-v5-7ZM" secondAttribute="leading" constant="17" id="bLx-cp-31O"/>
+                <constraint firstItem="Wxy-ek-24y" firstAttribute="top" secondItem="HAM-1O-JNe" secondAttribute="bottom" constant="-3" id="bj1-0v-0Pu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="18" id="eTg-T8-iMG"/>
-                <constraint firstItem="OIx-O7-ZnY" firstAttribute="leading" secondItem="CHm-xf-OQQ" secondAttribute="leading" id="fCo-D4-aPt"/>
-                <constraint firstItem="OvY-KX-T5W" firstAttribute="centerX" secondItem="9Ux-BD-jJl" secondAttribute="centerX" id="jes-Zq-c0i"/>
-                <constraint firstItem="OvY-KX-T5W" firstAttribute="top" secondItem="6GQ-av-1Vz" secondAttribute="top" id="kjU-SJ-cuH"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="52" id="lgK-5I-Wsn"/>
-                <constraint firstItem="zkD-60-ICD" firstAttribute="centerX" secondItem="add-7c-0kn" secondAttribute="centerX" id="nnT-lY-hBf"/>
-                <constraint firstItem="CHm-xf-OQQ" firstAttribute="leading" secondItem="L9T-v5-7ZM" secondAttribute="leading" constant="17" id="s8F-Oi-ahv"/>
-                <constraint firstItem="4Hj-ZS-cPX" firstAttribute="top" secondItem="L9T-v5-7ZM" secondAttribute="top" constant="16" id="sPe-ht-bu8"/>
-                <constraint firstItem="6GQ-av-1Vz" firstAttribute="top" secondItem="zkD-60-ICD" secondAttribute="bottom" constant="33" id="vFp-FM-jmb"/>
-                <constraint firstItem="uQr-OV-IaE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="x2e-CS-Qje"/>
-                <constraint firstItem="GUG-ue-okd" firstAttribute="top" secondItem="uQr-OV-IaE" secondAttribute="top" id="zfT-Xn-SPx"/>
+                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="52" id="st3-GE-4XZ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="138.46153846153845" y="91.706161137440759"/>
         </view>
     </objects>
     <resources>
-        <image name="23" width="80" height="19"/>
         <image name="animalbutton" width="94" height="94"/>
-        <image name="animalselected" width="94" height="94"/>
         <image name="animationbutton" width="94" height="94"/>
-        <image name="animationselected" width="94" height="94"/>
         <image name="entertainmentbutton" width="93" height="93"/>
-        <image name="entertainmentselected" width="93" height="93"/>
         <image name="financialbutton" width="94" height="94"/>
-        <image name="financialselected" width="94" height="94"/>
         <image name="foodbutton" width="93" height="93"/>
-        <image name="foodselected" width="93" height="93"/>
         <image name="gamebutton" width="94" height="94"/>
-        <image name="gameselected" width="94" height="94"/>
         <image name="jobbutton" width="93" height="93"/>
-        <image name="jobselected" width="93" height="93"/>
+        <image name="profilebarista" width="182.66667175292969" height="176"/>
         <image name="profileenabled" width="318" height="50"/>
         <image name="sportsbutton" width="94" height="94"/>
-        <image name="sportsselected" width="94" height="94"/>
-        <image name="tasteview" width="352" height="747"/>
-        <image name="text1" width="282" height="24"/>
-        <image name="text2" width="319" height="19"/>
         <image name="travelbutton" width="94" height="94"/>
-        <image name="travelselected" width="94" height="94"/>
     </resources>
 </document>

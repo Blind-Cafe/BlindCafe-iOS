@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DrinkCollectionViewCell" customModule="BlindCafe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="171" height="232"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="171" height="232"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38D-Yb-MYr">
+                        <rect key="frame" x="0.0" y="-6.5" width="171" height="245"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="38D-Yb-MYr" secondAttribute="height" multiplier="171:245" id="0rD-AR-Ed8"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="americano"/>
+                        <state key="selected" image="americanoselected"/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="38D-Yb-MYr" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Cac-zH-sR4"/>
+                <constraint firstItem="38D-Yb-MYr" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="QTc-Gf-7lV"/>
+                <constraint firstItem="38D-Yb-MYr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qQR-fe-c3v"/>
+                <constraint firstAttribute="trailing" secondItem="38D-Yb-MYr" secondAttribute="trailing" id="ywj-fG-gW0"/>
+            </constraints>
+            <size key="customSize" width="172" height="232"/>
+            <connections>
+                <outlet property="drinkButton" destination="38D-Yb-MYr" id="Z5B-Sw-Qqw"/>
+            </connections>
+            <point key="canvasLocation" x="223.91304347826087" y="207.58928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="americano" width="171" height="245"/>
+        <image name="americanoselected" width="171" height="245"/>
+    </resources>
+</document>

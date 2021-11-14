@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImage" destination="1h0-7e-8Nh" id="1d6-c8-DcZ"/>
+                <outlet property="homeButton" destination="Z43-DO-HJX" id="LJ9-FT-n7i"/>
                 <outlet property="progressBar" destination="0NU-Ia-Br4" id="gJn-Zm-wnO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,7 +33,7 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="homebutton"/>
                             <connections>
-                                <action selector="toChatting:" destination="-1" eventType="touchUpInside" id="9sX-DE-de7"/>
+                                <action selector="homeButton:" destination="-1" eventType="touchUpInside" id="cdr-He-bSa"/>
                             </connections>
                         </button>
                     </subviews>

@@ -33,8 +33,15 @@
 		CD297185273A35F000B034F1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD297184273A35F000B034F1 /* PHAsset.swift */; };
 		CD386C9D273CB8ED002D5187 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */; };
 		CD386C9E273CB8ED002D5187 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */; };
-		CD386CA0273D6845002D5187 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386C9F273D6844002D5187 /* UIImage.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
+		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
+		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
+		CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B35273F50BC0035C8D2 /* HomeResponse.swift */; };
+		CD693B38273F52410035C8D2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B37273F52410035C8D2 /* HomeDataManager.swift */; };
+		CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B3A273F763E0035C8D2 /* SelectDrinkViewController.swift */; };
+		CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B3B273F763E0035C8D2 /* SelectDrinkViewController.xib */; };
+		CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B3F273F837B0035C8D2 /* DrinkCollectionViewCell.swift */; };
+		CD693B42273F837B0035C8D2 /* DrinkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B40273F837B0035C8D2 /* DrinkCollectionViewCell.xib */; };
 		CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9E3272163C500DA6013 /* HomeViewController.swift */; };
 		CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9E4272163C500DA6013 /* HomeViewController.xib */; };
 		CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */; };
@@ -51,14 +58,13 @@
 		CD79E989272853130025CF1B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E988272853130025CF1B /* UIViewController.swift */; };
 		CD79E98B272854130025CF1B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E98A272854130025CF1B /* UIColor.swift */; };
 		CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E98E27291DA40025CF1B /* KakaoLoginDataManager.swift */; };
-		CD79E99127291DBF0025CF1B /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */; };
-		CD79E99327291DE90025CF1B /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */; };
+		CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99027291DBF0025CF1B /* LoginInput.swift */; };
+		CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99227291DE90025CF1B /* LoginResponse.swift */; };
 		CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E995272920AE0025CF1B /* IndicatorView.swift */; };
 		CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */; };
 		CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B49A32736BAE600940809 /* ProgressBar.swift */; };
 		CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CB9D9273819E7004620BB /* ReportViewController.swift */; };
 		CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7CB9DA273819E7004620BB /* ReportViewController.xib */; };
-		CDA5BBDC2735710B00E4120C /* UIToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA5BBDB2735710B00E4120C /* UIToolbar.swift */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
 		CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */; };
@@ -66,6 +72,7 @@
 		CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */; };
 		CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */; };
 		CDD149DD273185EF002B2897 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149DC273185EF002B2897 /* UITextField.swift */; };
+		CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9B5B7273FF7DE0098AF11 /* UIStackView.swift */; };
 		CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */; };
 		CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0C32732478C008367F3 /* ChattingViewController.swift */; };
 		CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C42732478C008367F3 /* ChattingViewController.xib */; };
@@ -105,8 +112,15 @@
 		CD297184273A35F000B034F1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		CD386C9B273CB8ED002D5187 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		CD386C9C273CB8ED002D5187 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
-		CD386C9F273D6844002D5187 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
+		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
+		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
+		CD693B35273F50BC0035C8D2 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		CD693B37273F52410035C8D2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		CD693B3A273F763E0035C8D2 /* SelectDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkViewController.swift; sourceTree = "<group>"; };
+		CD693B3B273F763E0035C8D2 /* SelectDrinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDrinkViewController.xib; sourceTree = "<group>"; };
+		CD693B3F273F837B0035C8D2 /* DrinkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD693B40273F837B0035C8D2 /* DrinkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinkCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD6AA9E3272163C500DA6013 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD6AA9E4272163C500DA6013 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD6AA9EE2724484F00DA6013 /* MatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewController.swift; sourceTree = "<group>"; };
@@ -123,14 +137,13 @@
 		CD79E988272853130025CF1B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CD79E98A272854130025CF1B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CD79E98E27291DA40025CF1B /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
-		CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginInput.swift; sourceTree = "<group>"; };
-		CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
+		CD79E99027291DBF0025CF1B /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
+		CD79E99227291DE90025CF1B /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CD79E995272920AE0025CF1B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
 		CD7B49A32736BAE600940809 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CD7CB9D9273819E7004620BB /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		CD7CB9DA273819E7004620BB /* ReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
-		CDA5BBDB2735710B00E4120C /* UIToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolbar.swift; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
@@ -138,6 +151,7 @@
 		CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Bold.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
 		CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GHANACHOCOLATE.TTF; path = ../../../../../../../Downloads/GHANACHOCOLATE.TTF; sourceTree = "<group>"; };
 		CDD149DC273185EF002B2897 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		CDE9B5B7273FF7DE0098AF11 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDF8A0C32732478C008367F3 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		CDF8A0C42732478C008367F3 /* ChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingViewController.xib; sourceTree = "<group>"; };
@@ -179,9 +193,10 @@
 		CD0C06B4272D80240020E858 /* ProfileInit */ = {
 			isa = PBXGroup;
 			children = (
-				CD0C06B9272D85B20020E858 /* InitInterest */,
 				CD0C06BA272DB37A0020E858 /* InitAgeGender */,
 				CD0C06BF27304A180020E858 /* InitNickname */,
+				CD0C06B9272D85B20020E858 /* InitInterest */,
+				CD693B2E273F4BE70035C8D2 /* InitDetailInterest */,
 			);
 			path = ProfileInit;
 			sourceTree = "<group>";
@@ -255,6 +270,7 @@
 				CD6AA9ED2724468000DA6013 /* Matched */,
 				CD6AA9EC2724465100DA6013 /* MyPage */,
 				CDF8A0C227324772008367F3 /* Chatting */,
+				CD693B39273F76230035C8D2 /* SelectDrink */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -279,6 +295,7 @@
 				CD15094E2720FA780020BD41 /* Login */,
 				CD79E9812728487A0025CF1B /* Agreement */,
 				CD0C06B4272D80240020E858 /* ProfileInit */,
+				CD693B45273FDFF00035C8D2 /* DoneSignUp */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -312,9 +329,8 @@
 				CD0C06B2272D2E770020E858 /* UIView.swift */,
 				CDD149CF27317800002B2897 /* UIFont.swift */,
 				CDD149DC273185EF002B2897 /* UITextField.swift */,
-				CDA5BBDB2735710B00E4120C /* UIToolbar.swift */,
 				CD297184273A35F000B034F1 /* PHAsset.swift */,
-				CD386C9F273D6844002D5187 /* UIImage.swift */,
+				CDE9B5B7273FF7DE0098AF11 /* UIStackView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -322,6 +338,8 @@
 		CD1509512720FBE00020BD41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CD693B33273F50A50035C8D2 /* Entity */,
+				CD693B34273F50AB0035C8D2 /* DataManager */,
 				CD6AA9E3272163C500DA6013 /* HomeViewController.swift */,
 				CD6AA9E4272163C500DA6013 /* HomeViewController.xib */,
 				CD7B49A32736BAE600940809 /* ProgressBar.swift */,
@@ -356,6 +374,57 @@
 				CD29717F273A1DB100B034F1 /* albumListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
+			isa = PBXGroup;
+			children = (
+				CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */,
+				CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */,
+			);
+			path = InitDetailInterest;
+			sourceTree = "<group>";
+		};
+		CD693B33273F50A50035C8D2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD693B35273F50BC0035C8D2 /* HomeResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD693B34273F50AB0035C8D2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD693B37273F52410035C8D2 /* HomeDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD693B39273F76230035C8D2 /* SelectDrink */ = {
+			isa = PBXGroup;
+			children = (
+				CD693B3E273F83650035C8D2 /* Cells */,
+				CD693B3A273F763E0035C8D2 /* SelectDrinkViewController.swift */,
+				CD693B3B273F763E0035C8D2 /* SelectDrinkViewController.xib */,
+			);
+			path = SelectDrink;
+			sourceTree = "<group>";
+		};
+		CD693B3E273F83650035C8D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD693B3F273F837B0035C8D2 /* DrinkCollectionViewCell.swift */,
+				CD693B40273F837B0035C8D2 /* DrinkCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CD693B45273FDFF00035C8D2 /* DoneSignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DoneSignUp;
 			sourceTree = "<group>";
 		};
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
@@ -416,8 +485,8 @@
 		CD79E98D27291CFF0025CF1B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				CD79E99027291DBF0025CF1B /* KakaoLoginInput.swift */,
-				CD79E99227291DE90025CF1B /* KakaoLoginResponse.swift */,
+				CD79E99027291DBF0025CF1B /* LoginInput.swift */,
+				CD79E99227291DE90025CF1B /* LoginResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -543,6 +612,7 @@
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
 				CD0C06B8272D85AB0020E858 /* InitInterestViewController.xib in Resources */,
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
+				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */,
@@ -555,7 +625,9 @@
 				CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */,
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
 				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
+				CD693B42273F837B0035C8D2 /* DrinkCollectionViewCell.xib in Resources */,
 				CD29717D273A157500B034F1 /* photoCollectionViewCell.xib in Resources */,
+				CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */,
 				CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */,
 				CD6AA9FA27266B1B00DA6013 /* OnboardingViewController.xib in Resources */,
 			);
@@ -613,24 +685,27 @@
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
+				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,
-				CD79E99127291DBF0025CF1B /* KakaoLoginInput.swift in Sources */,
+				CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */,
 				CDF8A0CE2734CFD3008367F3 /* TextTableViewCell.swift in Sources */,
 				CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */,
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
 				CD297185273A35F000B034F1 /* PHAsset.swift in Sources */,
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
+				CD693B38273F52410035C8D2 /* HomeDataManager.swift in Sources */,
 				CD6AA9F42724486200DA6013 /* MyPageViewController.swift in Sources */,
 				CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */,
 				CD79E987272852F90025CF1B /* Constant.swift in Sources */,
-				CD79E99327291DE90025CF1B /* KakaoLoginResponse.swift in Sources */,
+				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
+				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
 				CD386C9D273CB8ED002D5187 /* ImageTableViewCell.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
@@ -638,16 +713,17 @@
 				CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
-				CDA5BBDC2735710B00E4120C /* UIToolbar.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
 				CD6AA9FE2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift in Sources */,
-				CD386CA0273D6845002D5187 /* UIImage.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
+				CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */,
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,
 				CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
+				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
+				CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

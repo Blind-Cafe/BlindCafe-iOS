@@ -57,7 +57,7 @@ class InitNicknameViewController: BaseOnboardingViewController {
             presentBottomAlert(name: "genderfirst")
         }
         else {
-            changeRootViewController(BaseTabBarController())
+            navigationController?.pushViewController(InitInterestViewController(), animated: true)
         }
         
     }

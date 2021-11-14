@@ -9,9 +9,17 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    var status: String = ""
+    var partnerName: String = ""
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
     
-    @IBAction func toChatting(_ sender: Any) {
+    @IBOutlet weak var homeButton: UIButton!
+    @IBAction func homeButton(_ sender: Any) {
+        if status == "MATCHING" {
+            
+        }
         let vc = ChattingViewController()
         /*vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
@@ -32,14 +40,15 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
-        
-        
+    
         guard let startTime = startTime else {
             setTimer(startTime: Date())
             return
         }
         setTimer(startTime: startTime)
     }
+    
+    
 }
 
 extension HomeViewController {
@@ -56,6 +65,36 @@ extension HomeViewController {
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
             }
         }
+    }
+}
+
+extension HomeViewController {
+    func requestData(result: HomeResponse){
+        self.dismissIndicator()
+        
+        switch result.matchingStatus {
+        case "NONE":
+            backgroundImage.image = UIImage(named: "nonebackground")
+        case "WAIT":
+            backgroundImage.image = UIImage(named: "nonebackground")
+        case "FOUND":
+            backgroundImage.image = UIImage(named: "matchingbackground")
+        case "MATCHING":
+            backgroundImage.image = UIImage(named: "matchingbackground")
+        case "FAILED_LEAVE_ROOM":
+            print("failedleaveroom")
+        case "FAILED_REPORT":
+            print("failedreport")
+        case "FAILED_WONT_EXCHANGE":
+            print("failedwontexchange")
+        default:
+            break
+        }
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
 }
 

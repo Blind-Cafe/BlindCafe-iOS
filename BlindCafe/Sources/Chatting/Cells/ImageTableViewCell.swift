@@ -19,8 +19,8 @@ class ImageTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         backgroundColor = .mainBlack
-        receivingImageView.cornerRadius = 10
-        sendingImageView.cornerRadius = 10
+        receivingImageView.contentMode = .scaleAspectFit
+        sendingImageView.contentMode = .scaleAspectFit
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InitNicknameViewController">
             <connections>
@@ -31,23 +36,20 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-IS-Thw">
                     <rect key="frame" x="19" y="229" width="352" height="527"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="23" translatesAutoresizingMaskIntoConstraints="NO" id="esF-g4-9uB">
-                    <rect key="frame" x="36" y="247" width="80" height="19"/>
-                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asknickname" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-Ua-Lrj">
-                    <rect key="frame" x="36" y="282" width="282" height="22"/>
+                    <rect key="frame" x="36" y="283" width="282" height="22"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nicknamefield" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-gG-p1H">
-                    <rect key="frame" x="36" y="314" width="318" height="44"/>
+                    <rect key="frame" x="36" y="315" width="318" height="44"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickname" translatesAutoresizingMaskIntoConstraints="NO" id="vvs-jo-fYO">
-                    <rect key="frame" x="44" y="362" width="212" height="17"/>
+                    <rect key="frame" x="44" y="363" width="212" height="17"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="askother" translatesAutoresizingMaskIntoConstraints="NO" id="6sh-sS-vcI">
-                    <rect key="frame" x="36" y="402" width="282" height="22"/>
+                    <rect key="frame" x="36" y="403" width="282" height="22"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUh-bw-a3u">
-                    <rect key="frame" x="36" y="434" width="98" height="98"/>
+                    <rect key="frame" x="36" y="435" width="98" height="98"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="female3button"/>
                     <state key="selected" image="female3selected"/>
@@ -56,7 +58,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGi-uQ-ghH">
-                    <rect key="frame" x="145.66666666666666" y="434" width="99" height="99"/>
+                    <rect key="frame" x="145.66666666666666" y="435" width="99" height="99"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="male3button"/>
                     <state key="selected" image="male3selected"/>
@@ -65,7 +67,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cby-bQ-k6J">
-                    <rect key="frame" x="255" y="434" width="99" height="99"/>
+                    <rect key="frame" x="255" y="435" width="99" height="99"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="bothbutton"/>
                     <state key="selected" image="bothselected"/>
@@ -82,36 +84,45 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-mW-Gnl">
-                    <rect key="frame" x="51" y="324.33333333333331" width="261" height="19.666666666666686"/>
+                    <rect key="frame" x="51" y="325.33333333333331" width="261" height="19.666666666666686"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3 단계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZJ-LO-Nhn">
+                    <rect key="frame" x="36" y="256" width="48" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="WeF-BW-6HW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                    <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="esF-g4-9uB" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="17" id="2n7-rp-hWl"/>
                 <constraint firstItem="WOr-yh-fmw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B06-JO-8lf"/>
                 <constraint firstItem="pUh-bw-a3u" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="17" id="CSj-x3-UfP"/>
+                <constraint firstItem="ee0-gG-p1H" firstAttribute="leading" secondItem="GZJ-LO-Nhn" secondAttribute="leading" id="DrB-pX-6A6"/>
+                <constraint firstItem="uGN-Ua-Lrj" firstAttribute="top" secondItem="GZJ-LO-Nhn" secondAttribute="bottom" constant="8" id="ELU-Lg-SWb"/>
+                <constraint firstItem="6sh-sS-vcI" firstAttribute="leading" secondItem="GZJ-LO-Nhn" secondAttribute="leading" id="EV3-Qv-V4R"/>
                 <constraint firstItem="vvs-jo-fYO" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="25" id="Fcf-XY-gez"/>
-                <constraint firstItem="ee0-gG-p1H" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="GBr-Qf-eMc"/>
+                <constraint firstItem="GZJ-LO-Nhn" firstAttribute="top" secondItem="jJo-IS-Thw" secondAttribute="top" constant="27" id="Fwo-cb-Wbe"/>
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="trailing" secondItem="Kcm-mW-Gnl" secondAttribute="trailing" constant="42" id="KRO-wG-hTX"/>
-                <constraint firstItem="uGN-Ua-Lrj" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="MlT-os-h5S"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="leading" secondItem="ee0-gG-p1H" secondAttribute="leading" constant="15" id="Of2-Eg-PSH"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="top" secondItem="1va-QN-2Dt" secondAttribute="bottom" id="QJw-4J-TyP"/>
-                <constraint firstItem="uGN-Ua-Lrj" firstAttribute="top" secondItem="esF-g4-9uB" secondAttribute="bottom" constant="16" id="Qcc-8L-fwr"/>
                 <constraint firstItem="vvs-jo-fYO" firstAttribute="top" secondItem="ee0-gG-p1H" secondAttribute="bottom" constant="4" id="RYY-Re-3Wp"/>
                 <constraint firstItem="pUh-bw-a3u" firstAttribute="top" secondItem="6sh-sS-vcI" secondAttribute="bottom" constant="10" id="SKW-bk-fvw"/>
+                <constraint firstItem="GZJ-LO-Nhn" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="17" id="UKY-Vk-3Yj"/>
                 <constraint firstItem="Cby-bQ-k6J" firstAttribute="top" secondItem="oGi-uQ-ghH" secondAttribute="top" id="cl6-ue-GMs"/>
                 <constraint firstItem="6sh-sS-vcI" firstAttribute="top" secondItem="vvs-jo-fYO" secondAttribute="bottom" constant="23" id="fQU-uh-ffC"/>
+                <constraint firstItem="uGN-Ua-Lrj" firstAttribute="leading" secondItem="GZJ-LO-Nhn" secondAttribute="leading" id="g9B-TU-zMz"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="trailing" secondItem="Cby-bQ-k6J" secondAttribute="trailing" constant="17" id="gaV-T5-ZPB"/>
-                <constraint firstItem="esF-g4-9uB" firstAttribute="top" secondItem="1va-QN-2Dt" secondAttribute="bottom" constant="18" id="gsw-2G-Pr1"/>
                 <constraint firstItem="oGi-uQ-ghH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gyJ-Y9-RQD"/>
                 <constraint firstAttribute="bottom" secondItem="WOr-yh-fmw" secondAttribute="bottom" constant="50" id="hQ0-b6-bL9"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jGy-NW-bX1"/>
-                <constraint firstItem="6sh-sS-vcI" firstAttribute="leading" secondItem="esF-g4-9uB" secondAttribute="leading" id="jVC-AW-6a0"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="centerY" secondItem="ee0-gG-p1H" secondAttribute="centerY" constant="-2" id="m0r-sC-dcK"/>
                 <constraint firstAttribute="bottom" secondItem="jJo-IS-Thw" secondAttribute="bottom" id="nL2-Pl-kgG"/>
                 <constraint firstItem="1va-QN-2Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="53" id="pYm-5D-C7T"/>
@@ -124,7 +135,6 @@
         </view>
     </objects>
     <resources>
-        <image name="23" width="80" height="19"/>
         <image name="asknickname" width="282" height="22"/>
         <image name="askother" width="282" height="22"/>
         <image name="bothbutton" width="99" height="99"/>

@@ -16,4 +16,8 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = false
     }
+    
+    @objc func popToVC() {
+        navigationController?.popViewController(animated: true)
+    }
 }
