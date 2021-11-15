@@ -46,7 +46,6 @@ class InitInterestViewController: BaseOnboardingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.setImage(UIImage(named: "profilenextbutton"), for: .normal)
-        dismissKeyboardWhenTappedAround()
         
         setBackButton()
     }

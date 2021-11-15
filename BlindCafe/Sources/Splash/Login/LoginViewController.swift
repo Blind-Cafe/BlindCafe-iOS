@@ -46,7 +46,7 @@ class LoginViewController: BaseOnboardingViewController {
                 print("loginWithKakaoAccount() success.")
                 
                 self.showIndicator()
-                let input = LoginInput(token: oauthToken!.accessToken, deviceId: UIDevice.current.identifierForVendor!.uuidString)
+                let input = LoginInput(token: oauthToken!.accessToken, deviceId: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
                 KakaoLoginDataManager().kakaoLogin(input, viewController: self)
                 
                 print(input)
@@ -75,7 +75,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
                 self.showIndicator()
-                let input = LoginInput(token: tokenString, deviceId: UIDevice.current.identifierForVendor!.uuidString)
+                let input = LoginInput(token: tokenString, deviceId: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
                 AppleLoginDataManager().appleLogin(input, viewController: self)
                 print(input)
             }

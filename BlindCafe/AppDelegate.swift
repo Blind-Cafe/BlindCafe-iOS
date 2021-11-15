@@ -102,6 +102,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         //이 값을 서버로
-        print("FCM Token: \(fcmToken)")
+        print("FCM Token: \(fcmToken ?? "")")
+        UserDefaults.standard.setValue(fcmToken, forKey: "FCMToken")
     }
 }

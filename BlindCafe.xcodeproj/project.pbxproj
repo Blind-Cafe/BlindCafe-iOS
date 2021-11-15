@@ -54,6 +54,9 @@
 		CD77567627413C6100AC699A /* ImageSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77567427413C6100AC699A /* ImageSendingTableViewCell.xib */; };
 		CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567727413C7100AC699A /* ImageReceivingTableViewCell.swift */; };
 		CD77567A27413C7100AC699A /* ImageReceivingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77567827413C7100AC699A /* ImageReceivingTableViewCell.xib */; };
+		CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567D27424F8800AC699A /* InterestResponse.swift */; };
+		CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567F27424F9800AC699A /* InterestDataManager.swift */; };
+		CD7756822742538E00AC699A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = CD7756812742538E00AC699A /* data.json */; };
 		CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E982272848EC0025CF1B /* AgreementViewController.swift */; };
 		CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79E983272848EC0025CF1B /* AgreementViewController.xib */; };
 		CD79E987272852F90025CF1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E986272852F90025CF1B /* Constant.swift */; };
@@ -135,6 +138,9 @@
 		CD77567427413C6100AC699A /* ImageSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSendingTableViewCell.xib; sourceTree = "<group>"; };
 		CD77567727413C7100AC699A /* ImageReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageReceivingTableViewCell.swift; sourceTree = "<group>"; };
 		CD77567827413C7100AC699A /* ImageReceivingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageReceivingTableViewCell.xib; sourceTree = "<group>"; };
+		CD77567D27424F8800AC699A /* InterestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestResponse.swift; sourceTree = "<group>"; };
+		CD77567F27424F9800AC699A /* InterestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDataManager.swift; sourceTree = "<group>"; };
+		CD7756812742538E00AC699A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../../../Downloads/data.json; sourceTree = "<group>"; };
 		CD79E982272848EC0025CF1B /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		CD79E983272848EC0025CF1B /* AgreementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		CD79E986272852F90025CF1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -383,6 +389,8 @@
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
 			isa = PBXGroup;
 			children = (
+				CD77567B27424F5000AC699A /* Entity */,
+				CD77567C27424F5600AC699A /* DataManager */,
 				CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */,
 				CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */,
 			);
@@ -468,6 +476,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CD77567B27424F5000AC699A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD77567D27424F8800AC699A /* InterestResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD77567C27424F5600AC699A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD77567F27424F9800AC699A /* InterestDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		CD79E9812728487A0025CF1B /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +522,7 @@
 		CD79E9942729204D0025CF1B /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				CD7756812742538E00AC699A /* data.json */,
 				CD79E995272920AE0025CF1B /* IndicatorView.swift */,
 			);
 			path = CommonClass;
@@ -621,6 +646,7 @@
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */,
+				CD7756822742538E00AC699A /* data.json in Resources */,
 				CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */,
 				CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */,
 				CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */,
@@ -711,6 +737,7 @@
 				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
+				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
@@ -718,6 +745,7 @@
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
 				CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
+				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,

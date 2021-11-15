@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
             break
         }
         
-        let vc = SelectDrinkViewController()
+        let vc = ChattingViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: false)
     }

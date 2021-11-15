@@ -10,5 +10,6 @@ struct LoginResponse: Decodable {
     var message: String
     var jwt: String?
     var id: Int?
+    var nickname: String?
 }
 

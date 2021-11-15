@@ -29,6 +29,7 @@ class PhotoViewController: UIViewController {
     func uploadimage(img: UIImage) {
         var data = Data()
         data = img.pngData()!
+        
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()

@@ -7,23 +7,26 @@
 
 import UIKit
 
-class InitDetailInterestViewController: UIViewController {
-
+class InitDetailInterestViewController: BaseOnboardingViewController {
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //scrollView.contentInsetAdjustmentBehavior = .never
+        setBackButton()
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension InitDetailInterestViewController {
+    func getInterest(result: InterestResponse) {
+        dismissIndicator()
+        
     }
-    */
-
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }
