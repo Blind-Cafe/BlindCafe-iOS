@@ -10,6 +10,7 @@ import UIKit
 class InitInterestViewController: BaseOnboardingViewController {
     
     var selectedButtons: Int = 0
+    var selectedList: [String] = []
     
     @IBOutlet var tasteButtons: [UIButton]!
     
@@ -18,11 +19,13 @@ class InitInterestViewController: BaseOnboardingViewController {
             sender.isSelected = false
             sender.tintColor = .buttonTint
             selectedButtons -= 1
+            selectedList.removeAll(where: { $0 == String(sender.tag) })
         }
         else {
             sender.isSelected = true
             sender.tintColor = .mainGreen
             selectedButtons += 1
+            selectedList.append("\(sender.tag)")
         }
 
         if selectedButtons == 3 {
@@ -31,6 +34,7 @@ class InitInterestViewController: BaseOnboardingViewController {
         else {
             nextButton.setImage(UIImage(named: "profilenextbutton"), for: .normal)
         }
+        print(selectedList)
     }
     
     @IBOutlet weak var nextButton: UIButton!
@@ -39,7 +43,10 @@ class InitInterestViewController: BaseOnboardingViewController {
             self.presentBottomAlert(name: "profile1error")
         }
         else if selectedButtons == 3 {
-            navigationController?.pushViewController(InitDetailInterestViewController(), animated: true)
+            
+            let vc = InitDetailInterestViewController()
+            vc.selectedList = selectedList
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -48,8 +55,11 @@ class InitInterestViewController: BaseOnboardingViewController {
         nextButton.setImage(UIImage(named: "profilenextbutton"), for: .normal)
         
         setBackButton()
+        for i in 0...8 {
+            tasteButtons[i].tag = i + 1
+        }
     }
 
-    
-
 }
+
+

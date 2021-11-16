@@ -20,14 +20,15 @@
             <connections>
                 <outlet property="nextButton" destination="YWI-3X-fBj" id="AD1-Uk-xXM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="KQd-JH-RDe"/>
-                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="HhS-Ih-Pqo"/>
-                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="pyb-al-xMW"/>
-                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="NHE-OS-T5p"/>
-                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="pcn-rL-zX7"/>
-                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="26W-Ht-ELy"/>
-                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="87Y-HL-tfi"/>
-                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="OVw-zy-OCc"/>
+                <outletCollection property="tasteButtons" destination="ocW-Gc-E3L" collectionClass="NSMutableArray" id="Esd-Lj-9Yl"/>
+                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="Kdl-W0-kGF"/>
+                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="dpj-bx-QNW"/>
+                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="HMs-CJ-rtT"/>
+                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="wHI-cD-Y7y"/>
+                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="d64-hm-biY"/>
+                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="3ai-zo-IWc"/>
+                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="Wnd-aH-xFi"/>
+                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="7a6-Rc-HVT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

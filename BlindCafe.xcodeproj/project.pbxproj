@@ -391,9 +391,9 @@
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
 			isa = PBXGroup;
 			children = (
-				CD7661F5274282A3003ECE00 /* Cells */,
 				CD77567B27424F5000AC699A /* Entity */,
 				CD77567C27424F5600AC699A /* DataManager */,
+				CD7661F5274282A3003ECE00 /* Cells */,
 				CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */,
 				CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */,
 			);
