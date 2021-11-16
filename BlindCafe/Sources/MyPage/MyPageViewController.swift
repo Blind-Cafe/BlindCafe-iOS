@@ -9,10 +9,34 @@ import UIKit
 
 class MyPageViewController: BaseViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
+    
+    @IBOutlet weak var interestImage1: UIImageView!
+    @IBOutlet weak var interestImage2: UIImageView!
+    @IBOutlet weak var interestImage3: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        showIndicator()
+        MyPageDataManager().requestMyPage(viewController: self)
     }
     
+}
+
+extension MyPageViewController {
+    func request(result: MyPageResponse) {
+        dismissIndicator()
+        nameLabel.text = result.nickname
+        
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

@@ -37,6 +37,8 @@
 		CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */; };
 		CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */; };
 		CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3D12743F19F0088FE49 /* IndicatorView.swift */; };
+		CD2AA3D62743FE270088FE49 /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3D52743FE260088FE49 /* MyPageResponse.swift */; };
+		CD2AA3D82743FE360088FE49 /* MyPageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3D72743FE360088FE49 /* MyPageDataManager.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
@@ -128,6 +130,8 @@
 		CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoInput.swift; sourceTree = "<group>"; };
 		CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoDataManager.swift; sourceTree = "<group>"; };
 		CD2AA3D12743F19F0088FE49 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		CD2AA3D52743FE260088FE49 /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
+		CD2AA3D72743FE360088FE49 /* MyPageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDataManager.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
@@ -400,6 +404,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CD2AA3D32743FCC70088FE49 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD2AA3D52743FE260088FE49 /* MyPageResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD2AA3D42743FCD60088FE49 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD2AA3D72743FE360088FE49 /* MyPageDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +479,8 @@
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				CD2AA3D32743FCC70088FE49 /* Entity */,
+				CD2AA3D42743FCD60088FE49 /* DataManager */,
 				CD6AA9F22724486200DA6013 /* MyPageViewController.swift */,
 				CD6AA9F32724486200DA6013 /* MyPageViewController.xib */,
 			);
@@ -773,6 +795,7 @@
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
+				CD2AA3D62743FE270088FE49 /* MyPageResponse.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
@@ -783,6 +806,7 @@
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
+				CD2AA3D82743FE360088FE49 /* MyPageDataManager.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
 				CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
