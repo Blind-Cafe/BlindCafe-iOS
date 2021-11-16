@@ -115,14 +115,20 @@ extension LoginViewController {
         Token.jwtToken = result.jwt!
         UserDefaults.standard.set(result.jwt, forKey: "UserJwt")
         UserDefaults.standard.set(result.id, forKey: "UserID")
-        let vc = AgreementViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        //navController.modalPresentationStyle = .fullScreen
-        //navController.modalTransitionStyle = .crossDissolve
-        navController.view.backgroundColor = .mainBlack
-        navController.navigationBar.isTranslucent = false
-        //self.present(navController, animated: true)
-        changeRootViewController(navController)
+        UserDefaults.standard.set(result.code, forKey: "Status")
+        if result.code == "990" {
+            changeRootViewController(BaseTabBarController())
+        }
+        else {
+            let vc = AgreementViewController()
+            let navController = UINavigationController(rootViewController: vc)
+            //navController.modalPresentationStyle = .fullScreen
+            //navController.modalTransitionStyle = .crossDissolve
+            navController.view.backgroundColor = .mainBlack
+            navController.navigationBar.isTranslucent = false
+            //self.present(navController, animated: true)
+            changeRootViewController(navController)
+        }
     }
     
     func failedToRequest(message: String) {

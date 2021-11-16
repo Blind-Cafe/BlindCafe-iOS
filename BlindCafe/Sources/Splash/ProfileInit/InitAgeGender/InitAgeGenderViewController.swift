@@ -37,6 +37,13 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
             sender.isSelected = true
             indexOfOneAndOnly = genderButtons.firstIndex(of: sender)
         }
+        
+        if indexOfOneAndOnly != nil && ageTextField.text != "" {
+            nextButton.isEnabled = true
+        }
+        else {
+            nextButton.isEnabled = false
+        }
     }
     
     @IBOutlet weak var nextButton: UIButton!
@@ -53,6 +60,13 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
             presentBottomAlert(name: "genderfirst")
         }
         else {
+            UserDefaults.standard.set(Int(ageTextField.text!), forKey: "UserAge")
+            if genderButtons[0].isSelected == true {
+                UserDefaults.standard.set("F", forKey: "UserGender")
+            }
+            else {
+                UserDefaults.standard.set("M", forKey: "UserGender")
+            }
             navigationController?.pushViewController(InitNicknameViewController(), animated: true)
         }
         
@@ -67,6 +81,7 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
         ageTextField.delegate = self
         
         dismissKeyboardWhenTappedAround()
+        nextButton.isEnabled = false
         
         setBackButton()
     }
@@ -78,6 +93,13 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
     
     @IBAction func textDidChanged(_ sender: Any) {
         ageTextField.checkMaxLength(textField: ageTextField, maxLength: 2)
+        
+        if indexOfOneAndOnly != nil && ageTextField.text != "" {
+            nextButton.isEnabled = true
+        }
+        else {
+            nextButton.isEnabled = false
+        }
     }
     
     @IBAction func doneEditing(_ sender: Any) {

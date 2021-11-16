@@ -22,6 +22,7 @@
                 <outlet property="interest2Label" destination="eTA-cL-3VH" id="pmC-c5-zmN"/>
                 <outlet property="interest3CollectionView" destination="vyy-3v-VLf" id="vus-UV-xBY"/>
                 <outlet property="interest3Label" destination="vFI-nq-ift" id="IlK-CI-04v"/>
+                <outlet property="nextButton" destination="t5S-fL-xVn" id="f8Q-mw-Tkp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sug-GP-q7u"/>
             </connections>
         </placeholder>
@@ -186,16 +187,20 @@
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5S-fL-xVn">
-                    <rect key="frame" x="36" y="627" width="318" height="50"/>
+                    <rect key="frame" x="36" y="656" width="318" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileenabled"/>
+                    <state key="disabled" image="profilenextbutton"/>
+                    <connections>
+                        <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="cHs-Np-qxT"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="SuT-Uj-tpa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="URp-IV-5XQ"/>
-                <constraint firstAttribute="bottom" secondItem="t5S-fL-xVn" secondAttribute="bottom" constant="79" id="kst-VI-HYd"/>
+                <constraint firstAttribute="bottom" secondItem="t5S-fL-xVn" secondAttribute="bottom" constant="50" id="kst-VI-HYd"/>
                 <constraint firstItem="SuT-Uj-tpa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="laY-Pl-CLc"/>
                 <constraint firstAttribute="bottom" secondItem="SuT-Uj-tpa" secondAttribute="bottom" id="vc3-Lh-Qts"/>
                 <constraint firstItem="t5S-fL-xVn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w6m-cQ-gUZ"/>
@@ -207,6 +212,7 @@
     </objects>
     <resources>
         <image name="profileenabled" width="318" height="50"/>
+        <image name="profilenextbutton" width="318" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

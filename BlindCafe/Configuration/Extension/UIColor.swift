@@ -31,4 +31,6 @@ extension UIColor {
     class var veryLightPink: UIColor { UIColor(hex: 0xf3f3f3) }
     class var buttonTint: UIColor { UIColor(hex: 0x5b5b5b) }
     class var brownGray: UIColor { UIColor(hex: 0x474747) }
+    class var grayishBrown: UIColor { UIColor(hex: 0x454545) }
+    class var lightPink: UIColor {UIColor(hex: 0xbdbdbd)}
 }

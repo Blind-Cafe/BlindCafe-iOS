@@ -78,7 +78,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-yh-fmw">
                     <rect key="frame" x="36" y="656" width="318" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="profile2nextbutton"/>
+                    <state key="normal" image="profileenabled"/>
+                    <state key="disabled" image="profile2nextbutton"/>
                     <connections>
                         <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="i00-HE-lKU"/>
                     </connections>
@@ -147,6 +148,7 @@
         <image name="nicknamefield" width="318" height="44"/>
         <image name="profile2nextbutton" width="318" height="50"/>
         <image name="profilebarista" width="182.66667175292969" height="176"/>
+        <image name="profileenabled" width="318" height="50"/>
         <image name="profileview" width="352" height="527"/>
     </resources>
 </document>

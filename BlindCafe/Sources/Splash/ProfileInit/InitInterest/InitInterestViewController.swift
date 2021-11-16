@@ -43,7 +43,6 @@ class InitInterestViewController: BaseOnboardingViewController {
             self.presentBottomAlert(name: "profile1error")
         }
         else if selectedButtons == 3 {
-            
             let vc = InitDetailInterestViewController()
             vc.selectedList = selectedList
             navigationController?.pushViewController(vc, animated: true)

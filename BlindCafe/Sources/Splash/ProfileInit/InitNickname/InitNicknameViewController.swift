@@ -35,6 +35,13 @@ class InitNicknameViewController: BaseOnboardingViewController {
             sender.isSelected = true
             indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
         }
+        
+        if indexOfOneAndOnly != nil && nicknameTextField.text != "" {
+            nextButton.isEnabled = true
+        }
+        else {
+            nextButton.isEnabled = false
+        }
     }
     
     @IBOutlet weak var nextButton: UIButton!
@@ -57,6 +64,16 @@ class InitNicknameViewController: BaseOnboardingViewController {
             presentBottomAlert(name: "genderfirst")
         }
         else {
+            UserDefaults.standard.set(nicknameTextField.text, forKey: "UserNickname")
+            if partnerGenderButtons[0].isSelected == true {
+                UserDefaults.standard.set("F", forKey: "PartnerGender")
+            }
+            else if partnerGenderButtons[1].isSelected == true {
+                UserDefaults.standard.set("M", forKey: "PartnerGender")
+            }
+            else {
+                UserDefaults.standard.set("N", forKey: "PartnerGender")
+            }
             navigationController?.pushViewController(InitInterestViewController(), animated: true)
         }
         
@@ -67,12 +84,23 @@ class InitNicknameViewController: BaseOnboardingViewController {
         nicknameTextField.font = .SpoqaSans(.regular, size: 13)
         nicknameTextField.addDoneButtonOnKeyboard()
         nicknameTextField.addTarget(self, action: #selector(ifFocused), for: .touchDown)
+        nicknameTextField.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         
+        nextButton.isEnabled = false
         setBackButton()
     }
     
     @objc func ifFocused() {
         LetterCount.image = UIImage(named: "nickname")
         nicknameImage.image = UIImage(named: "nicknamefieldfocused")
+    }
+    
+    @objc func textDidChanged(_ sender: Any) {
+        if indexOfOneAndOnly != nil && nicknameTextField.text != "" {
+            nextButton.isEnabled = true
+        }
+        else {
+            nextButton.isEnabled = false
+        }
     }
 }

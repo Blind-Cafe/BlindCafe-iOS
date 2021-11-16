@@ -31,6 +31,11 @@
 		CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29717E273A1DB100B034F1 /* albumListTableViewCell.swift */; };
 		CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD29717F273A1DB100B034F1 /* albumListTableViewCell.xib */; };
 		CD297185273A35F000B034F1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD297184273A35F000B034F1 /* PHAsset.swift */; };
+		CD2AA3C9274379450088FE49 /* DoneSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3C7274379450088FE49 /* DoneSignUpViewController.swift */; };
+		CD2AA3CA274379450088FE49 /* DoneSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2AA3C8274379450088FE49 /* DoneSignUpViewController.xib */; };
+		CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CB2743C5E40088FE49 /* PostUserInfoResponse.swift */; };
+		CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */; };
+		CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
@@ -116,6 +121,11 @@
 		CD29717E273A1DB100B034F1 /* albumListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumListTableViewCell.swift; sourceTree = "<group>"; };
 		CD29717F273A1DB100B034F1 /* albumListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = albumListTableViewCell.xib; sourceTree = "<group>"; };
 		CD297184273A35F000B034F1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
+		CD2AA3C7274379450088FE49 /* DoneSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneSignUpViewController.swift; sourceTree = "<group>"; };
+		CD2AA3C8274379450088FE49 /* DoneSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneSignUpViewController.xib; sourceTree = "<group>"; };
+		CD2AA3CB2743C5E40088FE49 /* PostUserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoResponse.swift; sourceTree = "<group>"; };
+		CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoInput.swift; sourceTree = "<group>"; };
+		CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoDataManager.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
@@ -438,6 +448,8 @@
 		CD693B45273FDFF00035C8D2 /* DoneSignUp */ = {
 			isa = PBXGroup;
 			children = (
+				CD2AA3C7274379450088FE49 /* DoneSignUpViewController.swift */,
+				CD2AA3C8274379450088FE49 /* DoneSignUpViewController.xib */,
 			);
 			path = DoneSignUp;
 			sourceTree = "<group>";
@@ -492,6 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				CD77567D27424F8800AC699A /* InterestResponse.swift */,
+				CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */,
+				CD2AA3CB2743C5E40088FE49 /* PostUserInfoResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -500,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				CD77567F27424F9800AC699A /* InterestDataManager.swift */,
+				CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -652,6 +667,7 @@
 				CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
+				CD2AA3CA274379450088FE49 /* DoneSignUpViewController.xib in Resources */,
 				CD0C06B8272D85AB0020E858 /* InitInterestViewController.xib in Resources */,
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
 				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
@@ -728,9 +744,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
+				CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
+				CD2AA3C9274379450088FE49 /* DoneSignUpViewController.swift in Sources */,
 				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
@@ -760,7 +778,9 @@
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
+				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
+				CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
 				CD77567527413C6100AC699A /* ImageSendingTableViewCell.swift in Sources */,
 				CD6AA9FE2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift in Sources */,
