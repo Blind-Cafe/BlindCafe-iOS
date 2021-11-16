@@ -40,9 +40,9 @@ class HomeViewController: BaseViewController {
             break
         }
         
-        let vc = ChattingViewController()
+        /*let vc = ChattingViewController()
         vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(vc, animated: false)*/
     }
     
     //Timer
@@ -59,11 +59,14 @@ class HomeViewController: BaseViewController {
         
         print(Token.jwtToken)
     
-        guard let startTime = startTime else {
+        /*guard let startTime = startTime else {
             setTimer(startTime: Date())
             return
         }
-        setTimer(startTime: startTime)
+        setTimer(startTime: startTime)*/
+        
+        showIndicator()
+        HomeDataManager().requestHome(viewController: self)
     }
 }
 
@@ -88,15 +91,25 @@ extension HomeViewController {
     func requestData(result: HomeResponse){
         self.dismissIndicator()
         
+        status = result.matchingStatus
+        
         switch result.matchingStatus {
         case "NONE":
             backgroundImage.image = UIImage(named: "nonebackground")
+            progressBar.isHidden = true
+            homeButton.isHidden = false
+            homeButton.setImage(UIImage(named: "homebutton"), for: .normal)
         case "WAIT":
             backgroundImage.image = UIImage(named: "nonebackground")
+            progressBar.isHidden = true
         case "FOUND":
             backgroundImage.image = UIImage(named: "matchingbackground")
+            progressBar.isHidden = false
+            homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
         case "MATCHING":
             backgroundImage.image = UIImage(named: "matchingbackground")
+            progressBar.isHidden = false
+            homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")
         case "FAILED_REPORT":

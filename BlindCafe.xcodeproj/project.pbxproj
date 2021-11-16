@@ -36,6 +36,7 @@
 		CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CB2743C5E40088FE49 /* PostUserInfoResponse.swift */; };
 		CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */; };
 		CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */; };
+		CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3D12743F19F0088FE49 /* IndicatorView.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
@@ -126,6 +127,7 @@
 		CD2AA3CB2743C5E40088FE49 /* PostUserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoResponse.swift; sourceTree = "<group>"; };
 		CD2AA3CD2743C6850088FE49 /* PostUserInfoInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoInput.swift; sourceTree = "<group>"; };
 		CD2AA3CF2743C69E0088FE49 /* PostUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserInfoDataManager.swift; sourceTree = "<group>"; };
+		CD2AA3D12743F19F0088FE49 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				CD77568327425B3100AC699A /* data.json */,
+				CD2AA3D12743F19F0088FE49 /* IndicatorView.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
+				CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
 				CD2AA3C9274379450088FE49 /* DoneSignUpViewController.swift in Sources */,
 				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,

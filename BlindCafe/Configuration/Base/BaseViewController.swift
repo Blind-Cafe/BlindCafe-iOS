@@ -24,7 +24,7 @@ class BaseViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func showIndicator() {
+    func showHomeIndicator() {
         animationView = Lottie.AnimationView.init(name: "data")
         animationView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.3)
         animationView.frame = UIScreen.main.bounds
@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
         view.addSubview(animationView)
     }
     
-    func dismissIndicator() {
+    func dismissHomeIndicator() {
         animationView.stop()
         animationView.removeFromSuperview()
     }

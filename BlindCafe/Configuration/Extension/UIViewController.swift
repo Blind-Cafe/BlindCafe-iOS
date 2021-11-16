@@ -97,4 +97,14 @@ extension UIViewController {
         )
     }
     
+    // MARK: 인디케이터 표시
+    func showIndicator() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+    }
+    
+    // MARK: 인디케이터 숨김
+    @objc func dismissIndicator() {
+        IndicatorView.shared.dismiss()
+    }
 }

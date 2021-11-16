@@ -20,6 +20,7 @@ class HomeDataManager {
                     else {
                         viewController.failedToRequest(message: response.message)
                     }
+                    print(response)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
