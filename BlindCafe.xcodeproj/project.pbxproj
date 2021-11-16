@@ -50,13 +50,15 @@
 		CD6AA9FA27266B1B00DA6013 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9F827266B1B00DA6013 /* OnboardingViewController.xib */; };
 		CD6AA9FE2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA9FC2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift */; };
 		CD6AA9FF2726F3ED00DA6013 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9FD2726F3EC00DA6013 /* OnboardingCollectionViewCell.xib */; };
+		CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7661F6274282BE003ECE00 /* InterestCollectionViewCell.swift */; };
+		CD7661F9274282BF003ECE00 /* InterestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7661F7274282BF003ECE00 /* InterestCollectionViewCell.xib */; };
 		CD77567527413C6100AC699A /* ImageSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567327413C6100AC699A /* ImageSendingTableViewCell.swift */; };
 		CD77567627413C6100AC699A /* ImageSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77567427413C6100AC699A /* ImageSendingTableViewCell.xib */; };
 		CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567727413C7100AC699A /* ImageReceivingTableViewCell.swift */; };
 		CD77567A27413C7100AC699A /* ImageReceivingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77567827413C7100AC699A /* ImageReceivingTableViewCell.xib */; };
 		CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567D27424F8800AC699A /* InterestResponse.swift */; };
 		CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567F27424F9800AC699A /* InterestDataManager.swift */; };
-		CD7756822742538E00AC699A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = CD7756812742538E00AC699A /* data.json */; };
+		CD77568427425B3100AC699A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77568327425B3100AC699A /* data.json */; };
 		CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E982272848EC0025CF1B /* AgreementViewController.swift */; };
 		CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79E983272848EC0025CF1B /* AgreementViewController.xib */; };
 		CD79E987272852F90025CF1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E986272852F90025CF1B /* Constant.swift */; };
@@ -65,7 +67,6 @@
 		CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E98E27291DA40025CF1B /* KakaoLoginDataManager.swift */; };
 		CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99027291DBF0025CF1B /* LoginInput.swift */; };
 		CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99227291DE90025CF1B /* LoginResponse.swift */; };
-		CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E995272920AE0025CF1B /* IndicatorView.swift */; };
 		CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */; };
 		CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B49A32736BAE600940809 /* ProgressBar.swift */; };
 		CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CB9D9273819E7004620BB /* ReportViewController.swift */; };
@@ -134,13 +135,15 @@
 		CD6AA9F827266B1B00DA6013 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		CD6AA9FC2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD6AA9FD2726F3EC00DA6013 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD7661F6274282BE003ECE00 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD7661F7274282BF003ECE00 /* InterestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD77567327413C6100AC699A /* ImageSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSendingTableViewCell.swift; sourceTree = "<group>"; };
 		CD77567427413C6100AC699A /* ImageSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSendingTableViewCell.xib; sourceTree = "<group>"; };
 		CD77567727413C7100AC699A /* ImageReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageReceivingTableViewCell.swift; sourceTree = "<group>"; };
 		CD77567827413C7100AC699A /* ImageReceivingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageReceivingTableViewCell.xib; sourceTree = "<group>"; };
 		CD77567D27424F8800AC699A /* InterestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestResponse.swift; sourceTree = "<group>"; };
 		CD77567F27424F9800AC699A /* InterestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDataManager.swift; sourceTree = "<group>"; };
-		CD7756812742538E00AC699A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../../../Downloads/data.json; sourceTree = "<group>"; };
+		CD77568327425B3100AC699A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../../../Downloads/data.json; sourceTree = "<group>"; };
 		CD79E982272848EC0025CF1B /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		CD79E983272848EC0025CF1B /* AgreementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		CD79E986272852F90025CF1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -149,7 +152,6 @@
 		CD79E98E27291DA40025CF1B /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		CD79E99027291DBF0025CF1B /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
 		CD79E99227291DE90025CF1B /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		CD79E995272920AE0025CF1B /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CD79E99B272BF9C30025CF1B /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
 		CD7B49A32736BAE600940809 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CD7CB9D9273819E7004620BB /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
 			isa = PBXGroup;
 			children = (
+				CD7661F5274282A3003ECE00 /* Cells */,
 				CD77567B27424F5000AC699A /* Entity */,
 				CD77567C27424F5600AC699A /* DataManager */,
 				CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */,
@@ -476,6 +479,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CD7661F5274282A3003ECE00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD7661F6274282BE003ECE00 /* InterestCollectionViewCell.swift */,
+				CD7661F7274282BF003ECE00 /* InterestCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CD77567B27424F5000AC699A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,8 +534,7 @@
 		CD79E9942729204D0025CF1B /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
-				CD7756812742538E00AC699A /* data.json */,
-				CD79E995272920AE0025CF1B /* IndicatorView.swift */,
+				CD77568327425B3100AC699A /* data.json */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -636,6 +647,7 @@
 				CD6AA9F52724486200DA6013 /* MyPageViewController.xib in Resources */,
 				CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */,
 				CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */,
+				CD7661F9274282BF003ECE00 /* InterestCollectionViewCell.xib in Resources */,
 				CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */,
 				CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */,
@@ -646,7 +658,7 @@
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */,
-				CD7756822742538E00AC699A /* data.json in Resources */,
+				CD77568427425B3100AC699A /* data.json in Resources */,
 				CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */,
 				CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */,
 				CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */,
@@ -717,6 +729,7 @@
 			files = (
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
+				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
 				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
@@ -743,7 +756,6 @@
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
-				CD79E996272920AE0025CF1B /* IndicatorView.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,

@@ -83,6 +83,7 @@ class ChattingViewController: BaseViewController {
         chatTableView.dataSource = self
         chatTableView.separatorStyle = .none
         chatTableView.backgroundColor = .mainBlack
+        chatTableView.rowHeight = UITableView.automaticDimension
         
         chattingTextField.delegate = self
         
@@ -202,7 +203,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var isAfter = true
-        if indexPath.row > 0 {
+        if messages.count > 2 && indexPath.row > 0 {
             if messages[indexPath.row - 1].sender == messages[indexPath.row].sender {
                 isAfter = true
             }
@@ -265,6 +266,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingImageView.sd_setImage(with: image)
                 
                 cell.sendingTime.text = message.time
+                
                 return cell
             }
             else {
@@ -274,6 +276,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingImageView.sd_setImage(with: image)
                 
                 cell.receivingTime.text = message.time
+                
                 return cell
             }
             

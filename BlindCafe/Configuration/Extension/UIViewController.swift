@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 extension UIViewController {
     // MARK: 빈 화면을 눌렀을 때 키보드가 내려가도록 처리
@@ -96,14 +97,4 @@ extension UIViewController {
         )
     }
     
-    // MARK: 인디케이터 표시
-    func showIndicator() {
-        IndicatorView.shared.show()
-        IndicatorView.shared.showIndicator()
-    }
-    
-    // MARK: 인디케이터 숨김
-    @objc func dismissIndicator() {
-        IndicatorView.shared.dismiss()
-    }
 }

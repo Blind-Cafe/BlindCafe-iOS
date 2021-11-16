@@ -9,6 +9,7 @@ import UIKit
 import AuthenticationServices
 import KakaoSDKAuth
 import KakaoSDKUser
+import Lottie
 
 class LoginViewController: BaseOnboardingViewController {
     

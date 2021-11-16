@@ -39,6 +39,7 @@ class OnboardingViewController: BaseOnboardingViewController {
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.register(UINib(nibName: "OnboardingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
         pageChange()
+        
     }
     
     func pageChange() {

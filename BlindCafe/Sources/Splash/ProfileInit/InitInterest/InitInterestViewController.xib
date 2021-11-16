@@ -20,15 +20,14 @@
             <connections>
                 <outlet property="nextButton" destination="YWI-3X-fBj" id="AD1-Uk-xXM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="tasteButtons" destination="Naw-Rc-DBZ" collectionClass="NSMutableArray" id="2N5-gi-6Jt"/>
-                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="AXf-AQ-OmS"/>
-                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="aGX-Is-yIv"/>
-                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="2Ca-6f-b52"/>
-                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="qfF-47-YV9"/>
-                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="7Wc-EU-5vq"/>
-                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="B8K-D0-HV7"/>
-                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="Qwp-Ic-ls7"/>
-                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="OAy-zc-VNa"/>
+                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="KQd-JH-RDe"/>
+                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="HhS-Ih-Pqo"/>
+                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="pyb-al-xMW"/>
+                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="NHE-OS-T5p"/>
+                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="pcn-rL-zX7"/>
+                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="26W-Ht-ELy"/>
+                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="87Y-HL-tfi"/>
+                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="OVw-zy-OCc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -66,112 +65,113 @@
                             <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-Rc-DBZ">
-                            <rect key="frame" x="22" y="111" width="93" height="93"/>
-                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="foodbutton"/>
-                            <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="fBb-4s-uvH"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-sh-YHb">
-                            <rect key="frame" x="129" y="110.66666666666669" width="94" height="94"/>
+                            <rect key="frame" x="129" y="112" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="travelbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="L8n-JI-8Dk"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="pUW-cX-eFe"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-rh-WaO">
-                            <rect key="frame" x="236" y="110.66666666666669" width="94" height="94"/>
+                            <rect key="frame" x="236" y="112" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="gamebutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="8xp-dY-XND"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="sXe-MB-Pw5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wO-za-dKe">
-                            <rect key="frame" x="129" y="213" width="94" height="94"/>
+                            <rect key="frame" x="129" y="214" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="sportsbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="bc8-ix-YqH"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="hEw-R9-3ZK"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-27-D1G">
-                            <rect key="frame" x="236" y="213" width="94" height="94"/>
+                            <rect key="frame" x="236" y="214" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="financialbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="V7k-Cx-Mbf"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="YVz-YU-MXc"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGH-1V-SyS">
-                            <rect key="frame" x="22" y="213" width="93" height="93"/>
+                            <rect key="frame" x="22" y="214" width="93" height="93"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="entertainmentbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Jjz-m0-sh2"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="azP-5J-8nT"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-hV-PVG">
-                            <rect key="frame" x="22" y="315" width="93" height="93"/>
+                            <rect key="frame" x="22" y="316" width="93" height="93"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="jobbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Gs1-f0-BRr"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="60h-zF-7LQ"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psN-EM-D1L">
-                            <rect key="frame" x="236" y="315" width="94" height="94"/>
+                            <rect key="frame" x="236" y="316" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="animalbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="1i3-0V-ZAE"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="iI8-D3-Pps"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-Hx-i3l">
-                            <rect key="frame" x="129" y="315" width="94" height="94"/>
+                            <rect key="frame" x="129" y="316" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="animationbutton"/>
                             <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="wBP-EF-MOF"/>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Klz-QX-fV9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocW-Gc-E3L">
+                            <rect key="frame" x="22" y="112" width="93" height="93"/>
+                            <color key="tintColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="foodbutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Lwr-V4-V1k"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="3wO-za-dKe" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="top" id="0iA-MA-wjI"/>
                         <constraint firstItem="bKH-M0-JTU" firstAttribute="leading" secondItem="p6e-hv-OFg" secondAttribute="leading" id="1xA-sR-fpC"/>
                         <constraint firstItem="qXi-Fs-EyC" firstAttribute="leading" secondItem="bKH-M0-JTU" secondAttribute="leading" id="3EA-pC-9Q5"/>
                         <constraint firstAttribute="trailing" secondItem="LhJ-27-D1G" secondAttribute="trailing" constant="22" id="6ei-Ic-ilF"/>
                         <constraint firstAttribute="height" constant="531" id="GOp-rP-78n"/>
+                        <constraint firstItem="jGH-1V-SyS" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="bottom" constant="9" id="Hdd-b7-7uq"/>
                         <constraint firstItem="sZx-Hx-i3l" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="IT4-As-0kc"/>
+                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="O3L-2G-Hsr"/>
                         <constraint firstItem="p6e-hv-OFg" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="14" id="T9r-c4-6Za"/>
-                        <constraint firstItem="Naw-Rc-DBZ" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="13" id="Wuv-zF-MDG"/>
                         <constraint firstAttribute="trailing" secondItem="BLq-rh-WaO" secondAttribute="trailing" constant="22" id="X72-Qw-U39"/>
                         <constraint firstItem="LeJ-hV-PVG" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="X7b-yj-ysc"/>
                         <constraint firstAttribute="width" constant="352" id="XID-nq-3mH"/>
                         <constraint firstItem="jGH-1V-SyS" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="Z7k-Rd-r5q"/>
                         <constraint firstAttribute="trailing" secondItem="psN-EM-D1L" secondAttribute="trailing" constant="22" id="bxe-Ll-hEP"/>
+                        <constraint firstItem="dg0-sh-YHb" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="top" id="ctd-Yv-tLC"/>
                         <constraint firstItem="qXi-Fs-EyC" firstAttribute="top" secondItem="bKH-M0-JTU" secondAttribute="bottom" constant="1" id="d0a-V2-1aA"/>
                         <constraint firstItem="bKH-M0-JTU" firstAttribute="top" secondItem="p6e-hv-OFg" secondAttribute="bottom" constant="8" id="hnw-AX-erR"/>
+                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="14" id="iom-L2-8kF"/>
                         <constraint firstItem="psN-EM-D1L" firstAttribute="top" secondItem="sZx-Hx-i3l" secondAttribute="top" id="jZ6-YL-uLS"/>
                         <constraint firstItem="BLq-rh-WaO" firstAttribute="centerY" secondItem="dg0-sh-YHb" secondAttribute="centerY" id="mBU-K7-TzN"/>
                         <constraint firstItem="p6e-hv-OFg" firstAttribute="top" secondItem="Wxy-ek-24y" secondAttribute="top" constant="27" id="qJG-Sc-FqH"/>
-                        <constraint firstItem="Naw-Rc-DBZ" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="qaH-3D-FaV"/>
                         <constraint firstItem="sZx-Hx-i3l" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="rJh-4z-DVt"/>
-                        <constraint firstItem="dg0-sh-YHb" firstAttribute="centerY" secondItem="Naw-Rc-DBZ" secondAttribute="centerY" id="raN-fb-Rar"/>
-                        <constraint firstItem="jGH-1V-SyS" firstAttribute="top" secondItem="Naw-Rc-DBZ" secondAttribute="bottom" constant="9" id="u1b-1k-3xS"/>
                         <constraint firstItem="dg0-sh-YHb" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="u8C-w2-BDO"/>
                         <constraint firstItem="3wO-za-dKe" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="vD3-Mf-tw4"/>
                         <constraint firstItem="LhJ-27-D1G" firstAttribute="top" secondItem="3wO-za-dKe" secondAttribute="top" id="vgt-Jf-qhm"/>

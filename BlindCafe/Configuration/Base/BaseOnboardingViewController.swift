@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class BaseOnboardingViewController: UIViewController {
 
+    var animationView: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,5 +35,23 @@ class BaseOnboardingViewController: UIViewController {
     
     @objc func popToVC() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func showIndicator() {
+        animationView = Lottie.AnimationView.init(name: "data")
+        animationView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.3)
+        animationView.frame = UIScreen.main.bounds
+        animationView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        
+        animationView.play()
+        view.addSubview(animationView)
+    }
+    
+    func dismissIndicator() {
+        animationView.stop()
+        animationView.removeFromSuperview()
     }
 }
