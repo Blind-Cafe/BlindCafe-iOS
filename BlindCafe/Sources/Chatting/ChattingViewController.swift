@@ -105,7 +105,7 @@ class ChattingViewController: BaseViewController {
         
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "backbutton"), for: .normal)
-        backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(popToHome), for: .touchUpInside)
         backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
         let addBackButton = UIBarButtonItem(customView: backButton)
         
@@ -135,6 +135,10 @@ class ChattingViewController: BaseViewController {
         
         self.navigationItem.setLeftBarButtonItems([addBackButton, addNameLabel], animated: false)
         self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    @objc func popToHome(){
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func bellButtonAction() {

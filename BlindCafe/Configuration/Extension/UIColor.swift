@@ -33,4 +33,6 @@ extension UIColor {
     class var brownGray: UIColor { UIColor(hex: 0x474747) }
     class var grayishBrown: UIColor { UIColor(hex: 0x454545) }
     class var lightPink: UIColor {UIColor(hex: 0xbdbdbd)}
+    class var black3: UIColor {UIColor(hex: 0x323232)}
+    class var white2: UIColor { UIColor(hex: 0xfafafa) }
 }

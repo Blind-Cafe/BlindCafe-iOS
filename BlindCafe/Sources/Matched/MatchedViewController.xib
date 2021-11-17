@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchedViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
                 <outlet property="matchedTableView" destination="DnK-oy-Zru" id="DhL-ng-Hzm"/>
+                <outlet property="matchedView" destination="fpN-hP-Pdn" id="h21-h5-LZF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +27,26 @@
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpN-hP-Pdn">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchedimage" translatesAutoresizingMaskIntoConstraints="NO" id="MZs-Xw-Z3w">
+                            <rect key="frame" x="12" y="17" width="390" height="360"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchedlabel1" translatesAutoresizingMaskIntoConstraints="NO" id="kAI-Gs-F6j">
+                            <rect key="frame" x="94.5" y="445" width="225" height="24"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchedlabel2" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-38-yOQ">
+                            <rect key="frame" x="39.5" y="472" width="335" height="19"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="kAI-Gs-F6j" firstAttribute="top" secondItem="MZs-Xw-Z3w" secondAttribute="bottom" constant="68" id="4yh-G2-d5v"/>
+                        <constraint firstItem="MHy-38-yOQ" firstAttribute="centerX" secondItem="fpN-hP-Pdn" secondAttribute="centerX" id="OUh-Us-w2U"/>
+                        <constraint firstItem="MHy-38-yOQ" firstAttribute="top" secondItem="kAI-Gs-F6j" secondAttribute="bottom" constant="3" id="Q86-09-pTo"/>
+                        <constraint firstItem="kAI-Gs-F6j" firstAttribute="centerX" secondItem="fpN-hP-Pdn" secondAttribute="centerX" id="SzL-3x-U1j"/>
+                        <constraint firstItem="MZs-Xw-Z3w" firstAttribute="centerX" secondItem="fpN-hP-Pdn" secondAttribute="centerX" id="ddB-Cz-hxG"/>
+                        <constraint firstItem="MZs-Xw-Z3w" firstAttribute="top" secondItem="fpN-hP-Pdn" secondAttribute="top" constant="17" id="qBA-CV-Cmt"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -47,6 +67,9 @@
         </view>
     </objects>
     <resources>
+        <image name="matchedimage" width="390" height="360"/>
+        <image name="matchedlabel1" width="225" height="24"/>
+        <image name="matchedlabel2" width="335" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
