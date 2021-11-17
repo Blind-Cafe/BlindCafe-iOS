@@ -42,6 +42,7 @@
 		CD2AA3DC2744B2AE0088FE49 /* MatchedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3DA2744B2AD0088FE49 /* MatchedTableViewCell.swift */; };
 		CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2AA3DB2744B2AE0088FE49 /* MatchedTableViewCell.xib */; };
 		CD2AA3E12744F0F00088FE49 /* MatchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */; };
+		CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
@@ -138,6 +139,7 @@
 		CD2AA3DA2744B2AD0088FE49 /* MatchedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedTableViewCell.swift; sourceTree = "<group>"; };
 		CD2AA3DB2744B2AE0088FE49 /* MatchedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchedTableViewCell.xib; sourceTree = "<group>"; };
 		CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResponse.swift; sourceTree = "<group>"; };
+		CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingDataManager.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 		CD2AA3DF2744F0BA0088FE49 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -847,6 +850,7 @@
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
 				CD77567527413C6100AC699A /* ImageSendingTableViewCell.swift in Sources */,
 				CD6AA9FE2726F3EC00DA6013 /* OnboardingCollectionViewCell.swift in Sources */,
+				CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
 				CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */,
@@ -1001,7 +1005,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1025,7 +1029,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1110,7 +1114,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

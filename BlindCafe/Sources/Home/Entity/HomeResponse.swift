@@ -14,6 +14,6 @@ struct HomeResponse: Decodable {
     var matchingId: Int?
     var partnerId: Int?
     var partnerNickname: String?
-    var startTime: Int?
+    var startTime: String?
     var reason: String?
 }

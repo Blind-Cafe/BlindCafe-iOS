@@ -30,6 +30,7 @@ class ImageSendingTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutIfNeeded()
+        
         let width = sendingImageView.image?.size.width
         let height = sendingImageView.image?.size.height
         

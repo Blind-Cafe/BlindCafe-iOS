@@ -8,5 +8,19 @@
 import Foundation
 
 struct MatchingResponse: Decodable {
-    
+    var matchings: [MatchingResultResponse]?
+}
+
+struct MatchingResultResponse: Decodable {
+    var matchingId: Int
+    var partner: PartnerResultResponse
+    var latestMessage: String
+    var expiryDay: Int
+    var received: Bool
+}
+
+struct PartnerResultResponse: Decodable {
+    var userId: Int
+    var profileImage: String
+    var nickname: String
 }

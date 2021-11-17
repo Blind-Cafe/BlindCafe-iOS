@@ -8,7 +8,7 @@
 import Alamofire
 
 struct Constant {
-    static let BASE_URL = "https://www.blindcafe.me"
+    static let BASE_URL = "http://dev.blindcafe.me"
     
     static var HEADERS: HTTPHeaders = ["x-access-token": Token.jwtToken]
 }

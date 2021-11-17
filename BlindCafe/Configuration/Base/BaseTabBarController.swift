@@ -29,8 +29,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         }
         
         tabBar.isTranslucent = false
-        //tabBar.barTintColor = .mainGreen
-        UITabBar.appearance().backgroundColor = .black3
+        tabBar.barTintColor = .black3
         view.backgroundColor = .mainBlack
         
         let homeNavController = UINavigationController(rootViewController: homeViewController)

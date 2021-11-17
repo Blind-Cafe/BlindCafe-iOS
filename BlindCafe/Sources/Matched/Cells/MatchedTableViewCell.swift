@@ -11,7 +11,8 @@ class MatchedTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = .grayishBrown
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

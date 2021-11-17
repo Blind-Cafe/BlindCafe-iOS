@@ -200,9 +200,11 @@
                 <constraint firstItem="Wxy-ek-24y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ARu-sY-K7b"/>
                 <constraint firstItem="YWI-3X-fBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DS0-Wv-Haj"/>
                 <constraint firstItem="Wxy-ek-24y" firstAttribute="top" secondItem="HAM-1O-JNe" secondAttribute="bottom" constant="-3" id="bj1-0v-0Pu"/>
+                <constraint firstItem="YWI-3X-fBj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sZx-Hx-i3l" secondAttribute="bottom" constant="5" id="cvm-4q-GKL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="18" id="eTg-T8-iMG"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="52" id="lgK-5I-Wsn"/>
-                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="52" id="st3-GE-4XZ"/>
+                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="52" id="st3-GE-4XZ"/>
+                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="vBm-WA-oD6"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="138.46153846153845" y="91.706161137440759"/>

@@ -24,6 +24,9 @@ class MatchedViewController: BaseViewController {
         matchedTableView.dataSource = self
         
         print(Token.jwtToken)
+        
+        showIndicator()
+        MatchingDataManager().getMatchings(viewController: self)
     }
     
     func setNavigation() {
@@ -50,5 +53,12 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MatchedViewController {
+    func getMatching(result: MatchingResponse) {
+        dismissIndicator()
+    }
     
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

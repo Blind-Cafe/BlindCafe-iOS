@@ -56,7 +56,8 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = .clear
+        //navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.navigationBar.barTintColor = .mainBlack
         
         print(Token.jwtToken)
     

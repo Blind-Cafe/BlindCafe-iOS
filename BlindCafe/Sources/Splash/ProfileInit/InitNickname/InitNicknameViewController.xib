@@ -33,8 +33,11 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="1va-QN-2Dt">
                     <rect key="frame" x="103.66666666666669" y="53" width="183" height="176"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-IS-Thw">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-IS-Thw">
                     <rect key="frame" x="19" y="229" width="352" height="527"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="527" id="wVU-c4-85k"/>
+                    </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asknickname" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-Ua-Lrj">
                     <rect key="frame" x="36" y="283" width="282" height="22"/>
@@ -114,9 +117,11 @@
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="trailing" secondItem="Kcm-mW-Gnl" secondAttribute="trailing" constant="42" id="KRO-wG-hTX"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="leading" secondItem="ee0-gG-p1H" secondAttribute="leading" constant="15" id="Of2-Eg-PSH"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="top" secondItem="1va-QN-2Dt" secondAttribute="bottom" id="QJw-4J-TyP"/>
+                <constraint firstItem="1va-QN-2Dt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="R38-0P-c3V"/>
                 <constraint firstItem="vvs-jo-fYO" firstAttribute="top" secondItem="ee0-gG-p1H" secondAttribute="bottom" constant="4" id="RYY-Re-3Wp"/>
                 <constraint firstItem="pUh-bw-a3u" firstAttribute="top" secondItem="6sh-sS-vcI" secondAttribute="bottom" constant="10" id="SKW-bk-fvw"/>
                 <constraint firstItem="GZJ-LO-Nhn" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="17" id="UKY-Vk-3Yj"/>
+                <constraint firstItem="WOr-yh-fmw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oGi-uQ-ghH" secondAttribute="bottom" constant="10" id="ao9-b2-poR"/>
                 <constraint firstItem="Cby-bQ-k6J" firstAttribute="top" secondItem="oGi-uQ-ghH" secondAttribute="top" id="cl6-ue-GMs"/>
                 <constraint firstItem="6sh-sS-vcI" firstAttribute="top" secondItem="vvs-jo-fYO" secondAttribute="bottom" constant="23" id="fQU-uh-ffC"/>
                 <constraint firstItem="uGN-Ua-Lrj" firstAttribute="leading" secondItem="GZJ-LO-Nhn" secondAttribute="leading" id="g9B-TU-zMz"/>
@@ -126,7 +131,7 @@
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jGy-NW-bX1"/>
                 <constraint firstItem="Kcm-mW-Gnl" firstAttribute="centerY" secondItem="ee0-gG-p1H" secondAttribute="centerY" constant="-2" id="m0r-sC-dcK"/>
                 <constraint firstAttribute="bottom" secondItem="jJo-IS-Thw" secondAttribute="bottom" id="nL2-Pl-kgG"/>
-                <constraint firstItem="1va-QN-2Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="53" id="pYm-5D-C7T"/>
+                <constraint firstItem="1va-QN-2Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="53" id="pYm-5D-C7T"/>
                 <constraint firstItem="oGi-uQ-ghH" firstAttribute="top" secondItem="pUh-bw-a3u" secondAttribute="top" id="sJU-5X-Ygm"/>
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="top" secondItem="uGN-Ua-Lrj" secondAttribute="bottom" constant="10" id="u89-aW-Rqe"/>
                 <constraint firstItem="1va-QN-2Dt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yf1-ks-lIg"/>

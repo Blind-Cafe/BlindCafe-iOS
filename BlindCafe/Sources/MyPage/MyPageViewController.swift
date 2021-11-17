@@ -22,6 +22,7 @@ class MyPageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barTintColor = .mainBlack
         setNavigation()
         
         showIndicator()
