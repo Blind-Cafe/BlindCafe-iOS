@@ -21,6 +21,8 @@ class MyPageViewController: BaseViewController {
     
     @IBOutlet weak var badgeCollectionView: UICollectionView!
     
+    var drinksData: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -63,7 +65,14 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BadgeCollectionViewCell", for: indexPath) as! BadgeCollectionViewCell
         
+        let count = drinksData.count
         
+        if indexPath.row < count {
+            cell.badgeImageView.image = UIImage(named: drinkName(name: drinksData[indexPath.row]))
+        }
+        else {
+            cell.badgeImageView.image = UIImage(named: "badge")
+        }
         
         return cell
     }
@@ -74,6 +83,8 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension MyPageViewController {
     func request(result: MyPageResponse) {
         dismissIndicator()
+        drinksData = result.drinks
+        
         nameLabel.text = result.nickname
         if result.myGender == "M" {
             genderLabel.text = "남자"
@@ -119,5 +130,32 @@ extension MyPageViewController {
             break
         }
         return nameString
+    }
+    
+    func drinkName(name: Int) -> String {
+        var drinkName = ""
+        switch name {
+        case 1:
+            drinkName = "americanobadge"
+        case 2:
+            drinkName = "cafelattebadge"
+        case 3:
+            drinkName = "cafemochabadge"
+        case 4:
+            drinkName = "bubbleteabadge"
+        case 5:
+            drinkName = "mintchocolatebadge"
+        case 6:
+            drinkName = "strawberrybadge"
+        case 7:
+            drinkName = "bluelemonadebadge"
+        case 8:
+            drinkName = "greenteabadge"
+        case 9:
+            drinkName = "grapefruitteabadge"
+        default:
+            break
+        }
+        return drinkName
     }
 }
