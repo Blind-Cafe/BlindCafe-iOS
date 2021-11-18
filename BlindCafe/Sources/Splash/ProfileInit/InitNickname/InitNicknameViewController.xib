@@ -32,6 +32,10 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="1va-QN-2Dt">
                     <rect key="frame" x="103.66666666666669" y="53" width="183" height="176"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1va-QN-2Dt" secondAttribute="height" multiplier="183:176" id="GN3-xa-Xcg"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="cob-xS-bQP"/>
+                    </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-IS-Thw">
                     <rect key="frame" x="19" y="229" width="352" height="527"/>

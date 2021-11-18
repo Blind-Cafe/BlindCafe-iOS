@@ -10,10 +10,10 @@ import UIKit
 class HomeViewController: BaseViewController {
 
     var status: String = ""
-    var partnerName: String = ""
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
+    @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var homeButton: UIButton!
     @IBAction func homeButton(_ sender: Any) {
@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
         case "WAIT":
             print("waitbutton")
         case "FOUND":
-            let vc = SelectDrinkViewController()
+            let vc = ChattingViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "MATCHING":
@@ -39,10 +39,6 @@ class HomeViewController: BaseViewController {
         default:
             break
         }
-        
-        let vc = ChattingViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: false)
     }
     
     //Timer
@@ -59,14 +55,13 @@ class HomeViewController: BaseViewController {
         //navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.barTintColor = .mainBlack
         
+        let titleImage = UIImageView(image: UIImage(named: "blindcafe"))
+        titleImage.center = (navigationController?.navigationBar.center)!
+        //navigationController?.navigationBar.addSubview(titleImage)
+        navigationController?.navigationBar.topItem?.titleView = titleImage
+        
         print(Token.jwtToken)
     
-        /*guard let startTime = startTime else {
-            setTimer(startTime: Date())
-            return
-        }
-        setTimer(startTime: startTime)*/
-        
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
         
@@ -102,17 +97,25 @@ extension HomeViewController {
             progressBar.isHidden = true
             homeButton.isHidden = false
             homeButton.setImage(UIImage(named: "homebutton"), for: .normal)
+            timeLabel.isHidden = true
         case "WAIT":
             backgroundImage.image = UIImage(named: "nonebackground")
             progressBar.isHidden = true
+            timeLabel.isHidden = true
         case "FOUND":
             backgroundImage.image = UIImage(named: "matchingbackground")
             progressBar.isHidden = false
+            progressBar.removeForegroundLayer()
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
+            timeLabel.isHidden = false
+            timeLabel.text = "72:00"
         case "MATCHING":
             backgroundImage.image = UIImage(named: "matchingbackground")
             progressBar.isHidden = false
+            progressBar.addForegroundLayer()
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
+            let date: Date! = Date(timeIntervalSince1970: TimeInterval(Int(result.startTime!)!) / 1000)
+            setTimer(startTime: date)
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")
         case "FAILED_REPORT":

@@ -11,17 +11,23 @@ class MatchedViewController: BaseViewController {
 
     @IBOutlet weak var matchedTableView: UITableView!
     @IBOutlet weak var matchedView: UIView!
+    @IBOutlet weak var navigationView: UIView!
+    
+    var matchedData: MatchingResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barTintColor = .mainBlack
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .brownGray
+        navigationView.backgroundColor = .mainBlack
         setNavigation()
         
         matchedTableView.register(UINib(nibName: "MatchedTableViewCell", bundle: nil), forCellReuseIdentifier: "MatchedTableViewCell")
         matchedTableView.delegate = self
         matchedTableView.dataSource = self
+        matchedTableView.backgroundColor = .brownGray
         
         print(Token.jwtToken)
         
@@ -40,21 +46,34 @@ class MatchedViewController: BaseViewController {
 
 extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if matchedData?.matchings?.count == 0 {
+            matchedView.isHidden = false
+            navigationView.backgroundColor = .mainBlack
+        }
+        else {
+            matchedView.isHidden = true
+            navigationView.backgroundColor = .brownGray
+        }
+        return matchedData?.matchings?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchedTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchedTableViewCell", for: indexPath) as! MatchedTableViewCell
+        if matchedData != nil && matchedData?.matchings?.count != 0 {
+            cell.partnerName.text = matchedData!.matchings![indexPath.row].partner.nickname
+        }
         
         return cell
     }
-    
     
 }
 
 extension MatchedViewController {
     func getMatching(result: MatchingResponse) {
         dismissIndicator()
+        matchedData = result
+        
+        matchedTableView.reloadData()
     }
     
     func failedToRequest(message: String) {

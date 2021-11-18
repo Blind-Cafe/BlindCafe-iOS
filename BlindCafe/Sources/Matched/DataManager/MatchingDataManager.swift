@@ -15,7 +15,6 @@ class MatchingDataManager {
                 switch response.result {
                 case .success(let response):
                     viewController.getMatching(result: response)
-                    print(response)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

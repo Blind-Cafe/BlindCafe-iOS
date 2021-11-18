@@ -23,9 +23,7 @@ class BaseViewController: UIViewController {
         }
         
         view.backgroundColor = .mainBlack
-        //navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.tintColor = .mainBlack
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.SpoqaSans(.bold, size: 16), NSAttributedString.Key.foregroundColor: UIColor.veryLightPink]
         
         /*navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

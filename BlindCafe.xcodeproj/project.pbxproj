@@ -44,6 +44,8 @@
 		CD2AA3E12744F0F00088FE49 /* MatchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */; };
 		CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
+		CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */; };
+		CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
 		CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B35273F50BC0035C8D2 /* HomeResponse.swift */; };
@@ -141,6 +143,8 @@
 		CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResponse.swift; sourceTree = "<group>"; };
 		CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingDataManager.swift; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
+		CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
 		CD693B35273F50BC0035C8D2 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
@@ -453,6 +457,15 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		CD3A7B7327462F86007800B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */,
+				CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +525,7 @@
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A7B7327462F86007800B0 /* Cells */,
 				CD2AA3D32743FCC70088FE49 /* Entity */,
 				CD2AA3D42743FCD60088FE49 /* DataManager */,
 				CD6AA9F22724486200DA6013 /* MyPageViewController.swift */,
@@ -722,6 +736,7 @@
 			files = (
 				CD6AA9F52724486200DA6013 /* MyPageViewController.xib in Resources */,
 				CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */,
+				CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */,
 				CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */,
 				CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */,
 				CD7661F9274282BF003ECE00 /* InterestCollectionViewCell.xib in Resources */,
@@ -831,6 +846,7 @@
 				CD79E987272852F90025CF1B /* Constant.swift in Sources */,
 				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
+				CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
 				CD2AA3D62743FE270088FE49 /* MyPageResponse.swift in Sources */,

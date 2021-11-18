@@ -19,11 +19,17 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var interestImage2: UIImageView!
     @IBOutlet weak var interestImage3: UIImageView!
     
+    @IBOutlet weak var badgeCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor = .mainBlack
         setNavigation()
+        
+        badgeCollectionView.register(UINib(nibName: "BadgeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BadgeCollectionViewCell")
+        badgeCollectionView.delegate = self
+        badgeCollectionView.dataSource = self
         
         showIndicator()
         MyPageDataManager().requestMyPage(viewController: self)
@@ -47,6 +53,22 @@ class MyPageViewController: BaseViewController {
     @objc func toSetting() {
         
     }
+}
+
+extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BadgeCollectionViewCell", for: indexPath) as! BadgeCollectionViewCell
+        
+        
+        
+        return cell
+    }
+    
+    
 }
 
 extension MyPageViewController {

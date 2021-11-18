@@ -11,6 +11,8 @@ class SelectDrinkViewController: BaseViewController {
 
     @IBOutlet weak var drinkCollectionView: UICollectionView!
     
+    @IBOutlet weak var cafeLabel: UILabel!
+    
     var page: Int = 0
     
     var drinks = ["americano", "cafelatte", "cafemocha", "bubbletea", "mintchocolate", "strawberry", "bluelemonade", "greentea", "grapefruittea"]
@@ -22,7 +24,7 @@ class SelectDrinkViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         page = 0
-        
+        cafeLabel.text = "누군가 \(UserDefaults.standard.string(forKey: "UserNickname")!)님과 합석하고 싶어해요 음료수를 고르시면 테이블로 안내해드릴게요"
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "backbutton"), for: .normal)
         backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)

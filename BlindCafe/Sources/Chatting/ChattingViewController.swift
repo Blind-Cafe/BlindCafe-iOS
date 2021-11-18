@@ -270,7 +270,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingImageView.sd_setImage(with: image)
                 
                 cell.sendingTime.text = message.time
+                cell.layoutSubviews()
                 
+                chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
             }
             else {
@@ -280,7 +282,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingImageView.sd_setImage(with: image)
                 
                 cell.receivingTime.text = message.time
-                
+                cell.layoutSubviews()
+                chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
             }
             
@@ -412,11 +415,12 @@ extension ChattingViewController {
             }, completion: nil)
         }
         else {
-            self.toolbarBottomConstraint?.constant = keyboardFrame.size.height - 33
+            self.toolbarBottomConstraint?.constant = keyboardFrame.size.height - view.safeAreaInsets.bottom
+            
             self.view.layoutIfNeeded()
         }
         
-        self.chatTableView.frame.origin.y =  -keyboardFrame.size.height + 32
+        self.chatTableView.frame.origin.y =  -keyboardFrame.size.height + customToolbar.frame.height
         
         textFieldDidChange(_sender: chattingTextField)
     }

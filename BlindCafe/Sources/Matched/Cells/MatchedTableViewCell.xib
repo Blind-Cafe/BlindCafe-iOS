@@ -47,20 +47,47 @@
                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ls-oo-urf">
+                        <rect key="frame" x="320" y="10.5" width="56" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="56" id="8It-Nt-DP9"/>
+                            <constraint firstAttribute="height" constant="17" id="xZg-HJ-1Bv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-fQ-ihp">
+                        <rect key="frame" x="344" y="39.5" width="8" height="8"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="5Ls-oo-urf" firstAttribute="centerY" secondItem="u4z-rm-AaW" secondAttribute="centerY" id="6aQ-rf-Uvb"/>
+                    <constraint firstItem="BPK-fQ-ihp" firstAttribute="centerX" secondItem="5Ls-oo-urf" secondAttribute="centerX" id="7rQ-xl-xNR"/>
                     <constraint firstItem="u4z-rm-AaW" firstAttribute="leading" secondItem="3ZN-i6-Kl7" secondAttribute="trailing" constant="11" id="8HQ-g5-mWr"/>
                     <constraint firstItem="3ZN-i6-Kl7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="BU5-Wh-LIB"/>
                     <constraint firstItem="3ZN-i6-Kl7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DRs-4J-pKE"/>
                     <constraint firstItem="ZOr-yB-ZsJ" firstAttribute="top" secondItem="u4z-rm-AaW" secondAttribute="bottom" constant="6" id="EjY-7d-3cz"/>
                     <constraint firstItem="ZOr-yB-ZsJ" firstAttribute="leading" secondItem="3ZN-i6-Kl7" secondAttribute="trailing" constant="15" id="GXm-1D-nQg"/>
                     <constraint firstAttribute="bottom" secondItem="3ZN-i6-Kl7" secondAttribute="bottom" constant="8" id="InG-Kc-4DO"/>
+                    <constraint firstItem="BPK-fQ-ihp" firstAttribute="top" secondItem="5Ls-oo-urf" secondAttribute="bottom" constant="12" id="SYe-UZ-RUd"/>
                     <constraint firstItem="u4z-rm-AaW" firstAttribute="top" secondItem="3ZN-i6-Kl7" secondAttribute="top" constant="-1" id="iG0-VD-fxG"/>
+                    <constraint firstAttribute="trailing" secondItem="5Ls-oo-urf" secondAttribute="trailing" constant="14" id="mli-8d-EDP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lastMessage" destination="ZOr-yB-ZsJ" id="TgB-8F-Qja"/>
+                <outlet property="lastMessageImage" destination="BPK-fQ-ihp" id="Z34-YF-b2F"/>
+                <outlet property="partnerName" destination="u4z-rm-AaW" id="yTZ-bx-nmk"/>
+                <outlet property="partnerProfile" destination="3ZN-i6-Kl7" id="UW6-VC-F49"/>
+                <outlet property="timeLeft" destination="5Ls-oo-urf" id="NTD-GR-rdo"/>
+            </connections>
             <point key="canvasLocation" x="188.40579710144928" y="96.09375"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ball" width="8" height="8"/>
+    </resources>
 </document>
