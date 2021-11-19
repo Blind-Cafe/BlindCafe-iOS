@@ -12,6 +12,7 @@ import Alamofire
 import FirebaseStorageUI
 import Firebase
 import SDWebImage
+import AVFoundation
 
 struct Message {
     let sender: String
@@ -27,10 +28,26 @@ class ChattingViewController: BaseViewController {
     var messages: [Message] = []
     
     let storageRef = Storage.storage().reference()
-
-    //Top
+    let storage = Storage.storage()
     
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer!
+    
+    private lazy var recordURL: URL = {
+        var documentsURL: URL = {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            return paths.first!
+        }()
+        let time = Int64(Date().timeIntervalSince1970 * 1000)
+        let fileName = "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
+        let url = documentsURL.appendingPathComponent(fileName)
+        return url
+    }()
+    
+    //Top
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var recordView: UIView!
+    
     
     @IBAction func reportButton(_ sender: Any) {
         let vc = ReportViewController()
@@ -56,8 +73,7 @@ class ChattingViewController: BaseViewController {
         present(vc, animated: true)
     }
     @IBOutlet weak var recordButton: UIButton!
-    @IBAction func recordButton(_ sender: Any) {
-    }
+
     @IBOutlet weak var chattingField: UIImageView!
     @IBOutlet weak var chattingTextField: UITextView!
     @IBOutlet weak var sendButton: UIButton!
@@ -66,6 +82,7 @@ class ChattingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordView.isHidden = true
         
         view.backgroundColor = .black2
         
@@ -95,6 +112,49 @@ class ChattingViewController: BaseViewController {
         
         loadMessages()
         navigationbarCustom(title: "당")
+        
+        recordButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
+        recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestMicrophoneAccess { [weak self] allowed in
+            if allowed {
+                // If permission is granted...
+            } else {
+                //self?.showSettingsAlert()
+            }
+        }
+    }
+    
+    @objc func buttonDown() {
+        recordView.isHidden = false
+        record()
+    }
+    
+    @objc func buttonUp() {
+        recordView.isHidden = true
+        stopRecord()
+    }
+
+    func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
+        let audioSession: AVAudioSession = AVAudioSession.sharedInstance()
+        switch audioSession.recordPermission {
+        case .undetermined:
+            // 아직 녹음 권한 요청이 되지 않음, 사용자에게 권한 요청
+            audioSession.requestRecordPermission({ allowed in completion(allowed) })
+        case .denied:
+            // 사용자가 녹음 권한 거부, 사용자가 직접 설정 화면에서 권한 허용을 하게끔 유도
+            print("[Failure] Record Permission is Denied.")
+            completion(false)
+        case .granted:
+            // 사용자가 녹음 권한 허용
+            print("[Success] Record Permission is Granted.")
+            completion(true)
+        @unknown default:
+            fatalError("[ERROR] Record Permission is Unknown Default.")
+        }
     }
     
     //MARK: NavigationBar
@@ -175,6 +235,68 @@ class ChattingViewController: BaseViewController {
     }
     
     
+}
+
+//MARK: Audio
+extension ChattingViewController: AVAudioRecorderDelegate {
+    func record() {
+        do {
+            let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+            let time = Int64(Date().timeIntervalSince1970 * 1000)
+            let audioFileName = UUID().uuidString + ".m4a"
+            let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+            
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playAndRecord)
+            audioRecorder = try AVAudioRecorder(url: audioFileURL, settings: [:])
+            audioRecorder.delegate = self
+            try? session.setActive(true)
+            audioRecorder.record()
+            print("record")
+        } catch(let error) {
+            print("record error: \(error)")
+        }
+    }
+    
+    func stopRecord() {
+        audioRecorder.stop()
+        try? AVAudioSession.sharedInstance().setActive(false)
+        uploadAudio(audio: audioRecorder.url)
+        print("\(audioRecorder.url)")
+    }
+    
+    func uploadAudio(audio: URL) {
+        let audioFile = try? AVAudioFile(forReading: audio)
+        
+        let time = Int64(Date().timeIntervalSince1970 * 1000)
+        let filePath = "audio/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
+        let metaData = StorageMetadata()
+        metaData.contentType = "audio/m4a"
+        let uploadTask = storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                print("성공")
+            }
+        }
+        _ = uploadTask.observe(.success) {snapshot in
+            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
+        }
+        
+        //uploadTask.removeAllObservers()
+        //ChattingViewController().loadMessages()*/
+    }
+
+}
+
+
+extension ChattingViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            //재생이 끝났다면
+        }
+    }
 }
 
 extension ChattingViewController: UITextViewDelegate {

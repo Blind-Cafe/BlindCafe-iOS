@@ -10,7 +10,7 @@ import Foundation
 struct HomeResponse: Decodable {
     var code: String
     var message: String
-    var matchingStatus: String
+    var matchingStatus: String?
     var matchingId: Int?
     var partnerId: Int?
     var partnerNickname: String?

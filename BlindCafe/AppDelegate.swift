@@ -59,6 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            // 오디오 세션 카테고리, 모드, 옵션 설정
+            try audioSession.setCategory(.playback, mode: .moviePlayback, options: [])
+        } catch {
+            print("Failed to set audio session category.")
+        }
+        
         KakaoSDKCommon.initSDK(appKey: KakaoKey.KAKAO_NATIVE_KEY)
         FirebaseApp.configure()
         

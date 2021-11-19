@@ -52,9 +52,9 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = false
-        //navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.barTintColor = .mainBlack
         
+        view.backgroundColor = .mainBlack
         let titleImage = UIImageView(image: UIImage(named: "blindcafe"))
         titleImage.center = (navigationController?.navigationBar.center)!
         //navigationController?.navigationBar.addSubview(titleImage)
@@ -64,7 +64,6 @@ class HomeViewController: BaseViewController {
     
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
-        
     }
 }
 
@@ -78,7 +77,6 @@ extension HomeViewController {
                 if elapsedTimeSeconds >= 259200 {
                     timer.invalidate()
                 }
-                
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
             }
         }
@@ -89,7 +87,7 @@ extension HomeViewController {
     func requestData(result: HomeResponse){
         self.dismissIndicator()
         
-        status = result.matchingStatus
+        status = result.matchingStatus ?? ""
         
         switch result.matchingStatus {
         case "NONE":

@@ -19,9 +19,15 @@ class SelectDrinkViewController: BaseViewController {
     
     var selected: Int? = nil
     
+    @IBOutlet weak var nextButton: UIButton!
+    @IBAction func nextButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nextButton.isEnabled = false
         // Do any additional setup after loading the view.
         page = 0
         cafeLabel.text = "누군가 \(UserDefaults.standard.string(forKey: "UserNickname")!)님과 합석하고 싶어해요 음료수를 고르시면 테이블로 안내해드릴게요"
@@ -65,6 +71,7 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selected = indexPath.row
+        nextButton.isEnabled = true
         drinkCollectionView.reloadData()
     }
 

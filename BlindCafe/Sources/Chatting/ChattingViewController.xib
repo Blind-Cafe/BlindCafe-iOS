@@ -24,6 +24,7 @@
                 <outlet property="menuView" destination="Sdr-oO-m11" id="g8w-RD-XIy"/>
                 <outlet property="photoButton" destination="WHl-qT-EYP" id="Zty-hI-fik"/>
                 <outlet property="recordButton" destination="TL9-kS-uoi" id="gs4-8w-ZZO"/>
+                <outlet property="recordView" destination="5mT-W8-IxM" id="OOl-Qk-8sR"/>
                 <outlet property="sendButton" destination="Qwz-uB-LXw" id="R9H-9a-oCr"/>
                 <outlet property="toolbarBottomConstraint" destination="Ltc-eB-7Wt" id="hah-yf-QDD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -138,9 +139,6 @@
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="recordenabled"/>
                             <state key="disabled" image="recordbutton"/>
-                            <connections>
-                                <action selector="recordButton:" destination="-1" eventType="touchUpInside" id="Zy8-xg-ODy"/>
-                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chattingfield" translatesAutoresizingMaskIntoConstraints="NO" id="8jg-32-Gas">
                             <rect key="frame" x="112" y="6" width="262" height="39"/>
@@ -168,18 +166,31 @@
                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                         </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mT-W8-IxM">
+                            <rect key="frame" x="16" y="6" width="358" height="39"/>
+                            <color key="backgroundColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5mT-W8-IxM" secondAttribute="bottom" constant="6" id="7OX-6W-6s7"/>
                         <constraint firstItem="t2x-6g-IND" firstAttribute="leading" secondItem="8jg-32-Gas" secondAttribute="leading" constant="14" id="8Jr-ip-Itc"/>
                         <constraint firstItem="8jg-32-Gas" firstAttribute="trailing" secondItem="t2x-6g-IND" secondAttribute="trailing" constant="60" id="9Od-iW-Wg9"/>
                         <constraint firstAttribute="bottom" secondItem="8jg-32-Gas" secondAttribute="bottom" constant="6" id="9rQ-a5-KeX"/>
+                        <constraint firstAttribute="trailing" secondItem="5mT-W8-IxM" secondAttribute="trailing" constant="16" id="B1s-Ff-Qsl"/>
                         <constraint firstAttribute="trailing" secondItem="8jg-32-Gas" secondAttribute="trailing" constant="16" id="IDC-Yb-z7i"/>
                         <constraint firstItem="8jg-32-Gas" firstAttribute="top" secondItem="dXM-XI-4VQ" secondAttribute="top" constant="6" id="Mf1-9J-ydO"/>
                         <constraint firstItem="Qwz-uB-LXw" firstAttribute="centerY" secondItem="dXM-XI-4VQ" secondAttribute="centerY" id="Sec-Il-qkh"/>
                         <constraint firstItem="TL9-kS-uoi" firstAttribute="centerY" secondItem="dXM-XI-4VQ" secondAttribute="centerY" id="UnG-tI-jon"/>
                         <constraint firstItem="TL9-kS-uoi" firstAttribute="leading" secondItem="WHl-qT-EYP" secondAttribute="trailing" id="Xlq-jU-ho9"/>
                         <constraint firstItem="t2x-6g-IND" firstAttribute="centerY" secondItem="dXM-XI-4VQ" secondAttribute="centerY" id="aSJ-Zh-leS"/>
+                        <constraint firstItem="5mT-W8-IxM" firstAttribute="leading" secondItem="dXM-XI-4VQ" secondAttribute="leading" constant="16" id="bZm-zz-D1a"/>
+                        <constraint firstItem="5mT-W8-IxM" firstAttribute="top" secondItem="dXM-XI-4VQ" secondAttribute="top" constant="6" id="bjD-kz-Pig"/>
                         <constraint firstItem="WHl-qT-EYP" firstAttribute="leading" secondItem="dXM-XI-4VQ" secondAttribute="leading" constant="18" id="kes-8K-1iq"/>
                         <constraint firstItem="8jg-32-Gas" firstAttribute="leading" secondItem="dXM-XI-4VQ" secondAttribute="leading" constant="112" id="m0C-0y-Lra"/>
                         <constraint firstItem="8jg-32-Gas" firstAttribute="centerY" secondItem="t2x-6g-IND" secondAttribute="centerY" id="nhH-Lt-RwO"/>

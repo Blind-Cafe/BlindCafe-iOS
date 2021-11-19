@@ -40,6 +40,8 @@
 	<string>앨범 사용</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>녹음 사용</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
