@@ -79,6 +79,7 @@ class ChattingViewController: BaseViewController {
     @IBOutlet weak var sendButton: UIButton!
    
     @IBOutlet weak var chattingFieldConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -215,6 +216,7 @@ class ChattingViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange(_sender: Any?) {
+        
         if chattingTextField.text == "" {
             sendButton.isEnabled = false
             photoButton.isHidden = false
@@ -242,7 +244,6 @@ extension ChattingViewController: AVAudioRecorderDelegate {
     func record() {
         do {
             let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-            let time = Int64(Date().timeIntervalSince1970 * 1000)
             let audioFileName = UUID().uuidString + ".m4a"
             let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
             
@@ -262,17 +263,16 @@ extension ChattingViewController: AVAudioRecorderDelegate {
         audioRecorder.stop()
         try? AVAudioSession.sharedInstance().setActive(false)
         uploadAudio(audio: audioRecorder.url)
-        print("\(audioRecorder.url)")
     }
     
     func uploadAudio(audio: URL) {
-        let audioFile = try? AVAudioFile(forReading: audio)
+        let audioData = (try? Data(contentsOf: audio))!
         
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "audio/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()
         metaData.contentType = "audio/m4a"
-        let uploadTask = storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
+        let uploadTask = storage.reference().child(filePath).putData(audioData, metadata: metaData) { (metaData, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -281,11 +281,11 @@ extension ChattingViewController: AVAudioRecorderDelegate {
             }
         }
         _ = uploadTask.observe(.success) {snapshot in
-            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
+            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
         }
         
         //uploadTask.removeAllObservers()
-        //ChattingViewController().loadMessages()*/
+        //ChattingViewController().loadMessages()
     }
 
 }
@@ -542,9 +542,9 @@ extension ChattingViewController {
             self.view.layoutIfNeeded()
         }
         
-        self.chatTableView.frame.origin.y =  -keyboardFrame.size.height + customToolbar.frame.height
-        
         textFieldDidChange(_sender: chattingTextField)
+        
+        chatTableView.frame.origin.y = -keyboardFrame.height - customToolbar.frame.height
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -567,8 +567,8 @@ extension ChattingViewController {
             self.view.layoutIfNeeded()
         }
         
-        self.chatTableView.frame.origin.y =  0
-        
         textFieldDidChange(_sender: chattingTextField)
+        
+        chatTableView.frame.origin.y = 0
     }
 }

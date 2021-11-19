@@ -85,6 +85,10 @@
 		CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B49A32736BAE600940809 /* ProgressBar.swift */; };
 		CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CB9D9273819E7004620BB /* ReportViewController.swift */; };
 		CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7CB9DA273819E7004620BB /* ReportViewController.xib */; };
+		CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */; };
+		CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */; };
+		CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */; };
+		CD8A91832747B2DE008C8E4D /* AudioReceivingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A91812747B2DE008C8E4D /* AudioReceivingTableViewCell.xib */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
 		CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */; };
@@ -184,6 +188,10 @@
 		CD7B49A32736BAE600940809 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		CD7CB9D9273819E7004620BB /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		CD7CB9DA273819E7004620BB /* ReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
+		CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSendingTableViewCell.swift; sourceTree = "<group>"; };
+		CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSendingTableViewCell.xib; sourceTree = "<group>"; };
+		CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioReceivingTableViewCell.swift; sourceTree = "<group>"; };
+		CD8A91812747B2DE008C8E4D /* AudioReceivingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioReceivingTableViewCell.xib; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
@@ -671,6 +679,10 @@
 				CD77567427413C6100AC699A /* ImageSendingTableViewCell.xib */,
 				CD77567727413C7100AC699A /* ImageReceivingTableViewCell.swift */,
 				CD77567827413C7100AC699A /* ImageReceivingTableViewCell.xib */,
+				CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */,
+				CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */,
+				CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */,
+				CD8A91812747B2DE008C8E4D /* AudioReceivingTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -763,6 +775,8 @@
 				CD77567627413C6100AC699A /* ImageSendingTableViewCell.xib in Resources */,
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
 				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
+				CD8A91832747B2DE008C8E4D /* AudioReceivingTableViewCell.xib in Resources */,
+				CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */,
 				CD693B42273F837B0035C8D2 /* DrinkCollectionViewCell.xib in Resources */,
 				CD29717D273A157500B034F1 /* photoCollectionViewCell.xib in Resources */,
 				CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */,
@@ -855,8 +869,10 @@
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
+				CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
+				CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
