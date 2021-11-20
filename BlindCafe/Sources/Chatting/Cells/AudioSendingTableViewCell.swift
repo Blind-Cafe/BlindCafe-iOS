@@ -9,9 +9,13 @@ import UIKit
 
 class AudioSendingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var playStopButton: PlayStopButton!
+    @IBOutlet weak var audioTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = .mainBlack
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

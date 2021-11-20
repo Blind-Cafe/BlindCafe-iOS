@@ -87,7 +87,6 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         page = Int(scrollView.contentOffset.x / 136)
-        //drinkCollectionView.scrollToItem(at: [0, page], at: .centeredHorizontally, animated: true)
         
         drinkCollectionView.reloadData()
     }

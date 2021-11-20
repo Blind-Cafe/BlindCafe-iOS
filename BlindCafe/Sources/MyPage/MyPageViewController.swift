@@ -38,11 +38,14 @@ class MyPageViewController: BaseViewController {
     }
     
     func setNavigation() {
-        let titleLabel = UILabel(frame: CGRect(x: 25, y: 10, width: 100, height: 22))
+        let titleview = UIView(frame: CGRect(x: 0, y: 10, width: 100, height: 22))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 22))
         titleLabel.text = "마이페이지"
         titleLabel.font = .SpoqaSans(.bold, size: 15)
         titleLabel.textColor = .white2
-        navigationController?.navigationBar.addSubview(titleLabel)
+        //navigationController?.navigationBar.addSubview(titleLabel)
+        titleview.addSubview(titleLabel)
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(customView: titleview)
         
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "settingsbutton"), for: .normal)
@@ -53,7 +56,7 @@ class MyPageViewController: BaseViewController {
     }
     
     @objc func toSetting() {
-        
+        navigationController?.pushViewController(SettingsViewController(), animated: true)
     }
 }
 

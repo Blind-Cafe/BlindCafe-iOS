@@ -12,6 +12,7 @@ class AudioReceivingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = .mainBlack
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -31,7 +31,7 @@ class ChattingViewController: BaseViewController {
     let storage = Storage.storage()
     
     var audioRecorder: AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
+    var player: AVPlayer!
     
     private lazy var recordURL: URL = {
         var documentsURL: URL = {
@@ -96,6 +96,8 @@ class ChattingViewController: BaseViewController {
         chatTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTableViewCell")
         chatTableView.register(UINib(nibName: "ImageSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageSendingTableViewCell")
         chatTableView.register(UINib(nibName: "ImageReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageReceivingTableViewCell")
+        chatTableView.register(UINib(nibName: "AudioSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioSendingTableViewCell")
+        chatTableView.register(UINib(nibName: "AudioReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioReceivingTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -110,6 +112,7 @@ class ChattingViewController: BaseViewController {
         }
         
         chattingTextField.textColor = .white
+        chatTableView.frame.origin.y = 0
         
         loadMessages()
         navigationbarCustom(title: "당")
@@ -283,9 +286,6 @@ extension ChattingViewController: AVAudioRecorderDelegate {
         _ = uploadTask.observe(.success) {snapshot in
             ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
         }
-        
-        //uploadTask.removeAllObservers()
-        //ChattingViewController().loadMessages()
     }
 
 }
@@ -411,7 +411,30 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         else {
-            return UITableViewCell()
+            if message.sender == "." {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
+                cell.playStopButton.content = String(message.body)
+                cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AudioReceivingTableViewCell", for: indexPath) as! AudioReceivingTableViewCell
+                return cell
+            }
+        }
+    }
+    
+    @objc func playStop(_ sender: Any) {
+        let audio = storageRef.child("audio/\((sender as! PlayStopButton).content)")
+        audio.downloadURL { (url, error) in
+          if let error = error {
+              print(error.localizedDescription)
+          } else {
+              let playerItem = AVPlayerItem.init(url: url!)
+              self.player = AVPlayer.init(playerItem: playerItem)
+              self.player.play()
+              print("play")
+          }
         }
     }
     
@@ -477,7 +500,8 @@ extension ChattingViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
-                                    self.chatTableView.scrollToRow(at: IndexPath(row: self.messages.count - 1, section: 0), at: .top, animated: false)
+                                    let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                    self.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
                                 }
                             }
                         }
@@ -544,7 +568,7 @@ extension ChattingViewController {
         
         textFieldDidChange(_sender: chattingTextField)
         
-        chatTableView.frame.origin.y = -keyboardFrame.height - customToolbar.frame.height
+        chatTableView.frame.origin.y = -keyboardFrame.height + view.safeAreaInsets.bottom
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {

@@ -49,10 +49,12 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
         if matchedData?.matchings?.count == 0 {
             matchedView.isHidden = false
             navigationView.backgroundColor = .mainBlack
+            navigationController?.navigationBar.barTintColor = .mainBlack
         }
         else {
             matchedView.isHidden = true
             navigationView.backgroundColor = .brownGray
+            navigationController?.navigationBar.barTintColor = .brownGray
         }
         return matchedData?.matchings?.count ?? 0
     }

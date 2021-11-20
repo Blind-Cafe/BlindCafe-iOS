@@ -39,6 +39,10 @@ class HomeViewController: BaseViewController {
         default:
             break
         }
+        
+//        let vc = ChattingViewController()
+//        vc.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(vc, animated: false)
     }
     
     //Timer
@@ -62,8 +66,8 @@ class HomeViewController: BaseViewController {
         
         print(Token.jwtToken)
     
-        showIndicator()
-        HomeDataManager().requestHome(viewController: self)
+        /*showIndicator()
+        HomeDataManager().requestHome(viewController: self)*/
     }
 }
 
