@@ -41,13 +41,20 @@ class ReportViewController: UIViewController {
     
     @IBOutlet weak var reportNextButton: UIButton!
     @IBAction func reportNextButton(_ sender: Any) {
+        let rootView = presentingViewController
         
+        self.dismiss(animated: false, completion: {
+            let childVC2 = Report2ViewController()
+            childVC2.modalPresentationStyle = .overCurrentContext
+            rootView?.present(childVC2, animated: false, completion: nil)
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         reportNextButton.isEnabled = false
+        view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.5)
     }
 
 }

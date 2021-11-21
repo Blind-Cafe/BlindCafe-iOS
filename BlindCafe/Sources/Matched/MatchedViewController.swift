@@ -36,11 +36,14 @@ class MatchedViewController: BaseViewController {
     }
     
     func setNavigation() {
-        let titleLabel = UILabel(frame: CGRect(x: view.bounds.width / 2 - 50, y: 10, width: 100, height: 22))
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
         titleLabel.text = "내 테이블"
-        titleLabel.font = .SpoqaSans(.bold, size: 15)
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
         titleLabel.textColor = .white2
-        navigationController?.navigationBar.addSubview(titleLabel)
+        titleLabel.textAlignment = .center
+        titleview.addSubview(titleLabel)
+        self.navigationItem.titleView = titleview
     }
 }
 

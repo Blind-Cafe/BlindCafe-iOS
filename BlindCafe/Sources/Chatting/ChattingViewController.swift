@@ -28,6 +28,8 @@ class ChattingViewController: BaseViewController {
     
     var keyboardFrameHeight: CGFloat = 0
     
+    var FCM: String = ""
+    
     let db = Firestore.firestore()
     
     var messages: [Message] = []
@@ -56,12 +58,21 @@ class ChattingViewController: BaseViewController {
     
     
     @IBAction func reportButton(_ sender: Any) {
+        menuView.isHidden = true
         let vc = ReportViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
         
         present(vc, animated: false)
         
     }
     @IBAction func leaveroomButton(_ sender: Any) {
+        menuView.isHidden = true
+        let vc = LeaveRoomViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        
+        present(vc, animated: false)
     }
 
     //TableView
@@ -485,12 +496,16 @@ extension ChattingViewController {
     @IBAction func sendMessage(_ sender: Any) {
         if chattingTextField.text != nil && !chattingTextField.text!.isEmpty {
             if let messageBody = chattingTextField.text {
+                let input = FCMInput(targetToken: FCM, title: "BlindCafe", body: chattingTextField.text, path: "1")
+                FCMDataManager().requestFCM(input, viewController: self)
+                print("FCM!!! \(FCM)")
                 db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
                     "contents": messageBody,
                     "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
                     "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
                     "timestamp": Date(),
-                    "type": 1
+                    "type": 1,
+                    "token": UserDefaults.standard.string(forKey: "FCMToken")!
                 ]) { (error) in
                     if let e = error {
                         print(e.localizedDescription)
@@ -509,6 +524,9 @@ extension ChattingViewController {
         photoButton.isHidden = false
         recordButton.isHidden = false
         chattingFieldConstraint.constant = 112
+        
+        
+        
     }
     
     func send(contents: String, type: Int) {
@@ -517,7 +535,8 @@ extension ChattingViewController {
             "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
             "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
             "timestamp": Date(),
-            "type": type
+            "type": type,
+            "token" : UserDefaults.standard.string(forKey: "FCMToken")!
         ]) { (error) in
             if let e = error {
                 print(e.localizedDescription)
@@ -525,6 +544,8 @@ extension ChattingViewController {
                 print("Success save data")
             }
         }
+        
+        
     }
     
     func loadMessages() {
@@ -539,7 +560,7 @@ extension ChattingViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         snapshotDocuments.forEach { (doc) in
                             let data = doc.data()
-                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
+                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int, let fcmToken = data["token"] as? String {
                                 let time = self.timeFormatter(timestamp: timestamp)
                                 self.messages.append(Message(sender: sender, body: body, time: time, type: type))
                                 
@@ -547,6 +568,10 @@ extension ChattingViewController {
                                     self.chatTableView.reloadData()
                                     if self.messages.count != 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
+                                        
+                                        if sender != UserDefaults.standard.string(forKey: "UserNickname")! {
+                                            self.FCM = fcmToken
+                                        }
                                     }
                                     
                                 }

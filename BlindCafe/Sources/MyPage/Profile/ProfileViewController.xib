@@ -21,6 +21,8 @@
                 <outlet property="profileImage1" destination="hk6-bf-1Lb" id="ObI-45-5DG"/>
                 <outlet property="profileImage2" destination="F84-6X-UKI" id="eks-y8-l8U"/>
                 <outlet property="profileImage3" destination="Z8s-JL-xCM" id="ytj-UC-IpT"/>
+                <outlet property="userAgeLabel" destination="ByL-iH-gIC" id="YSo-xj-Pdv"/>
+                <outlet property="userGenderLabel" destination="gYY-KF-KpQ" id="9TL-4I-f9g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -174,6 +176,9 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileadd"/>
                     <state key="selected" image="profiledelete"/>
+                    <connections>
+                        <action selector="profileButton2:" destination="-1" eventType="touchUpInside" id="CB7-of-pXf"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="Z8s-JL-xCM">
                     <rect key="frame" x="260" y="60" width="112" height="152"/>
@@ -192,6 +197,9 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileadd"/>
                     <state key="selected" image="profiledelete"/>
+                    <connections>
+                        <action selector="profileButton3:" destination="-1" eventType="touchUpInside" id="DCW-1J-wja"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha3-gl-lOT">
                     <rect key="frame" x="17" y="652" width="356" height="50"/>

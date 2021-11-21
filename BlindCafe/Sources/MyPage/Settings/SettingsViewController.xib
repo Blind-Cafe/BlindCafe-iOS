@@ -96,16 +96,15 @@
                     <rect key="frame" x="0.0" y="254" width="390" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-Yo-JcZ">
-                            <rect key="frame" x="18" y="4" width="356" height="44"/>
+                            <rect key="frame" x="17" y="4" width="356" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="reportlist"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="fCy-Yo-JcZ" firstAttribute="centerX" secondItem="1aM-pF-Wch" secondAttribute="centerX" id="0Ps-qv-Zbk"/>
                         <constraint firstItem="fCy-Yo-JcZ" firstAttribute="centerY" secondItem="1aM-pF-Wch" secondAttribute="centerY" id="52L-ok-LTU"/>
-                        <constraint firstItem="fCy-Yo-JcZ" firstAttribute="leading" secondItem="1aM-pF-Wch" secondAttribute="leading" constant="18" id="OTX-J2-2qf"/>
-                        <constraint firstAttribute="trailing" secondItem="fCy-Yo-JcZ" secondAttribute="trailing" constant="16" id="lyF-DH-fBb"/>
                         <constraint firstAttribute="height" constant="52" id="weF-lb-OIa"/>
                     </constraints>
                 </view>
@@ -122,12 +121,12 @@
                     <rect key="frame" x="0.0" y="362" width="390" height="104"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-f0-0dd">
-                            <rect key="frame" x="24" y="15" width="66" height="22"/>
+                            <rect key="frame" x="22" y="15" width="66" height="22"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="logoutbutton"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpN-FZ-QBE">
-                            <rect key="frame" x="18" y="56" width="356" height="44"/>
+                            <rect key="frame" x="17" y="56" width="356" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="delete"/>
                         </button>
@@ -135,10 +134,9 @@
                     <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="yLp-f0-0dd" firstAttribute="top" secondItem="fou-uL-FLG" secondAttribute="top" constant="15" id="DFN-l4-2Bd"/>
-                        <constraint firstItem="XpN-FZ-QBE" firstAttribute="leading" secondItem="fou-uL-FLG" secondAttribute="leading" constant="18" id="QDv-xM-4RL"/>
-                        <constraint firstItem="yLp-f0-0dd" firstAttribute="leading" secondItem="fou-uL-FLG" secondAttribute="leading" constant="24" id="SoY-wF-X2M"/>
                         <constraint firstAttribute="height" constant="104" id="THO-Ao-oLr"/>
-                        <constraint firstAttribute="trailing" secondItem="XpN-FZ-QBE" secondAttribute="trailing" constant="16" id="ZK5-9p-98W"/>
+                        <constraint firstItem="yLp-f0-0dd" firstAttribute="leading" secondItem="XpN-FZ-QBE" secondAttribute="leading" constant="5" id="nOf-C8-MUv"/>
+                        <constraint firstItem="XpN-FZ-QBE" firstAttribute="centerX" secondItem="fou-uL-FLG" secondAttribute="centerX" id="oIW-Pl-xjZ"/>
                         <constraint firstAttribute="bottom" secondItem="XpN-FZ-QBE" secondAttribute="bottom" constant="4" id="pJl-nD-Ibu"/>
                     </constraints>
                 </view>

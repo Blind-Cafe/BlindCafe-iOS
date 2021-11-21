@@ -34,7 +34,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-n2-PQb">
-                    <rect key="frame" x="18" y="189" width="354" height="494"/>
+                    <rect key="frame" x="18" y="175" width="354" height="494"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-F6-rnq">
                             <rect key="frame" x="20" y="21" width="31" height="22"/>
@@ -236,9 +236,11 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4rK-n2-PQb" secondAttribute="bottom" constant="161" id="SRU-Ms-tga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4rK-n2-PQb" secondAttribute="trailing" constant="18" id="2j9-JQ-o32"/>
+                <constraint firstItem="4rK-n2-PQb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="bjH-T1-37i"/>
+                <constraint firstItem="4rK-n2-PQb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="epk-TB-KJ9"/>
                 <constraint firstItem="4rK-n2-PQb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gQ5-8P-MFe"/>
             </constraints>
             <point key="canvasLocation" x="162" y="100"/>

@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bglogin" translatesAutoresizingMaskIntoConstraints="NO" id="htw-yv-VkO">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bglogin" translatesAutoresizingMaskIntoConstraints="NO" id="htw-yv-VkO">
                     <rect key="frame" x="0.0" y="-5" width="390" height="854"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dB-gZ-3XR">
