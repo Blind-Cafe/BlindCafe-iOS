@@ -19,6 +19,18 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var interestImage2: UIImageView!
     @IBOutlet weak var interestImage3: UIImageView!
     
+    @IBAction func profileChange(_ sender: Any) {
+        let vc = ProfileViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func interestChange(_ sender: Any) {
+        let vc = InterestChangeViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBOutlet weak var badgeCollectionView: UICollectionView!
     
     var drinksData: [Int] = []
@@ -57,7 +69,9 @@ class MyPageViewController: BaseViewController {
     }
     
     @objc func toSetting() {
-        navigationController?.pushViewController(SettingsViewController(), animated: true)
+        let vc = SettingsViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -71,11 +85,14 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let count = drinksData.count
         
-        if indexPath.row < count {
-            cell.badgeImageView.image = UIImage(named: drinkName(name: drinksData[indexPath.row]))
-        }
-        else {
-            cell.badgeImageView.image = UIImage(named: "badge")
+        cell.badgeImageView.image = UIImage(named: "badge")
+        
+        if drinksData.count != 0 {
+            for i in 0...(drinksData.count - 1) {
+                if indexPath.row == (drinksData[i] - 1) {
+                    cell.badgeImageView.image = UIImage(named: drinkName(name: drinksData[i]))
+                }
+            }
         }
         
         return cell
@@ -88,6 +105,8 @@ extension MyPageViewController {
     func request(result: MyPageResponse) {
         dismissIndicator()
         drinksData = result.drinks
+        badgeCollectionView.reloadData()
+        print(drinksData)
         
         nameLabel.text = result.nickname
         if result.myGender == "M" {

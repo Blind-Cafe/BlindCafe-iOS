@@ -13,6 +13,8 @@ class HomeViewController: BaseViewController {
     var matchingId: Int = 0
     var partnerName: String = ""
     
+    var date: Date!
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var timeLabel: UILabel!
@@ -55,7 +57,10 @@ class HomeViewController: BaseViewController {
     var timer = Timer()
     deinit {
         timer.invalidate()
+        timer1.invalidate()
     }
+    
+    var timer1 = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +78,16 @@ class HomeViewController: BaseViewController {
     
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
+       
+        refresh()
+    }
+    
+    func refresh() {
+        DispatchQueue.main.async { [weak self] in
+            self!.timer1 = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+                HomeDataManager().requestHome(viewController: self!)
+            }
+        }
     }
 }
 
@@ -87,6 +102,16 @@ extension HomeViewController {
                     timer.invalidate()
                 }
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
+                
+                let elapsedTimeSecond = 259200 - Int(Date().timeIntervalSince(self!.date))
+                let hours = elapsedTimeSecond / 3600
+                let minutes = (elapsedTimeSecond % 3600) / 60
+                if minutes < 10 {
+                    self!.timeLabel.text = "\(hours) : 0\(minutes)"
+                }
+                else {
+                    self!.timeLabel.text = "\(hours) : \(minutes)"
+                }
             }
         }
     }
@@ -125,8 +150,19 @@ extension HomeViewController {
             progressBar.isHidden = false
             progressBar.addForegroundLayer()
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
-            let date: Date! = Date(timeIntervalSince1970: TimeInterval(Int(result.startTime!)!) / 1000)
+            date = Date(timeIntervalSince1970: TimeInterval(Int(result.startTime!)!).rounded())
             setTimer(startTime: date)
+            
+            let elapsedTimeSeconds = 259200 - Int(Date().timeIntervalSince(date))
+            let hours = elapsedTimeSeconds / 3600
+            let minutes = (elapsedTimeSeconds % 3600) / 60
+            if minutes < 10 {
+                timeLabel.text = "\(hours) : 0\(minutes)"
+            }
+            else {
+                timeLabel.text = "\(hours) : \(minutes)"
+            }
+            
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")
         case "FAILED_REPORT":

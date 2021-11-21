@@ -29,7 +29,6 @@ class PhotoViewController: UIViewController {
     func uploadimage(img: UIImage) {
         var data = Data()
         data = img.jpegData(compressionQuality: 1)!
-        //data = img.pngData()!
         
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
@@ -128,6 +127,7 @@ class PhotoViewController: UIViewController {
         albumListTableView.separatorInset = UIEdgeInsets(top: 0, left: 1500, bottom: 0, right: 0)
         photoCollectionView.backgroundColor = .charcol
     }
+    
 }
 
 //MARK: TableView
@@ -220,3 +220,4 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
 }
+

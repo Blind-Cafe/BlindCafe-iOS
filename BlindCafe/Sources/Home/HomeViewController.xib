@@ -54,7 +54,7 @@
                         <action selector="homeButton:" destination="-1" eventType="touchUpInside" id="cdr-He-bSa"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-dz-b4j">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa0-dz-b4j">
                     <rect key="frame" x="133" y="275" width="124" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="FyN-Gq-Qkd"/>

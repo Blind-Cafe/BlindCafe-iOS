@@ -232,27 +232,19 @@ class ChattingViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange(_sender: Any?) {
-        
         if chattingTextField.text == "" {
             sendButton.isEnabled = false
             photoButton.isHidden = false
             recordButton.isHidden = false
+            chattingFieldConstraint.constant = 112
         }
         else {
             sendButton.isEnabled = true
             photoButton.isHidden = true
             recordButton.isHidden = true
-        }
-        
-        if chattingTextField.text != "" {
             chattingFieldConstraint.constant = 18
         }
-        else {
-            chattingFieldConstraint.constant = 112
-        }
     }
-    
-    
 }
 
 //MARK: Audio
@@ -319,18 +311,13 @@ extension ChattingViewController: UITextViewDelegate {
             sendButton.isEnabled = false
             photoButton.isHidden = false
             recordButton.isHidden = false
+            chattingFieldConstraint.constant = 112
         }
         else {
             sendButton.isEnabled = true
             photoButton.isHidden = true
             recordButton.isHidden = true
-        }
-        
-        if chattingTextField.text != ""{
             chattingFieldConstraint.constant = 18
-        }
-        else {
-            chattingFieldConstraint.constant = 112
         }
         
     }
@@ -340,18 +327,13 @@ extension ChattingViewController: UITextViewDelegate {
             sendButton.isEnabled = false
             photoButton.isHidden = false
             recordButton.isHidden = false
+            chattingFieldConstraint.constant = 112
         }
         else {
             sendButton.isEnabled = true
             photoButton.isHidden = true
             recordButton.isHidden = true
-        }
-        
-        if chattingTextField.text != "" {
             chattingFieldConstraint.constant = 18
-        }
-        else {
-            chattingFieldConstraint.constant = 112
         }
     }
     
@@ -380,7 +362,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as! TextTableViewCell
             cell.selectionStyle = .none
             
-            if message.sender != partnerName {
+            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 cell.receivingMessageView.isHidden = true
                 cell.receivingStackView.isHidden = true
                 cell.receivingTime.isHidden = true
@@ -421,7 +403,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else if message.type == 2 {
             let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
             
-            if message.sender != partnerName {
+            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSendingTableViewCell", for: indexPath) as! ImageSendingTableViewCell
                 cell.selectionStyle = .none
         
@@ -447,7 +429,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         else {
-            if message.sender != partnerName {
+            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
                 
@@ -506,7 +488,7 @@ extension ChattingViewController {
                 db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
                     "contents": messageBody,
                     "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
-                    "senderUid": "\(String(describing: UserDefaults.standard.integer(forKey: "UserId")))",
+                    "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
                     "timestamp": Date(),
                     "type": 1
                 ]) { (error) in
@@ -533,7 +515,7 @@ extension ChattingViewController {
         db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
             "contents": contents,
             "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
-            "senderUid": "\(String(describing: UserDefaults.standard.integer(forKey: "UserId")))",
+            "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
             "timestamp": Date(),
             "type": type
         ]) { (error) in
@@ -563,8 +545,10 @@ extension ChattingViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
-                                    let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-                                    self.chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+                                    if self.messages.count != 0 {
+                                        self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
+                                    }
+                                    
                                 }
                             }
                         }
@@ -616,22 +600,16 @@ extension ChattingViewController {
         let keyboardHeight = keyboardRectangle.height
         keyboardFrameHeight = keyboardRectangle.height
         toolbarBottomConstraint.constant = (keyboardHeight - view.safeAreaInsets.bottom)
-        //tableViewBottom.constant = keyboardHeight
-        //chatTableView.frame.origin.y = -keyboardHeight - customToolbar.frame.height
-        //chatTableView.setContentOffset(CGPoint(x: 0, y: keyboardHeight + customToolbar.frame.height), animated: true)
         chatTableView.contentInset.bottom = keyboardHeight - view.safeAreaInsets.bottom
         if messages.count > 0 {
             chatTableView.scrollToRow(at: [0, messages.count - 1], at: .bottom, animated: false)
         }
         
         self.view.layoutSubviews()
-        
-
-        
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        chatTableView.contentInset.bottom = -view.safeAreaInsets.bottom
+        chatTableView.contentInset.bottom = 0
         toolbarBottomConstraint.constant = 0
         chatTableView.frame.origin.y = 0
         self.view.layoutSubviews()

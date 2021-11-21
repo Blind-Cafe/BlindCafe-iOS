@@ -13,23 +13,14 @@ import Lottie
 
 class LoginViewController: BaseOnboardingViewController {
     
-    @IBOutlet weak var appleLoginView: UIView!
+    @IBOutlet weak var appleLoginButton: ASAuthorizationAppleIDButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        addButton()
     }
     
-    func addButton() {
-        let button = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
-        button.addTarget(self, action: #selector(appleLoginHandler), for: .touchUpInside)
-        
-        appleLoginView.addSubview(button)
-        button.frame = CGRect(x: 0, y: 0, width: appleLoginView.frame.width, height: appleLoginView.frame.height)
-    }
-    
-    @objc func appleLoginHandler() {
+    @IBAction func appleLoginHandler(_ sender: Any) {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
         let controller = ASAuthorizationController(authorizationRequests: [request])
