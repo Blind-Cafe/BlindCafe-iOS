@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: BaseViewController {
 
     var status: String = ""
+    var matchingId: Int = 0
+    var partnerName: String = ""
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -19,15 +21,21 @@ class HomeViewController: BaseViewController {
     @IBAction func homeButton(_ sender: Any) {
         switch status {
         case "NONE":
-            print("nonebutton")
+            showIndicator()
+            let input = RequestMatchingInput()
+            RequestMatchingDataManager().requestMatching(input, viewController: self)
         case "WAIT":
             print("waitbutton")
         case "FOUND":
-            let vc = ChattingViewController()
+            let vc = SelectDrinkViewController()
+            vc.matchingId = matchingId
+            vc.partnerName = partnerName
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "MATCHING":
             let vc = ChattingViewController()
+            vc.matchingId = matchingId
+            vc.partnerName = partnerName
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "FAILED_LEAVE_ROOM":
@@ -40,9 +48,6 @@ class HomeViewController: BaseViewController {
             break
         }
         
-//        let vc = ChattingViewController()
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(vc, animated: false)
     }
     
     //Timer
@@ -66,8 +71,8 @@ class HomeViewController: BaseViewController {
         
         print(Token.jwtToken)
     
-        /*showIndicator()
-        HomeDataManager().requestHome(viewController: self)*/
+        showIndicator()
+        HomeDataManager().requestHome(viewController: self)
     }
 }
 
@@ -92,6 +97,9 @@ extension HomeViewController {
         self.dismissIndicator()
         
         status = result.matchingStatus ?? ""
+        matchingId = result.matchingId ?? -1
+        UserDefaults.standard.set(matchingId, forKey: "MatchingId")
+        partnerName = result.partnerNickname ?? ""
         
         switch result.matchingStatus {
         case "NONE":
@@ -102,6 +110,7 @@ extension HomeViewController {
             timeLabel.isHidden = true
         case "WAIT":
             backgroundImage.image = UIImage(named: "nonebackground")
+            homeButton.setImage(UIImage(named: "waithomebutton"), for: .normal)
             progressBar.isHidden = true
             timeLabel.isHidden = true
         case "FOUND":
@@ -124,6 +133,36 @@ extension HomeViewController {
             print("failedreport")
         case "FAILED_WONT_EXCHANGE":
             print("failedwontexchange")
+        default:
+            break
+        }
+    }
+    
+    func requestMatchingHome(result: RequestMatchingResponse) {
+        dismissIndicator()
+        status = result.matchingStatus
+        matchingId = result.matchingId ?? -1
+        UserDefaults.standard.set(matchingId, forKey: "MatchingId")
+        partnerName = result.partnerNickname ?? ""
+        
+        switch status {
+        case "NONE":
+            backgroundImage.image = UIImage(named: "nonebackground")
+            progressBar.isHidden = true
+            homeButton.isHidden = false
+            homeButton.setImage(UIImage(named: "homebutton"), for: .normal)
+            timeLabel.isHidden = true
+        case "WAIT":
+            backgroundImage.image = UIImage(named: "nonebackground")
+            progressBar.isHidden = true
+            timeLabel.isHidden = true
+        case "FOUND":
+            backgroundImage.image = UIImage(named: "matchingbackground")
+            progressBar.isHidden = false
+            progressBar.removeForegroundLayer()
+            homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
+            timeLabel.isHidden = false
+            timeLabel.text = "72:00"
         default:
             break
         }

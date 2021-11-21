@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             controller = BaseTabBarController()
         }*/
         
-        controller = BaseTabBarController()
+        controller = OnboardingViewController()
         //let navController = UINavigationController(rootViewController: controller)
         win.rootViewController = controller
         win.makeKeyAndVisible()
@@ -60,11 +60,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
-        let blurEffect = UIBlurEffect(style:.light)
+        /*let blurEffect = UIBlurEffect(style:.light)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         visualEffectView.frame = window!.frame
         visualEffectView.tag = 1234
-        self.window?.addSubview(visualEffectView)
+        self.window?.addSubview(visualEffectView)*/
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

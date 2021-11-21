@@ -8,7 +8,10 @@
 import UIKit
 
 class AudioReceivingTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var playstopButton: PlayStopButton!
+    @IBOutlet weak var audioTimeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

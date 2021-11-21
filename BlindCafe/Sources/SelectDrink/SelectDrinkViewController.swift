@@ -13,6 +13,9 @@ class SelectDrinkViewController: BaseViewController {
     
     @IBOutlet weak var cafeLabel: UILabel!
     
+    var matchingId: Int = 0
+    var partnerName = ""
+    
     var page: Int = 0
     
     var drinks = ["americano", "cafelatte", "cafemocha", "bubbletea", "mintchocolate", "strawberry", "bluelemonade", "greentea", "grapefruittea"]
@@ -21,7 +24,14 @@ class SelectDrinkViewController: BaseViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: false)
+        showIndicator()
+        let input = SelectDrinkInput(drink: selected! + 1)
+        SelectDrinkDataManager().requestDrink(id: matchingId, input, viewController: self)
+        
+        let vc = ChattingViewController()
+        vc.matchingId = matchingId
+        vc.partnerName = partnerName
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -89,5 +99,16 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
         page = Int(scrollView.contentOffset.x / 136)
         
         drinkCollectionView.reloadData()
+    }
+}
+
+extension SelectDrinkViewController {
+    func selectDrink(result: SelectDrinkResponse) {
+        dismissIndicator()
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
 }

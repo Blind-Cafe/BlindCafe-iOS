@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,9 +24,27 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jn-Bt-dZ3">
                         <rect key="frame" x="24" y="8" width="167" height="42"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur6-gW-8Fp" customClass="PlayStopButton" customModule="BlindCafe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-1" width="44" height="44"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="recordplay"/>
+                                <state key="selected" image="recordstop"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzf-IP-R2v">
+                                <rect key="frame" x="128" y="14" width="29" height="14"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                                <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mzf-IP-R2v" firstAttribute="centerY" secondItem="0Jn-Bt-dZ3" secondAttribute="centerY" id="8ga-Aa-JbK"/>
+                            <constraint firstItem="ur6-gW-8Fp" firstAttribute="leading" secondItem="0Jn-Bt-dZ3" secondAttribute="leading" id="CxH-DU-WIX"/>
+                            <constraint firstAttribute="trailing" secondItem="mzf-IP-R2v" secondAttribute="trailing" constant="10" id="P56-p1-JiO"/>
                             <constraint firstAttribute="width" constant="167" id="Wxb-hs-45g"/>
+                            <constraint firstItem="ur6-gW-8Fp" firstAttribute="centerY" secondItem="0Jn-Bt-dZ3" secondAttribute="centerY" id="sGg-S5-36c"/>
                             <constraint firstAttribute="height" constant="42" id="tde-WU-l9v"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -38,7 +61,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="audioTimeLabel" destination="mzf-IP-R2v" id="Wom-DC-fkU"/>
+                <outlet property="playstopButton" destination="ur6-gW-8Fp" id="zVr-6R-isY"/>
+            </connections>
             <point key="canvasLocation" x="147.10144927536234" y="90.736607142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="recordplay" width="44" height="44"/>
+        <image name="recordstop" width="44" height="44"/>
+    </resources>
 </document>

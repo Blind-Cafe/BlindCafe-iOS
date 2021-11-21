@@ -41,11 +41,12 @@ class MyPageViewController: BaseViewController {
         let titleview = UIView(frame: CGRect(x: 0, y: 10, width: 100, height: 22))
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 22))
         titleLabel.text = "마이페이지"
-        titleLabel.font = .SpoqaSans(.bold, size: 15)
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
         titleLabel.textColor = .white2
+        titleLabel.textAlignment = .center
         //navigationController?.navigationBar.addSubview(titleLabel)
         titleview.addSubview(titleLabel)
-        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(customView: titleview)
+        navigationController?.navigationBar.topItem?.titleView = titleview
         
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "settingsbutton"), for: .normal)

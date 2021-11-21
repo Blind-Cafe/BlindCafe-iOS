@@ -116,6 +116,7 @@ extension LoginViewController {
         UserDefaults.standard.set(result.jwt, forKey: "UserJwt")
         UserDefaults.standard.set(result.id, forKey: "UserID")
         UserDefaults.standard.set(result.code, forKey: "Status")
+        UserDefaults.standard.set(result.nickname, forKey: "UserNickname")
         if result.code == "990" {
             changeRootViewController(BaseTabBarController())
         }

@@ -23,6 +23,11 @@ struct Message {
 
 class ChattingViewController: BaseViewController {
     
+    var matchingId: Int = UserDefaults.standard.integer(forKey: "MatchingId")
+    var partnerName: String = ""
+    
+    var keyboardFrameHeight: CGFloat = 0
+    
     let db = Firestore.firestore()
     
     var messages: [Message] = []
@@ -31,7 +36,8 @@ class ChattingViewController: BaseViewController {
     let storage = Storage.storage()
     
     var audioRecorder: AVAudioRecorder!
-    var player: AVPlayer!
+    var player: AVAudioPlayer!
+    var audioSelected: Int!
     
     private lazy var recordURL: URL = {
         var documentsURL: URL = {
@@ -115,10 +121,12 @@ class ChattingViewController: BaseViewController {
         chatTableView.frame.origin.y = 0
         
         loadMessages()
-        navigationbarCustom(title: "당")
+        navigationbarCustom(title: "\(partnerName)")
         
         recordButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
         recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
+        
+        //chattingTextField.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +138,11 @@ class ChattingViewController: BaseViewController {
                 //self?.showSettingsAlert()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardNotification()
     }
     
     @objc func buttonDown() {
@@ -294,13 +307,35 @@ extension ChattingViewController: AVAudioRecorderDelegate {
 extension ChattingViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            //재생이 끝났다면
+            print("asdfasdf")
         }
     }
 }
 
+//MARK: TextViewDelegate
 extension ChattingViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        if chattingTextField.text == "" {
+            sendButton.isEnabled = false
+            photoButton.isHidden = false
+            recordButton.isHidden = false
+        }
+        else {
+            sendButton.isEnabled = true
+            photoButton.isHidden = true
+            recordButton.isHidden = true
+        }
+        
+        if chattingTextField.text != ""{
+            chattingFieldConstraint.constant = 18
+        }
+        else {
+            chattingFieldConstraint.constant = 112
+        }
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
         if chattingTextField.text == "" {
             sendButton.isEnabled = false
             photoButton.isHidden = false
@@ -319,6 +354,7 @@ extension ChattingViewController: UITextViewDelegate {
             chattingFieldConstraint.constant = 112
         }
     }
+    
 }
 
 //MARK: TableView
@@ -344,7 +380,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as! TextTableViewCell
             cell.selectionStyle = .none
             
-            if message.sender == "." {
+            if message.sender != partnerName {
                 cell.receivingMessageView.isHidden = true
                 cell.receivingStackView.isHidden = true
                 cell.receivingTime.isHidden = true
@@ -385,7 +421,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else if message.type == 2 {
             let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
             
-            if message.sender == "." {
+            if message.sender != partnerName {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSendingTableViewCell", for: indexPath) as! ImageSendingTableViewCell
                 cell.selectionStyle = .none
         
@@ -411,31 +447,53 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         else {
-            if message.sender == "." {
+            if message.sender != partnerName {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
+                
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
                 return cell
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioReceivingTableViewCell", for: indexPath) as! AudioReceivingTableViewCell
+                cell.playstopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
                 return cell
             }
         }
     }
     
     @objc func playStop(_ sender: Any) {
-        let audio = storageRef.child("audio/\((sender as! PlayStopButton).content)")
-        audio.downloadURL { (url, error) in
-          if let error = error {
-              print(error.localizedDescription)
-          } else {
-              let playerItem = AVPlayerItem.init(url: url!)
-              self.player = AVPlayer.init(playerItem: playerItem)
-              self.player.play()
-              print("play")
-          }
+        
+        if let player = player, player.play() {
+            (sender as! PlayStopButton).isSelected = false
+            
+            player.pause()
         }
+        else {
+            (sender as! PlayStopButton).isSelected = true
+            let audioRef = storageRef.child("audio/\((sender as! PlayStopButton).content)")
+            audioRef.downloadURL { url, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    do{
+                        try AVAudioSession.sharedInstance().setMode(.default)
+                        try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                        
+                        guard let urlString = url else {
+                            return
+                        }
+                        
+                        
+                        
+                    } catch {
+                        print("something went wrong")
+                    }
+                }
+            }
+            
+        }
+        
     }
     
 }
@@ -445,10 +503,10 @@ extension ChattingViewController {
     @IBAction func sendMessage(_ sender: Any) {
         if chattingTextField.text != nil && !chattingTextField.text!.isEmpty {
             if let messageBody = chattingTextField.text {
-                db.collection("Rooms/-/Messages").addDocument(data: [
+                db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
                     "contents": messageBody,
-                    "senderName": ".",
-                    "senderUid": ".",
+                    "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
+                    "senderUid": "\(String(describing: UserDefaults.standard.integer(forKey: "UserId")))",
                     "timestamp": Date(),
                     "type": 1
                 ]) { (error) in
@@ -464,13 +522,18 @@ extension ChattingViewController {
                 }
             }
         }
+        
+        sendButton.isEnabled = false
+        photoButton.isHidden = false
+        recordButton.isHidden = false
+        chattingFieldConstraint.constant = 112
     }
     
     func send(contents: String, type: Int) {
-        db.collection("Rooms/-/Messages").addDocument(data: [
+        db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
             "contents": contents,
-            "senderName": ".",
-            "senderUid": ".",
+            "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
+            "senderUid": "\(String(describing: UserDefaults.standard.integer(forKey: "UserId")))",
             "timestamp": Date(),
             "type": type
         ]) { (error) in
@@ -483,7 +546,7 @@ extension ChattingViewController {
     }
     
     func loadMessages() {
-        db.collection("Rooms/-/Messages")
+        db.collection("Rooms/\(matchingId)/Messages")
             .order(by: "timestamp")
             .addSnapshotListener { (querySnapshot, error) in
                 self.messages = []
@@ -535,7 +598,7 @@ extension ChattingViewController {
     func dismissWhenTappedAround() {
         let tap: UITapGestureRecognizer =
             UITapGestureRecognizer(target: self, action: #selector(self.dismissAll))
-//        tap.cancelsTouchesInView = false
+        //tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
     
@@ -548,51 +611,37 @@ extension ChattingViewController {
 
         let info = notification.userInfo!
 
-        let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame: NSValue = info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        keyboardFrameHeight = keyboardRectangle.height
+        toolbarBottomConstraint.constant = (keyboardHeight - view.safeAreaInsets.bottom)
+        //tableViewBottom.constant = keyboardHeight
+        //chatTableView.frame.origin.y = -keyboardHeight - customToolbar.frame.height
+        //chatTableView.setContentOffset(CGPoint(x: 0, y: keyboardHeight + customToolbar.frame.height), animated: true)
+        chatTableView.contentInset.bottom = keyboardHeight - view.safeAreaInsets.bottom
+        if messages.count > 0 {
+            chatTableView.scrollToRow(at: [0, messages.count - 1], at: .bottom, animated: false)
+        }
+        
+        self.view.layoutSubviews()
+        
 
-        if let durationNumber = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSNumber, let curveValue = info[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
-            let duration = durationNumber.doubleValue
-            let keyboardCurve = curveValue.intValue
-            let curve: UIView.AnimationCurve = UIView.AnimationCurve(rawValue: keyboardCurve) ?? .linear
-            let options = UIView.AnimationOptions(rawValue: UInt(curve.rawValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
-        else {
-            self.toolbarBottomConstraint?.constant = keyboardFrame.size.height - view.safeAreaInsets.bottom
-            
-            self.view.layoutIfNeeded()
-        }
         
-        textFieldDidChange(_sender: chattingTextField)
-        
-        chatTableView.frame.origin.y = -keyboardFrame.height + view.safeAreaInsets.bottom
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-
-        let info = notification.userInfo!
-
-        if let durationNumber = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSNumber, let curveValue = info[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
-            let duration = durationNumber.doubleValue
-            let keyboardCurve = curveValue.intValue
-            let curve: UIView.AnimationCurve = UIView.AnimationCurve(rawValue: keyboardCurve) ?? .linear
-            let options = UIView.AnimationOptions(rawValue: UInt(curve.rawValue << 16))
-            
-            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self.toolbarBottomConstraint.constant = 0
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
-        else {
-            self.toolbarBottomConstraint.constant = 0
-            self.view.layoutIfNeeded()
-        }
-        
-        textFieldDidChange(_sender: chattingTextField)
-        
+        chatTableView.contentInset.bottom = -view.safeAreaInsets.bottom
+        toolbarBottomConstraint.constant = 0
         chatTableView.frame.origin.y = 0
+        self.view.layoutSubviews()
+        
+    }
+    
+    
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+
     }
 }

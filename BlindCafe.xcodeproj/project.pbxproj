@@ -15,6 +15,12 @@
 		CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0C06BC272FBFFB0020E858 /* InitAgeGenderViewController.xib */; };
 		CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0C06C027304A3B0020E858 /* InitNicknameViewController.swift */; };
 		CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0C06C127304A3B0020E858 /* InitNicknameViewController.xib */; };
+		CD12A52A274A31D7005B399F /* RequestMatchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A529274A31D7005B399F /* RequestMatchingResponse.swift */; };
+		CD12A52C274A322F005B399F /* RequestMatchingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A52B274A322F005B399F /* RequestMatchingDataManager.swift */; };
+		CD12A52E274A38D1005B399F /* RequestMatchingInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A52D274A38D1005B399F /* RequestMatchingInput.swift */; };
+		CD12A532274A40AD005B399F /* SelectDrinkInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A531274A40AD005B399F /* SelectDrinkInput.swift */; };
+		CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A533274A40DA005B399F /* SelectDrinkResponse.swift */; };
+		CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A535274A40E5005B399F /* SelectDrinkDataManager.swift */; };
 		CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150933271F07A40020BD41 /* AppDelegate.swift */; };
 		CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150935271F07A40020BD41 /* SceneDelegate.swift */; };
 		CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD15093C271F07A90020BD41 /* Assets.xcassets */; };
@@ -92,6 +98,8 @@
 		CD8A91852747C3BD008C8E4D /* PlayStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91842747C3BD008C8E4D /* PlayStopButton.swift */; };
 		CD8A918A2748D42B008C8E4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91882748D42B008C8E4D /* SettingsViewController.swift */; };
 		CD8A918B2748D42B008C8E4D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A91892748D42B008C8E4D /* SettingsViewController.xib */; };
+		CD8A918F274A2042008C8E4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A918D274A203F008C8E4D /* ProfileViewController.swift */; };
+		CD8A9190274A2042008C8E4D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A918E274A203F008C8E4D /* ProfileViewController.xib */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
 		CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */; };
@@ -118,6 +126,12 @@
 		CD0C06BC272FBFFB0020E858 /* InitAgeGenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitAgeGenderViewController.xib; sourceTree = "<group>"; };
 		CD0C06C027304A3B0020E858 /* InitNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitNicknameViewController.swift; sourceTree = "<group>"; };
 		CD0C06C127304A3B0020E858 /* InitNicknameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitNicknameViewController.xib; sourceTree = "<group>"; };
+		CD12A529274A31D7005B399F /* RequestMatchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMatchingResponse.swift; sourceTree = "<group>"; };
+		CD12A52B274A322F005B399F /* RequestMatchingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMatchingDataManager.swift; sourceTree = "<group>"; };
+		CD12A52D274A38D1005B399F /* RequestMatchingInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMatchingInput.swift; sourceTree = "<group>"; };
+		CD12A531274A40AD005B399F /* SelectDrinkInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkInput.swift; sourceTree = "<group>"; };
+		CD12A533274A40DA005B399F /* SelectDrinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkResponse.swift; sourceTree = "<group>"; };
+		CD12A535274A40E5005B399F /* SelectDrinkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkDataManager.swift; sourceTree = "<group>"; };
 		CD150930271F07A40020BD41 /* BlindCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlindCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD150933271F07A40020BD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD150935271F07A40020BD41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +212,8 @@
 		CD8A91842747C3BD008C8E4D /* PlayStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStopButton.swift; sourceTree = "<group>"; };
 		CD8A91882748D42B008C8E4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CD8A91892748D42B008C8E4D /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		CD8A918D274A203F008C8E4D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CD8A918E274A203F008C8E4D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
@@ -280,6 +296,23 @@
 				CD0C06C127304A3B0020E858 /* InitNicknameViewController.xib */,
 			);
 			path = InitNickname;
+			sourceTree = "<group>";
+		};
+		CD12A52F274A4092005B399F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD12A531274A40AD005B399F /* SelectDrinkInput.swift */,
+				CD12A533274A40DA005B399F /* SelectDrinkResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD12A530274A4097005B399F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD12A535274A40E5005B399F /* SelectDrinkDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		CD150927271F07A40020BD41 = {
@@ -496,6 +529,8 @@
 			isa = PBXGroup;
 			children = (
 				CD693B35273F50BC0035C8D2 /* HomeResponse.swift */,
+				CD12A529274A31D7005B399F /* RequestMatchingResponse.swift */,
+				CD12A52D274A38D1005B399F /* RequestMatchingInput.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -504,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				CD693B37273F52410035C8D2 /* HomeDataManager.swift */,
+				CD12A52B274A322F005B399F /* RequestMatchingDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -511,6 +547,8 @@
 		CD693B39273F76230035C8D2 /* SelectDrink */ = {
 			isa = PBXGroup;
 			children = (
+				CD12A52F274A4092005B399F /* Entity */,
+				CD12A530274A4097005B399F /* DataManager */,
 				CD693B3E273F83650035C8D2 /* Cells */,
 				CD693B3A273F763E0035C8D2 /* SelectDrinkViewController.swift */,
 				CD693B3B273F763E0035C8D2 /* SelectDrinkViewController.xib */,
@@ -539,6 +577,7 @@
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				CD8A918C274A2008008C8E4D /* Profile */,
 				CD8A91862748D401008C8E4D /* Settings */,
 				CD3A7B7327462F86007800B0 /* Cells */,
 				CD2AA3D32743FCC70088FE49 /* Entity */,
@@ -662,6 +701,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		CD8A918C274A2008008C8E4D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A918D274A203F008C8E4D /* ProfileViewController.swift */,
+				CD8A918E274A203F008C8E4D /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		CDD149C92731605E002B2897 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +829,7 @@
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */,
 				CD77568427425B3100AC699A /* data.json in Resources */,
+				CD8A9190274A2042008C8E4D /* ProfileViewController.xib in Resources */,
 				CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */,
 				CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */,
 				CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */,
@@ -864,26 +913,32 @@
 				CD8A91852747C3BD008C8E4D /* PlayStopButton.swift in Sources */,
 				CD2AA3DC2744B2AE0088FE49 /* MatchedTableViewCell.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
+				CD12A52C274A322F005B399F /* RequestMatchingDataManager.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,
 				CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */,
 				CDF8A0CE2734CFD3008367F3 /* TextTableViewCell.swift in Sources */,
 				CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */,
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
+				CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
 				CD297185273A35F000B034F1 /* PHAsset.swift in Sources */,
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
+				CD8A918F274A2042008C8E4D /* ProfileViewController.swift in Sources */,
 				CD693B38273F52410035C8D2 /* HomeDataManager.swift in Sources */,
 				CD6AA9F42724486200DA6013 /* MyPageViewController.swift in Sources */,
+				CD12A52E274A38D1005B399F /* RequestMatchingInput.swift in Sources */,
 				CD8A918A2748D42B008C8E4D /* SettingsViewController.swift in Sources */,
 				CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */,
 				CD79E987272852F90025CF1B /* Constant.swift in Sources */,
+				CD12A532274A40AD005B399F /* SelectDrinkInput.swift in Sources */,
 				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
 				CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
 				CD2AA3D62743FE270088FE49 /* MyPageResponse.swift in Sources */,
+				CD12A52A274A31D7005B399F /* RequestMatchingResponse.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
@@ -909,6 +964,7 @@
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,
 				CD2AA3E12744F0F00088FE49 /* MatchingResponse.swift in Sources */,
 				CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */,
+				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
 				CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */,

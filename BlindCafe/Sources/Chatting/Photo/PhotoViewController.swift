@@ -28,12 +28,13 @@ class PhotoViewController: UIViewController {
     
     func uploadimage(img: UIImage) {
         var data = Data()
-        data = img.pngData()!
+        data = img.jpegData(compressionQuality: 1)!
+        //data = img.pngData()!
         
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "image/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()
-        metaData.contentType = "image/png"
+        metaData.contentType = "image/jpeg"
         let uploadTask = storage.reference().child(filePath).putData(data, metadata: metaData) { (metaData, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -168,7 +169,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let asset = album[albumIndex].photoAssets.object(at: indexPath.row)
         
-        cell.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: cell.imageView.frame.size)
+        cell.fetchImage(asset: asset, contentMode: .aspectFill, targetSize: CGSize(width: 1000, height: 1000))
         
         return cell
     }

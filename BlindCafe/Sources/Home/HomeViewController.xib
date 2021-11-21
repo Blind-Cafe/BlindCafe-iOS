@@ -68,16 +68,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z43-DO-HJX" secondAttribute="trailing" constant="87" id="4dr-oZ-q52"/>
-                <constraint firstItem="Z43-DO-HJX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="Dcz-DB-Wrt"/>
+                <constraint firstItem="Z43-DO-HJX" firstAttribute="top" secondItem="1h0-7e-8Nh" secondAttribute="top" constant="167" id="Dcz-DB-Wrt"/>
                 <constraint firstItem="Z43-DO-HJX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E0u-gh-k3E"/>
                 <constraint firstItem="Z43-DO-HJX" firstAttribute="centerY" secondItem="0NU-Ia-Br4" secondAttribute="centerY" id="LW9-Dy-900"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-44" id="Mes-1a-6fO"/>
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="bottom" secondItem="Z43-DO-HJX" secondAttribute="bottom" constant="-42" id="NGf-gu-2dr"/>
                 <constraint firstItem="0NU-Ia-Br4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Noj-ez-ae3"/>
-                <constraint firstItem="Z43-DO-HJX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="ZV1-z8-xpC"/>
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="centerX" secondItem="Z43-DO-HJX" secondAttribute="centerX" id="dsk-Md-Muv"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n6C-25-2xb"/>
+                <constraint firstItem="1h0-7e-8Nh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q0M-iB-Wyo"/>
+                <constraint firstItem="1h0-7e-8Nh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yiG-dQ-FWj"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="110.76923076923076" y="81.753554502369667"/>
