@@ -26,7 +26,7 @@ class InterestChangeViewController: BaseViewController {
         
         let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
-        titleLabel.text = "프로필 수정"
+        titleLabel.text = "관심사 수정"
         titleLabel.font = .SpoqaSans(.bold, size: 16)
         titleLabel.textColor = .white2
         titleLabel.textAlignment = .center
