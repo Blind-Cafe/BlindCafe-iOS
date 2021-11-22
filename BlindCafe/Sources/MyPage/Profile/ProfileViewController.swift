@@ -24,13 +24,22 @@ class ProfileViewController: BaseViewController {
     @IBAction func profileButton3(_ sender: Any) {
     }
     
+    
+    @IBOutlet weak var userNicknameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var userGenderLabel: UILabel!
+    
+    @IBOutlet weak var nicknameView: UIView!
+    @IBOutlet weak var nicknameAlert: UILabel!
+    
+    @IBOutlet weak var regionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigation()
+        nicknameView.backgroundColor = .coral
+        nicknameAlert.isHidden = true
     }
     
     func setNavigation() {

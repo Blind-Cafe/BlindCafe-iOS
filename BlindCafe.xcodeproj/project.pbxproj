@@ -110,9 +110,8 @@
 		CD8A9190274A2042008C8E4D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A918E274A203F008C8E4D /* ProfileViewController.xib */; };
 		CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516E9274ADD480063AA3B /* Report2ViewController.swift */; };
 		CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC516EA274ADD480063AA3B /* Report2ViewController.xib */; };
-		CDC516F0274AE2BC0063AA3B /* FCMInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516EF274AE2BC0063AA3B /* FCMInput.swift */; };
-		CDC516F2274AE3260063AA3B /* FCMResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F1274AE3260063AA3B /* FCMResponse.swift */; };
-		CDC516F4274AE3C20063AA3B /* FCMDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F3274AE3C20063AA3B /* FCMDataManager.swift */; };
+		CDC516F8274B0CA00063AA3B /* LeaveRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */; };
+		CDC516FA274B0CC20063AA3B /* LeaveRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F9274B0CC20063AA3B /* LeaveRoomResponse.swift */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
 		CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */; };
@@ -237,9 +236,8 @@
 		CD8A918E274A203F008C8E4D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CDC516E9274ADD480063AA3B /* Report2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report2ViewController.swift; sourceTree = "<group>"; };
 		CDC516EA274ADD480063AA3B /* Report2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report2ViewController.xib; sourceTree = "<group>"; };
-		CDC516EF274AE2BC0063AA3B /* FCMInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMInput.swift; sourceTree = "<group>"; };
-		CDC516F1274AE3260063AA3B /* FCMResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMResponse.swift; sourceTree = "<group>"; };
-		CDC516F3274AE3C20063AA3B /* FCMDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMDataManager.swift; sourceTree = "<group>"; };
+		CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRoomDataManager.swift; sourceTree = "<group>"; };
+		CDC516F9274B0CC20063AA3B /* LeaveRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRoomResponse.swift; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
@@ -731,14 +729,10 @@
 		CD7CB9D827381899004620BB /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				CD7CB9D9273819E7004620BB /* ReportViewController.swift */,
-				CD7CB9DA273819E7004620BB /* ReportViewController.xib */,
-				CDC516E9274ADD480063AA3B /* Report2ViewController.swift */,
-				CDC516EA274ADD480063AA3B /* Report2ViewController.xib */,
-				CD6FE403274AB4FE004698B2 /* LeaveRoomViewController.swift */,
-				CD6FE404274AB4FE004698B2 /* LeaveRoomViewController.xib */,
-				CD6FE407274AC4E5004698B2 /* LeaveRoom2ViewController.swift */,
-				CD6FE408274AC4E5004698B2 /* LeaveRoom2ViewController.xib */,
+				CDC516FC274B13910063AA3B /* Leave */,
+				CDC516FB274B13890063AA3B /* Report */,
+				CDC516F5274B0C280063AA3B /* Entity */,
+				CDC516F6274B0C320063AA3B /* DataManager */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -762,21 +756,42 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		CDC516ED274AE28F0063AA3B /* Entity */ = {
+		CDC516F5274B0C280063AA3B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				CDC516EF274AE2BC0063AA3B /* FCMInput.swift */,
-				CDC516F1274AE3260063AA3B /* FCMResponse.swift */,
+				CDC516F9274B0CC20063AA3B /* LeaveRoomResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		CDC516EE274AE2930063AA3B /* DataManager */ = {
+		CDC516F6274B0C320063AA3B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				CDC516F3274AE3C20063AA3B /* FCMDataManager.swift */,
+				CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CDC516FB274B13890063AA3B /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				CD7CB9D9273819E7004620BB /* ReportViewController.swift */,
+				CD7CB9DA273819E7004620BB /* ReportViewController.xib */,
+				CDC516E9274ADD480063AA3B /* Report2ViewController.swift */,
+				CDC516EA274ADD480063AA3B /* Report2ViewController.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		CDC516FC274B13910063AA3B /* Leave */ = {
+			isa = PBXGroup;
+			children = (
+				CD6FE403274AB4FE004698B2 /* LeaveRoomViewController.swift */,
+				CD6FE404274AB4FE004698B2 /* LeaveRoomViewController.xib */,
+				CD6FE407274AC4E5004698B2 /* LeaveRoom2ViewController.swift */,
+				CD6FE408274AC4E5004698B2 /* LeaveRoom2ViewController.xib */,
+			);
+			path = Leave;
 			sourceTree = "<group>";
 		};
 		CDD149C92731605E002B2897 /* Font */ = {
@@ -794,8 +809,6 @@
 		CDF8A0C227324772008367F3 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				CDC516ED274AE28F0063AA3B /* Entity */,
-				CDC516EE274AE2930063AA3B /* DataManager */,
 				CD2971742739F19D00B034F1 /* Photo */,
 				CD7CB9D827381899004620BB /* Alerts */,
 				CDF8A0C72732CA2A008367F3 /* Cells */,
@@ -981,7 +994,6 @@
 				CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */,
-				CDC516F4274AE3C20063AA3B /* FCMDataManager.swift in Sources */,
 				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
 				CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
@@ -997,6 +1009,7 @@
 				CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */,
 				CDF8A0CE2734CFD3008367F3 /* TextTableViewCell.swift in Sources */,
 				CD6AA9F02724484F00DA6013 /* MatchedViewController.swift in Sources */,
+				CDC516F8274B0CA00063AA3B /* LeaveRoomDataManager.swift in Sources */,
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
 				CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
@@ -1027,7 +1040,6 @@
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */,
-				CDC516F2274AE3260063AA3B /* FCMResponse.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
@@ -1042,8 +1054,8 @@
 				CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
-				CDC516F0274AE2BC0063AA3B /* FCMInput.swift in Sources */,
 				CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */,
+				CDC516FA274B0CC20063AA3B /* LeaveRoomResponse.swift in Sources */,
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,
 				CD2AA3E12744F0F00088FE49 /* MatchingResponse.swift in Sources */,
 				CD6FE3FC274A96F2004698B2 /* ProfilePhotoViewController.swift in Sources */,

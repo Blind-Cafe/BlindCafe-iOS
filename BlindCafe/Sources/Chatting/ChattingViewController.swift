@@ -28,8 +28,6 @@ class ChattingViewController: BaseViewController {
     
     var keyboardFrameHeight: CGFloat = 0
     
-    var FCM: String = ""
-    
     let db = Firestore.firestore()
     
     var messages: [Message] = []
@@ -38,8 +36,10 @@ class ChattingViewController: BaseViewController {
     let storage = Storage.storage()
     
     var audioRecorder: AVAudioRecorder!
-    var player: AVAudioPlayer!
-    var audioSelected: Int!
+    var audioPlayer: AVAudioPlayer!
+    var soundURL: String!
+    
+    var audioPlayingIndex: Int!
     
     private lazy var recordURL: URL = {
         var documentsURL: URL = {
@@ -137,18 +137,12 @@ class ChattingViewController: BaseViewController {
         recordButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
         recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
         
-        //chattingTextField.becomeFirstResponder()
+        recordInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestMicrophoneAccess { [weak self] allowed in
-            if allowed {
-                // If permission is granted...
-            } else {
-                //self?.showSettingsAlert()
-            }
-        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -164,25 +158,6 @@ class ChattingViewController: BaseViewController {
     @objc func buttonUp() {
         recordView.isHidden = true
         stopRecord()
-    }
-
-    func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
-        let audioSession: AVAudioSession = AVAudioSession.sharedInstance()
-        switch audioSession.recordPermission {
-        case .undetermined:
-            // 아직 녹음 권한 요청이 되지 않음, 사용자에게 권한 요청
-            audioSession.requestRecordPermission({ allowed in completion(allowed) })
-        case .denied:
-            // 사용자가 녹음 권한 거부, 사용자가 직접 설정 화면에서 권한 허용을 하게끔 유도
-            print("[Failure] Record Permission is Denied.")
-            completion(false)
-        case .granted:
-            // 사용자가 녹음 권한 허용
-            print("[Success] Record Permission is Granted.")
-            completion(true)
-        @unknown default:
-            fatalError("[ERROR] Record Permission is Unknown Default.")
-        }
     }
     
     //MARK: NavigationBar
@@ -259,28 +234,64 @@ class ChattingViewController: BaseViewController {
 }
 
 //MARK: Audio
-extension ChattingViewController: AVAudioRecorderDelegate {
-    func record() {
+extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+    func recordInit() {
+        let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+        let audioFileName = UUID().uuidString + ".m4a"
+        let audioFileURL = directoryURL?.appendingPathComponent(audioFileName)
+        soundURL = audioFileName
+        
+        let audioSession = AVAudioSession.sharedInstance()
         do {
-            let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-            let audioFileName = UUID().uuidString + ".m4a"
-            let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+            try audioSession.setCategory(.playAndRecord, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+        } catch _ {
             
-            let session = AVAudioSession.sharedInstance()
-            try session.setCategory(.playAndRecord)
-            audioRecorder = try AVAudioRecorder(url: audioFileURL, settings: [:])
-            audioRecorder.delegate = self
-            try? session.setActive(true)
-            audioRecorder.record()
-            print("record")
-        } catch(let error) {
-            print("record error: \(error)")
+        }
+        
+        let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32), AVSampleRateKey: 44100.0, AVNumberOfChannelsKey: 2]
+        audioRecorder = try? AVAudioRecorder(url: audioFileURL!, settings: recorderSetting)
+        audioRecorder.delegate = self
+        audioRecorder.isMeteringEnabled = true
+        audioRecorder?.prepareToRecord()
+    }
+    
+    func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {
+        let audioSession: AVAudioSession = AVAudioSession.sharedInstance()
+        switch audioSession.recordPermission {
+        case .undetermined:
+            // 아직 녹음 권한 요청이 되지 않음, 사용자에게 권한 요청
+            audioSession.requestRecordPermission({ allowed in completion(allowed) })
+        case .denied:
+            // 사용자가 녹음 권한 거부, 사용자가 직접 설정 화면에서 권한 허용을 하게끔 유도
+            print("[Failure] Record Permission is Denied.")
+            completion(false)
+        case .granted:
+            // 사용자가 녹음 권한 허용
+            print("[Success] Record Permission is Granted.")
+            completion(true)
+        @unknown default:
+            fatalError("[ERROR] Record Permission is Unknown Default.")
+        }
+    }
+    
+    func record() {
+        requestMicrophoneAccess { [weak self] allowed in
+            if allowed {
+                if let player = self!.audioPlayer {
+                    if player.isPlaying {
+                        player.stop()
+                    }
+                }
+                self!.audioRecorder.record()
+            } else {
+                //self?.showSettingsAlert()
+            }
         }
     }
     
     func stopRecord() {
         audioRecorder.stop()
-        try? AVAudioSession.sharedInstance().setActive(false)
+        print(audioRecorder.url)
         uploadAudio(audio: audioRecorder.url)
     }
     
@@ -291,28 +302,43 @@ extension ChattingViewController: AVAudioRecorderDelegate {
         let filePath = "audio/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()
         metaData.contentType = "audio/m4a"
-        let uploadTask = storage.reference().child(filePath).putData(audioData, metadata: metaData) { (metaData, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            } else {
-                print("성공")
+        do {
+            let audioData = try Data(contentsOf: audio)
+            
+            let uploadTask = storage.reference().child(filePath).putData(audioData, metadata: metaData) { (metaData, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                } else {
+                    print("성공")
+                }
+            }
+            _ = uploadTask.observe(.success) {snapshot in
+                ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
             }
         }
-        _ = uploadTask.observe(.success) {snapshot in
-            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
+        catch {
+            debugPrint(error.localizedDescription)
+        }
+        
+    }
+    
+    func playAudio() {
+        if let recorder = audioRecorder {
+            if !recorder.isRecording {
+                audioPlayer = try? AVAudioPlayer(contentsOf: recorder.url)
+                audioPlayer.delegate = self
+                audioPlayer.play()
+            }
         }
     }
-
-}
-
-
-extension ChattingViewController: AVAudioPlayerDelegate {
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            print("asdfasdf")
+            print("asfasdfa")
         }
     }
+
 }
 
 //MARK: TextViewDelegate
@@ -457,10 +483,10 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func playStop(_ sender: Any) {
         
-        if let player = player, player.play() {
+        if let player = audioPlayer, player.isPlaying {
             (sender as! PlayStopButton).isSelected = false
             
-            player.pause()
+            audioPlayer.pause()
         }
         else {
             (sender as! PlayStopButton).isSelected = true
@@ -470,15 +496,11 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 } else {
                     do{
-                        try AVAudioSession.sharedInstance().setMode(.default)
-                        try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                        
-                        guard let urlString = url else {
-                            return
-                        }
-                        
-                        
-                        
+                        let soundData = try Data(contentsOf: url!)
+                        self.audioPlayer = try AVAudioPlayer(data: soundData)
+                        self.audioPlayer.prepareToPlay()
+                        self.audioPlayer.delegate = self
+                        self.audioPlayer.play()
                     } catch {
                         print("something went wrong")
                     }
@@ -496,16 +518,12 @@ extension ChattingViewController {
     @IBAction func sendMessage(_ sender: Any) {
         if chattingTextField.text != nil && !chattingTextField.text!.isEmpty {
             if let messageBody = chattingTextField.text {
-                let input = FCMInput(targetToken: FCM, title: "BlindCafe", body: chattingTextField.text, path: "1")
-                FCMDataManager().requestFCM(input, viewController: self)
-                print("FCM!!! \(FCM)")
                 db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
                     "contents": messageBody,
                     "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
                     "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
                     "timestamp": Date(),
-                    "type": 1,
-                    "token": UserDefaults.standard.string(forKey: "FCMToken")!
+                    "type": 1
                 ]) { (error) in
                     if let e = error {
                         print(e.localizedDescription)
@@ -544,8 +562,6 @@ extension ChattingViewController {
                 print("Success save data")
             }
         }
-        
-        
     }
     
     func loadMessages() {
@@ -568,10 +584,6 @@ extension ChattingViewController {
                                     self.chatTableView.reloadData()
                                     if self.messages.count != 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
-                                        
-                                        if sender != UserDefaults.standard.string(forKey: "UserNickname")! {
-                                            self.FCM = fcmToken
-                                        }
                                     }
                                     
                                 }

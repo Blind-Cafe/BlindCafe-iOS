@@ -41,7 +41,7 @@ class LeaveRoom2ViewController: UIViewController {
     
     @IBOutlet weak var byeButton: UIButton!
     @IBAction func byeButton(_ sender: Any) {
-        
+        LeaveRoomDataManager().leaveRoom(id: (indexOfOneAndOnly! + 1), viewController: self)
     }
     
     override func viewDidLoad() {
@@ -51,6 +51,5 @@ class LeaveRoom2ViewController: UIViewController {
         view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.5)
     }
 
-
-
 }
+
