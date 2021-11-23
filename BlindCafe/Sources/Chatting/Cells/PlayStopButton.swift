@@ -10,9 +10,13 @@ import UIKit
 class PlayStopButton : UIButton {
 
     var content : String = ""
+    var index: Int = -1
+    var timeLabel: UILabel!
 
-    convenience init(content: String, object: Any) {
+    convenience init(content: String, index: Int, timeLabel: UILabel, object: Any) {
         self.init()
         self.content = content
+        self.index = index
+        self.timeLabel = timeLabel
     }
 }

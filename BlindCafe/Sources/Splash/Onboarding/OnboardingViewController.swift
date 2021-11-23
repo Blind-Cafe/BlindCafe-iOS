@@ -35,6 +35,10 @@ class OnboardingViewController: BaseOnboardingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = .mainBlack
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.SpoqaSans(.bold, size: 16), NSAttributedString.Key.foregroundColor: UIColor.veryLightPink]
+        self.title = "블라인드 카페 규칙"
+        
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
         onboardingCollectionView.register(UINib(nibName: "OnboardingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardingCollectionViewCell")

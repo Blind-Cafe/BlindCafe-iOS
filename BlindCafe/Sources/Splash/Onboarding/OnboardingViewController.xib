@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-hl-RuG">
-                    <rect key="frame" x="0.0" y="49" width="390" height="593"/>
+                    <rect key="frame" x="0.0" y="-50" width="390" height="593"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="sEK-hl-RuG" secondAttribute="height" multiplier="390:593" id="fn9-pj-GfN"/>
@@ -35,7 +35,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-9k-rEl">
-                    <rect key="frame" x="108.66666666666667" y="682" width="172.66666666666663" height="10"/>
+                    <rect key="frame" x="108.66666666666667" y="594" width="172.66666666666663" height="10"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="ECf-ic-T9G"/>
                     </constraints>
@@ -43,26 +43,19 @@
                     <color key="currentPageIndicatorTintColor" red="0.73333333333333328" green="0.82352941176470584" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWI-6h-ZFs">
-                    <rect key="frame" x="262" y="740" width="112" height="50"/>
+                    <rect key="frame" x="262" y="652" width="112" height="50"/>
                     <state key="normal" image="nextbutton"/>
                     <connections>
                         <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="8Pn-CZ-gwD"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZG-fg-mpp">
-                    <rect key="frame" x="20" y="743" width="57" height="44"/>
+                    <rect key="frame" x="20" y="655" width="57" height="44"/>
                     <state key="normal" image="skipbutton"/>
                     <connections>
                         <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="2C4-gD-oQM"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboardingtitle" translatesAutoresizingMaskIntoConstraints="NO" id="LeQ-NA-CgY">
-                    <rect key="frame" x="132" y="54" width="126" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="Kri-Qm-FjW"/>
-                        <constraint firstAttribute="width" constant="126" id="pSL-KF-Tfb"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,22 +66,19 @@
                 <constraint firstItem="Ma9-9k-rEl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Las-Km-gsO"/>
                 <constraint firstItem="gZG-fg-mpp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YBS-UC-1hS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ma9-9k-rEl" secondAttribute="bottom" constant="40" id="bP1-1O-LGq"/>
-                <constraint firstItem="LeQ-NA-CgY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cEg-IO-S9x"/>
                 <constraint firstItem="Ma9-9k-rEl" firstAttribute="top" secondItem="sEK-hl-RuG" secondAttribute="bottom" priority="250" constant="40" id="djy-mE-h90"/>
                 <constraint firstItem="gZG-fg-mpp" firstAttribute="centerY" secondItem="CWI-6h-ZFs" secondAttribute="centerY" id="hBE-rT-XmE"/>
-                <constraint firstItem="LeQ-NA-CgY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="l8T-Rp-oij"/>
-                <constraint firstItem="sEK-hl-RuG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="lt6-86-HDk"/>
+                <constraint firstItem="sEK-hl-RuG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-50" id="lt6-86-HDk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CWI-6h-ZFs" secondAttribute="bottom" constant="20" id="npb-Xr-PVC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Ma9-9k-rEl" secondAttribute="bottom" constant="118" id="rja-NM-P1o"/>
                 <constraint firstItem="Ma9-9k-rEl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t72-u0-Gdm"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="82"/>
         </view>
     </objects>
     <resources>
         <image name="nextbutton" width="112" height="50"/>
-        <image name="onboardingtitle" width="126" height="24"/>
         <image name="skipbutton" width="57" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

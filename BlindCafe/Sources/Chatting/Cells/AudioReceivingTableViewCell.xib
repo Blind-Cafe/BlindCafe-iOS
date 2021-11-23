@@ -63,7 +63,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="audioTimeLabel" destination="mzf-IP-R2v" id="Wom-DC-fkU"/>
-                <outlet property="playstopButton" destination="ur6-gW-8Fp" id="zVr-6R-isY"/>
+                <outlet property="playStopButton" destination="ur6-gW-8Fp" id="6p9-mJ-0tD"/>
             </connections>
             <point key="canvasLocation" x="147.10144927536234" y="90.736607142857139"/>
         </tableViewCell>

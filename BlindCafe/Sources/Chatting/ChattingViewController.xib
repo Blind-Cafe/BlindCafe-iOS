@@ -24,11 +24,14 @@
                 <outlet property="menuView" destination="Sdr-oO-m11" id="g8w-RD-XIy"/>
                 <outlet property="photoButton" destination="WHl-qT-EYP" id="Zty-hI-fik"/>
                 <outlet property="recordButton" destination="TL9-kS-uoi" id="gs4-8w-ZZO"/>
+                <outlet property="recordScrollView" destination="5oW-pv-fzr" id="YzE-Tr-BiG"/>
                 <outlet property="recordView" destination="5mT-W8-IxM" id="OOl-Qk-8sR"/>
                 <outlet property="sendButton" destination="Qwz-uB-LXw" id="R9H-9a-oCr"/>
                 <outlet property="tableViewBottom" destination="b0t-UG-NFc" id="OeN-ly-FnS"/>
                 <outlet property="toolbarBottomConstraint" destination="Ltc-eB-7Wt" id="hah-yf-QDD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="waveView" destination="Dox-rT-aUP" id="LRh-Ef-mFn"/>
+                <outlet property="waveViewWidth" destination="X1Y-k6-NNw" id="Ic8-bn-jf8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -176,7 +179,42 @@
                         </textView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mT-W8-IxM">
                             <rect key="frame" x="16" y="6" width="358" height="39"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-pv-fzr">
+                                    <rect key="frame" x="25" y="0.0" width="263" height="39"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dox-rT-aUP">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="39"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="X1Y-k6-NNw"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Dox-rT-aUP" secondAttribute="bottom" id="0B5-pd-gO4"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dox-rT-aUP" secondAttribute="trailing" id="GqB-Il-HZs"/>
+                                        <constraint firstItem="Dox-rT-aUP" firstAttribute="top" secondItem="5oW-pv-fzr" secondAttribute="top" id="ZLH-eZ-UdR"/>
+                                        <constraint firstItem="Dox-rT-aUP" firstAttribute="leading" secondItem="5oW-pv-fzr" secondAttribute="leading" id="cCY-pY-sr2"/>
+                                    </constraints>
+                                </scrollView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGP-2j-JuN">
+                                    <rect key="frame" x="296" y="8" width="42" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="5oW-pv-fzr" secondAttribute="bottom" id="5hy-tI-vBl"/>
+                                <constraint firstItem="5oW-pv-fzr" firstAttribute="leading" secondItem="5mT-W8-IxM" secondAttribute="leading" constant="25" id="AZx-wv-70Z"/>
+                                <constraint firstItem="5oW-pv-fzr" firstAttribute="top" secondItem="5mT-W8-IxM" secondAttribute="top" id="DcO-RJ-DHt"/>
+                                <constraint firstAttribute="trailing" secondItem="5oW-pv-fzr" secondAttribute="trailing" constant="70" id="Eqv-e8-PA4"/>
+                                <constraint firstItem="5oW-pv-fzr" firstAttribute="height" secondItem="5mT-W8-IxM" secondAttribute="height" id="bC8-CS-SDK"/>
+                                <constraint firstItem="Dox-rT-aUP" firstAttribute="height" secondItem="5mT-W8-IxM" secondAttribute="height" id="bpx-8b-pGX"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="20"/>

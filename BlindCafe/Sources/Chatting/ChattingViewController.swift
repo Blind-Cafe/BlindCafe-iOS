@@ -37,25 +37,25 @@ class ChattingViewController: BaseViewController {
     
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
-    var soundURL: String!
+    
+    var recordTimer: Timer!
+    lazy var pencil = UIBezierPath(rect: waveView.bounds)
+    lazy var firstPoint = CGPoint(x: 6, y: waveView.bounds.midY)
+    lazy var jump: CGFloat = (waveView.bounds.width - (firstPoint.x * 2)) / 200
+    let waveLayer = CAShapeLayer()
+    var traitLength: CGFloat!
+    var start: CGPoint!
+    
+    @IBOutlet weak var recordScrollView: UIScrollView!
+    @IBOutlet weak var waveView: UIView!
+    @IBOutlet weak var waveViewWidth: NSLayoutConstraint!
     
     var audioPlayingIndex: Int!
-    
-    private lazy var recordURL: URL = {
-        var documentsURL: URL = {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            return paths.first!
-        }()
-        let time = Int64(Date().timeIntervalSince1970 * 1000)
-        let fileName = "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
-        let url = documentsURL.appendingPathComponent(fileName)
-        return url
-    }()
+    var playing: Int!
     
     //Top
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var recordView: UIView!
-    
     
     @IBAction func reportButton(_ sender: Any) {
         menuView.isHidden = true
@@ -239,7 +239,6 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
         let audioFileName = UUID().uuidString + ".m4a"
         let audioFileURL = directoryURL?.appendingPathComponent(audioFileName)
-        soundURL = audioFileName
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -275,6 +274,10 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
     }
     
     func record() {
+        pencil.removeAllPoints()
+        waveLayer.removeFromSuperlayer()
+        writeWaves(0, false)
+        
         requestMicrophoneAccess { [weak self] allowed in
             if allowed {
                 if let player = self!.audioPlayer {
@@ -282,6 +285,16 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
                         player.stop()
                     }
                 }
+                
+                self?.recordTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (timer) in
+                    
+                    self?.audioRecorder.updateMeters()
+                    self?.writeWaves((self?.audioRecorder.averagePower(forChannel: 0))!, true)
+                    
+                    let bottomOffset = CGPoint(x: (self?.waveViewWidth.constant)!, y: 0)
+                    self!.recordScrollView.setContentOffset(bottomOffset, animated: false)
+                }
+                
                 self!.audioRecorder.record()
             } else {
                 //self?.showSettingsAlert()
@@ -323,19 +336,58 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
         
     }
     
-    func playAudio() {
-        if let recorder = audioRecorder {
-            if !recorder.isRecording {
-                audioPlayer = try? AVAudioPlayer(contentsOf: recorder.url)
-                audioPlayer.delegate = self
-                audioPlayer.play()
+    func writeWaves(_ input: Float, _ bool: Bool) {
+        if !bool {
+            start = firstPoint
+            if recordTimer != nil {
+                recordTimer.invalidate()
             }
+            return
+        }
+        else {
+            if input < -55 {
+                traitLength = 0.2
+            } else if input < -40 && input > -55 {
+                traitLength = (CGFloat(input) + 56) / 3
+            } else if input < -20 && input > -40 {
+                traitLength = (CGFloat(input) + 41) / 2
+            } else if input < -10 && input > -20 {
+                traitLength = (CGFloat(input) + 21) * 5
+            } else {
+                traitLength = (CGFloat(input) + 20) * 4
+            }
+            
+            waveViewWidth.constant = start.x
+            
+            pencil.lineWidth = jump * 2
+            pencil.lineCapStyle = .round
+            
+            pencil.move(to: start)
+            pencil.addLine(to: CGPoint(x: start.x, y: start.y + traitLength))
+            
+            pencil.move(to: start)
+            pencil.addLine(to: CGPoint(x: start.x, y: start.y - traitLength))
+            
+            waveLayer.strokeColor = UIColor.white.cgColor
+            
+            waveLayer.path = pencil.cgPath
+            waveLayer.fillColor = UIColor.clear.cgColor
+            
+            waveLayer.lineWidth = jump * 2
+            waveLayer.lineCap = .round
+            
+            waveView.layer.addSublayer(waveLayer)
+            waveLayer.contentsCenter = waveView.frame
+            waveView.setNeedsDisplay()
+            
+            start = CGPoint(x: start.x + jump * 2 + 2, y: start.y)
+            
         }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            print("asfasdfa")
+            let cell = chatTableView.cellForRow(at: [0, audioPlayingIndex])
         }
     }
 
@@ -447,7 +499,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingImageView.sd_setImage(with: image)
                 
                 cell.sendingTime.text = message.time
-                cell.layoutSubviews()
+                cell.layoutIfNeeded()
                 
                 chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
@@ -459,38 +511,54 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingImageView.sd_setImage(with: image)
                 
                 cell.receivingTime.text = message.time
-                cell.layoutSubviews()
+                cell.layoutIfNeeded()
                 chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
             }
-            
         }
         else {
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
-                
+                cell.playStopButton.index = indexPath.row
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                
+                if indexPath.row != audioPlayingIndex {
+                    cell.playStopButton.isSelected = false
+                }
+                else {
+                    cell.playStopButton.isSelected = true
+                }
+                
                 return cell
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioReceivingTableViewCell", for: indexPath) as! AudioReceivingTableViewCell
-                cell.playstopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                cell.playStopButton.content = String(message.body)
+                cell.playStopButton.index = indexPath.row
+                cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                
+                if indexPath.row != audioPlayingIndex {
+                    cell.playStopButton.isSelected = false
+                } else {
+                    cell.playStopButton.isSelected = true
+                }
+                
                 return cell
             }
         }
     }
     
-    @objc func playStop(_ sender: Any) {
+    @objc func playStop(_ sender: PlayStopButton) {
         
-        if let player = audioPlayer, player.isPlaying {
-            (sender as! PlayStopButton).isSelected = false
+        if  sender.isSelected == true {
+            sender.isSelected = false
             
             audioPlayer.pause()
         }
         else {
-            (sender as! PlayStopButton).isSelected = true
-            let audioRef = storageRef.child("audio/\((sender as! PlayStopButton).content)")
+            sender.isSelected = true
+            let audioRef = storageRef.child("audio/\(sender.content)")
             audioRef.downloadURL { url, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -501,16 +569,14 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                         self.audioPlayer.prepareToPlay()
                         self.audioPlayer.delegate = self
                         self.audioPlayer.play()
+                        self.audioPlayingIndex = sender.index
                     } catch {
                         print("something went wrong")
                     }
                 }
             }
-            
         }
-        
     }
-    
 }
 
 //MARK: Firestore 채팅
@@ -542,9 +608,6 @@ extension ChattingViewController {
         photoButton.isHidden = false
         recordButton.isHidden = false
         chattingFieldConstraint.constant = 112
-        
-        
-        
     }
     
     func send(contents: String, type: Int) {
@@ -553,8 +616,7 @@ extension ChattingViewController {
             "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
             "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
             "timestamp": Date(),
-            "type": type,
-            "token" : UserDefaults.standard.string(forKey: "FCMToken")!
+            "type": type
         ]) { (error) in
             if let e = error {
                 print(e.localizedDescription)
@@ -576,7 +638,7 @@ extension ChattingViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         snapshotDocuments.forEach { (doc) in
                             let data = doc.data()
-                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int, let fcmToken = data["token"] as? String {
+                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
                                 let time = self.timeFormatter(timestamp: timestamp)
                                 self.messages.append(Message(sender: sender, body: body, time: time, type: type))
                                 

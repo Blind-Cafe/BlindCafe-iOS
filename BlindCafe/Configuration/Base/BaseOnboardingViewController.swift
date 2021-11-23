@@ -18,6 +18,11 @@ class BaseOnboardingViewController: UIViewController {
         view.backgroundColor = .mainBlack
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = .mainBlack
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+
     }
     
     func setBackButton() {
