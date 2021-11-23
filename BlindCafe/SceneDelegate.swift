@@ -29,11 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             controller = BaseTabBarController()
         }*/
         
-        controller = ChattingViewController()
-//        let navController = UINavigationController(rootViewController: controller)
-//        navController.view.backgroundColor = .mainBlack
-//        navController.navigationBar.barTintColor = .mainBlack
-        win.rootViewController = controller
+        controller = OnboardingViewController()
+        let navController = UINavigationController(rootViewController: controller)
+        navController.view.backgroundColor = .mainBlack
+        navController.navigationBar.barTintColor = .mainBlack
+        win.rootViewController = navController
         win.makeKeyAndVisible()
         window = win
     }

@@ -49,16 +49,6 @@ class MatchedViewController: BaseViewController {
 
 extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if matchedData?.matchings?.count == 0 {
-            matchedView.isHidden = false
-            navigationView.backgroundColor = .mainBlack
-            navigationController?.navigationBar.barTintColor = .mainBlack
-        }
-        else {
-            matchedView.isHidden = true
-            navigationView.backgroundColor = .brownGray
-            navigationController?.navigationBar.barTintColor = .brownGray
-        }
         return matchedData?.matchings?.count ?? 0
     }
     
@@ -77,6 +67,17 @@ extension MatchedViewController {
     func getMatching(result: MatchingResponse) {
         dismissIndicator()
         matchedData = result
+        
+        if matchedData?.matchings?.count == 0 {
+            matchedView.isHidden = false
+            navigationView.backgroundColor = .mainBlack
+            navigationController?.navigationBar.barTintColor = .mainBlack
+        }
+        else {
+            matchedView.isHidden = true
+            navigationView.backgroundColor = .brownGray
+            navigationController?.navigationBar.barTintColor = .brownGray
+        }
         
         matchedTableView.reloadData()
     }

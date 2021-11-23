@@ -32,7 +32,10 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var nicknameView: UIView!
     @IBOutlet weak var nicknameAlert: UILabel!
     
-    @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var regionButton: UIButton!
+    @IBAction func regionButton(_ sender: Any) {
+        navigationController?.pushViewController(RegionChangeViewController(), animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,6 +21,14 @@ struct Message {
     let type: Int
 }
 
+struct AudioModel {
+    var url: URL
+    var index: Int
+    var duration: Int
+    var time: Int
+    var isSending: Bool
+}
+
 class ChattingViewController: BaseViewController {
     
     var matchingId: Int = UserDefaults.standard.integer(forKey: "MatchingId")
@@ -31,6 +39,7 @@ class ChattingViewController: BaseViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = []
+    var audios: [AudioModel] = []
     
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()

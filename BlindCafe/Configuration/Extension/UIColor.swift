@@ -37,4 +37,5 @@ extension UIColor {
     class var white2: UIColor { UIColor(hex: 0xfafafa) }
     class var blueGray: UIColor { UIColor(hex: 0x8e8e93)}
     class var coral: UIColor { UIColor(hex: 0xff453a) }
+    class var darkSage: UIColor { UIColor(hex: 0x575e56)}
 }

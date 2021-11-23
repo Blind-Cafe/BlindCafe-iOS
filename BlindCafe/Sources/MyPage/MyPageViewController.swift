@@ -132,23 +132,23 @@ extension MyPageViewController {
         var nameString = ""
         switch name {
         case 1:
-            nameString = "myfood"
-        case 2:
-            nameString = "mytravel"
-        case 3:
-            nameString = "mygame"
-        case 4:
-            nameString = "myentertainment"
-        case 5:
-            nameString = "mysports"
-        case 6:
-            nameString = "myfinancial"
-        case 7:
             nameString = "myjob"
-        case 8:
+        case 2:
             nameString = "myanimation"
-        case 9:
+        case 3:
             nameString = "myanimal"
+        case 4:
+            nameString = "myfood"
+        case 5:
+            nameString = "mytravel"
+        case 6:
+            nameString = "mygame"
+        case 7:
+            nameString = "myentertainment"
+        case 8:
+            nameString = "mysports"
+        case 9:
+            nameString = "myfinancial"
         default:
             break
         }

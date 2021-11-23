@@ -36,6 +36,10 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         let matchedNavController = UINavigationController(rootViewController: matchedViewController)
         let mypageNavController = UINavigationController(rootViewController: mypageViewController)
         
+        homeNavController.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        homeNavController.navigationController?.navigationBar.shadowImage = UIImage()
+        homeNavController.navigationController?.navigationBar.layoutIfNeeded()
+        
         homeNavController.tabBarItem = homeTabBarItem
         homeNavController.tabBarItem.selectedImage = UIImage(named: "homeitemselected")
         matchedNavController.tabBarItem = matchedTabBarItem

@@ -200,23 +200,23 @@ extension InitDetailInterestViewController {
         var nameString = ""
         switch interestdata.interests![i].main {
         case 1:
-            nameString = "음식"
-        case 2:
-            nameString = "여행"
-        case 3:
-            nameString = "게임"
-        case 4:
-            nameString = "연예"
-        case 5:
-            nameString = "스포츠"
-        case 6:
-            nameString = "재테크"
-        case 7:
             nameString = "취업"
-        case 8:
+        case 2:
             nameString = "만화/애니"
-        case 9:
+        case 3:
             nameString = "동물"
+        case 4:
+            nameString = "음식"
+        case 5:
+            nameString = "여행"
+        case 6:
+            nameString = "게임"
+        case 7:
+            nameString = "연예"
+        case 8:
+            nameString = "스포츠"
+        case 9:
+            nameString = "재테크"
         default:
             break
         }

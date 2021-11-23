@@ -20,15 +20,15 @@
             <connections>
                 <outlet property="nextButton" destination="YWI-3X-fBj" id="AD1-Uk-xXM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="tasteButtons" destination="ocW-Gc-E3L" collectionClass="NSMutableArray" id="Esd-Lj-9Yl"/>
-                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="Kdl-W0-kGF"/>
-                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="dpj-bx-QNW"/>
-                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="HMs-CJ-rtT"/>
-                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="wHI-cD-Y7y"/>
-                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="d64-hm-biY"/>
-                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="3ai-zo-IWc"/>
-                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="Wnd-aH-xFi"/>
-                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="7a6-Rc-HVT"/>
+                <outletCollection property="tasteButtons" destination="LeJ-hV-PVG" collectionClass="NSMutableArray" id="txh-1V-Ey3"/>
+                <outletCollection property="tasteButtons" destination="sZx-Hx-i3l" collectionClass="NSMutableArray" id="LFc-GO-I4d"/>
+                <outletCollection property="tasteButtons" destination="psN-EM-D1L" collectionClass="NSMutableArray" id="gPB-2u-VhV"/>
+                <outletCollection property="tasteButtons" destination="ocW-Gc-E3L" collectionClass="NSMutableArray" id="6Pq-IX-sEo"/>
+                <outletCollection property="tasteButtons" destination="dg0-sh-YHb" collectionClass="NSMutableArray" id="WSp-IM-FeN"/>
+                <outletCollection property="tasteButtons" destination="BLq-rh-WaO" collectionClass="NSMutableArray" id="gOE-qq-j2M"/>
+                <outletCollection property="tasteButtons" destination="jGH-1V-SyS" collectionClass="NSMutableArray" id="9Gy-bQ-cRR"/>
+                <outletCollection property="tasteButtons" destination="3wO-za-dKe" collectionClass="NSMutableArray" id="dFW-OW-b3T"/>
+                <outletCollection property="tasteButtons" destination="LhJ-27-D1G" collectionClass="NSMutableArray" id="fV6-jF-y4H"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -37,7 +37,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxy-ek-24y">
-                    <rect key="frame" x="19" y="225" width="352" height="531"/>
+                    <rect key="frame" x="19" y="8" width="352" height="748"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/3 단계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6e-hv-OFg">
                             <rect key="frame" x="13.999999999999996" y="27" width="47.666666666666657" height="19"/>
@@ -67,7 +67,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-sh-YHb">
-                            <rect key="frame" x="129" y="112" width="94" height="94"/>
+                            <rect key="frame" x="129" y="270" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="travelbutton"/>
@@ -75,17 +75,8 @@
                                 <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="pUW-cX-eFe"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-rh-WaO">
-                            <rect key="frame" x="236" y="112" width="94" height="94"/>
-                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="gamebutton"/>
-                            <connections>
-                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="sXe-MB-Pw5"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wO-za-dKe">
-                            <rect key="frame" x="129" y="214" width="94" height="94"/>
+                            <rect key="frame" x="129" y="397" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="sportsbutton"/>
@@ -94,7 +85,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhJ-27-D1G">
-                            <rect key="frame" x="236" y="214" width="94" height="94"/>
+                            <rect key="frame" x="241" y="397" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="financialbutton"/>
@@ -103,7 +94,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGH-1V-SyS">
-                            <rect key="frame" x="22" y="214" width="93" height="93"/>
+                            <rect key="frame" x="17" y="397" width="93" height="93"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="entertainmentbutton"/>
@@ -112,7 +103,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeJ-hV-PVG">
-                            <rect key="frame" x="22" y="316" width="93" height="93"/>
+                            <rect key="frame" x="17" y="143" width="93" height="93"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="jobbutton"/>
@@ -121,7 +112,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psN-EM-D1L">
-                            <rect key="frame" x="236" y="316" width="94" height="94"/>
+                            <rect key="frame" x="241" y="143" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="animalbutton"/>
@@ -130,11 +121,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-Hx-i3l">
-                            <rect key="frame" x="129" y="316" width="94" height="94"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="94" id="jSf-By-Huv"/>
-                                <constraint firstAttribute="width" secondItem="sZx-Hx-i3l" secondAttribute="height" multiplier="1:1" id="uMb-kO-por"/>
-                            </constraints>
+                            <rect key="frame" x="129" y="143" width="94" height="94"/>
                             <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="animationbutton"/>
@@ -143,7 +130,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocW-Gc-E3L">
-                            <rect key="frame" x="22" y="112" width="93" height="93"/>
+                            <rect key="frame" x="17" y="270" width="93" height="93"/>
                             <color key="tintColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="foodbutton"/>
@@ -151,36 +138,44 @@
                                 <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="Lwr-V4-V1k"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-rh-WaO">
+                            <rect key="frame" x="241" y="270" width="94" height="94"/>
+                            <color key="tintColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="gamebutton"/>
+                            <connections>
+                                <action selector="tasteAction:" destination="-1" eventType="touchUpInside" id="sXe-MB-Pw5"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="3wO-za-dKe" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="top" id="0iA-MA-wjI"/>
+                        <constraint firstItem="psN-EM-D1L" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="0P6-Ie-Fqw"/>
                         <constraint firstItem="bKH-M0-JTU" firstAttribute="leading" secondItem="p6e-hv-OFg" secondAttribute="leading" id="1xA-sR-fpC"/>
+                        <constraint firstItem="BLq-rh-WaO" firstAttribute="leading" secondItem="psN-EM-D1L" secondAttribute="leading" id="1xa-El-0Om"/>
+                        <constraint firstItem="dg0-sh-YHb" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="2EM-qt-K3V"/>
                         <constraint firstItem="qXi-Fs-EyC" firstAttribute="leading" secondItem="bKH-M0-JTU" secondAttribute="leading" id="3EA-pC-9Q5"/>
-                        <constraint firstAttribute="trailing" secondItem="LhJ-27-D1G" secondAttribute="trailing" constant="22" id="6ei-Ic-ilF"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="520" id="GOp-rP-78n"/>
-                        <constraint firstItem="jGH-1V-SyS" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="bottom" constant="9" id="Hdd-b7-7uq"/>
-                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="IT4-As-0kc"/>
-                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="O3L-2G-Hsr"/>
+                        <constraint firstItem="BLq-rh-WaO" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="top" id="N4b-9d-KmC"/>
+                        <constraint firstAttribute="trailing" secondItem="psN-EM-D1L" secondAttribute="trailing" constant="17" id="Ot2-1u-cKm"/>
+                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="bottom" constant="34" id="S2K-W9-eB3"/>
                         <constraint firstItem="p6e-hv-OFg" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="14" id="T9r-c4-6Za"/>
-                        <constraint firstAttribute="trailing" secondItem="BLq-rh-WaO" secondAttribute="trailing" constant="22" id="X72-Qw-U39"/>
-                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="X7b-yj-ysc"/>
+                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="17" id="TgR-kA-IFR"/>
                         <constraint firstAttribute="width" constant="352" id="XID-nq-3mH"/>
-                        <constraint firstItem="jGH-1V-SyS" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="22" id="Z7k-Rd-r5q"/>
-                        <constraint firstAttribute="trailing" secondItem="psN-EM-D1L" secondAttribute="trailing" constant="22" id="bxe-Ll-hEP"/>
-                        <constraint firstItem="dg0-sh-YHb" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="top" id="ctd-Yv-tLC"/>
+                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="acO-js-wP4"/>
                         <constraint firstItem="qXi-Fs-EyC" firstAttribute="top" secondItem="bKH-M0-JTU" secondAttribute="bottom" constant="1" id="d0a-V2-1aA"/>
+                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="45" id="fUX-4H-86O"/>
+                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="leading" secondItem="LeJ-hV-PVG" secondAttribute="leading" id="gke-RF-ndD"/>
                         <constraint firstItem="bKH-M0-JTU" firstAttribute="top" secondItem="p6e-hv-OFg" secondAttribute="bottom" constant="8" id="hnw-AX-erR"/>
-                        <constraint firstItem="ocW-Gc-E3L" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="14" id="iom-L2-8kF"/>
-                        <constraint firstItem="psN-EM-D1L" firstAttribute="top" secondItem="sZx-Hx-i3l" secondAttribute="top" id="jZ6-YL-uLS"/>
-                        <constraint firstItem="BLq-rh-WaO" firstAttribute="centerY" secondItem="dg0-sh-YHb" secondAttribute="centerY" id="mBU-K7-TzN"/>
+                        <constraint firstItem="jGH-1V-SyS" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="bottom" constant="34" id="lAf-S5-4yC"/>
+                        <constraint firstItem="LhJ-27-D1G" firstAttribute="centerX" secondItem="BLq-rh-WaO" secondAttribute="centerX" id="nBw-ID-SxK"/>
+                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="pu5-Xg-Wrv"/>
                         <constraint firstItem="p6e-hv-OFg" firstAttribute="top" secondItem="Wxy-ek-24y" secondAttribute="top" constant="27" id="qJG-Sc-FqH"/>
-                        <constraint firstItem="sZx-Hx-i3l" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="rJh-4z-DVt"/>
-                        <constraint firstItem="dg0-sh-YHb" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="u8C-w2-BDO"/>
-                        <constraint firstItem="3wO-za-dKe" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="vD3-Mf-tw4"/>
-                        <constraint firstItem="LhJ-27-D1G" firstAttribute="top" secondItem="3wO-za-dKe" secondAttribute="top" id="vgt-Jf-qhm"/>
-                        <constraint firstItem="LeJ-hV-PVG" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="bottom" constant="9" id="xaI-dC-daC"/>
+                        <constraint firstItem="jGH-1V-SyS" firstAttribute="leading" secondItem="ocW-Gc-E3L" secondAttribute="leading" id="wXp-hJ-1v9"/>
+                        <constraint firstItem="LhJ-27-D1G" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="top" id="waE-Z6-FJN"/>
+                        <constraint firstItem="3wO-za-dKe" firstAttribute="top" secondItem="jGH-1V-SyS" secondAttribute="top" id="xE5-85-DEK"/>
+                        <constraint firstItem="3wO-za-dKe" firstAttribute="centerX" secondItem="Wxy-ek-24y" secondAttribute="centerX" id="xic-rv-1Wt"/>
+                        <constraint firstItem="dg0-sh-YHb" firstAttribute="top" secondItem="ocW-Gc-E3L" secondAttribute="top" id="zPf-Bc-eRR"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWI-3X-fBj">
@@ -192,27 +187,16 @@
                         <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="hg1-mV-KU5"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilebarista" translatesAutoresizingMaskIntoConstraints="NO" id="HAM-1O-JNe">
-                    <rect key="frame" x="103.66666666666669" y="52" width="183" height="176"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="HAM-1O-JNe" secondAttribute="height" multiplier="183:176" id="Jxn-2h-AG2"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="hX9-dm-wsF"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Wxy-ek-24y" secondAttribute="bottom" id="0AG-3r-9yL"/>
-                <constraint firstItem="HAM-1O-JNe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1KK-3c-VSW"/>
                 <constraint firstItem="Wxy-ek-24y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ARu-sY-K7b"/>
+                <constraint firstItem="Wxy-ek-24y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Clx-H8-gpI"/>
                 <constraint firstItem="YWI-3X-fBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DS0-Wv-Haj"/>
-                <constraint firstItem="Wxy-ek-24y" firstAttribute="top" secondItem="HAM-1O-JNe" secondAttribute="bottom" constant="-3" id="bj1-0v-0Pu"/>
-                <constraint firstItem="YWI-3X-fBj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sZx-Hx-i3l" secondAttribute="bottom" constant="5" id="cvm-4q-GKL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="18" id="eTg-T8-iMG"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="52" id="lgK-5I-Wsn"/>
-                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="52" id="st3-GE-4XZ"/>
-                <constraint firstItem="HAM-1O-JNe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="vBm-WA-oD6"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="138.46153846153845" y="91.706161137440759"/>
@@ -226,7 +210,6 @@
         <image name="foodbutton" width="93" height="93"/>
         <image name="gamebutton" width="94" height="94"/>
         <image name="jobbutton" width="93" height="93"/>
-        <image name="profilebarista" width="182.66667175292969" height="176"/>
         <image name="profileenabled" width="318" height="50"/>
         <image name="sportsbutton" width="94" height="94"/>
         <image name="travelbutton" width="94" height="94"/>
