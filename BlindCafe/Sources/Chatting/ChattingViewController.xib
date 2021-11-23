@@ -26,6 +26,7 @@
                 <outlet property="recordButton" destination="TL9-kS-uoi" id="gs4-8w-ZZO"/>
                 <outlet property="recordScrollView" destination="5oW-pv-fzr" id="YzE-Tr-BiG"/>
                 <outlet property="recordView" destination="5mT-W8-IxM" id="OOl-Qk-8sR"/>
+                <outlet property="recoredTimeLabel" destination="XGP-2j-JuN" id="hGv-25-sKZ"/>
                 <outlet property="sendButton" destination="Qwz-uB-LXw" id="R9H-9a-oCr"/>
                 <outlet property="tableViewBottom" destination="b0t-UG-NFc" id="OeN-ly-FnS"/>
                 <outlet property="toolbarBottomConstraint" destination="Ltc-eB-7Wt" id="hah-yf-QDD"/>
@@ -198,11 +199,10 @@
                                         <constraint firstItem="Dox-rT-aUP" firstAttribute="leading" secondItem="5oW-pv-fzr" secondAttribute="leading" id="cCY-pY-sr2"/>
                                     </constraints>
                                 </scrollView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGP-2j-JuN">
-                                    <rect key="frame" x="296" y="8" width="42" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGP-2j-JuN">
+                                    <rect key="frame" x="302" y="10.666666666666629" width="42" height="18"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                    <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -212,8 +212,11 @@
                                 <constraint firstItem="5oW-pv-fzr" firstAttribute="leading" secondItem="5mT-W8-IxM" secondAttribute="leading" constant="25" id="AZx-wv-70Z"/>
                                 <constraint firstItem="5oW-pv-fzr" firstAttribute="top" secondItem="5mT-W8-IxM" secondAttribute="top" id="DcO-RJ-DHt"/>
                                 <constraint firstAttribute="trailing" secondItem="5oW-pv-fzr" secondAttribute="trailing" constant="70" id="Eqv-e8-PA4"/>
+                                <constraint firstAttribute="trailing" secondItem="XGP-2j-JuN" secondAttribute="trailing" constant="14" id="HTn-Bd-Xbh"/>
+                                <constraint firstItem="XGP-2j-JuN" firstAttribute="leading" secondItem="5oW-pv-fzr" secondAttribute="trailing" constant="14" id="ank-Du-ygn"/>
                                 <constraint firstItem="5oW-pv-fzr" firstAttribute="height" secondItem="5mT-W8-IxM" secondAttribute="height" id="bC8-CS-SDK"/>
                                 <constraint firstItem="Dox-rT-aUP" firstAttribute="height" secondItem="5mT-W8-IxM" secondAttribute="height" id="bpx-8b-pGX"/>
+                                <constraint firstItem="XGP-2j-JuN" firstAttribute="centerY" secondItem="5mT-W8-IxM" secondAttribute="centerY" id="nja-LD-VQD"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

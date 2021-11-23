@@ -49,6 +49,7 @@ class ChattingViewController: BaseViewController {
     @IBOutlet weak var recordScrollView: UIScrollView!
     @IBOutlet weak var waveView: UIView!
     @IBOutlet weak var waveViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var recoredTimeLabel: UILabel!
     
     var audioPlayingIndex: Int!
     var playing: Int!
@@ -286,6 +287,7 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
                     }
                 }
                 
+                var time = 0
                 self?.recordTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (timer) in
                     
                     self?.audioRecorder.updateMeters()
@@ -293,6 +295,11 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
                     
                     let bottomOffset = CGPoint(x: (self?.waveViewWidth.constant)!, y: 0)
                     self!.recordScrollView.setContentOffset(bottomOffset, animated: false)
+                    time += 1
+                    let minute = time / (5 * 60)
+                    let second = time % (5 * 60) / 5
+                    
+                    self?.recoredTimeLabel.text = String(format: "%02d:%02d", minute, second)
                 }
                 
                 self!.audioRecorder.record()
