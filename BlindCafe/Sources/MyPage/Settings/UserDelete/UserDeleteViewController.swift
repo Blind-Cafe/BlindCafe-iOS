@@ -38,6 +38,7 @@ class UserDeleteViewController: BaseViewController {
     @IBAction func nextButton(_ sender: Any) {
         let childVC2 = UserDelete2ViewController()
         childVC2.modalPresentationStyle = .overCurrentContext
+        childVC2.id = indexOfOneAndOnly! + 1
         present(childVC2, animated: false, completion: nil)
     }
     

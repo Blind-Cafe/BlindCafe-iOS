@@ -112,6 +112,8 @@
 		CDBCD352274E62C800995897 /* UserDeleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBCD350274E62C800995897 /* UserDeleteViewController.xib */; };
 		CDBCD355274E673400995897 /* UserDelete2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCD353274E673400995897 /* UserDelete2ViewController.swift */; };
 		CDBCD356274E673400995897 /* UserDelete2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBCD354274E673400995897 /* UserDelete2ViewController.xib */; };
+		CDBCD35A274E6CBA00995897 /* UserDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCD359274E6CBA00995897 /* UserDeleteResponse.swift */; };
+		CDBCD35C274E6CC500995897 /* UserDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCD35B274E6CC500995897 /* UserDeleteDataManager.swift */; };
 		CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516E9274ADD480063AA3B /* Report2ViewController.swift */; };
 		CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC516EA274ADD480063AA3B /* Report2ViewController.xib */; };
 		CDC516F8274B0CA00063AA3B /* LeaveRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */; };
@@ -250,6 +252,8 @@
 		CDBCD350274E62C800995897 /* UserDeleteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDeleteViewController.xib; sourceTree = "<group>"; };
 		CDBCD353274E673400995897 /* UserDelete2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete2ViewController.swift; sourceTree = "<group>"; };
 		CDBCD354274E673400995897 /* UserDelete2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDelete2ViewController.xib; sourceTree = "<group>"; };
+		CDBCD359274E6CBA00995897 /* UserDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteResponse.swift; sourceTree = "<group>"; };
+		CDBCD35B274E6CC500995897 /* UserDeleteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteDataManager.swift; sourceTree = "<group>"; };
 		CDC516E9274ADD480063AA3B /* Report2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report2ViewController.swift; sourceTree = "<group>"; };
 		CDC516EA274ADD480063AA3B /* Report2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report2ViewController.xib; sourceTree = "<group>"; };
 		CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRoomDataManager.swift; sourceTree = "<group>"; };
@@ -798,6 +802,7 @@
 		CDBCD357274E6B8E00995897 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				CDBCD359274E6CBA00995897 /* UserDeleteResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -805,6 +810,7 @@
 		CDBCD358274E6B9600995897 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				CDBCD35B274E6CC500995897 /* UserDeleteDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1085,8 +1091,10 @@
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
 				CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */,
 				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
+				CDBCD35C274E6CC500995897 /* UserDeleteDataManager.swift in Sources */,
 				CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
+				CDBCD35A274E6CBA00995897 /* UserDeleteResponse.swift in Sources */,
 				CD2AA3C9274379450088FE49 /* DoneSignUpViewController.swift in Sources */,
 				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,
 				CD7B49A42736BAE600940809 /* ProgressBar.swift in Sources */,
