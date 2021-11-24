@@ -108,6 +108,10 @@
 		CD8A918B2748D42B008C8E4D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A91892748D42B008C8E4D /* SettingsViewController.xib */; };
 		CD8A918F274A2042008C8E4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A918D274A203F008C8E4D /* ProfileViewController.swift */; };
 		CD8A9190274A2042008C8E4D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A918E274A203F008C8E4D /* ProfileViewController.xib */; };
+		CDBCD351274E62C800995897 /* UserDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCD34F274E62C800995897 /* UserDeleteViewController.swift */; };
+		CDBCD352274E62C800995897 /* UserDeleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBCD350274E62C800995897 /* UserDeleteViewController.xib */; };
+		CDBCD355274E673400995897 /* UserDelete2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBCD353274E673400995897 /* UserDelete2ViewController.swift */; };
+		CDBCD356274E673400995897 /* UserDelete2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBCD354274E673400995897 /* UserDelete2ViewController.xib */; };
 		CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516E9274ADD480063AA3B /* Report2ViewController.swift */; };
 		CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC516EA274ADD480063AA3B /* Report2ViewController.xib */; };
 		CDC516F8274B0CA00063AA3B /* LeaveRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */; };
@@ -242,6 +246,10 @@
 		CD8A91892748D42B008C8E4D /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		CD8A918D274A203F008C8E4D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CD8A918E274A203F008C8E4D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		CDBCD34F274E62C800995897 /* UserDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteViewController.swift; sourceTree = "<group>"; };
+		CDBCD350274E62C800995897 /* UserDeleteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDeleteViewController.xib; sourceTree = "<group>"; };
+		CDBCD353274E673400995897 /* UserDelete2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDelete2ViewController.swift; sourceTree = "<group>"; };
+		CDBCD354274E673400995897 /* UserDelete2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDelete2ViewController.xib; sourceTree = "<group>"; };
 		CDC516E9274ADD480063AA3B /* Report2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report2ViewController.swift; sourceTree = "<group>"; };
 		CDC516EA274ADD480063AA3B /* Report2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report2ViewController.xib; sourceTree = "<group>"; };
 		CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRoomDataManager.swift; sourceTree = "<group>"; };
@@ -756,6 +764,7 @@
 		CD8A91862748D401008C8E4D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CDBCD34E274E62B500995897 /* UserDelete */,
 				CD8A91882748D42B008C8E4D /* SettingsViewController.swift */,
 				CD8A91892748D42B008C8E4D /* SettingsViewController.xib */,
 			);
@@ -771,6 +780,33 @@
 				CD8A918E274A203F008C8E4D /* ProfileViewController.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		CDBCD34E274E62B500995897 /* UserDelete */ = {
+			isa = PBXGroup;
+			children = (
+				CDBCD357274E6B8E00995897 /* Entity */,
+				CDBCD358274E6B9600995897 /* DataManager */,
+				CDBCD34F274E62C800995897 /* UserDeleteViewController.swift */,
+				CDBCD350274E62C800995897 /* UserDeleteViewController.xib */,
+				CDBCD353274E673400995897 /* UserDelete2ViewController.swift */,
+				CDBCD354274E673400995897 /* UserDelete2ViewController.xib */,
+			);
+			path = UserDelete;
+			sourceTree = "<group>";
+		};
+		CDBCD357274E6B8E00995897 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CDBCD358274E6B9600995897 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		CDC516F5274B0C280063AA3B /* Entity */ = {
@@ -961,6 +997,7 @@
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
 				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
+				CDBCD356274E673400995897 /* UserDelete2ViewController.xib in Resources */,
 				CD6FE3FD274A96F2004698B2 /* ProfilePhotoViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */,
@@ -989,6 +1026,7 @@
 				CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */,
 				CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */,
 				CD6AA9FA27266B1B00DA6013 /* OnboardingViewController.xib in Resources */,
+				CDBCD352274E62C800995897 /* UserDeleteViewController.xib in Resources */,
 				CD6FE406274AB4FE004698B2 /* LeaveRoomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1087,6 +1125,7 @@
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
+				CDBCD355274E673400995897 /* UserDelete2ViewController.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
 				CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */,
@@ -1119,6 +1158,7 @@
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
 				CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */,
+				CDBCD351274E62C800995897 /* UserDeleteViewController.swift in Sources */,
 				CDC5170E274DACF30063AA3B /* ProfileExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

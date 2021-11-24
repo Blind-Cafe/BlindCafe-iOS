@@ -22,10 +22,9 @@ struct Message {
 }
 
 struct AudioModel {
-    var url: URL
+    var url: String
     var index: Int
     var duration: Int
-    var time: Int
     var isSending: Bool
 }
 
@@ -43,7 +42,7 @@ class ChattingViewController: BaseViewController {
     
     var messages: [Message] = []
     
-    var audioPlaying: AudioModel!
+    var audioPlaying: AudioModel?
     
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()
@@ -412,7 +411,8 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            let cell = chatTableView.cellForRow(at: [0, audioPlayingIndex])
+            audioPlayingIndex = -1
+            chatTableView.reloadData()
         }
     }
 
@@ -545,8 +545,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
-                cell.playStopButton.index = indexPath.row
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                cell.playStopButton.tag = indexPath.row
+                cell.audioSlider
                 
                 if indexPath.row != audioPlayingIndex {
                     cell.playStopButton.isSelected = false
@@ -560,8 +561,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioReceivingTableViewCell", for: indexPath) as! AudioReceivingTableViewCell
                 cell.playStopButton.content = String(message.body)
-                cell.playStopButton.index = indexPath.row
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
+                cell.playStopButton.tag = indexPath.row
                 
                 if indexPath.row != audioPlayingIndex {
                     cell.playStopButton.isSelected = false
@@ -576,13 +577,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func playStop(_ sender: PlayStopButton) {
         
+        let cell = chatTableView.cellForRow(at: [0, sender.tag])
+        
         if  sender.isSelected == true {
             sender.isSelected = false
             
-            audioPlayer.pause()
+            audioPlayer.stop()
+            audioPlayingIndex = -1
         }
         else {
             sender.isSelected = true
+            self.audioPlayingIndex = sender.tag
+           
             let audioRef = storageRef.child("audio/\(sender.content)")
             audioRef.downloadURL { url, error in
                 if let error = error {
@@ -594,13 +600,15 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                         self.audioPlayer.prepareToPlay()
                         self.audioPlayer.delegate = self
                         self.audioPlayer.play()
-                        self.audioPlayingIndex = sender.index
+                        
                     } catch {
                         print("something went wrong")
                     }
                 }
             }
         }
+        
+        chatTableView.reloadData()
     }
 }
 

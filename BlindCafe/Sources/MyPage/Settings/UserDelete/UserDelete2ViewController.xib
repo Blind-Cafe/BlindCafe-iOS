@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.ttf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDelete2ViewController" customModule="BlindCafe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSm-Op-NcV">
+                    <rect key="frame" x="30" y="365" width="354" height="166"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="블라인드 카페를 떠나시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTl-Tl-fsP">
+                            <rect key="frame" x="22" y="27" width="208" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="hyB-dC-DQK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
+                            <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정이 삭제되면 모든 내용이 지워집니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYC-9N-8Fc">
+                            <rect key="frame" x="22" y="53" width="221" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="19" id="sqQ-1J-eAb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                            <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alertline" translatesAutoresizingMaskIntoConstraints="NO" id="bKh-oL-ctt">
+                            <rect key="frame" x="17" y="99" width="320" height="1"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyJ-WO-kON">
+                            <rect key="frame" x="26" y="109" width="112" height="44"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="dismissbutton"/>
+                            <connections>
+                                <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="Xqm-W5-bF5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0w-dD-4Ae">
+                            <rect key="frame" x="216" y="109" width="112" height="44"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="userdelete"/>
+                            <connections>
+                                <action selector="userDeleteButton:" destination="-1" eventType="touchUpInside" id="uXe-Bq-hKa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bTl-Tl-fsP" firstAttribute="top" secondItem="iSm-Op-NcV" secondAttribute="top" constant="27" id="07p-Qr-ei9"/>
+                        <constraint firstItem="gyJ-WO-kON" firstAttribute="leading" secondItem="iSm-Op-NcV" secondAttribute="leading" constant="26" id="0Ur-wG-PMB"/>
+                        <constraint firstAttribute="trailing" secondItem="bKh-oL-ctt" secondAttribute="trailing" constant="17" id="1aa-tw-Lx6"/>
+                        <constraint firstItem="bKh-oL-ctt" firstAttribute="leading" secondItem="iSm-Op-NcV" secondAttribute="leading" constant="17" id="CXx-0F-fsp"/>
+                        <constraint firstAttribute="height" constant="166" id="DJj-fM-zbW"/>
+                        <constraint firstAttribute="width" constant="354" id="F4m-oH-Fp0"/>
+                        <constraint firstAttribute="trailing" secondItem="x0w-dD-4Ae" secondAttribute="trailing" constant="26" id="H8l-BF-5gL"/>
+                        <constraint firstAttribute="bottom" secondItem="x0w-dD-4Ae" secondAttribute="bottom" constant="13" id="LyP-t4-ASu"/>
+                        <constraint firstAttribute="bottom" secondItem="gyJ-WO-kON" secondAttribute="bottom" constant="13" id="MyS-t0-HPe"/>
+                        <constraint firstItem="UYC-9N-8Fc" firstAttribute="leading" secondItem="iSm-Op-NcV" secondAttribute="leading" constant="22" id="PLD-Q4-0i6"/>
+                        <constraint firstItem="bKh-oL-ctt" firstAttribute="top" secondItem="UYC-9N-8Fc" secondAttribute="bottom" constant="27" id="PW6-B5-W6r"/>
+                        <constraint firstItem="bTl-Tl-fsP" firstAttribute="leading" secondItem="iSm-Op-NcV" secondAttribute="leading" constant="22" id="mze-vh-xyB"/>
+                        <constraint firstItem="UYC-9N-8Fc" firstAttribute="top" secondItem="bTl-Tl-fsP" secondAttribute="bottom" constant="4" id="nsn-Mo-YxA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iSm-Op-NcV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TKm-GS-0FO"/>
+                <constraint firstItem="iSm-Op-NcV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wU3-iF-F3j"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="95"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alertline" width="325.5" height="1"/>
+        <image name="dismissbutton" width="112" height="44"/>
+        <image name="userdelete" width="112" height="44"/>
+    </resources>
+</document>

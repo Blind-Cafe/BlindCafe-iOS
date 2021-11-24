@@ -40,6 +40,11 @@ class SettingsViewController: BaseViewController {
         
     }
     
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        navigationController?.pushViewController(UserDeleteViewController(), animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
