@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
     var status: String = ""
     var matchingId: Int = 0
     var partnerName: String = ""
+    var start: String = ""
     
     var date: Date!
     
@@ -32,12 +33,14 @@ class HomeViewController: BaseViewController {
             let vc = SelectDrinkViewController()
             vc.matchingId = matchingId
             vc.partnerName = partnerName
+            vc.start = start
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "MATCHING":
             let vc = ChattingViewController()
             vc.matchingId = matchingId
             vc.partnerName = partnerName
+            vc.startTime = start
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "FAILED_LEAVE_ROOM":
@@ -103,15 +106,10 @@ extension HomeViewController {
                 }
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
                 
-                let elapsedTimeSecond = 259200 - Int(Date().timeIntervalSince(self!.date))
+                let elapsedTimeSecond = Int(Date().timeIntervalSince(self!.date))
                 let hours = elapsedTimeSecond / 3600
                 let minutes = (elapsedTimeSecond % 3600) / 60
-                if minutes < 10 {
-                    self!.timeLabel.text = "\(hours) : 0\(minutes)"
-                }
-                else {
-                    self!.timeLabel.text = "\(hours) : \(minutes)"
-                }
+                self!.timeLabel.text = String(format: "%02d : %02d", hours, minutes)
             }
         }
     }
@@ -125,6 +123,7 @@ extension HomeViewController {
         matchingId = result.matchingId ?? -1
         UserDefaults.standard.set(matchingId, forKey: "MatchingId")
         partnerName = result.partnerNickname ?? ""
+        start = result.startTime ?? ""
         
         switch result.matchingStatus {
         case "NONE":
@@ -153,15 +152,10 @@ extension HomeViewController {
             date = Date(timeIntervalSince1970: TimeInterval(Int(result.startTime!)!).rounded())
             setTimer(startTime: date)
             
-            let elapsedTimeSeconds = 259200 - Int(Date().timeIntervalSince(date))
+            let elapsedTimeSeconds = Int(Date().timeIntervalSince(date))
             let hours = elapsedTimeSeconds / 3600
             let minutes = (elapsedTimeSeconds % 3600) / 60
-            if minutes < 10 {
-                timeLabel.text = "\(hours) : 0\(minutes)"
-            }
-            else {
-                timeLabel.text = "\(hours) : \(minutes)"
-            }
+            timeLabel.text = String(format: "%02d : %02d", hours, minutes)
             
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")

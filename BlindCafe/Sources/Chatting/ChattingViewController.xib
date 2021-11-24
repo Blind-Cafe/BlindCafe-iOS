@@ -29,6 +29,7 @@
                 <outlet property="recoredTimeLabel" destination="XGP-2j-JuN" id="hGv-25-sKZ"/>
                 <outlet property="sendButton" destination="Qwz-uB-LXw" id="R9H-9a-oCr"/>
                 <outlet property="tableViewBottom" destination="b0t-UG-NFc" id="OeN-ly-FnS"/>
+                <outlet property="timeLabel" destination="XJW-a6-lBo" id="isw-8r-6Fw"/>
                 <outlet property="toolbarBottomConstraint" destination="Ltc-eB-7Wt" id="hah-yf-QDD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="waveView" destination="Dox-rT-aUP" id="LRh-Ef-mFn"/>

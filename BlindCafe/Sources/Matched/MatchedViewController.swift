@@ -29,8 +29,6 @@ class MatchedViewController: BaseViewController {
         matchedTableView.dataSource = self
         matchedTableView.backgroundColor = .brownGray
         
-        print(Token.jwtToken)
-        
         showIndicator()
         MatchingDataManager().getMatchings(viewController: self)
     }
@@ -54,7 +52,7 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchedTableViewCell", for: indexPath) as! MatchedTableViewCell
-        if matchedData != nil && matchedData?.matchings?.count != 0 {
+        if matchedData?.matchings?.count != 0 {
             cell.partnerName.text = matchedData!.matchings![indexPath.row].partner.nickname
         }
         

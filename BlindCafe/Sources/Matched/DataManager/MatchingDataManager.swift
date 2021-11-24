@@ -9,12 +9,14 @@ import Alamofire
 
 class MatchingDataManager {
     func getMatchings(viewController: MatchedViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching", method: .get, parameters: nil, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching", method: .get, headers: Constant.HEADERS)
             .validate()
             .responseDecodable(of: MatchingResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     viewController.getMatching(result: response)
+                    print(response)
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

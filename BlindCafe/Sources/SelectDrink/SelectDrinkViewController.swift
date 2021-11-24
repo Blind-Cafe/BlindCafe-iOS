@@ -13,6 +13,8 @@ class SelectDrinkViewController: BaseViewController {
     
     @IBOutlet weak var cafeLabel: UILabel!
     
+    var start: String = ""
+    
     var matchingId: Int = 0
     var partnerName = ""
     
@@ -29,6 +31,7 @@ class SelectDrinkViewController: BaseViewController {
         SelectDrinkDataManager().requestDrink(id: matchingId, input, viewController: self)
         
         let vc = ChattingViewController()
+        vc.startTime = start
         vc.matchingId = matchingId
         vc.partnerName = partnerName
         navigationController?.pushViewController(vc, animated: true)
@@ -49,8 +52,14 @@ class SelectDrinkViewController: BaseViewController {
         
         self.navigationItem.setLeftBarButton(addBackButton, animated: false)
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.SpoqaSans(.bold, size: 16), NSAttributedString.Key.foregroundColor: UIColor.veryLightPink]
-        self.title = "메뉴 주문하기"
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        titleLabel.text = "메뉴 주문하기"
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
+        titleLabel.textColor = .white2
+        titleLabel.textAlignment = .center
+        titleview.addSubview(titleLabel)
+        self.navigationItem.titleView = titleview
         
         drinkCollectionView.register(UINib(nibName: "DrinkCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DrinkCollectionViewCell")
         

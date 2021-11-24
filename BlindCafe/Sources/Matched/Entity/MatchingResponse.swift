@@ -15,7 +15,6 @@ struct MatchingResultResponse: Decodable {
     var matchingId: Int
     var partner: PartnerResultResponse
     var latestMessage: String
-    var expiryDay: Int
     var received: Bool
     var expiryTime: String
 }

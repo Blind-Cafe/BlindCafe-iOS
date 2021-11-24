@@ -118,6 +118,8 @@
 		CDC51706274D26780063AA3B /* RegionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC51704274D26780063AA3B /* RegionCollectionViewCell.xib */; };
 		CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC51707274D285A0063AA3B /* StateCollectionViewCell.swift */; };
 		CDC5170A274D285A0063AA3B /* StateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC51708274D285A0063AA3B /* StateCollectionViewCell.xib */; };
+		CDC5170E274DACF30063AA3B /* ProfileExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC5170C274DACF20063AA3B /* ProfileExchangeViewController.swift */; };
+		CDC5170F274DACF30063AA3B /* ProfileExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC5170D274DACF30063AA3B /* ProfileExchangeViewController.xib */; };
 		CDD149D027317800002B2897 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149CF27317800002B2897 /* UIFont.swift */; };
 		CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */; };
 		CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */; };
@@ -250,6 +252,8 @@
 		CDC51704274D26780063AA3B /* RegionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CDC51707274D285A0063AA3B /* StateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCollectionViewCell.swift; sourceTree = "<group>"; };
 		CDC51708274D285A0063AA3B /* StateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateCollectionViewCell.xib; sourceTree = "<group>"; };
+		CDC5170C274DACF20063AA3B /* ProfileExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileExchangeViewController.swift; sourceTree = "<group>"; };
+		CDC5170D274DACF30063AA3B /* ProfileExchangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileExchangeViewController.xib; sourceTree = "<group>"; };
 		CDD149CF27317800002B2897 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		CDD149D227317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		CDD149D327317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
@@ -828,6 +832,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CDC5170B274DAC7E0063AA3B /* Nexts */ = {
+			isa = PBXGroup;
+			children = (
+				CDC5170C274DACF20063AA3B /* ProfileExchangeViewController.swift */,
+				CDC5170D274DACF30063AA3B /* ProfileExchangeViewController.xib */,
+			);
+			path = Nexts;
+			sourceTree = "<group>";
+		};
 		CDD149C92731605E002B2897 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,6 +856,7 @@
 		CDF8A0C227324772008367F3 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				CDC5170B274DAC7E0063AA3B /* Nexts */,
 				CD2971742739F19D00B034F1 /* Photo */,
 				CD7CB9D827381899004620BB /* Alerts */,
 				CDF8A0C72732CA2A008367F3 /* Cells */,
@@ -959,6 +973,7 @@
 				CD6AA9F12724484F00DA6013 /* MatchedViewController.xib in Resources */,
 				CD6AA9FF2726F3ED00DA6013 /* OnboardingCollectionViewCell.xib in Resources */,
 				CD8A918B2748D42B008C8E4D /* SettingsViewController.xib in Resources */,
+				CDC5170F274DACF30063AA3B /* ProfileExchangeViewController.xib in Resources */,
 				CD15094D272063E60020BD41 /* LoginViewController.xib in Resources */,
 				CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */,
 				CD77567A27413C7100AC699A /* ImageReceivingTableViewCell.xib in Resources */,
@@ -1104,6 +1119,7 @@
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
 				CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */,
+				CDC5170E274DACF30063AA3B /* ProfileExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

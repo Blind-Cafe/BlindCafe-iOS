@@ -31,6 +31,9 @@ struct AudioModel {
 
 class ChattingViewController: BaseViewController {
     
+    var startTime: String = ""
+    @IBOutlet weak var timeLabel: UILabel!
+    
     var matchingId: Int = UserDefaults.standard.integer(forKey: "MatchingId")
     var partnerName: String = ""
     
@@ -39,7 +42,8 @@ class ChattingViewController: BaseViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = []
-    var audios: [AudioModel] = []
+    
+    var audioPlaying: AudioModel!
     
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()
@@ -148,6 +152,11 @@ class ChattingViewController: BaseViewController {
         recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
         
         recordInit()
+        let date = Date(timeIntervalSince1970: TimeInterval(Int(startTime) ?? 0).rounded())
+        let elapsedTimeSeconds = Int(Date().timeIntervalSince(date))
+        let hours = elapsedTimeSeconds / 3600
+        let minutes = (elapsedTimeSeconds % 3600) / 60
+        timeLabel.text = String(format: "%02d시간 %02d분", hours, minutes)
     }
     
     override func viewWillAppear(_ animated: Bool) {
