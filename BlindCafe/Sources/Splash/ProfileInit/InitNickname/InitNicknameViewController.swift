@@ -82,7 +82,6 @@ class InitNicknameViewController: BaseOnboardingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nicknameTextField.font = .SpoqaSans(.regular, size: 13)
-        nicknameTextField.addDoneButtonOnKeyboard()
         nicknameTextField.addTarget(self, action: #selector(ifFocused), for: .touchDown)
         nicknameTextField.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         

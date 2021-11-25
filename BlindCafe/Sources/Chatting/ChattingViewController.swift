@@ -116,6 +116,7 @@ class ChattingViewController: BaseViewController {
     @IBOutlet weak var chattingFieldConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     
+    var drinkName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playing = 0
@@ -134,6 +135,7 @@ class ChattingViewController: BaseViewController {
         chatTableView.register(UINib(nibName: "ImageReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageReceivingTableViewCell")
         chatTableView.register(UINib(nibName: "AudioSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioSendingTableViewCell")
         chatTableView.register(UINib(nibName: "AudioReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioReceivingTableViewCell")
+        chatTableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -162,11 +164,13 @@ class ChattingViewController: BaseViewController {
         let hours = elapsedTimeSeconds / 3600
         let minutes = (elapsedTimeSeconds % 3600) / 60
         timeLabel.text = String(format: "%02d시간 %02d분", hours, minutes)
+        
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadMessages()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -547,7 +551,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        else {
+        else if message.type == 3{
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
@@ -598,6 +602,11 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             }
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
+            cell.descriptionLabel.text = message.body
+            return cell
         }
         
     }
@@ -768,8 +777,11 @@ extension ChattingViewController {
                         }
                     }
                 }
-                
             }
+        
+        if self.messages.count == 0 {
+            self.send(contents: "\(self.drinkName)를 주문한 \(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))님입니다.\n간단한 인사를 건네 반갑게 맞아주세요.", type: 7)
+        }
     }
     
     

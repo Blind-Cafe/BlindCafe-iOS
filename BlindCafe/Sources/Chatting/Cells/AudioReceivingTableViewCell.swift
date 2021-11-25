@@ -12,7 +12,6 @@ class AudioReceivingTableViewCell: UITableViewCell {
     @IBOutlet weak var audioSlider: UISlider!
     @IBOutlet weak var audioTimeLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .mainBlack
@@ -23,7 +22,6 @@ class AudioReceivingTableViewCell: UITableViewCell {
         thumbView.layer.cornerRadius = thumbView.frame.height / 2
         
         let renderer = UIGraphicsImageRenderer(bounds: thumbView.bounds)
-        
         
         audioSlider.setThumbImage(renderer.image { context in
             thumbView.layer.render(in: context.cgContext)

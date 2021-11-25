@@ -10,7 +10,7 @@ import UIKit
 class Report2ViewController: UIViewController {
     
     @IBAction func leaveRoomButton(_ sender: Any) {
-        
+        changeRootViewController(BaseTabBarController())
     }
     
     override func viewDidLoad() {
@@ -18,11 +18,4 @@ class Report2ViewController: UIViewController {
 
     }
 
-}
-
-extension Report2ViewController {
-    func failedToRequest(message: String) {
-        dismissIndicator()
-        presentAlert(message: message)
-    }
 }

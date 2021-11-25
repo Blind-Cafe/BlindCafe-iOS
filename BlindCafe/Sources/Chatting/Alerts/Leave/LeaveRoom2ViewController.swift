@@ -62,10 +62,7 @@ class LeaveRoom2ViewController: UIViewController {
 extension LeaveRoom2ViewController {
     func leaveRoom() {
         dismissIndicator()
-        let presentingVC = self.presentingViewController
-        dismiss(animated: false) {
-            presentingVC?.navigationController?.popToRootViewController(animated: false)
-        }
+        changeRootViewController(BaseTabBarController())
     }
     func failedToRequest(message: String) {
         dismissIndicator()

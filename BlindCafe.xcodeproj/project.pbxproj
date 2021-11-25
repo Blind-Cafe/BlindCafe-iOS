@@ -74,6 +74,8 @@
 		CD6E9245274F234600651411 /* ReportListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E9244274F234600651411 /* ReportListDataManager.swift */; };
 		CD6E924B274FA8F100651411 /* MatchedChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E9249274FA8F100651411 /* MatchedChattingViewController.swift */; };
 		CD6E924C274FA8F100651411 /* MatchedChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E924A274FA8F100651411 /* MatchedChattingViewController.xib */; };
+		CD6E924F274FD47500651411 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E924D274FD47400651411 /* DescriptionTableViewCell.swift */; };
+		CD6E9250274FD47500651411 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E924E274FD47400651411 /* DescriptionTableViewCell.xib */; };
 		CD6FE3FC274A96F2004698B2 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FE3FA274A96F2004698B2 /* ProfilePhotoViewController.swift */; };
 		CD6FE3FD274A96F2004698B2 /* ProfilePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6FE3FB274A96F2004698B2 /* ProfilePhotoViewController.xib */; };
 		CD6FE401274AA956004698B2 /* InterestChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FE3FF274AA956004698B2 /* InterestChangeViewController.swift */; };
@@ -225,6 +227,8 @@
 		CD6E9244274F234600651411 /* ReportListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListDataManager.swift; sourceTree = "<group>"; };
 		CD6E9249274FA8F100651411 /* MatchedChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedChattingViewController.swift; sourceTree = "<group>"; };
 		CD6E924A274FA8F100651411 /* MatchedChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchedChattingViewController.xib; sourceTree = "<group>"; };
+		CD6E924D274FD47400651411 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		CD6E924E274FD47400651411 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		CD6FE3FA274A96F2004698B2 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		CD6FE3FB274A96F2004698B2 /* ProfilePhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoViewController.xib; sourceTree = "<group>"; };
 		CD6FE3FF274AA956004698B2 /* InterestChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestChangeViewController.swift; sourceTree = "<group>"; };
@@ -1011,6 +1015,8 @@
 				CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */,
 				CD8A91812747B2DE008C8E4D /* AudioReceivingTableViewCell.xib */,
 				CD8A91842747C3BD008C8E4D /* PlayStopButton.swift */,
+				CD6E924D274FD47400651411 /* DescriptionTableViewCell.swift */,
+				CD6E924E274FD47400651411 /* DescriptionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1095,6 +1101,7 @@
 				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
 				CDBCD356274E673400995897 /* UserDelete2ViewController.xib in Resources */,
+				CD6E9250274FD47500651411 /* DescriptionTableViewCell.xib in Resources */,
 				CD6FE3FD274A96F2004698B2 /* ProfilePhotoViewController.xib in Resources */,
 				CDD149D927317E8B002B2897 /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */,
@@ -1211,6 +1218,7 @@
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
 				CD8A918F274A2042008C8E4D /* ProfileViewController.swift in Sources */,
 				CD693B38273F52410035C8D2 /* HomeDataManager.swift in Sources */,
+				CD6E924F274FD47500651411 /* DescriptionTableViewCell.swift in Sources */,
 				CD6AA9F42724486200DA6013 /* MyPageViewController.swift in Sources */,
 				CD12A52E274A38D1005B399F /* RequestMatchingInput.swift in Sources */,
 				CD8A918A2748D42B008C8E4D /* SettingsViewController.swift in Sources */,

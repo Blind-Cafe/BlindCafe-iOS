@@ -29,12 +29,6 @@ class SelectDrinkViewController: BaseViewController {
         showIndicator()
         let input = SelectDrinkInput(drink: selected! + 1)
         SelectDrinkDataManager().requestDrink(id: matchingId, input, viewController: self)
-        
-        let vc = ChattingViewController()
-        vc.startTime = start
-        vc.matchingId = matchingId
-        vc.partnerName = partnerName
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -116,10 +110,43 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
 extension SelectDrinkViewController {
     func selectDrink(result: SelectDrinkResponse) {
         dismissIndicator()
+        let vc = ChattingViewController()
+        vc.startTime = start
+        vc.matchingId = matchingId
+        vc.partnerName = partnerName
+        vc.drinkName = drinkName(id: selected!)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func failedToRequest(message: String) {
         dismissIndicator()
         presentAlert(message: message)
+    }
+    
+    func drinkName(id: Int) -> String {
+        var drinkname = ""
+        switch id {
+        case 0:
+            drinkname = "아메리카노"
+        case 1:
+            drinkname = "카페라떼"
+        case 2:
+            drinkname = "카페모카"
+        case 3:
+            drinkname = "버블티"
+        case 4:
+            drinkname = "민트초코"
+        case 5:
+            drinkname = "딸기 스무디"
+        case 6:
+            drinkname = "블루 레몬 에이드"
+        case 7:
+            drinkname = "녹차"
+        case 8:
+            drinkname = "자몽티"
+        default:
+            print("drinkName")
+        }
+        return drinkname
     }
 }
