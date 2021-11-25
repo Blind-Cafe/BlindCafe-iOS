@@ -10,6 +10,7 @@ import UIKit
 class LeaveRoomViewController: BaseViewController {
 
     @IBOutlet weak var leaveLabel: UILabel!
+    var partnerName: String = ""
     
     @IBAction func dismissButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
@@ -30,6 +31,7 @@ class LeaveRoomViewController: BaseViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.5)
+        leaveLabel.text = "지금 나가시면 \(partnerName)님과 다시 매칭 될 수 없어요 "
     }
 
 

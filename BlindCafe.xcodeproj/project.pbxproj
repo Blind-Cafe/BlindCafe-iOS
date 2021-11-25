@@ -72,6 +72,8 @@
 		CD6AA9FF2726F3ED00DA6013 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AA9FD2726F3EC00DA6013 /* OnboardingCollectionViewCell.xib */; };
 		CD6E9243274F233A00651411 /* ReportListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E9242274F233A00651411 /* ReportListResponse.swift */; };
 		CD6E9245274F234600651411 /* ReportListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E9244274F234600651411 /* ReportListDataManager.swift */; };
+		CD6E924B274FA8F100651411 /* MatchedChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E9249274FA8F100651411 /* MatchedChattingViewController.swift */; };
+		CD6E924C274FA8F100651411 /* MatchedChattingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E924A274FA8F100651411 /* MatchedChattingViewController.xib */; };
 		CD6FE3FC274A96F2004698B2 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FE3FA274A96F2004698B2 /* ProfilePhotoViewController.swift */; };
 		CD6FE3FD274A96F2004698B2 /* ProfilePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6FE3FB274A96F2004698B2 /* ProfilePhotoViewController.xib */; };
 		CD6FE401274AA956004698B2 /* InterestChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6FE3FF274AA956004698B2 /* InterestChangeViewController.swift */; };
@@ -221,6 +223,8 @@
 		CD6AA9FD2726F3EC00DA6013 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD6E9242274F233A00651411 /* ReportListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListResponse.swift; sourceTree = "<group>"; };
 		CD6E9244274F234600651411 /* ReportListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListDataManager.swift; sourceTree = "<group>"; };
+		CD6E9249274FA8F100651411 /* MatchedChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedChattingViewController.swift; sourceTree = "<group>"; };
+		CD6E924A274FA8F100651411 /* MatchedChattingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchedChattingViewController.xib; sourceTree = "<group>"; };
 		CD6FE3FA274A96F2004698B2 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		CD6FE3FB274A96F2004698B2 /* ProfilePhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoViewController.xib; sourceTree = "<group>"; };
 		CD6FE3FF274AA956004698B2 /* InterestChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestChangeViewController.swift; sourceTree = "<group>"; };
@@ -662,6 +666,7 @@
 		CD6AA9ED2724468000DA6013 /* Matched */ = {
 			isa = PBXGroup;
 			children = (
+				CD6E9248274FA87B00651411 /* MatchedChatting */,
 				CD2AA3DE2744F09F0088FE49 /* Entity */,
 				CD2AA3DF2744F0BA0088FE49 /* DataManager */,
 				CD2AA3D92744B01F0088FE49 /* Cells */,
@@ -704,6 +709,15 @@
 				CD6E9244274F234600651411 /* ReportListDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD6E9248274FA87B00651411 /* MatchedChatting */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E9249274FA8F100651411 /* MatchedChattingViewController.swift */,
+				CD6E924A274FA8F100651411 /* MatchedChattingViewController.xib */,
+			);
+			path = MatchedChatting;
 			sourceTree = "<group>";
 		};
 		CD6FE3F9274A96D3004698B2 /* Photo */ = {
@@ -1071,6 +1085,7 @@
 				CDBCD36E274E98A000995897 /* ReportTableViewCell.xib in Resources */,
 				CD7661F9274282BF003ECE00 /* InterestCollectionViewCell.xib in Resources */,
 				CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */,
+				CD6E924C274FA8F100651411 /* MatchedChattingViewController.xib in Resources */,
 				CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
@@ -1230,6 +1245,7 @@
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
 				CD6FE401274AA956004698B2 /* InterestChangeViewController.swift in Sources */,
 				CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */,
+				CD6E924B274FA8F100651411 /* MatchedChattingViewController.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
 				CDC51705274D26780063AA3B /* RegionCollectionViewCell.swift in Sources */,
 				CD77567527413C6100AC699A /* ImageSendingTableViewCell.swift in Sources */,

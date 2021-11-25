@@ -40,6 +40,14 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         homeNavController.navigationController?.navigationBar.shadowImage = UIImage()
         homeNavController.navigationController?.navigationBar.layoutIfNeeded()
         
+        matchedNavController.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        matchedNavController.navigationController?.navigationBar.shadowImage = UIImage()
+        matchedNavController.navigationController?.navigationBar.layoutIfNeeded()
+        
+        mypageNavController.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        mypageNavController.navigationController?.navigationBar.shadowImage = UIImage()
+        mypageNavController.navigationController?.navigationBar.layoutIfNeeded()
+        
         homeNavController.tabBarItem = homeTabBarItem
         homeNavController.tabBarItem.selectedImage = UIImage(named: "homeitemselected")
         matchedNavController.tabBarItem = matchedTabBarItem

@@ -48,7 +48,7 @@ class ChattingViewController: BaseViewController {
     let storage = Storage.storage()
     
     var audioRecorder: AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer?
     
     var recordTimer: Timer!
     lazy var pencil = UIBezierPath(rect: waveView.bounds)
@@ -88,6 +88,7 @@ class ChattingViewController: BaseViewController {
         let vc = LeaveRoomViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.partnerName = partnerName
         
         present(vc, animated: false)
     }
@@ -550,19 +551,24 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
+                cell.audioSlider.tag = indexPath.row
                 cell.playStopButton.tag = indexPath.row
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
-                
+                //cell.audioSlider.addTarget(self, action: #selector(sliderAction(_:)), for: .valueChanged)
                 
                 if indexPath.row != audioPlayingIndex {
                     cell.playStopButton.isSelected = false
                     cell.audioSlider.value = 0
+                    cell.audioTimeLabel.text = "00:00"
                 }
                 else {
                     cell.playStopButton.isSelected = true
-                    cell.audioSlider.maximumValue = Float(Int(self.audioPlayer.duration))
+                    cell.audioSlider.maximumValue = Float(Int(self.audioPlayer?.duration ?? 0))
                     cell.audioSlider.minimumValue = 0.0
-                    cell.audioSlider.value = Float(playing ?? 0)
+                    cell.audioSlider.value = Float(playing)
+                    let minutes = playing / 60
+                    let seconds = playing % 60
+                    cell.audioTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
                 }
                 
                 return cell
@@ -572,11 +578,22 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.playStopButton.content = String(message.body)
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
                 cell.playStopButton.tag = indexPath.row
+                cell.audioSlider.tag = indexPath.row
                 
                 if indexPath.row != audioPlayingIndex {
                     cell.playStopButton.isSelected = false
+                    cell.audioSlider.value = 0
+                    cell.audioTimeLabel.text = "00:00"
                 } else {
                     cell.playStopButton.isSelected = true
+                    if audioPlayer != nil {
+                        cell.audioSlider.maximumValue = Float(Int(self.audioPlayer!.duration))
+                    }
+                    cell.audioSlider.minimumValue = 0.0
+                    cell.audioSlider.value = Float(playing)
+                    let minutes = playing / 60
+                    let seconds = playing % 60
+                    cell.audioTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
                 }
                 
                 return cell
@@ -590,9 +607,11 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         if  sender.isSelected == true {
             sender.isSelected = false
             
-            audioPlayer.stop()
-            audioPlayingIndex = -1
-            playing = 0
+            if audioPlayer != nil {
+                audioPlayer?.stop()
+                audioPlayingIndex = -1
+                playing = 0
+            }
             
             chatTableView.reloadData()
         }
@@ -601,6 +620,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             self.audioPlayingIndex = sender.tag
             
             let audioRef = storageRef.child("audio/\(sender.content)")
+            print(audioRef)
             audioRef.downloadURL { url, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -608,34 +628,68 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                     do{
                         let soundData = try Data(contentsOf: url!)
                         self.audioPlayer = try AVAudioPlayer(data: soundData)
-                        self.audioPlayer.prepareToPlay()
-                        self.audioPlayer.delegate = self
-                        self.audioPlayer.play()
+                        self.audioPlayer?.prepareToPlay()
+                        self.audioPlayer?.delegate = self
+                        self.audioPlayer?.play()
                         
                         self.chatTableView.reloadData()
                         
-                        self.audioPlayTimer(tag: sender.tag)
+                        self.audioPlayTimer(tag: sender.tag, current: 0)
                     } catch {
                         print("something went wrong")
                     }
                 }
             }
         }
-        
-        
     }
     
-    func audioPlayTimer(tag: Int) {
+    /*@objc func sliderAction(_ sender: UISlider){
+        if audioPlayer != nil {
+            audioPlayer?.stop()
+        }
+        
+        self.audioPlayingIndex = sender.tag
+        chatTableView.reloadData()
+        
+        let messagebody = messages[sender.tag].body
+        let audioRef = storageRef.child("audio/\(messagebody)")
+        audioRef.downloadURL { url, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                do{
+                    let soundData = try Data(contentsOf: url!)
+                    self.audioPlayer = try AVAudioPlayer(data: soundData)
+                    self.audioPlayer.prepareToPlay()
+                    self.audioPlayer.delegate = self
+                    
+                    self.audioPlayer.currentTime = TimeInterval(sender.value)
+                    self.audioPlayer.play()
+                    
+                    //self.chatTableView.reloadData()
+                    
+                    self.audioPlayTimer(tag: sender.tag, current: Int(sender.value))
+                } catch {
+                    print("something went wrong")
+                }
+            }
+        }
+    }*/
+    
+    func audioPlayTimer(tag: Int, current: Int) {
+        //self.playing = current
         audioTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            if !self.audioPlayer.isPlaying {
+            if self.playing >= Int(self.audioPlayer?.duration ?? 0) {
                 timer.invalidate()
                 self.playing = 0
             }
+            else {
+                self.playing += 1
+                
+                let indexPath: IndexPath = [0, tag]
+                self.chatTableView.reloadRows(at: [indexPath], with: .none)
+            }
             
-            self.playing += 1
-            
-            let indexPath: IndexPath = [0, tag]
-            self.chatTableView.reloadRows(at: [indexPath], with: .none)
         }
     }
 }

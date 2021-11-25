@@ -88,6 +88,8 @@ class InitNicknameViewController: BaseOnboardingViewController {
         
         nextButton.isEnabled = false
         setBackButton()
+        
+        dismissKeyboardWhenTappedAround()
     }
     
     @objc func ifFocused() {

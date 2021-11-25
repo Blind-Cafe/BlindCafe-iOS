@@ -29,6 +29,8 @@ class AudioSendingTableViewCell: UITableViewCell {
         audioSlider.setThumbImage(renderer.image { context in
             thumbView.layer.render(in: context.cgContext)
         }, for: .normal)
+        
+        audioSlider.isEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

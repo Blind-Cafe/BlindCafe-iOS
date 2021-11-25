@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9Z-UJ-Ojm">
-                        <rect key="frame" x="201" y="8" width="167" height="42"/>
+                        <rect key="frame" x="198" y="8" width="170" height="42"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNw-qU-ppV" customClass="PlayStopButton" customModule="BlindCafe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-1" width="44" height="44"/>
@@ -31,14 +31,14 @@
                                 <state key="normal" image="recordplay"/>
                                 <state key="selected" image="recordstop"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-Ss-31B">
-                                <rect key="frame" x="128" y="14" width="29" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXW-Ss-31B">
+                                <rect key="frame" x="131" y="14" width="29" height="14"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                                 <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.5" maxValue="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-T6-F6i">
-                                <rect key="frame" x="47" y="6" width="78" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.5" maxValue="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="pgG-T6-F6i">
+                                <rect key="frame" x="44" y="5" width="81" height="31"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="maximumTrackTintColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,14 +46,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IXW-Ss-31B" firstAttribute="leading" secondItem="pgG-T6-F6i" secondAttribute="trailing" constant="5" id="LwY-4a-vHx"/>
+                            <constraint firstItem="IXW-Ss-31B" firstAttribute="leading" secondItem="pgG-T6-F6i" secondAttribute="trailing" constant="8" id="LwY-4a-vHx"/>
+                            <constraint firstItem="IXW-Ss-31B" firstAttribute="centerY" secondItem="x9Z-UJ-Ojm" secondAttribute="centerY" id="O8t-Et-tvB"/>
                             <constraint firstItem="bNw-qU-ppV" firstAttribute="leading" secondItem="x9Z-UJ-Ojm" secondAttribute="leading" id="PPn-Ho-QIL"/>
-                            <constraint firstAttribute="width" constant="167" id="eTn-MM-BSl"/>
-                            <constraint firstItem="pgG-T6-F6i" firstAttribute="centerY" secondItem="x9Z-UJ-Ojm" secondAttribute="centerY" id="jHC-KN-xX8"/>
+                            <constraint firstAttribute="width" constant="170" id="eTn-MM-BSl"/>
+                            <constraint firstItem="pgG-T6-F6i" firstAttribute="centerY" secondItem="x9Z-UJ-Ojm" secondAttribute="centerY" constant="-1" id="jly-V6-U3X"/>
                             <constraint firstAttribute="trailing" secondItem="IXW-Ss-31B" secondAttribute="trailing" constant="10" id="kVH-qe-5Y0"/>
-                            <constraint firstItem="IXW-Ss-31B" firstAttribute="centerY" secondItem="x9Z-UJ-Ojm" secondAttribute="centerY" id="pxj-fX-rVX"/>
                             <constraint firstAttribute="height" constant="42" id="qyQ-wh-IMh"/>
-                            <constraint firstItem="pgG-T6-F6i" firstAttribute="leading" secondItem="bNw-qU-ppV" secondAttribute="trailing" constant="5" id="wOj-UI-uuZ"/>
+                            <constraint firstItem="pgG-T6-F6i" firstAttribute="leading" secondItem="bNw-qU-ppV" secondAttribute="trailing" constant="2" id="wOj-UI-uuZ"/>
                             <constraint firstItem="bNw-qU-ppV" firstAttribute="centerY" secondItem="x9Z-UJ-Ojm" secondAttribute="centerY" id="wqB-cU-5Z5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
