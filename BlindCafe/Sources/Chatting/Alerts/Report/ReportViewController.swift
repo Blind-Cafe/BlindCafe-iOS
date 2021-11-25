@@ -41,13 +41,12 @@ class ReportViewController: UIViewController {
     
     @IBOutlet weak var reportNextButton: UIButton!
     @IBAction func reportNextButton(_ sender: Any) {
-        let rootView = presentingViewController
+        let matchingId = UserDefaults.standard.string(forKey: "MatchingId") ?? ""
+        let input = ReportInput(matchingId: Int(matchingId)!, reason: self.indexOfOneAndOnly! + 1)
+        showIndicator()
+        ReportDataManager().report(input, viewController: self)
         
-        self.dismiss(animated: false, completion: {
-            let childVC2 = Report2ViewController()
-            childVC2.modalPresentationStyle = .overCurrentContext
-            rootView?.present(childVC2, animated: false, completion: nil)
-        })
+        
     }
     
     override func viewDidLoad() {
@@ -57,4 +56,23 @@ class ReportViewController: UIViewController {
         view.backgroundColor = UIColor(hex: 0x000000, alpha: 0.5)
     }
 
+}
+
+extension ReportViewController {
+    func report() {
+        dismissIndicator()
+        
+        let rootView = presentingViewController
+        
+        self.dismiss(animated: false, completion: {
+            let childVC2 = Report2ViewController()
+            childVC2.modalPresentationStyle = .overCurrentContext
+            rootView?.present(childVC2, animated: false, completion: nil)
+        })
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

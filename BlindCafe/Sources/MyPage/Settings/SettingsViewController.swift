@@ -40,6 +40,9 @@ class SettingsViewController: BaseViewController {
         
     }
     
+    @IBAction func reportListButton(_ sender: Any) {
+        navigationController?.pushViewController(ReportListViewController(), animated: true)
+    }
     
     @IBAction func deleteButton(_ sender: Any) {
         navigationController?.pushViewController(UserDeleteViewController(), animated: true)

@@ -542,12 +542,32 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else {
+            var duration: Double = 0
+            let audioRef = storageRef.child("audio/\(message.body)")
+            audioRef.downloadURL { url, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    do{
+                        let soundData = try Data(contentsOf: url!)
+                        self.audioPlayer = try AVAudioPlayer(data: soundData)
+                        self.audioPlayer.prepareToPlay()
+                        self.audioPlayer.delegate = self
+                        duration = self.audioPlayer.duration
+                    } catch {
+                        print("something went wrong")
+                    }
+                }
+            }
+            
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
                 cell.playStopButton.tag = indexPath.row
-                cell.audioSlider
+                cell.audioSlider.maximumValue = Float(duration)
+                cell.audioSlider.minimumValue = 0.0
+                cell.audioSlider.value = 0.0
                 
                 if indexPath.row != audioPlayingIndex {
                     cell.playStopButton.isSelected = false

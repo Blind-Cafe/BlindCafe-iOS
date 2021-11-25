@@ -11,27 +11,12 @@ class LeaveRoom2ViewController: UIViewController {
 
     @IBOutlet var leaveRoomButtons: [UIButton]!
     
-    var indexOfOneAndOnly: Int?
+    var reasonList: [Int] = []
     @IBAction func leaveRoomButton(_ sender: UIButton) {
-        if indexOfOneAndOnly != nil {
-            if !sender.isSelected {
-                for index in leaveRoomButtons.indices {
-                    leaveRoomButtons[index].isSelected = false
-                }
-                sender.isSelected = true
-                indexOfOneAndOnly = leaveRoomButtons.firstIndex(of: sender)
-                byeButton.isEnabled = true
-            }
-            else {
-                sender.isSelected = false
-                indexOfOneAndOnly = nil
-                byeButton.isEnabled = false
-            }
-        }
-        else {
-            sender.isSelected = true
-            indexOfOneAndOnly = leaveRoomButtons.firstIndex(of: sender)
-            byeButton.isEnabled = true
+        if sender.isSelected {
+            
+        } else {
+            
         }
     }
     
@@ -41,7 +26,7 @@ class LeaveRoom2ViewController: UIViewController {
     
     @IBOutlet weak var byeButton: UIButton!
     @IBAction func byeButton(_ sender: Any) {
-        LeaveRoomDataManager().leaveRoom(id: (indexOfOneAndOnly! + 1), viewController: self)
+
     }
     
     override func viewDidLoad() {
@@ -53,3 +38,12 @@ class LeaveRoom2ViewController: UIViewController {
 
 }
 
+extension LeaveRoom2ViewController {
+    func leaveRoom() {
+        dismissIndicator()
+    }
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
+}

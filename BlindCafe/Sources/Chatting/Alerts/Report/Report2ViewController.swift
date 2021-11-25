@@ -8,10 +8,6 @@
 import UIKit
 
 class Report2ViewController: UIViewController {
-
-    @IBAction func dismissButton(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
-    }
     
     @IBAction func leaveRoomButton(_ sender: Any) {
         
@@ -20,7 +16,13 @@ class Report2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
+}
+
+extension Report2ViewController {
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

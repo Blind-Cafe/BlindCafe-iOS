@@ -99,6 +99,9 @@
                             <rect key="frame" x="17" y="4" width="356" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="reportlist"/>
+                            <connections>
+                                <action selector="reportListButton:" destination="-1" eventType="touchUpInside" id="kIs-Fo-J1z"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
