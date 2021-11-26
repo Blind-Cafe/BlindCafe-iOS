@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController {
     var matchingId: Int = 0
     var partnerName: String = ""
     var start: String = ""
+    var reason: String = ""
     
     var date: Date!
     
@@ -160,7 +161,7 @@ extension HomeViewController {
             let minutes = (elapsedTimeSeconds % 3600) / 60
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
         case "FAILED_LEAVE_ROOM":
-            print("failedleaveroom")
+            reason = result.reason ?? ""
         case "FAILED_REPORT":
             print("failedreport")
         case "FAILED_WONT_EXCHANGE":
