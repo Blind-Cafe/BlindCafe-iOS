@@ -15,7 +15,5 @@ class Report2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

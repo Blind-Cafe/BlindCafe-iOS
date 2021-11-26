@@ -28,7 +28,10 @@ class HomeViewController: BaseViewController {
             let input = RequestMatchingInput()
             RequestMatchingDataManager().requestMatching(input, viewController: self)
         case "WAIT":
-            print("waitbutton")
+            let vc = MatchingCancelViewController()
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: false)
         case "FOUND":
             let vc = SelectDrinkViewController()
             vc.matchingId = matchingId
@@ -156,7 +159,6 @@ extension HomeViewController {
             let hours = elapsedTimeSeconds / 3600
             let minutes = (elapsedTimeSeconds % 3600) / 60
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
-            
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")
         case "FAILED_REPORT":

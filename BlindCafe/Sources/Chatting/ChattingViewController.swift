@@ -117,6 +117,7 @@ class ChattingViewController: BaseViewController {
     @IBOutlet weak var tableViewBottom: NSLayoutConstraint!
     
     var drinkName = ""
+    var isFirst = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playing = 0
@@ -165,7 +166,12 @@ class ChattingViewController: BaseViewController {
         let minutes = (elapsedTimeSeconds % 3600) / 60
         timeLabel.text = String(format: "%02d시간 %02d분", hours, minutes)
         
-        
+        if self.drinkName != "" && isFirst {
+            self.send(contents: "매칭에 성공하였습니다.\n간단한 인사로 반갑게 맞아주세요.", type: 7)
+            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
+        } else if self.drinkName != "" && isFirst {
+            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -551,7 +557,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
-        else if message.type == 3{
+        else if message.type == 3 {
             if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
@@ -652,39 +658,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    /*@objc func sliderAction(_ sender: UISlider){
-        if audioPlayer != nil {
-            audioPlayer?.stop()
-        }
-        
-        self.audioPlayingIndex = sender.tag
-        chatTableView.reloadData()
-        
-        let messagebody = messages[sender.tag].body
-        let audioRef = storageRef.child("audio/\(messagebody)")
-        audioRef.downloadURL { url, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                do{
-                    let soundData = try Data(contentsOf: url!)
-                    self.audioPlayer = try AVAudioPlayer(data: soundData)
-                    self.audioPlayer.prepareToPlay()
-                    self.audioPlayer.delegate = self
-                    
-                    self.audioPlayer.currentTime = TimeInterval(sender.value)
-                    self.audioPlayer.play()
-                    
-                    //self.chatTableView.reloadData()
-                    
-                    self.audioPlayTimer(tag: sender.tag, current: Int(sender.value))
-                } catch {
-                    print("something went wrong")
-                }
-            }
-        }
-    }*/
-    
     func audioPlayTimer(tag: Int, current: Int) {
         //self.playing = current
         audioTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
@@ -771,17 +744,13 @@ extension ChattingViewController {
                                     if self.messages.count != 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
                                     }
-                                    
                                 }
                             }
                         }
                     }
                 }
             }
-        
-        if self.messages.count == 0 {
-            self.send(contents: "\(self.drinkName)를 주문한 \(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))님입니다.\n간단한 인사를 건네 반갑게 맞아주세요.", type: 7)
-        }
+
     }
     
     

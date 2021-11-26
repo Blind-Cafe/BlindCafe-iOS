@@ -24,6 +24,8 @@ class SelectDrinkViewController: BaseViewController {
     
     var selected: Int? = nil
     
+    var isFirst: Bool = true
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         showIndicator()
@@ -33,6 +35,7 @@ class SelectDrinkViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(matchingId)
 
         nextButton.isEnabled = false
         // Do any additional setup after loading the view.
@@ -60,7 +63,6 @@ class SelectDrinkViewController: BaseViewController {
         drinkCollectionView.delegate = self
         drinkCollectionView.dataSource = self
         drinkCollectionView.backgroundColor = .mainBlack
-        
     }
 }
 
@@ -104,17 +106,28 @@ extension SelectDrinkViewController: UICollectionViewDelegate, UICollectionViewD
         drinkCollectionView.reloadData()
     }
     
-    
 }
 
 extension SelectDrinkViewController {
     func selectDrink(result: SelectDrinkResponse) {
+        GetMatchingDataManager().getMatching(id: matchingId, viewController: self)
+    }
+    
+    func getDrink(result: GetMatchingResponse){
         dismissIndicator()
+        if result.drink == "미입력" {
+            isFirst = true
+        } else {
+            isFirst = false
+        }
+        
         let vc = ChattingViewController()
         vc.startTime = start
         vc.matchingId = matchingId
         vc.partnerName = partnerName
         vc.drinkName = drinkName(id: selected!)
+        vc.isFirst = isFirst
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
