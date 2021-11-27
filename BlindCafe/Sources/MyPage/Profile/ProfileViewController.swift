@@ -20,12 +20,41 @@ class ProfileViewController: BaseViewController {
         navigationController?.pushViewController(RegionChangeViewController(), animated: true)
     }
     
+    var indexOfOneAndOnly: Int?
+    @IBOutlet var partnerGenderButtons: [UIButton]!
+    @IBAction func partnerGenderAction(_ sender: UIButton) {
+        if indexOfOneAndOnly != nil {
+            if !sender.isSelected {
+                for index in partnerGenderButtons.indices {
+                    partnerGenderButtons[index].isSelected = false
+                }
+                sender.isSelected = true
+                indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
+                //reportNextButton.isEnabled = true
+            }
+            else {
+                sender.isSelected = false
+                indexOfOneAndOnly = nil
+                //reportNextButton.isEnabled = false
+            }
+        }
+        else {
+            sender.isSelected = true
+            indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
+            //reportNextButton.isEnabled = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigation()
-        nicknameView.backgroundColor = .coral
-        nicknameAlert.isHidden = true
+        nicknameView.backgroundColor = .white2
+        nicknameAlert.textColor = .veryLightPink
+        
+        
+        showIndicator()
+        GetProfileDataManager().getProfile(viewController: self)
     }
     
     func setNavigation() {
@@ -47,4 +76,34 @@ class ProfileViewController: BaseViewController {
         self.navigationItem.titleView = titleview
     }
 
+}
+
+extension ProfileViewController {
+    func getprofile(result: GetProfileResponse) {
+        dismissIndicator()
+        userNicknameLabel.text = result.nickname
+        userAgeLabel.text = String(result.age)
+        if result.myGender == "M" {
+            userGenderLabel.text = "남자"
+        } else {
+            userGenderLabel.text = "여자"
+        }
+        
+        if result.region != nil {
+            regionButton.setTitle(result.region, for: .normal)
+        }
+        
+        for index in partnerGenderButtons.indices {
+            partnerGenderButtons[index].isSelected = false
+        }
+        if result.partnerGender == "F" {
+            partnerGenderButtons[0].isSelected = true
+        }
+        else if result.partnerGender == "M" {
+            partnerGenderButtons[1].isSelected = true
+        }
+        else {
+            partnerGenderButtons[2].isSelected = true
+        }
+    }
 }
