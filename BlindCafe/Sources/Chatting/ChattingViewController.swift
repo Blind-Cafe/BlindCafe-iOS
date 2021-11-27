@@ -118,6 +118,7 @@ class ChattingViewController: BaseViewController {
     
     var drinkName = ""
     var isFirst = true
+    var common = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playing = 0
@@ -169,11 +170,11 @@ class ChattingViewController: BaseViewController {
         if self.drinkName != "" && isFirst {
             self.send(contents: "매칭에 성공하였습니다.\n간단한 인사로 반갑게 맞아주세요.", type: 7)
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
-            //공통관심사
-            //토픽
+            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님과 \(partnerName)님의 공통 관심사는 \(common)입니다.", type: 7)
         } else if self.drinkName != "" && !isFirst {
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -351,8 +352,6 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
     }
     
     func uploadAudio(audio: URL) {
-        let audioData = (try? Data(contentsOf: audio))!
-        
         let time = Int64(Date().timeIntervalSince1970 * 1000)
         let filePath = "audio/\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")"
         let metaData = StorageMetadata()

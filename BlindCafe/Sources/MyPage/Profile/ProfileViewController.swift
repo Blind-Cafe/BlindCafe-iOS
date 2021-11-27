@@ -8,23 +8,6 @@
 import UIKit
 
 class ProfileViewController: BaseViewController {
-
-    @IBOutlet weak var profileImage1: UIImageView!
-    @IBOutlet weak var profileButton1: UIButton!
-    @IBAction func profileButton1(_ sender: UIButton) {
-    }
-    
-    @IBOutlet weak var profileImage2: UIImageView!
-    @IBOutlet weak var profileButton2: UIButton!
-    @IBAction func profileButton2(_ sender: Any) {
-    }
-    
-    @IBOutlet weak var profileImage3: UIImageView!
-    @IBOutlet weak var profileButton3: UIButton!
-    @IBAction func profileButton3(_ sender: Any) {
-    }
-    
-    
     @IBOutlet weak var userNicknameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var userGenderLabel: UILabel!

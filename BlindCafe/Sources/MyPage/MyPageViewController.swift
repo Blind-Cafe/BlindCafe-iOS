@@ -12,8 +12,10 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var genderImageView: UIImageView!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var partnerGenderLabel: UILabel!
     
     @IBOutlet weak var interestImage1: UIImageView!
     @IBOutlet weak var interestImage2: UIImageView!
@@ -111,12 +113,29 @@ extension MyPageViewController {
         nameLabel.text = result.nickname
         if result.myGender == "M" {
             genderLabel.text = "남자"
+            genderImageView.image = UIImage(named: "mypagemale")
         }
         else {
             genderLabel.text = "여자"
+            genderImageView.image = UIImage(named: "mypagefemale")
         }
         ageLabel.text = String(result.age)
-        regionLabel.text = result.region ?? ""
+        
+        if result.region == nil {
+            regionLabel.text = "지역을 설정해주세요"
+            regionLabel.textColor = .veryLightPink
+        } else {
+            regionLabel.text = result.region
+            regionLabel.textColor = .white2
+        }
+        
+        if result.partnerGender == "M" {
+            partnerGenderLabel.text = "남자"
+        } else if result.partnerGender == "F" {
+            partnerGenderLabel.text = "여자"
+        } else {
+            partnerGenderLabel.text = "상관없음"
+        }
         
         interestImage1.image = UIImage(named: mainName(name: result.interests[0]))
         interestImage2.image = UIImage(named: mainName(name: result.interests[1]))

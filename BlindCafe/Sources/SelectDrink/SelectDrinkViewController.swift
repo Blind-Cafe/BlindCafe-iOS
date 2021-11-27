@@ -127,6 +127,7 @@ extension SelectDrinkViewController {
         vc.partnerName = partnerName
         vc.drinkName = drinkName(id: selected!)
         vc.isFirst = isFirst
+        vc.common = result.interest
         
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -14,16 +14,15 @@ class HomeDataManager {
             .responseDecodable(of: HomeResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    if response.code == "1000"{
+                    if response.code == "1000" {
                         viewController.requestData(result: response)
                     }
-                    else {
+                    else if response.code == "1007" {
                         viewController.failedToRequest(message: response.message)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
-                
             }
     }
 }

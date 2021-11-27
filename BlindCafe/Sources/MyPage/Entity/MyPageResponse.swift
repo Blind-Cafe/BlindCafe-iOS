@@ -13,6 +13,7 @@ struct MyPageResponse: Decodable {
     var myGender: String
     var age: Int
     var region: String?
+    var partnerGender: String
     var interests: [Int]
     var drinks: [Int]
 }

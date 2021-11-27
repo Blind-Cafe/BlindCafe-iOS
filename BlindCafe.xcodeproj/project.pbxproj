@@ -107,6 +107,8 @@
 		CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567D27424F8800AC699A /* InterestResponse.swift */; };
 		CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77567F27424F9800AC699A /* InterestDataManager.swift */; };
 		CD77568427425B3100AC699A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = CD77568327425B3100AC699A /* data.json */; };
+		CD783B612751ED8E00EFFDF9 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B5F2751ED8E00EFFDF9 /* ProfileImageViewController.swift */; };
+		CD783B622751ED8E00EFFDF9 /* ProfileImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */; };
 		CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E982272848EC0025CF1B /* AgreementViewController.swift */; };
 		CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79E983272848EC0025CF1B /* AgreementViewController.xib */; };
 		CD79E987272852F90025CF1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E986272852F90025CF1B /* Constant.swift */; };
@@ -272,6 +274,8 @@
 		CD77567D27424F8800AC699A /* InterestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestResponse.swift; sourceTree = "<group>"; };
 		CD77567F27424F9800AC699A /* InterestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestDataManager.swift; sourceTree = "<group>"; };
 		CD77568327425B3100AC699A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../../../Downloads/data.json; sourceTree = "<group>"; };
+		CD783B5F2751ED8E00EFFDF9 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
+		CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImageViewController.xib; sourceTree = "<group>"; };
 		CD79E982272848EC0025CF1B /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		CD79E983272848EC0025CF1B /* AgreementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		CD79E986272852F90025CF1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -682,6 +686,7 @@
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				CD783B5E2751ED6E00EFFDF9 /* ProfileImage */,
 				CD6FE3FE274AA93E004698B2 /* InterestChange */,
 				CD8A918C274A2008008C8E4D /* Profile */,
 				CD8A91862748D401008C8E4D /* Settings */,
@@ -856,6 +861,16 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		CD783B5E2751ED6E00EFFDF9 /* ProfileImage */ = {
+			isa = PBXGroup;
+			children = (
+				CD6FE3F9274A96D3004698B2 /* Photo */,
+				CD783B5F2751ED8E00EFFDF9 /* ProfileImageViewController.swift */,
+				CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */,
+			);
+			path = ProfileImage;
+			sourceTree = "<group>";
+		};
 		CD79E9812728487A0025CF1B /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,7 +931,6 @@
 			isa = PBXGroup;
 			children = (
 				CDC516FD274D22350063AA3B /* Region */,
-				CD6FE3F9274A96D3004698B2 /* Photo */,
 				CD8A918D274A203F008C8E4D /* ProfileViewController.swift */,
 				CD8A918E274A203F008C8E4D /* ProfileViewController.xib */,
 			);
@@ -1174,6 +1188,7 @@
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
 				CD2AA3CA274379450088FE49 /* DoneSignUpViewController.xib in Resources */,
 				CD0C06B8272D85AB0020E858 /* InitInterestViewController.xib in Resources */,
+				CD783B622751ED8E00EFFDF9 /* ProfileImageViewController.xib in Resources */,
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
 				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
@@ -1357,6 +1372,7 @@
 				CD6E925D275011C600651411 /* GetMatchingDataManager.swift in Sources */,
 				CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */,
 				CDBCD360274E829A00995897 /* ReportInput.swift in Sources */,
+				CD783B612751ED8E00EFFDF9 /* ProfileImageViewController.swift in Sources */,
 				CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD6E926D2750B9A400651411 /* ReportLeave1ViewController.swift in Sources */,
