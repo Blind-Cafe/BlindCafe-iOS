@@ -891,20 +891,6 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
-		CD783B692752132700EFFDF9 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		CD783B6A2752132C00EFFDF9 /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
 		CD79E9812728487A0025CF1B /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,8 +1071,6 @@
 		CDC516FD274D22350063AA3B /* Region */ = {
 			isa = PBXGroup;
 			children = (
-				CD783B692752132700EFFDF9 /* Entity */,
-				CD783B6A2752132C00EFFDF9 /* DataManager */,
 				CDC51702274D264E0063AA3B /* Cells */,
 				CDC516FE274D226C0063AA3B /* RegionChangeViewController.swift */,
 				CDC516FF274D226C0063AA3B /* RegionChangeViewController.xib */,

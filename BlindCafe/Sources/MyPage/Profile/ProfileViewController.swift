@@ -16,7 +16,7 @@ class ProfileViewController: BaseViewController, regionProtocol {
         regionButton.setTitle("\(region) \(state)", for: .normal)
     }
     
-    @IBOutlet weak var userNicknameLabel: UILabel!
+    @IBOutlet weak var userNicknameTextField: UITextField!
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var userGenderLabel: UILabel!
     
@@ -41,19 +41,35 @@ class ProfileViewController: BaseViewController, regionProtocol {
                 }
                 sender.isSelected = true
                 indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
-                //reportNextButton.isEnabled = true
             }
             else {
                 sender.isSelected = false
                 indexOfOneAndOnly = nil
-                //reportNextButton.isEnabled = false
             }
         }
         else {
             sender.isSelected = true
             indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
-            //reportNextButton.isEnabled = true
         }
+    }
+    
+    @IBAction func textFieldChanged(_ sender: Any) {
+        nicknameAlert.textColor = .veryLightPink
+        nicknameView.backgroundColor = .white2
+    }
+    
+    @IBAction func changeButton(_ sender: Any) {
+        let count = userNicknameTextField.text?.count ?? 0
+        
+        if count < 1 || count > 9 {
+            nicknameAlert.textColor = .coral
+            nicknameView.backgroundColor = .coral
+        }
+        else {
+            UserDefaults.standard.set(userNicknameTextField.text, forKey: "UserNickname")
+            
+        }
+
     }
     
     override func viewDidLoad() {
@@ -62,7 +78,7 @@ class ProfileViewController: BaseViewController, regionProtocol {
         setNavigation()
         nicknameView.backgroundColor = .white2
         nicknameAlert.textColor = .veryLightPink
-        
+        dismissKeyboardWhenTappedAround()
         
         showIndicator()
         GetProfileDataManager().getProfile(viewController: self)
@@ -92,7 +108,7 @@ class ProfileViewController: BaseViewController, regionProtocol {
 extension ProfileViewController {
     func getprofile(result: GetProfileResponse) {
         dismissIndicator()
-        userNicknameLabel.text = result.nickname
+        userNicknameTextField.text = result.nickname
         userAgeLabel.text = String(result.age)
         if result.myGender == "M" {
             userGenderLabel.text = "남자"
