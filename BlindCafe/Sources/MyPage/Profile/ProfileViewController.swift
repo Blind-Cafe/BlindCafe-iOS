@@ -7,7 +7,15 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+protocol regionProtocol {
+    func passRegion(region: String, state: String)
+}
+
+class ProfileViewController: BaseViewController, regionProtocol {
+    func passRegion(region: String, state: String) {
+        regionButton.setTitle("\(region) \(state)", for: .normal)
+    }
+    
     @IBOutlet weak var userNicknameLabel: UILabel!
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var userGenderLabel: UILabel!
@@ -17,8 +25,11 @@ class ProfileViewController: BaseViewController {
     
     @IBOutlet weak var regionButton: UIButton!
     @IBAction func regionButton(_ sender: Any) {
-        navigationController?.pushViewController(RegionChangeViewController(), animated: true)
+        let vc = RegionChangeViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
+    
     
     var indexOfOneAndOnly: Int?
     @IBOutlet var partnerGenderButtons: [UIButton]!

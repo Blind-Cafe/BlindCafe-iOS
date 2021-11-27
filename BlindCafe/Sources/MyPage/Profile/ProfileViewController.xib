@@ -246,6 +246,7 @@
                 <constraint firstItem="e1D-Wv-AFT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="Thn-CZ-mzp"/>
                 <constraint firstItem="gYY-KF-KpQ" firstAttribute="top" secondItem="MM7-Gm-yGG" secondAttribute="bottom" constant="4" id="Tyr-AO-qsz"/>
                 <constraint firstItem="YXD-sW-ZF3" firstAttribute="top" secondItem="KOX-K1-W0k" secondAttribute="bottom" constant="4" id="UKi-zW-7Gh"/>
+                <constraint firstItem="KOX-K1-W0k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="VMJ-22-HsU"/>
                 <constraint firstItem="I1M-wo-01w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="VsP-01-3Kg"/>
                 <constraint firstItem="pTc-sh-RyJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Wxp-1T-7ws"/>
                 <constraint firstItem="gYY-KF-KpQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Zs7-m6-3JK"/>
@@ -268,6 +269,7 @@
                 <constraint firstItem="v9x-W2-HhN" firstAttribute="top" secondItem="YXD-sW-ZF3" secondAttribute="bottom" constant="16" id="uQE-Gk-aSJ"/>
                 <constraint firstItem="9h3-dj-SqK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="uqT-53-chX"/>
                 <constraint firstItem="nW1-E6-xlM" firstAttribute="top" secondItem="9h3-dj-SqK" secondAttribute="bottom" constant="4" id="vrj-Mb-ByD"/>
+                <constraint firstAttribute="trailing" secondItem="KOX-K1-W0k" secondAttribute="trailing" constant="17" id="wau-n5-zdY"/>
                 <constraint firstItem="Jj4-iS-TI6" firstAttribute="width" secondItem="6Gg-0n-Vk9" secondAttribute="width" id="xAl-iZ-3rS"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
