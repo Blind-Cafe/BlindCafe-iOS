@@ -55,6 +55,14 @@
                         <action selector="galleryButton:" destination="-1" eventType="touchUpInside" id="PW9-GB-c7p"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-ik-QNC">
+                    <rect key="frame" x="356" y="5" width="44" height="44"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="closebutton"/>
+                    <connections>
+                        <action selector="closeButton:" destination="-1" eventType="touchUpInside" id="QGQ-er-Vnp"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,14 +77,17 @@
                 <constraint firstItem="lBQ-0a-bUi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cXo-hV-1dT"/>
                 <constraint firstItem="i1M-rx-pUm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lge-bo-K9T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i1M-rx-pUm" secondAttribute="trailing" id="miG-x0-ieE"/>
+                <constraint firstAttribute="trailing" secondItem="LJ1-ik-QNC" secondAttribute="trailing" constant="14" id="mpE-3F-jXU"/>
                 <constraint firstItem="2qP-po-9Pt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="r2y-Pp-zFg"/>
                 <constraint firstItem="lBQ-0a-bUi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="sFn-14-Tfl"/>
+                <constraint firstItem="LJ1-ik-QNC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="sR0-ye-bQm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="closebutton" width="44" height="44"/>
         <image name="galleryfolder" width="75" height="24"/>
         <image name="galleryphoto" width="75" height="24"/>
         <image name="photosendbutton" width="356" height="50"/>

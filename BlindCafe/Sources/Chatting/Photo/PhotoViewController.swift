@@ -15,6 +15,9 @@ struct AlbumModel {
 }
 
 class PhotoViewController: UIViewController {
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     let storage = Storage.storage()
     

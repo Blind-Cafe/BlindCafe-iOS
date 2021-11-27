@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,16 +15,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileImageViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
+                <outlet property="profileButton1" destination="l08-Yd-DdS" id="k8x-Ln-Zud"/>
+                <outlet property="profileButton2" destination="Dnb-MD-pb3" id="Xlq-du-TFf"/>
+                <outlet property="profileButton3" destination="TNx-3F-mkc" id="23K-7B-Yea"/>
+                <outlet property="profileImage1" destination="OOc-cT-7UG" id="I51-J1-6X3"/>
+                <outlet property="profileImage2" destination="jer-SO-0Wr" id="tPf-Lg-QhY"/>
+                <outlet property="profileImage3" destination="yPa-JI-r7f" id="yLR-2M-RRT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="프로필 등록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whK-ek-M9I">
-                    <rect key="frame" x="24" y="67" width="106.66666666666669" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 등록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whK-ek-M9I">
+                    <rect key="frame" x="22.000000000000007" y="24" width="106.66666666666669" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="KbT-CA-YNN"/>
                     </constraints>
@@ -33,12 +38,10 @@
                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-cT-7UG">
-                    <rect key="frame" x="20" y="103" width="112" height="152"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-cT-7UG">
+                    <rect key="frame" x="17" y="60" width="112" height="152"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="112" id="aUF-PE-kPN"/>
                         <constraint firstAttribute="width" secondItem="OOc-cT-7UG" secondAttribute="height" multiplier="14:19" id="ceg-ti-qeg"/>
-                        <constraint firstAttribute="height" constant="152" id="oVZ-Kn-naQ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -46,54 +49,74 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-Yd-DdS">
-                    <rect key="frame" x="88" y="211" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="jer-SO-0Wr">
+                    <rect key="frame" x="139" y="60" width="112" height="152"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-MD-pb3">
+                    <rect key="frame" x="214" y="175" width="44" height="44"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileadd"/>
                     <state key="selected" image="profiledelete"/>
+                    <connections>
+                        <action selector="profileButton2:" destination="-1" eventType="touchUpInside" id="qsS-0x-MSR"/>
+                    </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="jer-SO-0Wr">
-                    <rect key="frame" x="141" y="103" width="112" height="152"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="152" id="ea7-tG-tq5"/>
-                        <constraint firstAttribute="width" constant="112" id="x1P-Xb-UiG"/>
-                    </constraints>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="yPa-JI-r7f">
+                    <rect key="frame" x="261" y="60" width="112" height="152"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-MD-pb3">
-                    <rect key="frame" x="209" y="211" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-Yd-DdS">
+                    <rect key="frame" x="92" y="175" width="44" height="44"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileadd"/>
                     <state key="selected" image="profiledelete"/>
+                    <connections>
+                        <action selector="profileButton1:" destination="-1" eventType="touchUpInside" id="ynH-iM-6ty"/>
+                    </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profileimagefield" translatesAutoresizingMaskIntoConstraints="NO" id="yPa-JI-r7f">
-                    <rect key="frame" x="262" y="103" width="112" height="152"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="152" id="VMc-90-K5b"/>
-                        <constraint firstAttribute="width" constant="112" id="gQP-bm-kdt"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-3F-mkc">
-                    <rect key="frame" x="330" y="211" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-3F-mkc">
+                    <rect key="frame" x="336" y="175" width="44" height="44"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="profileadd"/>
                     <state key="selected" image="profiledelete"/>
+                    <connections>
+                        <action selector="profileButton3:" destination="-1" eventType="touchUpInside" id="oxa-Wr-Mg0"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yPa-JI-r7f" firstAttribute="centerY" secondItem="OOc-cT-7UG" secondAttribute="centerY" id="9v6-aX-NOd"/>
+                <constraint firstItem="whK-ek-M9I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="Fo3-bV-948"/>
+                <constraint firstItem="OOc-cT-7UG" firstAttribute="top" secondItem="whK-ek-M9I" secondAttribute="bottom" constant="12" id="Gx3-tp-zki"/>
+                <constraint firstItem="yPa-JI-r7f" firstAttribute="width" secondItem="OOc-cT-7UG" secondAttribute="width" id="J2t-Wp-gvm"/>
+                <constraint firstItem="Dnb-MD-pb3" firstAttribute="trailing" secondItem="jer-SO-0Wr" secondAttribute="trailing" constant="7" id="O4O-Do-CHs"/>
+                <constraint firstItem="jer-SO-0Wr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S9j-eL-nW9"/>
+                <constraint firstItem="jer-SO-0Wr" firstAttribute="bottom" secondItem="l08-Yd-DdS" secondAttribute="bottom" constant="-7" id="UDa-id-5ew"/>
+                <constraint firstItem="TNx-3F-mkc" firstAttribute="trailing" secondItem="yPa-JI-r7f" secondAttribute="trailing" constant="7" id="WiS-Vu-oUE"/>
+                <constraint firstItem="yPa-JI-r7f" firstAttribute="bottom" secondItem="Dnb-MD-pb3" secondAttribute="bottom" constant="-7" id="Xgb-x0-Xbc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yPa-JI-r7f" secondAttribute="trailing" constant="17" id="ZXK-eq-x4G"/>
+                <constraint firstItem="jer-SO-0Wr" firstAttribute="height" secondItem="OOc-cT-7UG" secondAttribute="height" id="a4Q-xE-Ep2"/>
+                <constraint firstItem="TNx-3F-mkc" firstAttribute="bottom" secondItem="yPa-JI-r7f" secondAttribute="bottom" constant="7" id="agB-5O-fux"/>
+                <constraint firstItem="jer-SO-0Wr" firstAttribute="centerY" secondItem="OOc-cT-7UG" secondAttribute="centerY" id="eaJ-gF-wTN"/>
+                <constraint firstItem="whK-ek-M9I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="hzd-MP-G9q"/>
+                <constraint firstItem="jer-SO-0Wr" firstAttribute="width" secondItem="OOc-cT-7UG" secondAttribute="width" id="nKt-0w-qgT"/>
+                <constraint firstItem="yPa-JI-r7f" firstAttribute="height" secondItem="OOc-cT-7UG" secondAttribute="height" id="sg2-Rq-IJ3"/>
+                <constraint firstItem="yPa-JI-r7f" firstAttribute="leading" secondItem="jer-SO-0Wr" secondAttribute="trailing" constant="10" id="tb5-WR-ByY"/>
+                <constraint firstItem="OOc-cT-7UG" firstAttribute="trailing" secondItem="l08-Yd-DdS" secondAttribute="trailing" constant="-7" id="wcT-g5-RQd"/>
+                <constraint firstItem="OOc-cT-7UG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="wmO-YN-UGT"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="85"/>
         </view>
     </objects>
@@ -101,8 +124,5 @@
         <image name="profileadd" width="44" height="44"/>
         <image name="profiledelete" width="44" height="44"/>
         <image name="profileimagefield" width="112" height="152"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
