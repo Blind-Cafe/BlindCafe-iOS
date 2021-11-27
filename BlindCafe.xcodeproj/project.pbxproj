@@ -111,6 +111,9 @@
 		CD783B622751ED8E00EFFDF9 /* ProfileImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */; };
 		CD783B642752002600EFFDF9 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B632752002600EFFDF9 /* GetProfileResponse.swift */; };
 		CD783B68275200B100EFFDF9 /* GetProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B67275200B100EFFDF9 /* GetProfileDataManager.swift */; };
+		CD783B6C27523FA700EFFDF9 /* PutProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B6B27523FA600EFFDF9 /* PutProfileInput.swift */; };
+		CD783B6E27523FB700EFFDF9 /* PutProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B6D27523FB700EFFDF9 /* PutProfileResponse.swift */; };
+		CD783B702752413500EFFDF9 /* PutProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD783B6F2752413500EFFDF9 /* PutProfileDataManager.swift */; };
 		CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E982272848EC0025CF1B /* AgreementViewController.swift */; };
 		CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD79E983272848EC0025CF1B /* AgreementViewController.xib */; };
 		CD79E987272852F90025CF1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79E986272852F90025CF1B /* Constant.swift */; };
@@ -280,6 +283,9 @@
 		CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImageViewController.xib; sourceTree = "<group>"; };
 		CD783B632752002600EFFDF9 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
 		CD783B67275200B100EFFDF9 /* GetProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileDataManager.swift; sourceTree = "<group>"; };
+		CD783B6B27523FA600EFFDF9 /* PutProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProfileInput.swift; sourceTree = "<group>"; };
+		CD783B6D27523FB700EFFDF9 /* PutProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProfileResponse.swift; sourceTree = "<group>"; };
+		CD783B6F2752413500EFFDF9 /* PutProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutProfileDataManager.swift; sourceTree = "<group>"; };
 		CD79E982272848EC0025CF1B /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		CD79E983272848EC0025CF1B /* AgreementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		CD79E986272852F90025CF1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -690,8 +696,8 @@
 		CD6AA9EC2724465100DA6013 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				CD783B5E2751ED6E00EFFDF9 /* ProfileImage */,
 				CD6FE3FE274AA93E004698B2 /* InterestChange */,
+				CD783B5E2751ED6E00EFFDF9 /* ProfileImage */,
 				CD8A918C274A2008008C8E4D /* Profile */,
 				CD8A91862748D401008C8E4D /* Settings */,
 				CD3A7B7327462F86007800B0 /* Cells */,
@@ -879,6 +885,8 @@
 			isa = PBXGroup;
 			children = (
 				CD783B632752002600EFFDF9 /* GetProfileResponse.swift */,
+				CD783B6B27523FA600EFFDF9 /* PutProfileInput.swift */,
+				CD783B6D27523FB700EFFDF9 /* PutProfileResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -887,6 +895,7 @@
 			isa = PBXGroup;
 			children = (
 				CD783B67275200B100EFFDF9 /* GetProfileDataManager.swift */,
+				CD783B6F2752413500EFFDF9 /* PutProfileDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1348,6 +1357,7 @@
 				CD12A532274A40AD005B399F /* SelectDrinkInput.swift in Sources */,
 				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
+				CD783B702752413500EFFDF9 /* PutProfileDataManager.swift in Sources */,
 				CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
@@ -1394,9 +1404,11 @@
 				CD6FE3FC274A96F2004698B2 /* ProfilePhotoViewController.swift in Sources */,
 				CD783B642752002600EFFDF9 /* GetProfileResponse.swift in Sources */,
 				CD6E925D275011C600651411 /* GetMatchingDataManager.swift in Sources */,
+				CD783B6E27523FB700EFFDF9 /* PutProfileResponse.swift in Sources */,
 				CD79E984272848EC0025CF1B /* AgreementViewController.swift in Sources */,
 				CDBCD360274E829A00995897 /* ReportInput.swift in Sources */,
 				CD783B612751ED8E00EFFDF9 /* ProfileImageViewController.swift in Sources */,
+				CD783B6C27523FA700EFFDF9 /* PutProfileInput.swift in Sources */,
 				CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD6E926D2750B9A400651411 /* ReportLeave1ViewController.swift in Sources */,

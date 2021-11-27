@@ -7,7 +7,15 @@
 
 import UIKit
 
-class MyPageViewController: BaseViewController {
+protocol GetInfo {
+    func passInfo()
+}
+
+class MyPageViewController: BaseViewController, GetInfo{
+    func passInfo() {
+        showIndicator()
+        MyPageDataManager().requestMyPage(viewController: self)
+    }
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,9 +29,16 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var interestImage2: UIImageView!
     @IBOutlet weak var interestImage3: UIImageView!
     
+    @IBAction func profileImageChange(_ sender: Any) {
+        let vc = ProfileImageViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func profileChange(_ sender: Any) {
         let vc = ProfileViewController()
         vc.hidesBottomBarWhenPushed = true
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -121,7 +136,8 @@ extension MyPageViewController {
         }
         ageLabel.text = String(result.age)
         
-        if result.region == nil {
+        let region = result.region
+        if region == nil || region == "  " {
             regionLabel.text = "지역을 설정해주세요"
             regionLabel.textColor = .veryLightPink
         } else {

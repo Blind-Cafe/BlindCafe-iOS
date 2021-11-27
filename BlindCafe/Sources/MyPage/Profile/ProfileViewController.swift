@@ -16,6 +16,8 @@ class ProfileViewController: BaseViewController, regionProtocol {
         regionButton.setTitle("\(region) \(state)", for: .normal)
     }
     
+    var delegate: GetInfo?
+    
     @IBOutlet weak var userNicknameTextField: UITextField!
     @IBOutlet weak var userAgeLabel: UILabel!
     @IBOutlet weak var userGenderLabel: UILabel!
@@ -30,26 +32,13 @@ class ProfileViewController: BaseViewController, regionProtocol {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    var indexOfOneAndOnly: Int?
     @IBOutlet var partnerGenderButtons: [UIButton]!
     @IBAction func partnerGenderAction(_ sender: UIButton) {
-        if indexOfOneAndOnly != nil {
-            if !sender.isSelected {
-                for index in partnerGenderButtons.indices {
-                    partnerGenderButtons[index].isSelected = false
-                }
-                sender.isSelected = true
-                indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
+        if !sender.isSelected {
+            for index in partnerGenderButtons.indices {
+                partnerGenderButtons[index].isSelected = false
             }
-            else {
-                sender.isSelected = false
-                indexOfOneAndOnly = nil
-            }
-        }
-        else {
             sender.isSelected = true
-            indexOfOneAndOnly = partnerGenderButtons.firstIndex(of: sender)
         }
     }
     
@@ -67,7 +56,25 @@ class ProfileViewController: BaseViewController, regionProtocol {
         }
         else {
             UserDefaults.standard.set(userNicknameTextField.text, forKey: "UserNickname")
+            var partnerGender = ""
+            if partnerGenderButtons[0].isSelected {
+                partnerGender = "F"
+            } else if partnerGenderButtons[1].isSelected {
+                partnerGender = "M"
+            } else {
+                partnerGender = "N"
+            }
             
+            if regionButton.title(for: .normal) != "지역을 설정해주세요" {
+                let stateArr = regionButton.title(for: .normal)?.split(separator: " ")
+                let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: String(stateArr![0]), region: String(stateArr![1]))
+                PutProfileDataManager().putProfile(input, viewController: self)
+            } else {
+                let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: " ", region: " ")
+                PutProfileDataManager().putProfile(input, viewController: self)
+            }
+            delegate?.passInfo()
+            navigationController?.popViewController(animated: false)
         }
 
     }
@@ -132,5 +139,10 @@ extension ProfileViewController {
         else {
             partnerGenderButtons[2].isSelected = true
         }
+    }
+    
+    func putprofile(result: PutProfileResponse) {
+        dismissIndicator()
+        
     }
 }
