@@ -37,11 +37,15 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-d0-Nsb">
                                 <rect key="frame" x="14" y="38" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Pm6-kr-BwE"/>
+                                    <constraint firstAttribute="width" constant="44" id="RmJ-vS-nQt"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="recordplay"/>
                                 <state key="selected" image="recordstop"/>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-JL-qtj">
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DSv-JL-qtj">
                                 <rect key="frame" x="70" y="45" width="204" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Zaq-iY-Ms5"/>
@@ -87,6 +91,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="audioSlider" destination="DSv-JL-qtj" id="8zd-Nk-sKE"/>
+                <outlet property="audioTimeLabel" destination="pLT-gg-gdI" id="7Dh-cu-etw"/>
+                <outlet property="playStopButton" destination="qi9-d0-Nsb" id="bzV-UV-1VM"/>
+            </connections>
             <point key="canvasLocation" x="199.27536231884059" y="117.1875"/>
         </tableViewCell>
     </objects>

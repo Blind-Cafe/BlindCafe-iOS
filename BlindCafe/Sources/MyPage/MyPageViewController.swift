@@ -11,7 +11,7 @@ protocol GetInfo {
     func passInfo()
 }
 
-class MyPageViewController: BaseViewController, GetInfo{
+class MyPageViewController: BaseViewController, GetInfo {
     func passInfo() {
         showIndicator()
         MyPageDataManager().requestMyPage(viewController: self)

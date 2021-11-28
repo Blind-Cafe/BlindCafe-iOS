@@ -277,7 +277,7 @@
                 <constraint firstItem="Jj4-iS-TI6" firstAttribute="width" secondItem="6Gg-0n-Vk9" secondAttribute="width" id="xAl-iZ-3rS"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <point key="canvasLocation" x="-209" y="35"/>
+            <point key="canvasLocation" x="-231" y="7"/>
         </view>
     </objects>
     <resources>

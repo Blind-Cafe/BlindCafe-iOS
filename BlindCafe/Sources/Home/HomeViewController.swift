@@ -86,7 +86,7 @@ class HomeViewController: BaseViewController {
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
        
-        //refresh()
+        refresh()
     }
     
     func refresh() {

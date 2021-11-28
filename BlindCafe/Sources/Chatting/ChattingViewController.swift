@@ -177,7 +177,6 @@ class ChattingViewController: BaseViewController {
         } else if self.drinkName != "" && !isFirst {
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -188,6 +187,7 @@ class ChattingViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeKeyboardNotification()
+        audioPlayer?.stop()
     }
     
     @objc func buttonDown() {
@@ -372,7 +372,7 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
                     print("성공")
                 }
             }
-            _ = uploadTask.observe(.success) {snapshot in
+            _ = uploadTask.observe(.success) { snapshot in
                 ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
             }
         }
@@ -619,8 +619,40 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textTopicLabel.text = message.body
             
             return cell
+        } else if message.type == 5 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTopicTableViewCell", for: indexPath) as! ImageTopicTableViewCell
+            let url = URL(string: message.body)
+            let data = try? Data(contentsOf: url!)
+            cell.imageTopicImageView.image = UIImage(data: data ?? Data())
+            
+            return cell
+        } else if message.type == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AudioTopicTableViewCell", for: indexPath) as! AudioTopicTableViewCell
+            
+            cell.playStopButton.tag = indexPath.row
+            cell.playStopButton.addTarget(self, action: #selector(topicPlayStop(_:)), for: .touchUpInside)
+            
+            cell.audioSlider.tag = indexPath.row
+            
+            if indexPath.row != audioPlayingIndex {
+                cell.playStopButton.isSelected = false
+                cell.audioSlider.value = 0
+                cell.audioTimeLabel.text = "00:00/00:00"
+            } else {
+                cell.playStopButton.isSelected = true
+                if audioPlayer != nil {
+                    cell.audioSlider.maximumValue = Float(Int(self.audioPlayer!.duration))
+                }
+                cell.audioSlider.minimumValue = 0.0
+                cell.audioSlider.value = Float(playing)
+                let minutes = playing / 60
+                let seconds = playing % 60
+                cell.audioTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
+            }
+            
+            return cell
         }
-        else if message.type == 7{
+        else if message.type == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             cell.descriptionLabel.text = message.body
             return cell
@@ -628,6 +660,39 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+    }
+    
+    @objc func topicPlayStop(_ sender: UIButton){
+        if  sender.isSelected == true {
+            sender.isSelected = false
+            
+            if audioPlayer != nil {
+                audioPlayer?.stop()
+                audioPlayingIndex = -1
+                playing = 0
+            }
+            
+            chatTableView.reloadData()
+        }
+        else {
+            sender.isSelected = true
+            self.audioPlayingIndex = sender.tag
+            
+            do{
+                let url = URL(string: messages[sender.tag].body)!
+                let soundData = try Data(contentsOf: url)
+                self.audioPlayer = try AVAudioPlayer(data: soundData)
+                self.audioPlayer?.prepareToPlay()
+                self.audioPlayer?.delegate = self
+                self.audioPlayer?.play()
+                
+                self.chatTableView.reloadData()
+                
+                self.audioPlayTimer(tag: sender.tag, current: 0)
+            } catch {
+                print("something went wrong")
+            }
+        }
     }
     
     @objc func playStop(_ sender: PlayStopButton) {
@@ -843,5 +908,10 @@ extension ChattingViewController {
             send(contents: (result.audio?.src)!, type: 6)
         }
             
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
 }

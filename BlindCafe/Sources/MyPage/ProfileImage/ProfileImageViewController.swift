@@ -13,7 +13,7 @@ protocol GetImage {
 
 class ProfileImageViewController: BaseViewController, GetImage {
     func getImage(selectedField: Int, profileImage: UIImage){
-        /*switch selectedField {
+        switch selectedField {
         case 1:
             profileImage1.image = profileImage
         case 2:
@@ -22,10 +22,8 @@ class ProfileImageViewController: BaseViewController, GetImage {
             profileImage3.image = profileImage
         default:
             print("uploaded!")
-        }*/
+        }
         
-        showIndicator()
-        GetProfileImageDataManager().getProfileImage(viewController: self)
     }
     
     @IBOutlet weak var profileImage1: UIImageView!

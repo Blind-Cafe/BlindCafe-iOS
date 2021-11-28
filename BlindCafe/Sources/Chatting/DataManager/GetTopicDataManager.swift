@@ -10,13 +10,13 @@ import Alamofire
 class GetTopicDataManager {
     func getTopic(id: Int, viewController: ChattingViewController) {
         AF.request("\(Constant.BASE_URL)/api/matching/\(id)/topic", method: .get, headers: Constant.HEADERS)
-            .validate()
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: GetTopicResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     viewController.topic(result: response)
-                case .failure(let error):
-                    print(error.localizedDescription)
+                case .failure(_):
+                    viewController.failedToRequest(message: "더 이상 존재하는 토픽이 없습니다.")
                 }
             }
     }

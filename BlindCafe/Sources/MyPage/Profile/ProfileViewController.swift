@@ -73,8 +73,10 @@ class ProfileViewController: BaseViewController, regionProtocol {
                 let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: " ", region: " ")
                 PutProfileDataManager().putProfile(input, viewController: self)
             }
+            
             delegate?.passInfo()
             navigationController?.popViewController(animated: false)
+            
         }
 
     }

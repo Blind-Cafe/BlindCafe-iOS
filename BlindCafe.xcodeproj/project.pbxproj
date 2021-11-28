@@ -52,6 +52,17 @@
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */; };
 		CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */; };
+		CD48D5672753DE2B00F69061 /* ProfileOpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D5652753DE2B00F69061 /* ProfileOpenViewController.swift */; };
+		CD48D5682753DE2B00F69061 /* ProfileOpenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD48D5662753DE2B00F69061 /* ProfileOpenViewController.xib */; };
+		CD48D56C2753ECB600F69061 /* ProfileOpenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D56B2753ECB600F69061 /* ProfileOpenResponse.swift */; };
+		CD48D56E2753F0EE00F69061 /* ProfileOpenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D56D2753F0EE00F69061 /* ProfileOpenDataManager.swift */; };
+		CD48D5712753F88A00F69061 /* PostProfileInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D5702753F88A00F69061 /* PostProfileInput.swift */; };
+		CD48D5732753F89B00F69061 /* PostProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D5722753F89B00F69061 /* PostProfileResponse.swift */; };
+		CD48D5752753F8FF00F69061 /* PostProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D5742753F8FF00F69061 /* PostProfileDataManager.swift */; };
+		CD48D5782754054600F69061 /* WaitProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D5762754054600F69061 /* WaitProfileViewController.swift */; };
+		CD48D5792754054600F69061 /* WaitProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD48D5772754054600F69061 /* WaitProfileViewController.xib */; };
+		CD48D57D275408BB00F69061 /* ProfileAcceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD48D57B275408BB00F69061 /* ProfileAcceptViewController.swift */; };
+		CD48D57E275408BB00F69061 /* ProfileAcceptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD48D57C275408BB00F69061 /* ProfileAcceptViewController.xib */; };
 		CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */; };
 		CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */; };
 		CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD693B35273F50BC0035C8D2 /* HomeResponse.swift */; };
@@ -138,6 +149,7 @@
 		CD8A60D9275393D70002E07D /* AudioTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60D7275393D70002E07D /* AudioTopicTableViewCell.xib */; };
 		CD8A60DC2753A4400002E07D /* GetTopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60DB2753A4400002E07D /* GetTopicResponse.swift */; };
 		CD8A60DF2753A4540002E07D /* GetTopicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60DE2753A4540002E07D /* GetTopicDataManager.swift */; };
+		CD8A60E12753B24D0002E07D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60E02753B24D0002E07D /* ErrorResponse.swift */; };
 		CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */; };
 		CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */; };
 		CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */; };
@@ -236,6 +248,17 @@
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD48D5652753DE2B00F69061 /* ProfileOpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenViewController.swift; sourceTree = "<group>"; };
+		CD48D5662753DE2B00F69061 /* ProfileOpenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOpenViewController.xib; sourceTree = "<group>"; };
+		CD48D56B2753ECB600F69061 /* ProfileOpenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenResponse.swift; sourceTree = "<group>"; };
+		CD48D56D2753F0EE00F69061 /* ProfileOpenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOpenDataManager.swift; sourceTree = "<group>"; };
+		CD48D5702753F88A00F69061 /* PostProfileInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProfileInput.swift; sourceTree = "<group>"; };
+		CD48D5722753F89B00F69061 /* PostProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProfileResponse.swift; sourceTree = "<group>"; };
+		CD48D5742753F8FF00F69061 /* PostProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProfileDataManager.swift; sourceTree = "<group>"; };
+		CD48D5762754054600F69061 /* WaitProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitProfileViewController.swift; sourceTree = "<group>"; };
+		CD48D5772754054600F69061 /* WaitProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitProfileViewController.xib; sourceTree = "<group>"; };
+		CD48D57B275408BB00F69061 /* ProfileAcceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAcceptViewController.swift; sourceTree = "<group>"; };
+		CD48D57C275408BB00F69061 /* ProfileAcceptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileAcceptViewController.xib; sourceTree = "<group>"; };
 		CD693B2F273F4C140035C8D2 /* InitDetailInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDetailInterestViewController.swift; sourceTree = "<group>"; };
 		CD693B30273F4C140035C8D2 /* InitDetailInterestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitDetailInterestViewController.xib; sourceTree = "<group>"; };
 		CD693B35273F50BC0035C8D2 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
@@ -322,6 +345,7 @@
 		CD8A60D7275393D70002E07D /* AudioTopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTopicTableViewCell.xib; sourceTree = "<group>"; };
 		CD8A60DB2753A4400002E07D /* GetTopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopicResponse.swift; sourceTree = "<group>"; };
 		CD8A60DE2753A4540002E07D /* GetTopicDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopicDataManager.swift; sourceTree = "<group>"; };
+		CD8A60E02753B24D0002E07D /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSendingTableViewCell.swift; sourceTree = "<group>"; };
 		CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSendingTableViewCell.xib; sourceTree = "<group>"; };
 		CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioReceivingTableViewCell.swift; sourceTree = "<group>"; };
@@ -496,6 +520,7 @@
 			children = (
 				CD150949272063420020BD41 /* Splash */,
 				CD1509512720FBE00020BD41 /* Home */,
+				CD48D5632753D6DD00F69061 /* ProfileExchange */,
 				CD6AA9ED2724468000DA6013 /* Matched */,
 				CD6AA9EC2724465100DA6013 /* MyPage */,
 				CDF8A0C227324772008367F3 /* Chatting */,
@@ -546,6 +571,7 @@
 				CD15095527214BC40020BD41 /* BaseViewController.swift */,
 				CD15095227210DCB0020BD41 /* BaseTabBarController.swift */,
 				CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */,
+				CD8A60E02753B24D0002E07D /* ErrorResponse.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -654,6 +680,64 @@
 				CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CD48D5632753D6DD00F69061 /* ProfileExchange */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D57A2754078D00F69061 /* ProfileAccept */,
+				CD48D5642753DE0D00F69061 /* ProfileOpen */,
+				CD48D56F2753F77400F69061 /* LoadingViews */,
+			);
+			path = ProfileExchange;
+			sourceTree = "<group>";
+		};
+		CD48D5642753DE0D00F69061 /* ProfileOpen */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D56A2753EC9500F69061 /* Entity */,
+				CD48D5692753EC8D00F69061 /* DataManager */,
+				CD48D5652753DE2B00F69061 /* ProfileOpenViewController.swift */,
+				CD48D5662753DE2B00F69061 /* ProfileOpenViewController.xib */,
+			);
+			path = ProfileOpen;
+			sourceTree = "<group>";
+		};
+		CD48D5692753EC8D00F69061 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D56D2753F0EE00F69061 /* ProfileOpenDataManager.swift */,
+				CD48D5742753F8FF00F69061 /* PostProfileDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD48D56A2753EC9500F69061 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D56B2753ECB600F69061 /* ProfileOpenResponse.swift */,
+				CD48D5702753F88A00F69061 /* PostProfileInput.swift */,
+				CD48D5722753F89B00F69061 /* PostProfileResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD48D56F2753F77400F69061 /* LoadingViews */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D5762754054600F69061 /* WaitProfileViewController.swift */,
+				CD48D5772754054600F69061 /* WaitProfileViewController.xib */,
+			);
+			path = LoadingViews;
+			sourceTree = "<group>";
+		};
+		CD48D57A2754078D00F69061 /* ProfileAccept */ = {
+			isa = PBXGroup;
+			children = (
+				CD48D57B275408BB00F69061 /* ProfileAcceptViewController.swift */,
+				CD48D57C275408BB00F69061 /* ProfileAcceptViewController.xib */,
+			);
+			path = ProfileAccept;
 			sourceTree = "<group>";
 		};
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
@@ -1276,6 +1360,7 @@
 				CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */,
 				CD6E924C274FA8F100651411 /* MatchedChattingViewController.xib in Resources */,
 				CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */,
+				CD48D57E275408BB00F69061 /* ProfileAcceptViewController.xib in Resources */,
 				CDD149D827317E8B002B2897 /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				CD150940271F07A90020BD41 /* LaunchScreen.storyboard in Resources */,
 				CD2AA3CA274379450088FE49 /* DoneSignUpViewController.xib in Resources */,
@@ -1284,6 +1369,7 @@
 				CD79E985272848EC0025CF1B /* AgreementViewController.xib in Resources */,
 				CD693B3D273F763E0035C8D2 /* SelectDrinkViewController.xib in Resources */,
 				CDF8A0C62732478C008367F3 /* ChattingViewController.xib in Resources */,
+				CD48D5682753DE2B00F69061 /* ProfileOpenViewController.xib in Resources */,
 				CDBCD356274E673400995897 /* UserDelete2ViewController.xib in Resources */,
 				CD6E9250274FD47500651411 /* DescriptionTableViewCell.xib in Resources */,
 				CD6FE3FD274A96F2004698B2 /* ProfilePhotoViewController.xib in Resources */,
@@ -1311,6 +1397,7 @@
 				CD6E92662750B97400651411 /* Leave1ViewController.xib in Resources */,
 				CD6FE40A274AC4E5004698B2 /* LeaveRoom2ViewController.xib in Resources */,
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
+				CD48D5792754054600F69061 /* WaitProfileViewController.xib in Resources */,
 				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
 				CD6FE402274AA956004698B2 /* InterestChangeViewController.xib in Resources */,
 				CD8A91832747B2DE008C8E4D /* AudioReceivingTableViewCell.xib in Resources */,
@@ -1386,6 +1473,7 @@
 				CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */,
 				CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */,
 				CDBCD35A274E6CBA00995897 /* UserDeleteResponse.swift in Sources */,
+				CD48D5782754054600F69061 /* WaitProfileViewController.swift in Sources */,
 				CD2AA3C9274379450088FE49 /* DoneSignUpViewController.swift in Sources */,
 				CD6E9243274F233A00651411 /* ReportListResponse.swift in Sources */,
 				CD693B41273F837B0035C8D2 /* DrinkCollectionViewCell.swift in Sources */,
@@ -1397,6 +1485,7 @@
 				CDBCD36D274E98A000995897 /* ReportTableViewCell.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD12A52C274A322F005B399F /* RequestMatchingDataManager.swift in Sources */,
+				CD48D56C2753ECB600F69061 /* ProfileOpenResponse.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,
 				CD79E99127291DBF0025CF1B /* LoginInput.swift in Sources */,
@@ -1421,12 +1510,14 @@
 				CD79E987272852F90025CF1B /* Constant.swift in Sources */,
 				CD12A532274A40AD005B399F /* SelectDrinkInput.swift in Sources */,
 				CD79E99327291DE90025CF1B /* LoginResponse.swift in Sources */,
+				CD48D56E2753F0EE00F69061 /* ProfileOpenDataManager.swift in Sources */,
 				CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */,
 				CD783B702752413500EFFDF9 /* PutProfileDataManager.swift in Sources */,
 				CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
 				CD6FE409274AC4E5004698B2 /* LeaveRoom2ViewController.swift in Sources */,
+				CD48D5672753DE2B00F69061 /* ProfileOpenViewController.swift in Sources */,
 				CD2AA3D62743FE270088FE49 /* MyPageResponse.swift in Sources */,
 				CD12A52A274A31D7005B399F /* RequestMatchingResponse.swift in Sources */,
 				CD783B68275200B100EFFDF9 /* GetProfileDataManager.swift in Sources */,
@@ -1439,9 +1530,11 @@
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
 				CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */,
 				CD8A60D4275393C80002E07D /* ImageTopicTableViewCell.swift in Sources */,
+				CD48D5752753F8FF00F69061 /* PostProfileDataManager.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
 				CD8A60D8275393D70002E07D /* AudioTopicTableViewCell.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
+				CD48D57D275408BB00F69061 /* ProfileAcceptViewController.swift in Sources */,
 				CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD6E92652750B97400651411 /* Leave1ViewController.swift in Sources */,
@@ -1482,10 +1575,13 @@
 				CD783B6C27523FA700EFFDF9 /* PutProfileInput.swift in Sources */,
 				CD8A60DF2753A4540002E07D /* GetTopicDataManager.swift in Sources */,
 				CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */,
+				CD48D5712753F88A00F69061 /* PostProfileInput.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD6E926D2750B9A400651411 /* ReportLeave1ViewController.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
+				CD8A60E12753B24D0002E07D /* ErrorResponse.swift in Sources */,
+				CD48D5732753F89B00F69061 /* PostProfileResponse.swift in Sources */,
 				CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */,
 				CDBCD351274E62C800995897 /* UserDeleteViewController.swift in Sources */,
 			);

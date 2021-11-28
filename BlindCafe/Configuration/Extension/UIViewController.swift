@@ -35,14 +35,14 @@ extension UIViewController {
     
     func presentAlert(message: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
         let alertSuperview = UIView()
-        alertSuperview.backgroundColor = .white
+        alertSuperview.backgroundColor = .black2
         alertSuperview.layer.cornerRadius = 5
         alertSuperview.isHidden = true
     
         let alertLabel = UILabel()
         //alertLabel.font = .NotoSans(.regular, size: 15)
-        alertLabel.font = .systemFont(ofSize: 16, weight: .semibold)
-        alertLabel.textColor = .darkGray
+        alertLabel.font = .SpoqaSans(.bold, size: 16)
+        alertLabel.textColor = .white2
         
         self.view.addSubview(alertSuperview)
         alertSuperview.snp.makeConstraints { make in
