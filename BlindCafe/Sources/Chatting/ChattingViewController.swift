@@ -15,7 +15,7 @@ import SDWebImage
 import AVFoundation
 
 struct Message {
-    let sender: String
+    let senderId: String
     let body: String
     let time: String
     let type: Int
@@ -138,6 +138,9 @@ class ChattingViewController: BaseViewController {
         chatTableView.register(UINib(nibName: "AudioSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioSendingTableViewCell")
         chatTableView.register(UINib(nibName: "AudioReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioReceivingTableViewCell")
         chatTableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
+        chatTableView.register(UINib(nibName: "TextTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTopicTableViewCell")
+        chatTableView.register(UINib(nibName: "ImageTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTopicTableViewCell")
+        chatTableView.register(UINib(nibName: "AudioTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioTopicTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -242,7 +245,9 @@ class ChattingViewController: BaseViewController {
     }
     
     @objc func bellButtonAction() {
-        
+        showIndicator()
+        GetTopicDataManager().getTopic(id: matchingId, viewController: self)
+        print(matchingId)
     }
     
     @objc func menuButtonAction() {
@@ -479,7 +484,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var isAfter = true
         if messages.count > 2 && indexPath.row > 0 {
-            if messages[indexPath.row - 1].sender == messages[indexPath.row].sender {
+            if messages[indexPath.row - 1].senderId == messages[indexPath.row].senderId {
                 isAfter = true
             }
             else {
@@ -493,7 +498,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as! TextTableViewCell
             cell.selectionStyle = .none
             
-            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
+            if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 cell.receivingMessageView.isHidden = true
                 cell.receivingStackView.isHidden = true
                 cell.receivingTime.isHidden = true
@@ -534,7 +539,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else if message.type == 2 {
             let image = Storage.storage().reference(forURL: "gs://blind-cafe.appspot.com/image/\(message.body)")
             
-            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
+            if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSendingTableViewCell", for: indexPath) as! ImageSendingTableViewCell
                 cell.selectionStyle = .none
         
@@ -559,7 +564,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         else if message.type == 3 {
-            if message.sender == UserDefaults.standard.string(forKey: "UserNickname")! {
+            if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
                 cell.playStopButton.content = String(message.body)
                 cell.audioSlider.tag = indexPath.row
@@ -609,11 +614,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             }
+        } else if message.type == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextTopicTableViewCell", for: indexPath) as! TextTopicTableViewCell
+            cell.textTopicLabel.text = message.body
+            
+            return cell
         }
-        else {
+        else if message.type == 7{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             cell.descriptionLabel.text = message.body
             return cell
+        } else {
+            return UITableViewCell()
         }
         
     }
@@ -736,9 +748,9 @@ extension ChattingViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         snapshotDocuments.forEach { (doc) in
                             let data = doc.data()
-                            if let sender = data["senderName"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
+                            if let sender = data["senderUid"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
                                 let time = self.timeFormatter(timestamp: timestamp)
-                                self.messages.append(Message(sender: sender, body: body, time: time, type: type))
+                                self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
@@ -817,5 +829,19 @@ extension ChattingViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
 
+    }
+}
+
+extension ChattingViewController {
+    func topic(result: GetTopicResponse) {
+        dismissIndicator()
+        if result.type == "text" {
+            send(contents: (result.text?.content)!, type: 4)
+        } else if result.type == "image" {
+            send(contents: (result.image?.src)!, type: 5)
+        } else if result.type == "audio" {
+            send(contents: (result.audio?.src)!, type: 6)
+        }
+            
     }
 }

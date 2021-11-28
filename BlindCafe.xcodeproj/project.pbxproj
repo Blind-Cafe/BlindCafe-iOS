@@ -130,6 +130,14 @@
 		CD8A60BB27526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */; };
 		CD8A60BD2752FC240002E07D /* UploadProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */; };
 		CD8A60C1275306C10002E07D /* GetProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */; };
+		CD8A60D0275393B70002E07D /* TextTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60CE275393B70002E07D /* TextTopicTableViewCell.swift */; };
+		CD8A60D1275393B70002E07D /* TextTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60CF275393B70002E07D /* TextTopicTableViewCell.xib */; };
+		CD8A60D4275393C80002E07D /* ImageTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60D2275393C80002E07D /* ImageTopicTableViewCell.swift */; };
+		CD8A60D5275393C80002E07D /* ImageTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60D3275393C80002E07D /* ImageTopicTableViewCell.xib */; };
+		CD8A60D8275393D70002E07D /* AudioTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60D6275393D70002E07D /* AudioTopicTableViewCell.swift */; };
+		CD8A60D9275393D70002E07D /* AudioTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60D7275393D70002E07D /* AudioTopicTableViewCell.xib */; };
+		CD8A60DC2753A4400002E07D /* GetTopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60DB2753A4400002E07D /* GetTopicResponse.swift */; };
+		CD8A60DF2753A4540002E07D /* GetTopicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60DE2753A4540002E07D /* GetTopicDataManager.swift */; };
 		CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */; };
 		CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */; };
 		CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */; };
@@ -306,6 +314,14 @@
 		CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfileImage.swift; sourceTree = "<group>"; };
 		CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageDataManager.swift; sourceTree = "<group>"; };
+		CD8A60CE275393B70002E07D /* TextTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTopicTableViewCell.swift; sourceTree = "<group>"; };
+		CD8A60CF275393B70002E07D /* TextTopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTopicTableViewCell.xib; sourceTree = "<group>"; };
+		CD8A60D2275393C80002E07D /* ImageTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTopicTableViewCell.swift; sourceTree = "<group>"; };
+		CD8A60D3275393C80002E07D /* ImageTopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTopicTableViewCell.xib; sourceTree = "<group>"; };
+		CD8A60D6275393D70002E07D /* AudioTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTopicTableViewCell.swift; sourceTree = "<group>"; };
+		CD8A60D7275393D70002E07D /* AudioTopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTopicTableViewCell.xib; sourceTree = "<group>"; };
+		CD8A60DB2753A4400002E07D /* GetTopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopicResponse.swift; sourceTree = "<group>"; };
+		CD8A60DE2753A4540002E07D /* GetTopicDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopicDataManager.swift; sourceTree = "<group>"; };
 		CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSendingTableViewCell.swift; sourceTree = "<group>"; };
 		CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSendingTableViewCell.xib; sourceTree = "<group>"; };
 		CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioReceivingTableViewCell.swift; sourceTree = "<group>"; };
@@ -965,6 +981,22 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		CD8A60DA2753A2C70002E07D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A60DB2753A4400002E07D /* GetTopicResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD8A60DD2753A4440002E07D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A60DE2753A4540002E07D /* GetTopicDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		CD8A91862748D401008C8E4D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1133,6 +1165,8 @@
 		CDF8A0C227324772008367F3 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				CD8A60DD2753A4440002E07D /* DataManager */,
+				CD8A60DA2753A2C70002E07D /* Entity */,
 				CD2971742739F19D00B034F1 /* Photo */,
 				CD7CB9D827381899004620BB /* Alerts */,
 				CDF8A0C72732CA2A008367F3 /* Cells */,
@@ -1158,6 +1192,12 @@
 				CD8A91842747C3BD008C8E4D /* PlayStopButton.swift */,
 				CD6E924D274FD47400651411 /* DescriptionTableViewCell.swift */,
 				CD6E924E274FD47400651411 /* DescriptionTableViewCell.xib */,
+				CD8A60CE275393B70002E07D /* TextTopicTableViewCell.swift */,
+				CD8A60CF275393B70002E07D /* TextTopicTableViewCell.xib */,
+				CD8A60D2275393C80002E07D /* ImageTopicTableViewCell.swift */,
+				CD8A60D3275393C80002E07D /* ImageTopicTableViewCell.xib */,
+				CD8A60D6275393D70002E07D /* AudioTopicTableViewCell.swift */,
+				CD8A60D7275393D70002E07D /* AudioTopicTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1263,15 +1303,18 @@
 				CDBCD369274E97F000995897 /* ReportListViewController.xib in Resources */,
 				CD15094D272063E60020BD41 /* LoginViewController.xib in Resources */,
 				CD297181273A1DB100B034F1 /* albumListTableViewCell.xib in Resources */,
+				CD8A60D1275393B70002E07D /* TextTopicTableViewCell.xib in Resources */,
 				CD77567A27413C7100AC699A /* ImageReceivingTableViewCell.xib in Resources */,
 				CD6E926E2750B9A400651411 /* ReportLeave1ViewController.xib in Resources */,
 				CD77567627413C6100AC699A /* ImageSendingTableViewCell.xib in Resources */,
+				CD8A60D9275393D70002E07D /* AudioTopicTableViewCell.xib in Resources */,
 				CD6E92662750B97400651411 /* Leave1ViewController.xib in Resources */,
 				CD6FE40A274AC4E5004698B2 /* LeaveRoom2ViewController.xib in Resources */,
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
 				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
 				CD6FE402274AA956004698B2 /* InterestChangeViewController.xib in Resources */,
 				CD8A91832747B2DE008C8E4D /* AudioReceivingTableViewCell.xib in Resources */,
+				CD8A60D5275393C80002E07D /* ImageTopicTableViewCell.xib in Resources */,
 				CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */,
 				CD693B42273F837B0035C8D2 /* DrinkCollectionViewCell.xib in Resources */,
 				CD29717D273A157500B034F1 /* photoCollectionViewCell.xib in Resources */,
@@ -1395,7 +1438,9 @@
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,
 				CD0C06B3272D2E770020E858 /* UIView.swift in Sources */,
 				CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */,
+				CD8A60D4275393C80002E07D /* ImageTopicTableViewCell.swift in Sources */,
 				CD7CB9DB273819E7004620BB /* ReportViewController.swift in Sources */,
+				CD8A60D8275393D70002E07D /* AudioTopicTableViewCell.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
@@ -1403,11 +1448,13 @@
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
 				CDBCD364274E82BC00995897 /* ReportDataManager.swift in Sources */,
+				CD8A60D0275393B70002E07D /* TextTopicTableViewCell.swift in Sources */,
 				CD8A60BD2752FC240002E07D /* UploadProfileImage.swift in Sources */,
 				CD2AA3D82743FE360088FE49 /* MyPageDataManager.swift in Sources */,
 				CD6FE405274AB4FE004698B2 /* LeaveRoomViewController.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
 				CD6FE401274AA956004698B2 /* InterestChangeViewController.swift in Sources */,
+				CD8A60DC2753A4400002E07D /* GetTopicResponse.swift in Sources */,
 				CD2AA3D02743C69E0088FE49 /* PostUserInfoDataManager.swift in Sources */,
 				CD6E924B274FA8F100651411 /* MatchedChattingViewController.swift in Sources */,
 				CD6E92692750B98200651411 /* Leave2ViewController.swift in Sources */,
@@ -1433,6 +1480,7 @@
 				CDBCD360274E829A00995897 /* ReportInput.swift in Sources */,
 				CD783B612751ED8E00EFFDF9 /* ProfileImageViewController.swift in Sources */,
 				CD783B6C27523FA700EFFDF9 /* PutProfileInput.swift in Sources */,
+				CD8A60DF2753A4540002E07D /* GetTopicDataManager.swift in Sources */,
 				CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD6E926D2750B9A400651411 /* ReportLeave1ViewController.swift in Sources */,
