@@ -121,6 +121,12 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension MyPageViewController {
     func request(result: MyPageResponse) {
         dismissIndicator()
+        if result.profileImage != nil {
+            let url = URL(string: result.profileImage!)
+            let data = try? Data(contentsOf: url!)
+            profileImage.image = UIImage(data: data!)
+        }
+        
         drinksData = result.drinks
         badgeCollectionView.reloadData()
         print(drinksData)

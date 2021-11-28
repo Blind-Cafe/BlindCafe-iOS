@@ -8,7 +8,10 @@
 import UIKit
 import Photos
 
-class ProfilePhotoViewController: BaseViewController {
+class ProfilePhotoViewController: BaseViewController{
+    
+    var delegate: GetImage?
+    
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -126,8 +129,11 @@ extension ProfilePhotoViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! photoCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! ProfilePhotoCollectionViewCell
         
+        UploadProfileImage().uploadImage(priority: selectedfield, image: cell.imageView.image ?? UIImage())
+        self.delegate?.getImage(selectedField: selectedfield, profileImage: cell.imageView.image ?? UIImage())
+        self.dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

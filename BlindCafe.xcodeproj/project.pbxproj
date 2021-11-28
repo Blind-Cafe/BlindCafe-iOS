@@ -128,6 +128,8 @@
 		CD7CB9DC273819E7004620BB /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7CB9DA273819E7004620BB /* ReportViewController.xib */; };
 		CD8A60BA27526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60B827526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift */; };
 		CD8A60BB27526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */; };
+		CD8A60BD2752FC240002E07D /* UploadProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */; };
+		CD8A60C1275306C10002E07D /* GetProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */; };
 		CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */; };
 		CD8A917F2747B2CD008C8E4D /* AudioSendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */; };
 		CD8A91822747B2DE008C8E4D /* AudioReceivingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */; };
@@ -302,6 +304,8 @@
 		CD7CB9DA273819E7004620BB /* ReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
 		CD8A60B827526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfileImage.swift; sourceTree = "<group>"; };
+		CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageDataManager.swift; sourceTree = "<group>"; };
 		CD8A917C2747B2CC008C8E4D /* AudioSendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSendingTableViewCell.swift; sourceTree = "<group>"; };
 		CD8A917D2747B2CC008C8E4D /* AudioSendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSendingTableViewCell.xib; sourceTree = "<group>"; };
 		CD8A91802747B2DE008C8E4D /* AudioReceivingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioReceivingTableViewCell.swift; sourceTree = "<group>"; };
@@ -836,6 +840,7 @@
 				CD6FE3FB274A96F2004698B2 /* ProfilePhotoViewController.xib */,
 				CD8A60B827526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift */,
 				CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */,
+				CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -880,6 +885,7 @@
 		CD783B5E2751ED6E00EFFDF9 /* ProfileImage */ = {
 			isa = PBXGroup;
 			children = (
+				CD8A60BF275304060002E07D /* DataManager */,
 				CD6FE3F9274A96D3004698B2 /* Photo */,
 				CD783B5F2751ED8E00EFFDF9 /* ProfileImageViewController.swift */,
 				CD783B602751ED8E00EFFDF9 /* ProfileImageViewController.xib */,
@@ -949,6 +955,14 @@
 				CDC516FB274B13890063AA3B /* Report */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		CD8A60BF275304060002E07D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		CD8A91862748D401008C8E4D /* Settings */ = {
@@ -1389,6 +1403,7 @@
 				CD77567927413C7100AC699A /* ImageReceivingTableViewCell.swift in Sources */,
 				CD2AA3CE2743C6860088FE49 /* PostUserInfoInput.swift in Sources */,
 				CDBCD364274E82BC00995897 /* ReportDataManager.swift in Sources */,
+				CD8A60BD2752FC240002E07D /* UploadProfileImage.swift in Sources */,
 				CD2AA3D82743FE360088FE49 /* MyPageDataManager.swift in Sources */,
 				CD6FE405274AB4FE004698B2 /* LeaveRoomViewController.swift in Sources */,
 				CD15095927215B570020BD41 /* Key.swift in Sources */,
@@ -1405,6 +1420,7 @@
 				CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
+				CD8A60C1275306C10002E07D /* GetProfileImageDataManager.swift in Sources */,
 				CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */,
 				CDC516FA274B0CC20063AA3B /* LeaveRoomResponse.swift in Sources */,
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,
