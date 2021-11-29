@@ -20,6 +20,13 @@ class LoginViewController: BaseOnboardingViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func policy2Button(_ sender: Any) {
+        let vc = Policy2ViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var appleLoginButton: ASAuthorizationAppleIDButton!
     
     override func viewDidLoad() {

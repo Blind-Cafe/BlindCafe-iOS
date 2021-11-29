@@ -70,7 +70,7 @@ class ProfileViewController: BaseViewController, regionProtocol {
                 let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: String(stateArr![0]), region: String(stateArr![1]))
                 PutProfileDataManager().putProfile(input, viewController: self)
             } else {
-                let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: " ", region: " ")
+                let input = PutProfileInput(nickname: userNicknameTextField.text!, partnerGender: partnerGender, state: nil, region: nil)
                 PutProfileDataManager().putProfile(input, viewController: self)
             }
             

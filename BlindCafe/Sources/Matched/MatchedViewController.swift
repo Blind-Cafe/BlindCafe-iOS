@@ -28,6 +28,7 @@ class MatchedViewController: BaseViewController {
         matchedTableView.delegate = self
         matchedTableView.dataSource = self
         matchedTableView.backgroundColor = .brownGray
+        matchedTableView.separatorStyle = .none
         
         showIndicator()
         MatchingDataManager().getMatchings(viewController: self)
@@ -60,7 +61,7 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
             if matchedData!.matchings![indexPath.row].partner.profileImage != nil {
                 let url = URL(string: matchedData!.matchings![indexPath.row].partner.profileImage!)
                 let data = try? Data(contentsOf: url!)
-                cell.lastMessageImage.image = UIImage(data: data!)
+                cell.partnerProfile.image = UIImage(data: data!)
             }
             
             if matchedData!.matchings![indexPath.row].received {

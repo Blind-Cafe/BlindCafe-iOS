@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Bold.ttf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Policy2ViewController" customModule="BlindCafe" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2Q-N3-4xv">
+                    <rect key="frame" x="4" y="44" width="44" height="44"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="backbutton"/>
+                    <connections>
+                        <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="vVM-5b-UJs"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovx-MN-Lor">
+                    <rect key="frame" x="177.5" y="56" width="59" height="20"/>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="16"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRQ-uM-EbI">
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZW-yv-1vT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1152"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-VU-Hqj">
+                                    <rect key="frame" x="16" y="10" width="382" height="1132"/>
+                                    <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <mutableString key="text">개인정보 처리방침
+
+블라인드카페(이하 ‘서비스’)는 정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 ‘정보통신망법’)에 따라 이용자의 개인정보 보호와 권익을 보호하기 위하여 다음과 같이 개인정보 처리방침을 제정,운영하고 있습니다.
+
+개인정보 처리 목적
+원활한 서비스와 서비스 품질향상을 위한 데이터분석 및 통계를 위해 고객의 개인정보를 수집 또는 이용합니다. 수집된 개인 정보는 고객의 동의없이 제3자에게 절대로 제공되지 않으며 위에서 언급한 내용 외에는 사용되지 않습니다. 
+
+수집하는 개인정보 항목
+보다 나은 서비스를 제공하기 위해 수집하는 고객의 개인정보는 다음과 같습니다.
+회원가입시 또는 서비스를 이용하는 과정에서 이용자의 닉네임, 나이, 성별, 사진, 위치 정보, 음성 등이 수집됩니다. 서비스 이용과정이나 사업처리 과정에서 단말기 정보(모델명, OS버전, 화면크기, 기기고유식별번호), IP 정보, 쿠키 정보가 자동으로 생성되어 수집됩니다. 위 개인정보는 이용자가 회원가입을 하거나 서비스를 이용하는 과정에서 직접 제공하여 수집되며 회사는 이용자의 동의를 받습니다. 
+
+개인정보 보유 및 이용기간, 파기
+이용자가 서비스를 가입해 서비스를 탈퇴하기 전까지 서비스를 이용하는 동안 개인정보를 보유 및 이용합니다. 개인 정보의 수집 및 동의를 철회할 경우 또는 수집 및 이용목적이 달성되거나 보유 및 이용 기간이 종료된 경우 개인 정보는 파기됩니다. 이 경우 개인 정보는 어떠한 용도로도 열람 또는 이용할 수 없도록 처리됩니다.
+
+개인정보 제3자 제공 및 위탁
+이용자가 서비스 이용과정 등에서 따로 동의하는 경우나 법령에 규정된 경우를 제외하고는 고객의 개인정보를 명시한 목적 범위를 초과하여 이용하거나 제3자에게 제공 또는 공유하지 않습니다. 하지만 서비스 향상, 법령이나 이용약관에 반하여 다른 이용자에게 피해를 줄 수 있는 잘못된 이용행위의 차단, 방지할 수 있습니다.
+
+이용자의 권리
+이용자는 언제든지 마이페이지 메뉴에 진입하여 계정을 삭제할 수 있습니다. 혹은 서비스 내에서 해당 조치가 원할하지 않을 경우 회사로 요청하시면 신속히 처리하겠습니다.
+
+개인정보 보호책임자
+회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련된 이용자의 불만처리를 위하여 아래와 같은 개인정보 보호책임자를 지정하고 있습니다.
+
+- 개인정보 보호책임자
+- 성명: 이혜지
+- 직책: 사원
+- 연락처: blindcafeapp@gmail.com
+
+개인정보 처리방침 변경
+개인정보처리방침은 시행일부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일전부터 공지사항을 통하여 고지할 것입니다. 이용자는 해당 일 이후에도 서비스를 계속 이용함으로써 변경된 방침에 동의하는 것으로 간주됩니다.
+</mutableString>
+                                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="GKU-VU-Hqj" secondAttribute="bottom" constant="10" id="21O-vq-SeO"/>
+                                <constraint firstItem="GKU-VU-Hqj" firstAttribute="top" secondItem="NZW-yv-1vT" secondAttribute="top" constant="10" id="S51-qs-1VH"/>
+                                <constraint firstItem="GKU-VU-Hqj" firstAttribute="leading" secondItem="NZW-yv-1vT" secondAttribute="leading" constant="16" id="U1p-g8-D4p"/>
+                                <constraint firstAttribute="trailing" secondItem="GKU-VU-Hqj" secondAttribute="trailing" constant="16" id="ciV-yc-TuG"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="NZW-yv-1vT" firstAttribute="leading" secondItem="QRQ-uM-EbI" secondAttribute="leading" id="K3a-U6-IFI"/>
+                        <constraint firstAttribute="trailing" secondItem="NZW-yv-1vT" secondAttribute="trailing" id="af3-Xp-yrv"/>
+                        <constraint firstItem="NZW-yv-1vT" firstAttribute="top" secondItem="QRQ-uM-EbI" secondAttribute="top" id="m8I-d1-AfC"/>
+                        <constraint firstItem="NZW-yv-1vT" firstAttribute="width" secondItem="QRQ-uM-EbI" secondAttribute="width" id="wxl-wL-gDZ"/>
+                        <constraint firstAttribute="bottom" secondItem="NZW-yv-1vT" secondAttribute="bottom" id="z9L-KF-5KZ"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QRQ-uM-EbI" firstAttribute="top" secondItem="k2Q-N3-4xv" secondAttribute="bottom" id="6iU-gB-81I"/>
+                <constraint firstItem="QRQ-uM-EbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hg0-1I-nFg"/>
+                <constraint firstItem="k2Q-N3-4xv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MAy-lt-uY8"/>
+                <constraint firstItem="QRQ-uM-EbI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bWO-hw-RQR"/>
+                <constraint firstAttribute="bottom" secondItem="QRQ-uM-EbI" secondAttribute="bottom" id="gAn-SK-epH"/>
+                <constraint firstItem="ovx-MN-Lor" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h4J-ef-uV5"/>
+                <constraint firstItem="ovx-MN-Lor" firstAttribute="centerY" secondItem="k2Q-N3-4xv" secondAttribute="centerY" id="kXg-Te-RBn"/>
+                <constraint firstItem="k2Q-N3-4xv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="rXu-Qb-tJk"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="98"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backbutton" width="44" height="44"/>
+    </resources>
+</document>

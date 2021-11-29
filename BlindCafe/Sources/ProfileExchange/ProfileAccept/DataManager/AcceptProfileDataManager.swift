@@ -17,6 +17,7 @@ class AcceptProfileDataManager {
                     viewController.acceptProfile(result: response)
                     print(response)
                 case .failure(let error):
+                    viewController.changeRootViewController(BaseTabBarController())
                     print(error.localizedDescription)
                 }
             }

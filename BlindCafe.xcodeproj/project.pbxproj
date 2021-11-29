@@ -45,6 +45,8 @@
 		CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15095227210DCB0020BD41 /* BaseTabBarController.swift */; };
 		CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15095527214BC40020BD41 /* BaseViewController.swift */; };
 		CD15095927215B570020BD41 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15095827215B570020BD41 /* Key.swift */; };
+		CD18B83D27557D7700A61C9B /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18B83B27557D7600A61C9B /* LogoutViewController.swift */; };
+		CD18B83E27557D7700A61C9B /* LogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD18B83C27557D7600A61C9B /* LogoutViewController.xib */; };
 		CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2971752739F46500B034F1 /* PhotoViewController.swift */; };
 		CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2971762739F46500B034F1 /* PhotoViewController.xib */; };
 		CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */; };
@@ -186,6 +188,16 @@
 		CDBD4DA127551D5A00DDFEBB /* PutInterestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DA027551D5A00DDFEBB /* PutInterestDataManager.swift */; };
 		CDBD4DA427551D8900DDFEBB /* PutInterestInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DA327551D8900DDFEBB /* PutInterestInput.swift */; };
 		CDBD4DA627551DE800DDFEBB /* PutInterestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DA527551DE800DDFEBB /* PutInterestResponse.swift */; };
+		CDBD4DAC2755456A00DDFEBB /* PartnerProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DAA2755456A00DDFEBB /* PartnerProfileImageViewController.swift */; };
+		CDBD4DAD2755456A00DDFEBB /* PartnerProfileImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBD4DAB2755456A00DDFEBB /* PartnerProfileImageViewController.xib */; };
+		CDBD4DB02755494600DDFEBB /* Policy2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DAE2755494600DDFEBB /* Policy2ViewController.swift */; };
+		CDBD4DB12755494600DDFEBB /* Policy2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBD4DAF2755494600DDFEBB /* Policy2ViewController.xib */; };
+		CDBD4DB427554BE600DDFEBB /* StopUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DB227554BE600DDFEBB /* StopUserViewController.swift */; };
+		CDBD4DB527554BE700DDFEBB /* StopUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBD4DB327554BE600DDFEBB /* StopUserViewController.xib */; };
+		CDBD4DBA275567A800DDFEBB /* PartnerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DB8275567A800DDFEBB /* PartnerImageCollectionViewCell.swift */; };
+		CDBD4DBB275567A800DDFEBB /* PartnerImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBD4DB9275567A800DDFEBB /* PartnerImageCollectionViewCell.xib */; };
+		CDBD4DBF2755696400DDFEBB /* PartnerImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DBE2755696400DDFEBB /* PartnerImageResponse.swift */; };
+		CDBD4DC127556A5C00DDFEBB /* PartnerImagesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD4DC027556A5C00DDFEBB /* PartnerImagesDataManager.swift */; };
 		CDC516EB274ADD480063AA3B /* Report2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516E9274ADD480063AA3B /* Report2ViewController.swift */; };
 		CDC516EC274ADD480063AA3B /* Report2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC516EA274ADD480063AA3B /* Report2ViewController.xib */; };
 		CDC516F8274B0CA00063AA3B /* LeaveRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */; };
@@ -262,6 +274,8 @@
 		CD15095427211ADF0020BD41 /* BlindCafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlindCafe.entitlements; sourceTree = "<group>"; };
 		CD15095527214BC40020BD41 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CD15095827215B570020BD41 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		CD18B83B27557D7600A61C9B /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		CD18B83C27557D7600A61C9B /* LogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutViewController.xib; sourceTree = "<group>"; };
 		CD2971752739F46500B034F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CD2971762739F46500B034F1 /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 		CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -403,6 +417,16 @@
 		CDBD4DA027551D5A00DDFEBB /* PutInterestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutInterestDataManager.swift; sourceTree = "<group>"; };
 		CDBD4DA327551D8900DDFEBB /* PutInterestInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutInterestInput.swift; sourceTree = "<group>"; };
 		CDBD4DA527551DE800DDFEBB /* PutInterestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutInterestResponse.swift; sourceTree = "<group>"; };
+		CDBD4DAA2755456A00DDFEBB /* PartnerProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerProfileImageViewController.swift; sourceTree = "<group>"; };
+		CDBD4DAB2755456A00DDFEBB /* PartnerProfileImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerProfileImageViewController.xib; sourceTree = "<group>"; };
+		CDBD4DAE2755494600DDFEBB /* Policy2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policy2ViewController.swift; sourceTree = "<group>"; };
+		CDBD4DAF2755494600DDFEBB /* Policy2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Policy2ViewController.xib; sourceTree = "<group>"; };
+		CDBD4DB227554BE600DDFEBB /* StopUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopUserViewController.swift; sourceTree = "<group>"; };
+		CDBD4DB327554BE600DDFEBB /* StopUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StopUserViewController.xib; sourceTree = "<group>"; };
+		CDBD4DB8275567A800DDFEBB /* PartnerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDBD4DB9275567A800DDFEBB /* PartnerImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartnerImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		CDBD4DBE2755696400DDFEBB /* PartnerImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerImageResponse.swift; sourceTree = "<group>"; };
+		CDBD4DC027556A5C00DDFEBB /* PartnerImagesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerImagesDataManager.swift; sourceTree = "<group>"; };
 		CDC516E9274ADD480063AA3B /* Report2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report2ViewController.swift; sourceTree = "<group>"; };
 		CDC516EA274ADD480063AA3B /* Report2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Report2ViewController.xib; sourceTree = "<group>"; };
 		CDC516F7274B0CA00063AA3B /* LeaveRoomDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRoomDataManager.swift; sourceTree = "<group>"; };
@@ -672,6 +696,15 @@
 			path = Secret;
 			sourceTree = "<group>";
 		};
+		CD18B83A27557D5C00A61C9B /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				CD18B83B27557D7600A61C9B /* LogoutViewController.swift */,
+				CD18B83C27557D7600A61C9B /* LogoutViewController.xib */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
 		CD2971742739F19D00B034F1 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +829,7 @@
 		CD48D57A2754078D00F69061 /* ProfileAccept */ = {
 			isa = PBXGroup;
 			children = (
+				CDBD4DA92755455100DDFEBB /* PartnerProfileImage */,
 				CD14C7C32754A4480067B390 /* RejectProfile */,
 				CD48D58027540ABD00F69061 /* Entity */,
 				CD48D57F27540AB400F69061 /* DataManager */,
@@ -966,6 +1000,7 @@
 		CD6E925E2750B7DA00651411 /* Nexts */ = {
 			isa = PBXGroup;
 			children = (
+				CDBD4DB627554BEF00DDFEBB /* StopUser */,
 				CD6E92792750C0CA00651411 /* MatchingCancel */,
 				CD6E92772750C0AA00651411 /* Leave */,
 			);
@@ -1169,6 +1204,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBCD365274E97CB00995897 /* ReportList */,
+				CD18B83A27557D5C00A61C9B /* Logout */,
 				CDBCD34E274E62B500995897 /* UserDelete */,
 				CD8A91882748D42B008C8E4D /* SettingsViewController.swift */,
 				CD8A91892748D42B008C8E4D /* SettingsViewController.xib */,
@@ -1269,6 +1305,52 @@
 			children = (
 				CDBD4DA327551D8900DDFEBB /* PutInterestInput.swift */,
 				CDBD4DA527551DE800DDFEBB /* PutInterestResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CDBD4DA92755455100DDFEBB /* PartnerProfileImage */ = {
+			isa = PBXGroup;
+			children = (
+				CDBD4DBD2755690600DDFEBB /* Entity */,
+				CDBD4DBC275568FC00DDFEBB /* DataManager */,
+				CDBD4DB72755678700DDFEBB /* Cells */,
+				CDBD4DAA2755456A00DDFEBB /* PartnerProfileImageViewController.swift */,
+				CDBD4DAB2755456A00DDFEBB /* PartnerProfileImageViewController.xib */,
+			);
+			path = PartnerProfileImage;
+			sourceTree = "<group>";
+		};
+		CDBD4DB627554BEF00DDFEBB /* StopUser */ = {
+			isa = PBXGroup;
+			children = (
+				CDBD4DB227554BE600DDFEBB /* StopUserViewController.swift */,
+				CDBD4DB327554BE600DDFEBB /* StopUserViewController.xib */,
+			);
+			path = StopUser;
+			sourceTree = "<group>";
+		};
+		CDBD4DB72755678700DDFEBB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CDBD4DB8275567A800DDFEBB /* PartnerImageCollectionViewCell.swift */,
+				CDBD4DB9275567A800DDFEBB /* PartnerImageCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CDBD4DBC275568FC00DDFEBB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDBD4DC027556A5C00DDFEBB /* PartnerImagesDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CDBD4DBD2755690600DDFEBB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CDBD4DBE2755696400DDFEBB /* PartnerImageResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1393,6 +1475,8 @@
 			children = (
 				CDFB480B2754C6D600ECDC03 /* Policy1ViewController.swift */,
 				CDFB480C2754C6D600ECDC03 /* Policy1ViewController.xib */,
+				CDBD4DAE2755494600DDFEBB /* Policy2ViewController.swift */,
+				CDBD4DAF2755494600DDFEBB /* Policy2ViewController.xib */,
 			);
 			path = Policy;
 			sourceTree = "<group>";
@@ -1478,13 +1562,16 @@
 				CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */,
 				CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */,
 				CDC51706274D26780063AA3B /* RegionCollectionViewCell.xib in Resources */,
+				CDBD4DAD2755456A00DDFEBB /* PartnerProfileImageViewController.xib in Resources */,
 				CDC51701274D226D0063AA3B /* RegionChangeViewController.xib in Resources */,
 				CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */,
 				CD8A60BB27526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib in Resources */,
 				CD6E92762750BE7C00651411 /* MatchingCancelViewController.xib in Resources */,
 				CDBCD36E274E98A000995897 /* ReportTableViewCell.xib in Resources */,
 				CD7661F9274282BF003ECE00 /* InterestCollectionViewCell.xib in Resources */,
+				CDBD4DBB275567A800DDFEBB /* PartnerImageCollectionViewCell.xib in Resources */,
 				CDD149D727317E8B002B2897 /* SpoqaHanSansNeo-Light.ttf in Resources */,
+				CDBD4DB527554BE700DDFEBB /* StopUserViewController.xib in Resources */,
 				CD6E924C274FA8F100651411 /* MatchedChattingViewController.xib in Resources */,
 				CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				CD48D57E275408BB00F69061 /* ProfileAcceptViewController.xib in Resources */,
@@ -1526,6 +1613,8 @@
 				CD0C06C327304A3B0020E858 /* InitNicknameViewController.xib in Resources */,
 				CD48D5792754054600F69061 /* WaitProfileViewController.xib in Resources */,
 				CDF8A0CF2734CFD3008367F3 /* TextTableViewCell.xib in Resources */,
+				CDBD4DB12755494600DDFEBB /* Policy2ViewController.xib in Resources */,
+				CD18B83E27557D7700A61C9B /* LogoutViewController.xib in Resources */,
 				CD6FE402274AA956004698B2 /* InterestChangeViewController.xib in Resources */,
 				CD8A91832747B2DE008C8E4D /* AudioReceivingTableViewCell.xib in Resources */,
 				CD8A60D5275393C80002E07D /* ImageTopicTableViewCell.xib in Resources */,
@@ -1590,6 +1679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBD4DC127556A5C00DDFEBB /* PartnerImagesDataManager.swift in Sources */,
 				CD15095627214BC40020BD41 /* BaseViewController.swift in Sources */,
 				CD2AA3CC2743C5E50088FE49 /* PostUserInfoResponse.swift in Sources */,
 				CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */,
@@ -1597,6 +1687,8 @@
 				CD7661F8274282BF003ECE00 /* InterestCollectionViewCell.swift in Sources */,
 				CD14C7CD2754C35C0067B390 /* ProfileAcceptDataManager.swift in Sources */,
 				CDFB48122754F67D00ECDC03 /* ChattingLogPostDataManager.swift in Sources */,
+				CD18B83D27557D7700A61C9B /* LogoutViewController.swift in Sources */,
+				CDBD4DB02755494600DDFEBB /* Policy2ViewController.swift in Sources */,
 				CDFB480D2754C6D600ECDC03 /* Policy1ViewController.swift in Sources */,
 				CD6E927F2750C10500651411 /* MatchingCancelDataManager.swift in Sources */,
 				CDBCD35C274E6CC500995897 /* UserDeleteDataManager.swift in Sources */,
@@ -1633,6 +1725,7 @@
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
 				CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
+				CDBD4DAC2755456A00DDFEBB /* PartnerProfileImageViewController.swift in Sources */,
 				CD14C7B427546CA50067B390 /* GetProfileImageResponse.swift in Sources */,
 				CD6E927D2750C0F200651411 /* MatchingCancelEntity.swift in Sources */,
 				CD297185273A35F000B034F1 /* PHAsset.swift in Sources */,
@@ -1653,7 +1746,9 @@
 				CD783B702752413500EFFDF9 /* PutProfileDataManager.swift in Sources */,
 				CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */,
 				CD6AA9E5272163C500DA6013 /* HomeViewController.swift in Sources */,
+				CDBD4DB427554BE600DDFEBB /* StopUserViewController.swift in Sources */,
 				CD14C7C92754B0A50067B390 /* AcceptProfileResponse.swift in Sources */,
+				CDBD4DBA275567A800DDFEBB /* PartnerImageCollectionViewCell.swift in Sources */,
 				CD77567E27424F8800AC699A /* InterestResponse.swift in Sources */,
 				CD6FE409274AC4E5004698B2 /* LeaveRoom2ViewController.swift in Sources */,
 				CD48D5672753DE2B00F69061 /* ProfileOpenViewController.swift in Sources */,
@@ -1666,6 +1761,7 @@
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
 				CD14C7BA275485CD0067B390 /* GetNextDataManager.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
+				CDBD4DBF2755696400DDFEBB /* PartnerImageResponse.swift in Sources */,
 				CD6E9245274F234600651411 /* ReportListDataManager.swift in Sources */,
 				CDBCD355274E673400995897 /* UserDelete2ViewController.swift in Sources */,
 				CD0C06BD272FBFFB0020E858 /* InitAgeGenderViewController.swift in Sources */,

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PartnerProfileImageViewController" customModule="BlindCafe" customModuleProvider="target">
+            <connections>
+                <outlet property="imageCollectionView" destination="yA4-i4-89M" id="por-zH-C3k"/>
+                <outlet property="pageControl" destination="zvU-wo-iI2" id="rYZ-NQ-azH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yA4-i4-89M">
+                    <rect key="frame" x="89" y="278" width="236" height="340"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="236" id="oY6-BH-q7X"/>
+                        <constraint firstAttribute="height" constant="340" id="yuH-Je-g6w"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="15r-YU-78S">
+                        <size key="itemSize" width="236" height="340"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zvU-wo-iI2">
+                    <rect key="frame" x="129" y="631" width="156" height="26"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAC-Wz-W3n">
+                    <rect key="frame" x="89" y="278" width="44" height="44"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="closebutton"/>
+                    <connections>
+                        <action selector="dismissButton:" destination="-1" eventType="touchUpInside" id="Gon-gT-CtR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qAC-Wz-W3n" firstAttribute="top" secondItem="yA4-i4-89M" secondAttribute="top" id="8f0-rB-ml1"/>
+                <constraint firstItem="zvU-wo-iI2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jfw-I3-ofF"/>
+                <constraint firstItem="yA4-i4-89M" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="P8Z-7P-qP8"/>
+                <constraint firstItem="qAC-Wz-W3n" firstAttribute="leading" secondItem="yA4-i4-89M" secondAttribute="leading" id="YkW-TQ-uAR"/>
+                <constraint firstItem="zvU-wo-iI2" firstAttribute="top" secondItem="yA4-i4-89M" secondAttribute="bottom" constant="13" id="g1W-EZ-G2i"/>
+                <constraint firstItem="yA4-i4-89M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xax-3i-gpa"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <point key="canvasLocation" x="139" y="98"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closebutton" width="44" height="44"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

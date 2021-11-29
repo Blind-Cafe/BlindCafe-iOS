@@ -16,6 +16,8 @@ import AVFoundation
 
 class MatchedChattingViewController: BaseViewController {
 
+    @IBOutlet weak var topView: UIView!
+    
     var startTime: String = ""
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -121,7 +123,8 @@ class MatchedChattingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        topView.backgroundColor = .lightchat
+        
         self.playing = 0
         recordView.isHidden = true
         
@@ -139,6 +142,9 @@ class MatchedChattingViewController: BaseViewController {
         chatTableView.register(UINib(nibName: "AudioSendingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioSendingTableViewCell")
         chatTableView.register(UINib(nibName: "AudioReceivingTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioReceivingTableViewCell")
         chatTableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
+        chatTableView.register(UINib(nibName: "TextTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTopicTableViewCell")
+        chatTableView.register(UINib(nibName: "ImageTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTopicTableViewCell")
+        chatTableView.register(UINib(nibName: "AudioTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioTopicTableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -606,10 +612,60 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
                 return cell
             }
         }
+        else if message.type == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextTopicTableViewCell", for: indexPath) as! TextTopicTableViewCell
+            cell.backgroundColor = .lightchat
+            cell.textTopicLabel.text = message.body
+            
+            return cell
+        } else if message.type == 5 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTopicTableViewCell", for: indexPath) as! ImageTopicTableViewCell
+            cell.backgroundColor = .lightchat
+            let url = URL(string: message.body)
+            let data = try? Data(contentsOf: url!)
+            cell.imageTopicImageView.image = UIImage(data: data ?? Data())
+            
+            return cell
+        } else if message.type == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AudioTopicTableViewCell", for: indexPath) as! AudioTopicTableViewCell
+            cell.backgroundColor = .lightchat
+            cell.playStopButton.tag = indexPath.row
+            cell.playStopButton.addTarget(self, action: #selector(topicPlayStop(_:)), for: .touchUpInside)
+            
+            cell.audioSlider.tag = indexPath.row
+            
+            if indexPath.row != audioPlayingIndex {
+                cell.playStopButton.isSelected = false
+                cell.audioSlider.value = 0
+                cell.audioTimeLabel.text = "00:00/00:00"
+            } else {
+                cell.playStopButton.isSelected = true
+                if audioPlayer != nil {
+                    cell.audioSlider.maximumValue = Float(Int(self.audioPlayer!.duration))
+                }
+                cell.audioSlider.minimumValue = 0.0
+                cell.audioSlider.value = Float(playing)
+                let minutes = playing / 60
+                let seconds = playing % 60
+                cell.audioTimeLabel.text = String(format: "%02d:%02d", minutes, seconds)
+            }
+            
+            return cell
+        }
         else if message.type == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             cell.backgroundColor = .lightchat
-            cell.descriptionLabel.text = message.body
+            if message.body.contains("<") {
+                let strArr = message.body.components(separatedBy: CharacterSet(charactersIn: "<>"))
+                
+                let str = strArr[0] + strArr[1] + strArr[2]
+                let attributedstr = NSMutableAttributedString(string: str)
+                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: strArr[1]))
+                
+                cell.descriptionLabel.attributedText = attributedstr
+            } else {
+                cell.descriptionLabel.text = message.body
+            }
             return cell
         } else {
             return UITableViewCell()
@@ -617,6 +673,38 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
         
     }
     
+    @objc func topicPlayStop(_ sender: UIButton){
+        if  sender.isSelected == true {
+            sender.isSelected = false
+            
+            if audioPlayer != nil {
+                audioPlayer?.stop()
+                audioPlayingIndex = -1
+                playing = 0
+            }
+            
+            chatTableView.reloadData()
+        }
+        else {
+            sender.isSelected = true
+            self.audioPlayingIndex = sender.tag
+            
+            do{
+                let url = URL(string: messages[sender.tag].body)!
+                let soundData = try Data(contentsOf: url)
+                self.audioPlayer = try AVAudioPlayer(data: soundData)
+                self.audioPlayer?.prepareToPlay()
+                self.audioPlayer?.delegate = self
+                self.audioPlayer?.play()
+                
+                self.chatTableView.reloadData()
+                
+                self.audioPlayTimer(tag: sender.tag, current: 0)
+            } catch {
+                print("something went wrong")
+            }
+        }
+    }
     
     @objc func playStop(_ sender: PlayStopButton) {
         

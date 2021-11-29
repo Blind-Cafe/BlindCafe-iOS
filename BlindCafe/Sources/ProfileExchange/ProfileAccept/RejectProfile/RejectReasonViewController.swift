@@ -43,7 +43,8 @@ class RejectReasonViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rejectButton.isEnabled = false
+        
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "backbutton"), for: .normal)
         backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
@@ -59,5 +60,8 @@ extension RejectReasonViewController {
         dismissIndicator()
         let vc = Leave2ViewController()
         vc.reason = "\(partnerName)님과 3일간의 추억은 즐거우셨나요?\n이제 더 좋은 추억을 쌓으러 가보죠!"
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }

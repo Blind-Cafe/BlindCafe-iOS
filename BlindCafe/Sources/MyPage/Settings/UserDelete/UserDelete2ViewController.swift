@@ -35,7 +35,9 @@ extension UserDelete2ViewController {
         let navController = UINavigationController(rootViewController: controller)
         navController.view.backgroundColor = .mainBlack
         navController.navigationBar.barTintColor = .mainBlack
-        present(navController, animated: false, completion: nil)
+        navController.modalPresentationStyle = .fullScreen
+        navController.modalTransitionStyle = .crossDissolve
+        present(navController, animated: true, completion: nil)
     }
     func failedToRequest(message: String) {
         dismissIndicator()

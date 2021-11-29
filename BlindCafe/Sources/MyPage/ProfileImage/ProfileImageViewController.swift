@@ -99,8 +99,10 @@ class ProfileImageViewController: BaseViewController, GetImage {
     }
     
     @objc func toBack(){
-        if profileButtons[0].isSelected && profileButtons[1].isSelected && profileButtons[2].isSelected {
-            
+        if !profileButtons[0].isSelected && !profileButtons[1].isSelected && !profileButtons[2].isSelected {
+            self.presentBottomAlert(name: "profilebottomalert")
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
 

@@ -55,6 +55,7 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
                 UserDefaults.standard.set(nicknameTextField.text, forKey: "UserNickname")
                 showIndicator()
                 let input = PostProfileInput(nickname: nicknameTextField.text!, state: String(strArr[0]), region: String(strArr[1]))
+                print(input)
                 PostProfileDataManager().putProfile(input, id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
             } else {
                 self.presentBottomAlert(name: "profilefirst")
@@ -66,7 +67,8 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
     var fill: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nicknameView.backgroundColor = .white2
+        nicknameAlert.textColor = .veryLightPink
         setNavigation()
 
         showIndicator()
@@ -82,18 +84,25 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
         
         self.navigationItem.setLeftBarButton(addBackButton, animated: false)
         
-        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 44))
         titleLabel.text = "프로필 공개하기"
         titleLabel.font = .SpoqaSans(.bold, size: 16)
         titleLabel.textColor = .white2
         titleLabel.textAlignment = .center
         titleview.addSubview(titleLabel)
         self.navigationItem.titleView = titleview
+        
+        dismissKeyboardWhenTappedAround()
     }
     
     @objc func popToRoot() {
         navigationController?.popToRootViewController(animated: false)
+    }
+    
+    @IBAction func textChange(_ sender: Any) {
+        nicknameAlert.textColor = .veryLightPink
+        nicknameView.backgroundColor = .white2
     }
 }
 
@@ -156,23 +165,23 @@ extension ProfileOpenViewController {
     func getInterestImage(id: String) -> UIImage {
         var interestImage = UIImage()
         switch id {
-        case "1":
+        case "취업":
             interestImage = UIImage(named: "exjob")!
-        case "2":
+        case "작품":
             interestImage = UIImage(named: "exanimation")!
-        case "3":
+        case "동물":
             interestImage = UIImage(named: "exanimal")!
-        case "4":
+        case "음식":
             interestImage = UIImage(named: "exfood")!
-        case "5":
+        case "여행":
             interestImage = UIImage(named: "extravel")!
-        case "6":
+        case "게임":
             interestImage = UIImage(named: "exgame")!
-        case "7":
+        case "연예":
             interestImage = UIImage(named: "exentertainment")!
-        case "8":
+        case "스포츠":
             interestImage = UIImage(named: "exsports")!
-        case "9":
+        case "재테크":
             interestImage = UIImage(named: "exfinancial")!
         default:
             break

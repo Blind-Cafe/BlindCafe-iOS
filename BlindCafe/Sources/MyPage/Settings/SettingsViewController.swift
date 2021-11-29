@@ -29,15 +29,12 @@ class SettingsViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var settingButton3: UIButton!
-    @IBAction func settingButton3(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-        }
-        else {
-            sender.isSelected = true
-        }
+    @IBAction func toLogout(_ sender: Any) {
+        let vc = LogoutViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
         
+        present(vc, animated: false)
     }
     
     @IBAction func reportListButton(_ sender: Any) {

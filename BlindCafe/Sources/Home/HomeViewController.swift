@@ -26,9 +26,9 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var homeButton: UIButton!
     @IBAction func homeButton(_ sender: Any) {
         isButton = true
+        
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
-        
     }
     
     //Timer
@@ -50,15 +50,12 @@ class HomeViewController: BaseViewController {
         view.backgroundColor = .mainBlack
         let titleImage = UIImageView(image: UIImage(named: "blindcafe"))
         titleImage.center = (navigationController?.navigationBar.center)!
-        //navigationController?.navigationBar.addSubview(titleImage)
         navigationController?.navigationBar.topItem?.titleView = titleImage
         
         print(Token.jwtToken)
     
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
-       
-        //refresh()
     }
     
     func refresh() {
@@ -134,14 +131,35 @@ extension HomeViewController {
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
         case "FAILED_LEAVE_ROOM":
             reason = result.reason ?? ""
+            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+            let attributedstr = NSMutableAttributedString(string: str)
+            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+            let vc = Leave2ViewController()
+            vc.reasonattr = attributedstr
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: false, completion: nil)
         case "FAILED_REPORT":
             reason = result.reason ?? ""
+            let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
+            let vc = Leave2ViewController()
+            vc.reason = str
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: false, completion: nil)
         case "FAILED_WONT_EXCHANGE":
             reason = result.reason ?? ""
+            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+            let attributedstr = NSMutableAttributedString(string: str)
+            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+            let vc = Leave2ViewController()
+            vc.reasonattr = attributedstr
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: false, completion: nil)
         default:
             break
         }
-        
         
         if isButton {
             isButton = false
@@ -176,36 +194,18 @@ extension HomeViewController {
             case "PROFILE_READY":
                 showIndicator()
                 ProfileReadyDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+            case "PROFILE_ACCEPT":
+                showIndicator()
+                ProfileAcceptDataManager().profileAccept(id: matchingId, viewController: self)
             case "MATCHING_CONTINUE":
                 let vc = ProfileAcceptedViewController()
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
-            case "FAILED_LEAVE_ROOM":
-                let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
-                let attributedstr = NSMutableAttributedString(string: str)
-                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
-                let vc = Leave2ViewController()
-                vc.reasonattr = attributedstr
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
-            case "FAILED_REPORT":
-                let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
-                let vc = Leave2ViewController()
-                vc.reason = str
-                vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: true)
-            case "FAILED_WONT_EXCHANGE":
-                let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
-                let attributedstr = NSMutableAttributedString(string: str)
-                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
-                let vc = Leave2ViewController()
-                vc.reasonattr = attributedstr
                 vc.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(vc, animated: true)
             default:
                 break
             }
         }
+        
     }
     
     func requestMatchingHome(result: RequestMatchingResponse) {
@@ -253,8 +253,18 @@ extension HomeViewController {
     }
     
     func profileAccepted(result: GetMatchingResponse) {
-        if result.continuous == true {
-            
+        dismissIndicator()
+        if result.continuous != true {
+            let vc = WaitProfileViewController()
+            vc.partnerName = partnerName
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            let vc = ProfileAcceptedViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: true, completion: nil)
         }
         
     }

@@ -20,6 +20,7 @@ var photocount = Int()
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let gcmMessageIDKey = "path"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -106,6 +107,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        if let messageID = userInfo["gcm.message_id"] {
+            print("Message ID: \(messageID)")
+        }
+        
+    }
 }
 
 extension AppDelegate: MessagingDelegate {
@@ -114,6 +124,4 @@ extension AppDelegate: MessagingDelegate {
         print("FCM Token: \(fcmToken ?? "")")
         UserDefaults.standard.setValue(fcmToken, forKey: "FCMToken")
     }
-    
-
 }

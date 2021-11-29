@@ -30,12 +30,12 @@
                     <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-yu-tVa">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="2448"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bld-Fn-xNi">
-                                    <rect key="frame" x="16" y="10" width="382" height="1980"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bld-Fn-xNi">
+                                    <rect key="frame" x="16" y="10" width="382" height="2428"/>
                                     <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <mutableString key="text">서비스 이용약관
+                                    <string key="text">서비스 이용약관
 
 목적
 본 약관은 어바웃타임(이하 “제작자”)에서 제공하는 소셜 매칭 어플리케이션인 블라인드카페(이하 “서비스”)의 이용과 관련하여 제작자와 이를 이용하는 이용자(이하 “회원”)과의 서비스 이용에 관한 권리 및 의무와 책임사항, 기타 필요한 사항을 규정하는 것을 목적으로 합니다.
@@ -84,7 +84,7 @@
 회원이 서비스에 접속 또는 이용하는 과정에서 발생하는 개인적인 손해, 제3자가 불법적으로 본 서비스의 서버에 접속하거나 서버를 이용함으로써 발생하는 손해, 제 3자가 악성 프로그램을 전송 또는 유포함으로써 발생하는 손해, 전송된 데이타의 누락, 생략, 파괴 등으로 발생한 손해, 명예훼손 등 제작자의 고의나 과실 없이 고객 또는 제3자의 행위로 인하여 회원에게 발생하는 손해에 대해 책임을 부담하지 않습니다.
 
 제작자는 안정된 서비스를 제공하기 위해서 노력할 것입니다. 하지만 서비스로 인하여 회원에게 발생한 모든 손해 (천재지변, 전쟁, 기간통신사업자의 서비스 중지, 제삼자가 제공하는 오픈 아이디의 인증 장애, 해결이 곤란한 기술적 결함 기타 불가항력으로 인하여 서비스를 제공할 수 없는 경우, 개인정보의 부정확한 기재, 컴퓨터 오류, 보안 문제로 인하여 발생하는 제반 문제, 현재 보안기술 수준으로 방어가 곤란한 네트워크 해킹, 회원 상호 간 또는 회원과 제삼자 간에 서비스를 매개로 발생한 분쟁 등 기타 서비스 이용으로 발생하는 모든 손해를 포함함)에 대해 일체의 책임을 지지 않습니다.
-</mutableString>
+</string>
                                     <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -93,7 +93,6 @@
                             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="bld-Fn-xNi" firstAttribute="top" secondItem="wmO-yu-tVa" secondAttribute="top" constant="10" id="0NN-y9-nXN"/>
-                                <constraint firstAttribute="height" constant="2000" id="dRd-eu-5qX"/>
                                 <constraint firstAttribute="bottom" secondItem="bld-Fn-xNi" secondAttribute="bottom" constant="10" id="gCr-kY-7nQ"/>
                                 <constraint firstItem="bld-Fn-xNi" firstAttribute="leading" secondItem="wmO-yu-tVa" secondAttribute="leading" constant="16" id="oGT-mo-fEm"/>
                                 <constraint firstAttribute="trailing" secondItem="bld-Fn-xNi" secondAttribute="trailing" constant="16" id="wCR-kN-5cj"/>

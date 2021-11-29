@@ -22,20 +22,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var controller: UIViewController
         
-        /*if Token.jwtToken == "" {
+        if Token.jwtToken == "" {
             controller = OnboardingViewController()
+            let navController = UINavigationController(rootViewController: controller)
+            win.rootViewController = navController
+            win.makeKeyAndVisible()
+            window = win
         }
         else {
             controller = BaseTabBarController()
-        }*/
+            win.rootViewController = controller
+            win.makeKeyAndVisible()
+            window = win
+        }
         
-        controller = OnboardingViewController()
-        let navController = UINavigationController(rootViewController: controller)
-        navController.view.backgroundColor = .mainBlack
-        navController.navigationBar.barTintColor = .mainBlack
-        win.rootViewController = navController
-        win.makeKeyAndVisible()
-        window = win
+        
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

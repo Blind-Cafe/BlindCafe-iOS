@@ -45,7 +45,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Kou-OJ-z0o" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DYO-f2-qgB"/>
                     <constraint firstItem="JE5-3H-ApL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Gmd-HR-uZx"/>
@@ -60,6 +59,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="descriptionLabel" destination="Vqc-1p-bza" id="bxl-ln-Olf"/>
             </connections>

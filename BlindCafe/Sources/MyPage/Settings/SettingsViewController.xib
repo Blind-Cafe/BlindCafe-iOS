@@ -16,7 +16,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
                 <outlet property="settingButton1" destination="v2I-Kn-DGF" id="iaN-Mu-Bmm"/>
-                <outlet property="settingButton3" destination="03g-rn-EJu" id="zlO-jE-whZ"/>
                 <outlet property="settingbutton2" destination="R9O-Qj-2wj" id="9cB-CZ-50U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,16 +35,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYG-w2-QMs">
-                    <rect key="frame" x="0.0" y="56" width="390" height="190"/>
+                    <rect key="frame" x="0.0" y="56" width="390" height="130"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings1" translatesAutoresizingMaskIntoConstraints="NO" id="FUA-h9-00I">
-                            <rect key="frame" x="24" y="16" width="236" height="41"/>
+                            <rect key="frame" x="24" y="16" width="248" height="41"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings2" translatesAutoresizingMaskIntoConstraints="NO" id="IRK-hb-6a9">
-                            <rect key="frame" x="24" y="73" width="236" height="41"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings3" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-YK-RyH">
-                            <rect key="frame" x="24" y="130" width="250" height="41"/>
+                            <rect key="frame" x="24" y="73" width="267" height="41"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-Kn-DGF">
                             <rect key="frame" x="320" y="14.666666666666657" width="44" height="44"/>
@@ -65,35 +61,22 @@
                                 <action selector="settingButton2:" destination="-1" eventType="touchUpInside" id="FoW-mN-xZ6"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03g-rn-EJu">
-                            <rect key="frame" x="320" y="128.66666666666669" width="44" height="44"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="toggleleft"/>
-                            <state key="selected" image="toggleright"/>
-                            <connections>
-                                <action selector="settingButton3:" destination="-1" eventType="touchUpInside" id="p3h-0u-Adx"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="IRK-hb-6a9" firstAttribute="top" secondItem="FUA-h9-00I" secondAttribute="bottom" constant="16" id="2H9-oL-54B"/>
-                        <constraint firstAttribute="height" constant="190" id="7AL-Ab-F5F"/>
-                        <constraint firstAttribute="trailing" secondItem="03g-rn-EJu" secondAttribute="trailing" constant="26" id="ALf-O1-rwC"/>
                         <constraint firstItem="FUA-h9-00I" firstAttribute="top" secondItem="cYG-w2-QMs" secondAttribute="top" constant="16" id="CbA-oT-GFw"/>
                         <constraint firstItem="R9O-Qj-2wj" firstAttribute="centerY" secondItem="IRK-hb-6a9" secondAttribute="centerY" id="JGr-BG-fv2"/>
-                        <constraint firstItem="fAq-YK-RyH" firstAttribute="top" secondItem="IRK-hb-6a9" secondAttribute="bottom" constant="16" id="MOc-tq-LOv"/>
-                        <constraint firstItem="fAq-YK-RyH" firstAttribute="leading" secondItem="cYG-w2-QMs" secondAttribute="leading" constant="24" id="Pm1-gz-mqf"/>
                         <constraint firstItem="FUA-h9-00I" firstAttribute="leading" secondItem="cYG-w2-QMs" secondAttribute="leading" constant="24" id="RXK-4M-5wH"/>
                         <constraint firstAttribute="trailing" secondItem="v2I-Kn-DGF" secondAttribute="trailing" constant="26" id="aSw-ux-TN3"/>
-                        <constraint firstItem="03g-rn-EJu" firstAttribute="centerY" secondItem="fAq-YK-RyH" secondAttribute="centerY" id="gMp-fg-zj1"/>
+                        <constraint firstAttribute="bottom" secondItem="IRK-hb-6a9" secondAttribute="bottom" constant="16" id="ftC-55-zjo"/>
                         <constraint firstItem="v2I-Kn-DGF" firstAttribute="centerY" secondItem="FUA-h9-00I" secondAttribute="centerY" id="gpr-R1-tlb"/>
                         <constraint firstItem="IRK-hb-6a9" firstAttribute="leading" secondItem="cYG-w2-QMs" secondAttribute="leading" constant="24" id="meP-1C-gQ9"/>
                         <constraint firstAttribute="trailing" secondItem="R9O-Qj-2wj" secondAttribute="trailing" constant="26" id="z8o-aa-TVP"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aM-pF-Wch">
-                    <rect key="frame" x="0.0" y="254" width="390" height="52"/>
+                    <rect key="frame" x="0.0" y="194" width="390" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCy-Yo-JcZ">
                             <rect key="frame" x="17" y="4" width="356" height="44"/>
@@ -112,7 +95,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8C-CO-fHB">
-                    <rect key="frame" x="24" y="322" width="29.666666666666671" height="24"/>
+                    <rect key="frame" x="24" y="262" width="29.666666666666671" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="hxx-zs-B2y"/>
                     </constraints>
@@ -121,12 +104,15 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fou-uL-FLG">
-                    <rect key="frame" x="0.0" y="362" width="390" height="104"/>
+                    <rect key="frame" x="0.0" y="302" width="390" height="104"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-f0-0dd">
                             <rect key="frame" x="22" y="15" width="66" height="22"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="logoutbutton"/>
+                            <connections>
+                                <action selector="toLogout:" destination="-1" eventType="touchUpInside" id="mJ1-Bf-2gE"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpN-FZ-QBE">
                             <rect key="frame" x="17" y="56" width="356" height="44"/>
@@ -172,9 +158,8 @@
         <image name="delete" width="356" height="44"/>
         <image name="logoutbutton" width="66" height="22"/>
         <image name="reportlist" width="356" height="44"/>
-        <image name="settings1" width="236" height="41"/>
-        <image name="settings2" width="236" height="41"/>
-        <image name="settings3" width="250" height="41"/>
+        <image name="settings1" width="248" height="41"/>
+        <image name="settings2" width="267" height="41"/>
         <image name="toggleleft" width="44" height="44"/>
         <image name="toggleright" width="44" height="44"/>
     </resources>

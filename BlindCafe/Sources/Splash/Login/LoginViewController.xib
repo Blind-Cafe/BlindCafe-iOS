@@ -56,24 +56,28 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작하면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-zE-qDs">
-                    <rect key="frame" x="49" y="731" width="41" height="14"/>
+                    <rect key="frame" x="49" y="722" width="41" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="yFd-pL-HMB"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-wh-xbK">
-                    <rect key="frame" x="95" y="725" width="84" height="26"/>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-wh-xbK">
+                    <rect key="frame" x="95" y="720" width="99" height="32"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="개인정보처리방침,">
+                    <state key="normal" image="policy1">
                         <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="policy2Button:" destination="-1" eventType="touchUpInside" id="Eua-pc-Zw8"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-Rb-67y">
-                    <rect key="frame" x="184" y="725" width="41" height="26"/>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-Rb-67y">
+                    <rect key="frame" x="199" y="720" width="52" height="32"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="이용약관">
+                    <state key="normal" image="policy2">
                         <color key="titleColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -81,7 +85,10 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에 동의하게 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-fn-2Sf">
-                    <rect key="frame" x="230" y="731" width="89" height="14"/>
+                    <rect key="frame" x="256" y="722" width="89" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Rfe-AB-DlB"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -90,10 +97,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.56897345732186111" green="0.69174631508134254" blue="0.63112517832317194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="Z0H-zE-qDs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="49" id="2Uz-uJ-o8c"/>
-                <constraint firstItem="TLH-wh-xbK" firstAttribute="centerY" secondItem="Z0H-zE-qDs" secondAttribute="centerY" id="AMD-Gk-ZiY"/>
+                <constraint firstItem="Z0H-zE-qDs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" priority="750" constant="49" id="2Uz-uJ-o8c"/>
+                <constraint firstItem="TLH-wh-xbK" firstAttribute="centerY" secondItem="Z0H-zE-qDs" secondAttribute="centerY" constant="-2" id="AMD-Gk-ZiY"/>
                 <constraint firstItem="8dB-gZ-3XR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fbk-4W-Swh"/>
-                <constraint firstItem="eUc-Rb-67y" firstAttribute="centerY" secondItem="TLH-wh-xbK" secondAttribute="centerY" id="JUF-7C-GQs"/>
+                <constraint firstItem="eUc-Rb-67y" firstAttribute="centerY" secondItem="Z0H-zE-qDs" secondAttribute="centerY" constant="-2" id="Fdv-eU-ZUy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Z0H-zE-qDs" secondAttribute="bottom" constant="56" id="KL1-Sc-p82"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8dB-gZ-3XR" secondAttribute="trailing" constant="17" id="KP4-oL-YbO"/>
                 <constraint firstItem="htw-yv-VkO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-5" id="N89-Ul-og1"/>
                 <constraint firstItem="htw-yv-VkO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OZS-Qx-8KJ"/>
@@ -104,12 +112,13 @@
                 <constraint firstItem="ayd-fn-2Sf" firstAttribute="leading" secondItem="eUc-Rb-67y" secondAttribute="trailing" constant="5" id="f2u-cW-U05"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9nH-qx-vXk" secondAttribute="bottom" constant="98" id="ipC-nd-7Vn"/>
                 <constraint firstItem="htw-yv-VkO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jvt-bB-2c6"/>
+                <constraint firstItem="ayd-fn-2Sf" firstAttribute="centerY" secondItem="Z0H-zE-qDs" secondAttribute="centerY" id="n5H-Dh-oLu"/>
+                <constraint firstItem="Z0H-zE-qDs" firstAttribute="top" secondItem="9nH-qx-vXk" secondAttribute="bottom" constant="10" id="nzz-Iy-1z9"/>
                 <constraint firstItem="TLH-wh-xbK" firstAttribute="leading" secondItem="Z0H-zE-qDs" secondAttribute="trailing" constant="5" id="oGv-ca-bL4"/>
                 <constraint firstItem="eUc-Rb-67y" firstAttribute="leading" secondItem="TLH-wh-xbK" secondAttribute="trailing" constant="5" id="wMS-2m-8pe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9nH-qx-vXk" secondAttribute="trailing" constant="17" id="wb7-fT-IWb"/>
                 <constraint firstItem="8dB-gZ-3XR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="wkn-w2-X5b"/>
-                <constraint firstAttribute="bottom" secondItem="Z0H-zE-qDs" secondAttribute="bottom" constant="99" id="ybg-oK-Dp6"/>
-                <constraint firstItem="ayd-fn-2Sf" firstAttribute="centerY" secondItem="eUc-Rb-67y" secondAttribute="centerY" id="yw5-AU-GVd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ayd-fn-2Sf" secondAttribute="trailing" priority="750" constant="45" id="yI1-8l-Bfc"/>
             </constraints>
             <point key="canvasLocation" x="-477" y="22"/>
         </view>
@@ -118,5 +127,7 @@
         <image name="applelogin" width="358" height="53"/>
         <image name="bglogin" width="390" height="844"/>
         <image name="kakaoLoginLargeWide" width="359" height="54"/>
+        <image name="policy1" width="99" height="32"/>
+        <image name="policy2" width="52" height="32"/>
     </resources>
 </document>

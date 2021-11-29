@@ -171,13 +171,18 @@ class ChattingViewController: BaseViewController {
         let minutes = (elapsedTimeSeconds % 3600) / 60
         timeLabel.text = String(format: "%02d시간 %02d분", hours, minutes)
         
-        /*if self.drinkName != "" && isFirst {
-            self.send(contents: "매칭에 성공하였습니다.\n간단한 인사로 반갑게 맞아주세요.", type: 7)
-            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
-            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님과 \(partnerName)님의 공통 관심사는 \(common)입니다.", type: 7)
-        } else if self.drinkName != "" && !isFirst {
-            self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
-        }*/
+    
+        if hours >= 48 {
+            photoButton.isEnabled = true
+            recordButton.isEnabled = true
+        } else if hours >= 24 {
+            photoButton.isEnabled = true
+            recordButton.isEnabled = false
+        } else {
+            photoButton.isEnabled = false
+            recordButton.isEnabled = false
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -665,7 +670,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if message.type == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
-            cell.descriptionLabel.text = message.body
+            if message.body.contains("<") {
+                let strArr = message.body.components(separatedBy: CharacterSet(charactersIn: "<>"))
+                
+                let str = strArr[0] + strArr[1] + strArr[2]
+                let attributedstr = NSMutableAttributedString(string: str)
+                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: strArr[1]))
+                
+                cell.descriptionLabel.attributedText = attributedstr
+            } else {
+                cell.descriptionLabel.text = message.body
+            }
+            
             cell.backgroundColor = .mainBlack
             return cell
         } else {
@@ -797,7 +813,15 @@ extension ChattingViewController {
                             let data = doc.data()
                             if let sender = data["senderUid"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
                                 let time = self.timeFormatter(timestamp: timestamp)
-                                self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
+                                
+                                let dateFormatter = DateFormatter()
+                                dateFormatter.locale = Locale(identifier: "ko_KR")
+                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                                let date = Date()
+                                
+                                if dateFormatter.string(from: date) > self.timeFormatter2(timestamp: timestamp) {
+                                    self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
+                                }
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
@@ -822,6 +846,18 @@ extension ChattingViewController {
         let date = timestamp.dateValue()
         return dateFormatter.string(from: date)
     }
+    
+    func timeFormatter2(timestamp: Timestamp) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        //let date = Date(timeIntervalSince1970: dd)
+        let date = timestamp.dateValue()
+        return dateFormatter.string(from: date)
+    }
+    
+    
+
 }
 
 //MARK: KeyboardToolbar

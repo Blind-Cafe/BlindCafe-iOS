@@ -15,13 +15,11 @@ class Leave2ViewController: UIViewController {
     var reason = ""
     
     @IBAction func toHomeButton(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: false)
+        changeRootViewController(BaseTabBarController())
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.isHidden = true
         
         if reason != "" {
             leaveReasonLabel.text = reason

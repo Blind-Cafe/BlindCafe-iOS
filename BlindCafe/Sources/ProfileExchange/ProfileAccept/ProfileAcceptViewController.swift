@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileAcceptViewController: BaseViewController {
+    var id = 0
 
     @IBOutlet weak var acceptLabel1: UILabel!
     @IBOutlet weak var acceptLabel2: UILabel!
@@ -29,7 +30,9 @@ class ProfileAcceptViewController: BaseViewController {
     }
     
     @IBAction func acceptButton(_ sender: Any) {
-        
+        showIndicator()
+        let input = RequestMatchingInput()
+        AcceptProfileDataManager().acceptProfile(input, id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
     }
     
     override func viewDidLoad() {
@@ -46,7 +49,11 @@ class ProfileAcceptViewController: BaseViewController {
     }
     
     @objc func touchToViewPhoto() {
-        print("photo")
+        let vc = PartnerProfileImageViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.id = id
+        present(vc, animated: false)
     }
     
     func setNavigation() {
@@ -58,8 +65,8 @@ class ProfileAcceptViewController: BaseViewController {
         
         self.navigationItem.setLeftBarButton(addBackButton, animated: false)
         
-        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 44))
         titleLabel.text = "프로필 수락하기"
         titleLabel.font = .SpoqaSans(.bold, size: 16)
         titleLabel.textColor = .white2
@@ -85,11 +92,12 @@ extension ProfileAcceptViewController {
             let data = try? Data(contentsOf: url!)
             partnerProfileImageView.image = UIImage(data: data!)
         }
+        partnerNickname.text = result.nickname
         
         partnerRegion.text = result.region
         
         for i in 0...2 {
-            partnerInterests[i].text = result.interests![0]
+            partnerInterests[i].text = result.interests![i]
         }
         
         if result.gender == "F" {
@@ -98,7 +106,9 @@ extension ProfileAcceptViewController {
             partnerGenderLabel.text = "남자"
         }
         
-        partnerAgeLabel.text = "\(String(describing: result.age))"
+        partnerAgeLabel.text = "\(result.age ?? 0)"
+        
+        id = result.userId!
     }
     
     func acceptProfile(result: AcceptProfileResponse) {

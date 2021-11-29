@@ -39,11 +39,11 @@ class InterestChangeViewController: BaseViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
-        if selectedButtons == 0 {
+        if selectedButtons != 3 {
             self.presentBottomAlert(name: "profile1error")
         }
         else if selectedButtons == 3 {
-            let vc = InitDetailInterestViewController()
+            let vc = InterestDetailChangeViewController()
             vc.selectedList = selectedList
             navigationController?.pushViewController(vc, animated: true)
         }

@@ -31,6 +31,7 @@
                 <outlet property="tableViewBottom" destination="o6g-qr-HX8" id="iU1-7q-gYH"/>
                 <outlet property="timeLabel" destination="kLF-He-BLA" id="CNC-Xe-eoK"/>
                 <outlet property="toolbarBottomConstraint" destination="u3L-m4-8FJ" id="6D4-Pw-0q6"/>
+                <outlet property="topView" destination="iBf-3Y-UDC" id="x1F-Wo-ghp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="waveView" destination="V5B-Zb-U08" id="Ueu-7n-8px"/>
                 <outlet property="waveViewWidth" destination="t6k-qm-usI" id="Sq4-wu-dtZ"/>
@@ -41,6 +42,13 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBf-3Y-UDC">
+                    <rect key="frame" x="0.0" y="-88" width="390" height="100"/>
+                    <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3p2-iH-k6B"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYk-VV-3rG">
                     <rect key="frame" x="0.0" y="306" width="390" height="400"/>
                     <viewLayoutGuide key="safeArea" id="PvF-1G-9WI"/>
@@ -257,12 +265,15 @@
                 <constraint firstItem="KF0-oK-X4r" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A43-gl-zP7"/>
                 <constraint firstItem="KF0-oK-X4r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ets-x5-6Af"/>
                 <constraint firstAttribute="trailing" secondItem="kXY-AY-36F" secondAttribute="trailing" id="OaA-x6-se0"/>
+                <constraint firstItem="iBf-3Y-UDC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XeR-zX-fdS"/>
                 <constraint firstAttribute="bottom" secondItem="ZYk-VV-3rG" secondAttribute="bottom" constant="50" id="cnN-CL-24d"/>
+                <constraint firstAttribute="trailing" secondItem="iBf-3Y-UDC" secondAttribute="trailing" id="d1y-tF-sxu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KF0-oK-X4r" secondAttribute="trailing" id="gYk-ha-n1Y"/>
                 <constraint firstItem="iRb-jH-aBc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="jdY-hU-iEN"/>
                 <constraint firstItem="ZYk-VV-3rG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ka3-We-59I"/>
                 <constraint firstItem="iRb-jH-aBc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="o0q-er-i4e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KF0-oK-X4r" secondAttribute="bottom" constant="51" id="o6g-qr-HX8"/>
+                <constraint firstItem="iBf-3Y-UDC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-88" id="ou0-lT-tZH"/>
                 <constraint firstItem="ZYk-VV-3rG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="pqk-wg-CWB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kXY-AY-36F" secondAttribute="bottom" id="u3L-m4-8FJ"/>
                 <constraint firstItem="kXY-AY-36F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vbg-v9-VQV"/>

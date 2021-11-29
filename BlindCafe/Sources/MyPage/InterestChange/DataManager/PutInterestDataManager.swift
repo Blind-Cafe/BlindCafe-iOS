@@ -9,7 +9,7 @@ import Alamofire
 
 class PutInterestDataManager {
     func putInterest(_ parameters: PutInterestInput, viewController: InterestDetailChangeViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user", method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/interest", method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
             .validate()
             .responseDecodable(of: PutInterestResponse.self) { response in
                 switch response.result {

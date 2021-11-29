@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InterestDetailChangeViewController: UIViewController {
+class InterestDetailChangeViewController: BaseViewController {
     
     var interestdata: InterestResponse!
     var selectedList: [String] = []
@@ -47,6 +47,7 @@ class InterestDetailChangeViewController: UIViewController {
             }
             
             let input = PutInterestInput(interests: [PutInterestResult(main: interestdata.interests![0].main, sub: interest1), PutInterestResult(main: interestdata.interests![1].main, sub: interest2), PutInterestResult(main: interestdata.interests![2].main, sub: interest3)])
+            print(input)
             showIndicator()
             PutInterestDataManager().putInterest(input, viewController: self)
         }
@@ -58,7 +59,7 @@ class InterestDetailChangeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nextButton.isEnabled = false
+        setNavigation()
         
         interest1CollectionView.delegate = self
         interest1CollectionView.dataSource = self
@@ -70,12 +71,31 @@ class InterestDetailChangeViewController: UIViewController {
         interest3CollectionView.dataSource = self
         interest3CollectionView.register(UINib(nibName: "InterestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "InterestCollectionViewCell")
         
-        interest1CollectionView.backgroundColor = .black2
-        interest2CollectionView.backgroundColor = .black2
-        interest3CollectionView.backgroundColor = .black2
+        interest1CollectionView.backgroundColor = .mainBlack
+        interest2CollectionView.backgroundColor = .mainBlack
+        interest3CollectionView.backgroundColor = .mainBlack
         
         showIndicator()
         ChangeInterestDataManager().getInterest(id1: selectedList[0], id2: selectedList[1], id3: selectedList[2], viewController: self)
+    }
+    
+    func setNavigation() {
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backbutton"), for: .normal)
+        backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
+        let addBackButton = UIBarButtonItem(customView: backButton)
+        
+        self.navigationItem.setLeftBarButton(addBackButton, animated: false)
+        
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        titleLabel.text = "관심사 수정"
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
+        titleLabel.textColor = .white2
+        titleLabel.textAlignment = .center
+        titleview.addSubview(titleLabel)
+        self.navigationItem.titleView = titleview
     }
 
 

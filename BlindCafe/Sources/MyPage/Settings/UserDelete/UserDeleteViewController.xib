@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDeleteViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
@@ -25,9 +30,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLF-zE-TtP">
-                    <rect key="frame" x="321" y="98" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLF-zE-TtP">
+                    <rect key="frame" x="329" y="72" width="44" height="44"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton">
@@ -37,9 +41,8 @@
                         <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="hsP-Vx-OkC"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlv-c3-8KT">
-                    <rect key="frame" x="328" y="157" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlv-c3-8KT">
+                    <rect key="frame" x="329" y="121" width="44" height="44"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton">
@@ -49,9 +52,8 @@
                         <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="JwQ-5o-zqs"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-JX-9yQ">
-                    <rect key="frame" x="319" y="238" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-JX-9yQ">
+                    <rect key="frame" x="329" y="170" width="44" height="44"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton">
@@ -61,9 +63,8 @@
                         <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="ndX-AI-fCI"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tl-Ak-6ho">
-                    <rect key="frame" x="321" y="301" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tl-Ak-6ho">
+                    <rect key="frame" x="329" y="219" width="44" height="44"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton">
@@ -71,18 +72,6 @@
                     </state>
                     <connections>
                         <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="h87-x9-JGA"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b5-sw-Hmi">
-                    <rect key="frame" x="324" y="374" width="44" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" image="checkbutton"/>
-                    <state key="selected" image="selectedcheckbutton">
-                        <color key="titleColor" name="AccentColor"/>
-                    </state>
-                    <connections>
-                        <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="Yit-dt-N6G"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N7-4x-dAe">
@@ -95,9 +84,98 @@
                         <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="l7E-x4-aLe"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="블라인드 카페를 떠나시는 이유가 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zt-fh-Tat">
+                    <rect key="frame" x="18" y="24" width="301.66666666666669" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="9wH-cR-Hyk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                    <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충분한 시간을 보냈습니다 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ4-Up-hOK">
+                    <rect key="frame" x="25" y="83" width="162" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="9R5-NP-Ml1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋은 사람을 만나지 못했습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-gC-Xjr">
+                    <rect key="frame" x="25" y="132" width="189.66666666666666" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="3T9-XN-dYI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대방의 정보를 알 수 없어 답답합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1v-ip-R13">
+                    <rect key="frame" x="24.999999999999986" y="181" width="237.66666666666663" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Xir-0k-Pdq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림이 너무 자주옵니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS8-Vx-WSy">
+                    <rect key="frame" x="25" y="230" width="145" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="r0d-Au-afX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매칭을 기다리는 시간이 깁니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1w-y9-1Vw">
+                    <rect key="frame" x="25" y="279" width="189.66666666666666" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="wwc-Yd-Ijq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b5-sw-Hmi">
+                    <rect key="frame" x="329" y="268" width="44" height="44"/>
+                    <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="checkbutton"/>
+                    <state key="selected" image="selectedcheckbutton">
+                        <color key="titleColor" name="AccentColor"/>
+                    </state>
+                    <connections>
+                        <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="Yit-dt-N6G"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5b5-sw-Hmi" firstAttribute="centerY" secondItem="J1w-y9-1Vw" secondAttribute="centerY" id="4IZ-CA-Tv2"/>
+                <constraint firstItem="mJ4-Up-hOK" firstAttribute="top" secondItem="0zt-fh-Tat" secondAttribute="bottom" constant="35" id="5t0-8a-w6D"/>
+                <constraint firstItem="BuK-gC-Xjr" firstAttribute="top" secondItem="mJ4-Up-hOK" secondAttribute="bottom" constant="27" id="8Zh-Rw-ZMt"/>
+                <constraint firstItem="g1v-ip-R13" firstAttribute="top" secondItem="BuK-gC-Xjr" secondAttribute="bottom" constant="27" id="9nc-qd-u8W"/>
+                <constraint firstItem="KS8-Vx-WSy" firstAttribute="top" secondItem="g1v-ip-R13" secondAttribute="bottom" constant="27" id="Cgq-uf-RLa"/>
+                <constraint firstItem="0zt-fh-Tat" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="Lbw-M0-Phl"/>
+                <constraint firstItem="J1w-y9-1Vw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="LgB-Jn-9EC"/>
+                <constraint firstItem="g1v-ip-R13" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="NeY-Zr-J4O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fLF-zE-TtP" secondAttribute="trailing" constant="17" id="Po7-iH-HYK"/>
+                <constraint firstItem="mJ4-Up-hOK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="U0t-2c-ysN"/>
+                <constraint firstItem="Hlv-c3-8KT" firstAttribute="centerY" secondItem="BuK-gC-Xjr" secondAttribute="centerY" id="VAq-SZ-f0X"/>
+                <constraint firstItem="BuK-gC-Xjr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="XvC-rr-QNc"/>
+                <constraint firstItem="fLF-zE-TtP" firstAttribute="centerY" secondItem="mJ4-Up-hOK" secondAttribute="centerY" id="YBn-rJ-tGM"/>
+                <constraint firstItem="1Tl-Ak-6ho" firstAttribute="centerY" secondItem="KS8-Vx-WSy" secondAttribute="centerY" id="aWF-Op-fga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Tl-Ak-6ho" secondAttribute="trailing" constant="17" id="bWB-Rg-hOo"/>
+                <constraint firstItem="0zt-fh-Tat" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="l0i-Q6-Vql"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hlv-c3-8KT" secondAttribute="trailing" constant="17" id="nWL-E2-ixz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bhf-JX-9yQ" secondAttribute="trailing" constant="17" id="pdA-IB-S5n"/>
+                <constraint firstItem="Bhf-JX-9yQ" firstAttribute="centerY" secondItem="g1v-ip-R13" secondAttribute="centerY" id="sP0-HP-0XA"/>
+                <constraint firstItem="KS8-Vx-WSy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="u3b-aB-W29"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5b5-sw-Hmi" secondAttribute="trailing" constant="17" id="uLl-68-3vo"/>
+                <constraint firstItem="J1w-y9-1Vw" firstAttribute="top" secondItem="KS8-Vx-WSy" secondAttribute="bottom" constant="27" id="xtk-lI-nE7"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </view>
