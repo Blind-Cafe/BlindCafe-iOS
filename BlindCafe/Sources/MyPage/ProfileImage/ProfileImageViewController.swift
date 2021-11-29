@@ -16,14 +16,16 @@ class ProfileImageViewController: BaseViewController, GetImage {
         switch selectedField {
         case 1:
             profileImages[0].image = profileImage
+            profileButtons[0].isSelected = true
         case 2:
             profileImages[1].image = profileImage
+            profileButtons[1].isSelected = true
         case 3:
             profileImages[2].image = profileImage
+            profileButtons[2].isSelected = true
         default:
             print("uploaded!")
         }
-        
     }
     
     @IBOutlet var profileImages: [UIImageView]!
@@ -36,26 +38,41 @@ class ProfileImageViewController: BaseViewController, GetImage {
             vc.delegate = self
             present(vc, animated: true, completion: nil)
         } else {
-            
+            deletePriority = 1
+            showIndicator()
+            DeleteProfileImageDataManager().deleteProfileImage(id: 1, viewController: self)
         }
-        
     }
     
-    @IBAction func profileButton2(_ sender: Any) {
-        let vc = ProfilePhotoViewController()
-        vc.selectedfield = 2
-        vc.modalPresentationStyle = .pageSheet
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
+    @IBAction func profileButton2(_ sender: UIButton) {
+        if !sender.isSelected {
+            let vc = ProfilePhotoViewController()
+            vc.selectedfield = 2
+            vc.modalPresentationStyle = .pageSheet
+            vc.delegate = self
+            present(vc, animated: true, completion: nil)
+        } else {
+            deletePriority = 2
+            showIndicator()
+            DeleteProfileImageDataManager().deleteProfileImage(id: 2, viewController: self)
+        }
     }
     
-    @IBAction func profileButton3(_ sender: Any) {
-        let vc = ProfilePhotoViewController()
-        vc.selectedfield = 3
-        vc.modalPresentationStyle = .pageSheet
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
+    @IBAction func profileButton3(_ sender: UIButton) {
+        if !sender.isSelected {
+            let vc = ProfilePhotoViewController()
+            vc.selectedfield = 3
+            vc.modalPresentationStyle = .pageSheet
+            vc.delegate = self
+            present(vc, animated: true, completion: nil)
+        } else {
+            deletePriority = 3
+            showIndicator()
+            DeleteProfileImageDataManager().deleteProfileImage(id: 3, viewController: self)
+        }
     }
+    
+    var deletePriority = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +115,13 @@ extension ProfileImageViewController {
                 profileButtons[i].isSelected = false
             }
         }
+        
+    }
+    
+    func deleteImage() {
+        dismissIndicator()
+        profileImages[deletePriority - 1].image = UIImage(named: "profileimagefield")
+        profileButtons[deletePriority - 1].isSelected = false
         
     }
 }
