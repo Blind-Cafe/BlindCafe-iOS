@@ -26,6 +26,7 @@
 		CD14C7B427546CA50067B390 /* GetProfileImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B327546CA50067B390 /* GetProfileImageResponse.swift */; };
 		CD14C7B627546CBA0067B390 /* GetProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B527546CBA0067B390 /* GetProfileImageDataManager.swift */; };
 		CD14C7B82754715B0067B390 /* DeleteProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B72754715B0067B390 /* DeleteProfileImageDataManager.swift */; };
+		CD14C7BA275485CD0067B390 /* GetNextDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B9275485CD0067B390 /* GetNextDataManager.swift */; };
 		CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150933271F07A40020BD41 /* AppDelegate.swift */; };
 		CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150935271F07A40020BD41 /* SceneDelegate.swift */; };
 		CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD15093C271F07A90020BD41 /* Assets.xcassets */; };
@@ -223,6 +224,7 @@
 		CD14C7B327546CA50067B390 /* GetProfileImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageResponse.swift; sourceTree = "<group>"; };
 		CD14C7B527546CBA0067B390 /* GetProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageDataManager.swift; sourceTree = "<group>"; };
 		CD14C7B72754715B0067B390 /* DeleteProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileImageDataManager.swift; sourceTree = "<group>"; };
+		CD14C7B9275485CD0067B390 /* GetNextDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNextDataManager.swift; sourceTree = "<group>"; };
 		CD150930271F07A40020BD41 /* BlindCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlindCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD150933271F07A40020BD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD150935271F07A40020BD41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 			children = (
 				CD48D56D2753F0EE00F69061 /* ProfileOpenDataManager.swift */,
 				CD48D5742753F8FF00F69061 /* PostProfileDataManager.swift */,
+				CD14C7B9275485CD0067B390 /* GetNextDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1562,6 +1565,7 @@
 				CD783B68275200B100EFFDF9 /* GetProfileDataManager.swift in Sources */,
 				CD0C06C227304A3B0020E858 /* InitNicknameViewController.swift in Sources */,
 				CD693B36273F50BC0035C8D2 /* HomeResponse.swift in Sources */,
+				CD14C7BA275485CD0067B390 /* GetNextDataManager.swift in Sources */,
 				CD6AA9F927266B1B00DA6013 /* OnboardingViewController.swift in Sources */,
 				CD6E9245274F234600651411 /* ReportListDataManager.swift in Sources */,
 				CDBCD355274E673400995897 /* UserDelete2ViewController.swift in Sources */,

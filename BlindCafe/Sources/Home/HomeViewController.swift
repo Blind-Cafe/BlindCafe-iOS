@@ -47,6 +47,12 @@ class HomeViewController: BaseViewController {
             vc.startTime = start
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
+        case "PROFILE_OPEN":
+            let vc = ProfileOpenViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: false)
+        case "PROFILE_READY":
+            print("profileready")
         case "FAILED_LEAVE_ROOM":
             print("failedleaveroom")
         case "FAILED_REPORT":

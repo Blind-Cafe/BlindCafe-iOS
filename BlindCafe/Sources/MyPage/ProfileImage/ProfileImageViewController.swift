@@ -122,6 +122,5 @@ extension ProfileImageViewController {
         dismissIndicator()
         profileImages[deletePriority - 1].image = UIImage(named: "profileimagefield")
         profileButtons[deletePriority - 1].isSelected = false
-        
     }
 }

@@ -66,9 +66,34 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
     var fill: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavigation()
 
         showIndicator()
         ProfileOpenDataManager().getProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+    }
+    
+    func setNavigation() {
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backbutton"), for: .normal)
+        backButton.addTarget(self, action: #selector(popToRoot), for: .touchUpInside)
+        backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
+        let addBackButton = UIBarButtonItem(customView: backButton)
+        
+        self.navigationItem.setLeftBarButton(addBackButton, animated: false)
+        
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        titleLabel.text = "프로필 공개하기"
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
+        titleLabel.textColor = .white2
+        titleLabel.textAlignment = .center
+        titleview.addSubview(titleLabel)
+        self.navigationItem.titleView = titleview
+    }
+    
+    @objc func popToRoot() {
+        navigationController?.popToRootViewController(animated: false)
     }
 }
 
@@ -105,6 +130,27 @@ extension ProfileOpenViewController {
     
     func postprofile(result: PostProfileResponse) {
         dismissIndicator()
+        if result.result == false {
+            let vc = WaitProfileViewController()
+            vc.partnerName = result.nickname
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            showIndicator()
+            GetNextDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+        }
+    }
+    
+    func getPartner(result: GetPartnerProfileResponse) {
+        dismissIndicator()
+        if result.fill == false {
+            let vc = WaitProfileViewController()
+            vc.partnerName = result.nickname
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ProfileAcceptViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func getInterestImage(id: String) -> UIImage {
