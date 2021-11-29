@@ -24,7 +24,6 @@ class TextTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .mainBlack
         receivingMessageLabel.sizeToFit()
         sendingMessageLabel.sizeToFit()
     }

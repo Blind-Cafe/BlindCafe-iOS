@@ -21,6 +21,6 @@ struct MatchingResultResponse: Decodable {
 
 struct PartnerResultResponse: Decodable {
     var userId: Int
-    var profileImage: String
+    var profileImage: String?
     var nickname: String
 }

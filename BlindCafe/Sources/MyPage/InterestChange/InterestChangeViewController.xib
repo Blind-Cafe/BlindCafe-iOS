@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -10,17 +10,170 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterestChangeViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
+                <outlet property="nextButton" destination="jI5-H3-gYM" id="jPP-fg-ER0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="interestButtons" destination="ULQ-nD-kAF" collectionClass="NSMutableArray" id="dvp-Oq-Cyy"/>
+                <outletCollection property="interestButtons" destination="Nfm-Vi-tAm" collectionClass="NSMutableArray" id="H81-3e-Igz"/>
+                <outletCollection property="interestButtons" destination="eiX-3s-IeH" collectionClass="NSMutableArray" id="9bC-y7-ILp"/>
+                <outletCollection property="interestButtons" destination="453-uA-Z7Q" collectionClass="NSMutableArray" id="7rq-6x-WdQ"/>
+                <outletCollection property="interestButtons" destination="01H-LV-nO9" collectionClass="NSMutableArray" id="9Rf-bU-qcc"/>
+                <outletCollection property="interestButtons" destination="LXq-6X-T8f" collectionClass="NSMutableArray" id="VL7-MR-iuv"/>
+                <outletCollection property="interestButtons" destination="4jt-E5-DNN" collectionClass="NSMutableArray" id="SAC-fq-9hd"/>
+                <outletCollection property="interestButtons" destination="4PK-Qc-fVZ" collectionClass="NSMutableArray" id="oxP-C6-5ug"/>
+                <outletCollection property="interestButtons" destination="klC-08-KLj" collectionClass="NSMutableArray" id="G8I-VQ-1cL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULQ-nD-kAF">
+                    <rect key="frame" x="17" y="48" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myjob"/>
+                    <state key="selected" image="myjobselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="bJK-og-pto"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiX-3s-IeH">
+                    <rect key="frame" x="269" y="48" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myanimal"/>
+                    <state key="selected" image="myanimalselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="nXy-Cf-kn3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="453-uA-Z7Q">
+                    <rect key="frame" x="17" y="175" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myfood"/>
+                    <state key="selected" image="myfoodselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="yrh-Sp-bgq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01H-LV-nO9">
+                    <rect key="frame" x="143" y="175" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="mytravel"/>
+                    <state key="selected" image="mytravelselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="CcU-QB-WjV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-6X-T8f">
+                    <rect key="frame" x="269" y="175" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="mygame"/>
+                    <state key="selected" image="mygameselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="RvC-YP-iqa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PK-Qc-fVZ">
+                    <rect key="frame" x="143" y="301" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="mysports"/>
+                    <state key="selected" image="mysportsselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="vSP-Uc-akh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klC-08-KLj">
+                    <rect key="frame" x="269" y="301" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myfinancial"/>
+                    <state key="selected" image="myfinancialselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="uPY-vM-4G1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfm-Vi-tAm">
+                    <rect key="frame" x="143" y="48" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myanimation"/>
+                    <state key="selected" image="myanimationselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="REj-tl-463"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI5-H3-gYM">
+                    <rect key="frame" x="17" y="656" width="356" height="50"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="interestnextbuttonenabled"/>
+                    <state key="disabled" image="interestnextbutton"/>
+                    <state key="selected" image="interestnextbutton"/>
+                    <connections>
+                        <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="D2S-oE-tw0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jt-E5-DNN">
+                    <rect key="frame" x="17" y="301" width="104" height="104"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="myentertainment"/>
+                    <state key="selected" image="myentertainmentselected"/>
+                    <connections>
+                        <action selector="interestAction:" destination="-1" eventType="touchUpInside" id="7gq-3f-4gP"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ULQ-nD-kAF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="7kw-hd-f6H"/>
+                <constraint firstItem="01H-LV-nO9" firstAttribute="leading" secondItem="453-uA-Z7Q" secondAttribute="trailing" constant="22" id="Aj5-d4-w0L"/>
+                <constraint firstItem="453-uA-Z7Q" firstAttribute="top" secondItem="ULQ-nD-kAF" secondAttribute="bottom" constant="23" id="EZj-os-apS"/>
+                <constraint firstItem="4PK-Qc-fVZ" firstAttribute="centerY" secondItem="4jt-E5-DNN" secondAttribute="centerY" id="Eu6-K9-aoX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eiX-3s-IeH" secondAttribute="trailing" constant="17" id="HbR-O1-aqj"/>
+                <constraint firstItem="Nfm-Vi-tAm" firstAttribute="centerY" secondItem="ULQ-nD-kAF" secondAttribute="centerY" id="IJE-XJ-obO"/>
+                <constraint firstItem="eiX-3s-IeH" firstAttribute="leading" secondItem="Nfm-Vi-tAm" secondAttribute="trailing" constant="22" id="K2j-7H-hE3"/>
+                <constraint firstItem="eiX-3s-IeH" firstAttribute="centerY" secondItem="ULQ-nD-kAF" secondAttribute="centerY" id="La3-zh-DGF"/>
+                <constraint firstItem="jI5-H3-gYM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MYr-r7-BVT"/>
+                <constraint firstItem="4jt-E5-DNN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="MjB-Of-GGb"/>
+                <constraint firstItem="01H-LV-nO9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qf4-vR-lqM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LXq-6X-T8f" secondAttribute="trailing" constant="17" id="WDM-hC-ML4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="klC-08-KLj" secondAttribute="trailing" constant="17" id="XiZ-h9-BZe"/>
+                <constraint firstItem="01H-LV-nO9" firstAttribute="centerY" secondItem="453-uA-Z7Q" secondAttribute="centerY" id="aHS-LJ-Fok"/>
+                <constraint firstAttribute="bottom" secondItem="jI5-H3-gYM" secondAttribute="bottom" constant="50" id="bGA-OS-ced"/>
+                <constraint firstItem="klC-08-KLj" firstAttribute="leading" secondItem="4PK-Qc-fVZ" secondAttribute="trailing" constant="22" id="gkm-6N-BY2"/>
+                <constraint firstItem="ULQ-nD-kAF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="hj6-po-03G"/>
+                <constraint firstItem="LXq-6X-T8f" firstAttribute="leading" secondItem="01H-LV-nO9" secondAttribute="trailing" constant="22" id="mcJ-v6-1Vt"/>
+                <constraint firstItem="klC-08-KLj" firstAttribute="centerY" secondItem="4jt-E5-DNN" secondAttribute="centerY" id="nf1-NZ-XAB"/>
+                <constraint firstItem="Nfm-Vi-tAm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="r8C-DK-Ltx"/>
+                <constraint firstItem="Nfm-Vi-tAm" firstAttribute="leading" secondItem="ULQ-nD-kAF" secondAttribute="trailing" constant="22" id="rHP-ds-xNr"/>
+                <constraint firstItem="LXq-6X-T8f" firstAttribute="centerY" secondItem="453-uA-Z7Q" secondAttribute="centerY" id="rbP-cA-yRT"/>
+                <constraint firstItem="4PK-Qc-fVZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wLD-fk-JJ6"/>
+                <constraint firstItem="453-uA-Z7Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="wW6-t3-jtp"/>
+                <constraint firstItem="4PK-Qc-fVZ" firstAttribute="leading" secondItem="4jt-E5-DNN" secondAttribute="trailing" constant="22" id="y6c-37-Ujc"/>
+                <constraint firstItem="4jt-E5-DNN" firstAttribute="top" secondItem="453-uA-Z7Q" secondAttribute="bottom" constant="22" id="yEd-rh-BnB"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="94"/>
         </view>
     </objects>
+    <resources>
+        <image name="interestnextbutton" width="356" height="50"/>
+        <image name="interestnextbuttonenabled" width="356" height="50"/>
+        <image name="myanimal" width="104" height="104"/>
+        <image name="myanimalselected" width="104" height="104"/>
+        <image name="myanimation" width="104" height="104"/>
+        <image name="myanimationselected" width="104" height="104"/>
+        <image name="myentertainment" width="104" height="104"/>
+        <image name="myentertainmentselected" width="104" height="104"/>
+        <image name="myfinancial" width="104" height="104"/>
+        <image name="myfinancialselected" width="104" height="104"/>
+        <image name="myfood" width="104" height="104"/>
+        <image name="myfoodselected" width="104" height="104"/>
+        <image name="mygame" width="104" height="104"/>
+        <image name="mygameselected" width="104" height="104"/>
+        <image name="myjob" width="104" height="104"/>
+        <image name="myjobselected" width="104" height="104"/>
+        <image name="mysports" width="104" height="104"/>
+        <image name="mysportsselected" width="104" height="104"/>
+        <image name="mytravel" width="104" height="104"/>
+        <image name="mytravelselected" width="104" height="104"/>
+    </resources>
 </document>

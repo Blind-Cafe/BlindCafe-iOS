@@ -15,6 +15,9 @@ struct AlbumModel {
 }
 
 class PhotoViewController: UIViewController {
+    var matchingId: Int = 0
+    
+    
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -45,8 +48,9 @@ class PhotoViewController: UIViewController {
                 print("성공")
             }
         }
-        _ = uploadTask.observe(.success) {snapshot in
-            ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 2)
+        _ = uploadTask.observe(.success) { snapshot in
+            let input = PostChattingInput(type: 2, contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")")
+            PostChattingDataManager().postChatting(input, id: self.matchingId, viewController: ChattingViewController())
         }
         
         //uploadTask.removeAllObservers()

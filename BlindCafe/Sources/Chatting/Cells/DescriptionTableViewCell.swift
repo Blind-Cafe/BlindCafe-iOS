@@ -14,7 +14,6 @@ class DescriptionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .mainBlack
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -14,4 +14,5 @@ struct GetMatchingResponse: Decodable {
     var drink: String
     var startTime: String
     var interest: String
+    var continuous: Bool
 }

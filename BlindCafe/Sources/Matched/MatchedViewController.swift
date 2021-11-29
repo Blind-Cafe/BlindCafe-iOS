@@ -54,9 +54,32 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchedTableViewCell", for: indexPath) as! MatchedTableViewCell
         if matchedData?.matchings?.count != 0 {
             cell.partnerName.text = matchedData!.matchings![indexPath.row].partner.nickname
+            cell.timeLeft.text = matchedData!.matchings![indexPath.row].expiryTime
+            cell.lastMessage.text = matchedData!.matchings![indexPath.row].latestMessage
+            
+            if matchedData!.matchings![indexPath.row].partner.profileImage != nil {
+                let url = URL(string: matchedData!.matchings![indexPath.row].partner.profileImage!)
+                let data = try? Data(contentsOf: url!)
+                cell.lastMessageImage.image = UIImage(data: data!)
+            }
+            
+            if matchedData!.matchings![indexPath.row].received {
+                cell.lastMessageImage.isHidden = false
+            } else {
+                cell.lastMessageImage.isHidden = true
+            }
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MatchedChattingViewController()
+        vc.matchingId =  matchedData?.matchings![indexPath.row].matchingId ?? 0
+        vc.partnerName = (matchedData?.matchings![indexPath.row].partner.nickname)!
+        vc.matchingId = (matchedData?.matchings![indexPath.row].matchingId)!
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: false)
     }
     
 }
@@ -85,3 +108,4 @@ extension MatchedViewController {
         presentAlert(message: message)
     }
 }
+

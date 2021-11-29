@@ -14,7 +14,6 @@ class AudioReceivingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .mainBlack
         
         let thumbView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         

@@ -105,6 +105,7 @@ class ChattingViewController: BaseViewController {
     @IBAction func photoButton(_ sender: Any) {
         let vc = PhotoViewController()
         vc.modalPresentationStyle = .pageSheet
+        vc.matchingId = matchingId
         present(vc, animated: true)
     }
     @IBOutlet weak var recordButton: UIButton!
@@ -170,13 +171,13 @@ class ChattingViewController: BaseViewController {
         let minutes = (elapsedTimeSeconds % 3600) / 60
         timeLabel.text = String(format: "%02d시간 %02d분", hours, minutes)
         
-        if self.drinkName != "" && isFirst {
+        /*if self.drinkName != "" && isFirst {
             self.send(contents: "매칭에 성공하였습니다.\n간단한 인사로 반갑게 맞아주세요.", type: 7)
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님과 \(partnerName)님의 공통 관심사는 \(common)입니다.", type: 7)
         } else if self.drinkName != "" && !isFirst {
             self.send(contents: "\(UserDefaults.standard.string(forKey: "UserNickname")!)님은 \(self.drinkName)을(를) 주문하셨습니다.", type: 7)
-        }
+        }*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -188,6 +189,10 @@ class ChattingViewController: BaseViewController {
         super.viewWillDisappear(animated)
         removeKeyboardNotification()
         audioPlayer?.stop()
+        
+        showIndicator()
+        let input = RequestMatchingInput()
+        ChattingLogPostDataManager().log(input, id: matchingId, viewController: self)
     }
     
     @objc func buttonDown() {
@@ -373,7 +378,8 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
                 }
             }
             _ = uploadTask.observe(.success) { snapshot in
-                ChattingViewController().send(contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")", type: 3)
+                let input = PostChattingInput(type: 3, contents: "\(time)\(UserDefaults.standard.string(forKey: "UserID") ?? "")")
+                PostChattingDataManager().postChatting(input, id: self.matchingId, viewController: self)
             }
         }
         catch {
@@ -497,6 +503,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         if message.type == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as! TextTableViewCell
             cell.selectionStyle = .none
+            cell.backgroundColor = .mainBlack
             
             if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 cell.receivingMessageView.isHidden = true
@@ -541,6 +548,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
             if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageSendingTableViewCell", for: indexPath) as! ImageSendingTableViewCell
+                cell.backgroundColor = .mainBlack
                 cell.selectionStyle = .none
         
                 cell.sendingImageView.sd_setImage(with: image)
@@ -553,6 +561,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageReceivingTableViewCell", for: indexPath) as! ImageReceivingTableViewCell
+                cell.backgroundColor = .mainBlack
                 cell.selectionStyle = .none
                 
                 cell.receivingImageView.sd_setImage(with: image)
@@ -566,6 +575,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else if message.type == 3 {
             if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioSendingTableViewCell", for: indexPath) as! AudioSendingTableViewCell
+                cell.backgroundColor = .mainBlack
                 cell.playStopButton.content = String(message.body)
                 cell.audioSlider.tag = indexPath.row
                 cell.playStopButton.tag = indexPath.row
@@ -591,6 +601,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioReceivingTableViewCell", for: indexPath) as! AudioReceivingTableViewCell
+                cell.backgroundColor = .mainBlack
                 cell.playStopButton.content = String(message.body)
                 cell.playStopButton.addTarget(self, action: #selector(playStop(_:)), for: .touchUpInside)
                 cell.playStopButton.tag = indexPath.row
@@ -655,6 +666,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else if message.type == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             cell.descriptionLabel.text = message.body
+            cell.backgroundColor = .mainBlack
             return cell
         } else {
             return UITableViewCell()
@@ -758,47 +770,17 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 extension ChattingViewController {
     @IBAction func sendMessage(_ sender: Any) {
         if chattingTextField.text != nil && !chattingTextField.text!.isEmpty {
-            if let messageBody = chattingTextField.text {
-                db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
-                    "contents": messageBody,
-                    "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
-                    "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
-                    "timestamp": Date(),
-                    "type": 1
-                ]) { (error) in
-                    if let e = error {
-                        print(e.localizedDescription)
-                    } else {
-                        print("Success save data")
-                        
-                        DispatchQueue.main.async {
-                            self.chattingTextField.text = ""
-                        }
-                    }
-                }
-            }
+            let input = PostChattingInput(type: 1, contents: chattingTextField.text)
+            PostChattingDataManager().postChatting(input, id: matchingId, viewController: self)
         }
         
+        self.chattingTextField.text = ""
         sendButton.isEnabled = false
         photoButton.isHidden = false
         recordButton.isHidden = false
         chattingFieldConstraint.constant = 112
-    }
-    
-    func send(contents: String, type: Int) {
-        db.collection("Rooms/\(matchingId)/Messages").addDocument(data: [
-            "contents": contents,
-            "senderName": "\(String(describing: UserDefaults.standard.string(forKey: "UserNickname")!))",
-            "senderUid": UserDefaults.standard.string(forKey: "UserID")!,
-            "timestamp": Date(),
-            "type": type
-        ]) { (error) in
-            if let e = error {
-                print(e.localizedDescription)
-            } else {
-                print("Success save data")
-            }
-        }
+        
+        
     }
     
     func loadMessages() {
@@ -900,14 +882,22 @@ extension ChattingViewController {
 extension ChattingViewController {
     func topic(result: GetTopicResponse) {
         dismissIndicator()
-        if result.type == "text" {
+        /*if result.type == "text" {
             send(contents: (result.text?.content)!, type: 4)
         } else if result.type == "image" {
             send(contents: (result.image?.src)!, type: 5)
         } else if result.type == "audio" {
             send(contents: (result.audio?.src)!, type: 6)
-        }
-            
+        }*/
+    }
+    
+    func chatLog() {
+        dismissIndicator()
+        print("log")
+    }
+    
+    func send() {
+        
     }
     
     func failedToRequest(message: String) {

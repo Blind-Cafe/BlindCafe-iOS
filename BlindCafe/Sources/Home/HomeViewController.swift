@@ -17,66 +17,17 @@ class HomeViewController: BaseViewController {
     
     var date: Date!
     
+    var isButton = false
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var homeButton: UIButton!
     @IBAction func homeButton(_ sender: Any) {
-        switch status {
-        case "NONE":
-            showIndicator()
-            let input = RequestMatchingInput()
-            RequestMatchingDataManager().requestMatching(input, viewController: self)
-        case "WAIT":
-            let vc = MatchingCancelViewController()
-            vc.modalPresentationStyle = .overCurrentContext
-            vc.modalTransitionStyle = .crossDissolve
-            present(vc, animated: false)
-        case "FOUND":
-            let vc = SelectDrinkViewController()
-            vc.matchingId = matchingId
-            vc.partnerName = partnerName
-            vc.start = start
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: false)
-        case "MATCHING":
-            let vc = ChattingViewController()
-            vc.matchingId = matchingId
-            vc.partnerName = partnerName
-            vc.startTime = start
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: false)
-        case "PROFILE_OPEN":
-            let vc = ProfileOpenViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: false)
-        case "PROFILE_READY":
-            showIndicator()
-            ProfileReadyDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
-            
-        case "FAILED_LEAVE_ROOM":
-            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
-            let attributedstr = NSMutableAttributedString(string: str)
-            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
-            let vc = Leave2ViewController()
-            vc.reasonattr = attributedstr
-            navigationController?.pushViewController(vc, animated: true)
-        case "FAILED_REPORT":
-            let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
-            let vc = Leave2ViewController()
-            vc.reason = str
-            navigationController?.pushViewController(vc, animated: true)
-        case "FAILED_WONT_EXCHANGE":
-            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
-            let attributedstr = NSMutableAttributedString(string: str)
-            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
-            let vc = Leave2ViewController()
-            vc.reasonattr = attributedstr
-            navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
+        isButton = true
+        showIndicator()
+        HomeDataManager().requestHome(viewController: self)
         
     }
     
@@ -107,7 +58,7 @@ class HomeViewController: BaseViewController {
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
        
-        refresh()
+        //refresh()
     }
     
     func refresh() {
@@ -131,7 +82,7 @@ extension HomeViewController {
                 }
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
                 
-                let elapsedTimeSecond = Int(Date().timeIntervalSince(self!.date))
+                let elapsedTimeSecond = Int(Date().timeIntervalSince((self?.date)!))
                 let hours = elapsedTimeSecond / 3600
                 let minutes = (elapsedTimeSecond % 3600) / 60
                 self!.timeLabel.text = String(format: "%02d : %02d", hours, minutes)
@@ -184,11 +135,76 @@ extension HomeViewController {
         case "FAILED_LEAVE_ROOM":
             reason = result.reason ?? ""
         case "FAILED_REPORT":
-            print("failedreport")
+            reason = result.reason ?? ""
         case "FAILED_WONT_EXCHANGE":
-            print("failedwontexchange")
+            reason = result.reason ?? ""
         default:
             break
+        }
+        
+        
+        if isButton {
+            isButton = false
+            switch status {
+            case "NONE":
+                showIndicator()
+                let input = RequestMatchingInput()
+                RequestMatchingDataManager().requestMatching(input, viewController: self)
+            case "WAIT":
+                let vc = MatchingCancelViewController()
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: false)
+            case "FOUND":
+                let vc = SelectDrinkViewController()
+                vc.matchingId = matchingId
+                vc.partnerName = partnerName
+                vc.start = start
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: false)
+            case "MATCHING":
+                let vc = ChattingViewController()
+                vc.matchingId = matchingId
+                vc.partnerName = partnerName
+                vc.startTime = start
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: false)
+            case "PROFILE_OPEN":
+                let vc = ProfileOpenViewController()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: false)
+            case "PROFILE_READY":
+                showIndicator()
+                ProfileReadyDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+            case "MATCHING_CONTINUE":
+                let vc = ProfileAcceptedViewController()
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            case "FAILED_LEAVE_ROOM":
+                let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+                let attributedstr = NSMutableAttributedString(string: str)
+                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+                let vc = Leave2ViewController()
+                vc.reasonattr = attributedstr
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            case "FAILED_REPORT":
+                let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
+                let vc = Leave2ViewController()
+                vc.reason = str
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            case "FAILED_WONT_EXCHANGE":
+                let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+                let attributedstr = NSMutableAttributedString(string: str)
+                attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+                let vc = Leave2ViewController()
+                vc.reasonattr = attributedstr
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
         }
     }
     
@@ -227,11 +243,20 @@ extension HomeViewController {
         if result.fill == false {
             let vc = WaitProfileViewController()
             vc.partnerName = result.nickname
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = ProfileAcceptViewController()
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func profileAccepted(result: GetMatchingResponse) {
+        if result.continuous == true {
+            
+        }
+        
     }
     
     func failedToRequest(message: String) {

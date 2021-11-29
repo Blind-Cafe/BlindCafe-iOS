@@ -79,7 +79,7 @@ class ProfileImageViewController: BaseViewController, GetImage {
 
         let backButton: UIButton = UIButton()
         backButton.setImage(UIImage(named: "backbutton"), for: .normal)
-        backButton.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(toBack), for: .touchUpInside)
         backButton.frame = CGRect(x: 18, y: 0, width: 44, height: 44)
         let addBackButton = UIBarButtonItem(customView: backButton)
         
@@ -96,6 +96,12 @@ class ProfileImageViewController: BaseViewController, GetImage {
     
         showIndicator()
         GetProfileImageDataManager().getProfileImage(viewController: self)
+    }
+    
+    @objc func toBack(){
+        if profileButtons[0].isSelected && profileButtons[1].isSelected && profileButtons[2].isSelected {
+            
+        }
     }
 
 }

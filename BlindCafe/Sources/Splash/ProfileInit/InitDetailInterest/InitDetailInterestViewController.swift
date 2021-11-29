@@ -202,7 +202,7 @@ extension InitDetailInterestViewController {
         case 1:
             nameString = "취업"
         case 2:
-            nameString = "만화/애니"
+            nameString = "작품"
         case 3:
             nameString = "동물"
         case 4:

@@ -8,11 +8,55 @@
 import UIKit
 
 class InterestChangeViewController: BaseViewController {
+    
+    var selectedButtons: Int = 0
+    var selectedList: [String] = []
+    
+    @IBOutlet var interestButtons: [UIButton]!
+    
+    @IBAction func interestAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.tintColor = .buttonTint
+            selectedButtons -= 1
+            selectedList.removeAll(where: { $0 == String(sender.tag) })
+        }
+        else {
+            sender.isSelected = true
+            sender.tintColor = .mainGreen
+            selectedButtons += 1
+            selectedList.append("\(sender.tag)")
+        }
 
+        if selectedButtons == 3 {
+            nextButton.setImage(UIImage(named: "interestnextbuttonenabled"), for: .normal)
+        }
+        else {
+            nextButton.setImage(UIImage(named: "interestnextbutton"), for: .normal)
+        }
+        print(selectedList)
+    }
+    
+    @IBOutlet weak var nextButton: UIButton!
+    @IBAction func nextButton(_ sender: Any) {
+        if selectedButtons == 0 {
+            self.presentBottomAlert(name: "profile1error")
+        }
+        else if selectedButtons == 3 {
+            let vc = InitDetailInterestViewController()
+            vc.selectedList = selectedList
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavigation()
+        
+        for i in 0...8 {
+            interestButtons[i].tag = i + 1
+        }
     }
 
     func setNavigation() {
