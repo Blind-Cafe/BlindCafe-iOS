@@ -22,6 +22,12 @@ class ProfileAcceptViewController: BaseViewController {
     @IBOutlet weak var partnerAgeLabel: UILabel!
     
     
+    @IBAction func rejectButton(_ sender: Any) {
+        let vc = RejectReasonViewController()
+        vc.partnerName = partnerNickname.text!
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func acceptButton(_ sender: Any) {
         
     }
@@ -33,6 +39,14 @@ class ProfileAcceptViewController: BaseViewController {
 
         showIndicator()
         GetPartnerProfileDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToViewPhoto))
+        partnerProfileImageView.addGestureRecognizer(tapGesture)
+        partnerProfileImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func touchToViewPhoto() {
+        print("photo")
     }
     
     func setNavigation() {
@@ -85,6 +99,17 @@ extension ProfileAcceptViewController {
         }
         
         partnerAgeLabel.text = "\(String(describing: result.age))"
-        
+    }
+    
+    func acceptProfile(result: AcceptProfileResponse) {
+        dismissIndicator()
+        if result.result == false {
+            let vc = WaitProfileViewController()
+            vc.partnerName = result.nickname
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ProfileAcceptedViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

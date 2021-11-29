@@ -52,13 +52,28 @@ class HomeViewController: BaseViewController {
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: false)
         case "PROFILE_READY":
-            print("profileready")
+            showIndicator()
+            ProfileReadyDataManager().getPartnerProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+            
         case "FAILED_LEAVE_ROOM":
-            print("failedleaveroom")
+            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+            let attributedstr = NSMutableAttributedString(string: str)
+            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+            let vc = Leave2ViewController()
+            vc.reasonattr = attributedstr
+            navigationController?.pushViewController(vc, animated: true)
         case "FAILED_REPORT":
-            print("failedreport")
+            let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
+            let vc = Leave2ViewController()
+            vc.reason = str
+            navigationController?.pushViewController(vc, animated: true)
         case "FAILED_WONT_EXCHANGE":
-            print("failedwontexchange")
+            let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
+            let attributedstr = NSMutableAttributedString(string: str)
+            attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (str as NSString).range(of: reason))
+            let vc = Leave2ViewController()
+            vc.reasonattr = attributedstr
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
@@ -204,6 +219,18 @@ extension HomeViewController {
             timeLabel.text = "72:00"
         default:
             break
+        }
+    }
+    
+    func profileReady(result: GetPartnerProfileResponse){
+        dismissIndicator()
+        if result.fill == false {
+            let vc = WaitProfileViewController()
+            vc.partnerName = result.nickname
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = ProfileAcceptViewController()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

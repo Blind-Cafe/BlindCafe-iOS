@@ -11,17 +11,24 @@ class Leave2ViewController: UIViewController {
 
     @IBOutlet weak var leaveReasonLabel: UILabel!
     
+    var reasonattr = NSAttributedString(string: "")
     var reason = ""
-    var partnerName = ""
+    
+    @IBAction func toHomeButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let attributedstr = NSMutableAttributedString(string: reason)
-        attributedstr.addAttribute(.foregroundColor, value: UIColor.blue, range: (reason as NSString).range(of: reason))
-        attributedstr.addAttribute(.foregroundColor, value: UIColor(hex: 0xb1d0b7), range: (reason as NSString).range(of: reason))
+        navigationController?.navigationBar.isHidden = true
         
-        leaveReasonLabel.text = "\(attributedstr)"
+        if reason != "" {
+            leaveReasonLabel.text = reason
+        } else {
+            leaveReasonLabel.attributedText = reasonattr
+        }
+       
     }
 
 

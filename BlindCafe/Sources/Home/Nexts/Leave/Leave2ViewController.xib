@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="143.66666666666663" width="390" height="431"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M34-mh-G34">
-                    <rect key="frame" x="17" y="668" width="356" height="18"/>
+                    <rect key="frame" x="17" y="574.66666666666663" width="356" height="18"/>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                     <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -37,6 +37,9 @@
                     <rect key="frame" x="17" y="744" width="356" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="tohomebutton"/>
+                    <connections>
+                        <action selector="toHomeButton:" destination="-1" eventType="touchUpInside" id="Vzy-0x-EyG"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -47,8 +50,8 @@
                 <constraint firstItem="fhv-u9-y2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cOF-KM-DLB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M34-mh-G34" secondAttribute="trailing" constant="17" id="dLp-gm-osX"/>
                 <constraint firstAttribute="bottom" secondItem="fhv-u9-y2M" secondAttribute="bottom" constant="50" id="hxt-4e-c0x"/>
+                <constraint firstItem="M34-mh-G34" firstAttribute="top" secondItem="Ew4-GH-fLm" secondAttribute="bottom" id="iJA-9v-4DO"/>
                 <constraint firstItem="Ew4-GH-fLm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lKe-zo-kJn"/>
-                <constraint firstItem="fhv-u9-y2M" firstAttribute="top" secondItem="M34-mh-G34" secondAttribute="bottom" constant="58" id="rPd-tR-HwB"/>
                 <constraint firstItem="M34-mh-G34" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="scX-y6-Uzy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ew4-GH-fLm" secondAttribute="trailing" id="udG-p3-c0A"/>
             </constraints>
