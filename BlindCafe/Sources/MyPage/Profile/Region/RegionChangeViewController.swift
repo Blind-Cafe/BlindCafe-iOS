@@ -20,6 +20,8 @@ class RegionChangeViewController: BaseViewController{
     @IBOutlet weak var regionCollectionView: UICollectionView!
     @IBOutlet weak var stateCollectionView: UICollectionView!
     
+    var push = ""
+    
     @IBAction func nextButton(_ sender: Any) {
         delegate?.passRegion(region: States[selectedRegion].region, state: States[selectedRegion].states[selectedState])
         navigationController?.popViewController(animated: false)

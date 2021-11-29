@@ -21,6 +21,10 @@
 		CD12A532274A40AD005B399F /* SelectDrinkInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A531274A40AD005B399F /* SelectDrinkInput.swift */; };
 		CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A533274A40DA005B399F /* SelectDrinkResponse.swift */; };
 		CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12A535274A40E5005B399F /* SelectDrinkDataManager.swift */; };
+		CD14C7AF275411060067B390 /* GetPartnerProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7AE275411060067B390 /* GetPartnerProfileResponse.swift */; };
+		CD14C7B12754118A0067B390 /* GetPartnerProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B02754118A0067B390 /* GetPartnerProfileDataManager.swift */; };
+		CD14C7B427546CA50067B390 /* GetProfileImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B327546CA50067B390 /* GetProfileImageResponse.swift */; };
+		CD14C7B627546CBA0067B390 /* GetProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD14C7B527546CBA0067B390 /* GetProfileImageDataManager.swift */; };
 		CD150934271F07A40020BD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150933271F07A40020BD41 /* AppDelegate.swift */; };
 		CD150936271F07A40020BD41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD150935271F07A40020BD41 /* SceneDelegate.swift */; };
 		CD15093D271F07A90020BD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD15093C271F07A90020BD41 /* Assets.xcassets */; };
@@ -140,7 +144,6 @@
 		CD8A60BA27526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60B827526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift */; };
 		CD8A60BB27526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */; };
 		CD8A60BD2752FC240002E07D /* UploadProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */; };
-		CD8A60C1275306C10002E07D /* GetProfileImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */; };
 		CD8A60D0275393B70002E07D /* TextTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60CE275393B70002E07D /* TextTopicTableViewCell.swift */; };
 		CD8A60D1275393B70002E07D /* TextTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD8A60CF275393B70002E07D /* TextTopicTableViewCell.xib */; };
 		CD8A60D4275393C80002E07D /* ImageTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8A60D2275393C80002E07D /* ImageTopicTableViewCell.swift */; };
@@ -214,6 +217,10 @@
 		CD12A531274A40AD005B399F /* SelectDrinkInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkInput.swift; sourceTree = "<group>"; };
 		CD12A533274A40DA005B399F /* SelectDrinkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkResponse.swift; sourceTree = "<group>"; };
 		CD12A535274A40E5005B399F /* SelectDrinkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDrinkDataManager.swift; sourceTree = "<group>"; };
+		CD14C7AE275411060067B390 /* GetPartnerProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartnerProfileResponse.swift; sourceTree = "<group>"; };
+		CD14C7B02754118A0067B390 /* GetPartnerProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartnerProfileDataManager.swift; sourceTree = "<group>"; };
+		CD14C7B327546CA50067B390 /* GetProfileImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageResponse.swift; sourceTree = "<group>"; };
+		CD14C7B527546CBA0067B390 /* GetProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageDataManager.swift; sourceTree = "<group>"; };
 		CD150930271F07A40020BD41 /* BlindCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlindCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD150933271F07A40020BD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD150935271F07A40020BD41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -336,7 +343,6 @@
 		CD8A60B827526ABA0002E07D /* ProfilePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD8A60B927526ABA0002E07D /* ProfilePhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD8A60BC2752FC240002E07D /* UploadProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfileImage.swift; sourceTree = "<group>"; };
-		CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileImageDataManager.swift; sourceTree = "<group>"; };
 		CD8A60CE275393B70002E07D /* TextTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTopicTableViewCell.swift; sourceTree = "<group>"; };
 		CD8A60CF275393B70002E07D /* TextTopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTopicTableViewCell.xib; sourceTree = "<group>"; };
 		CD8A60D2275393C80002E07D /* ImageTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTopicTableViewCell.swift; sourceTree = "<group>"; };
@@ -479,6 +485,14 @@
 				CD6E925C275011C600651411 /* GetMatchingDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD14C7B227546C990067B390 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD14C7B327546CA50067B390 /* GetProfileImageResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		CD150927271F07A40020BD41 = {
@@ -734,10 +748,28 @@
 		CD48D57A2754078D00F69061 /* ProfileAccept */ = {
 			isa = PBXGroup;
 			children = (
+				CD48D58027540ABD00F69061 /* Entity */,
+				CD48D57F27540AB400F69061 /* DataManager */,
 				CD48D57B275408BB00F69061 /* ProfileAcceptViewController.swift */,
 				CD48D57C275408BB00F69061 /* ProfileAcceptViewController.xib */,
 			);
 			path = ProfileAccept;
+			sourceTree = "<group>";
+		};
+		CD48D57F27540AB400F69061 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD14C7B02754118A0067B390 /* GetPartnerProfileDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD48D58027540ABD00F69061 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD14C7AE275411060067B390 /* GetPartnerProfileResponse.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		CD693B2E273F4BE70035C8D2 /* InitDetailInterest */ = {
@@ -985,6 +1017,7 @@
 		CD783B5E2751ED6E00EFFDF9 /* ProfileImage */ = {
 			isa = PBXGroup;
 			children = (
+				CD14C7B227546C990067B390 /* Entity */,
 				CD8A60BF275304060002E07D /* DataManager */,
 				CD6FE3F9274A96D3004698B2 /* Photo */,
 				CD783B5F2751ED8E00EFFDF9 /* ProfileImageViewController.swift */,
@@ -1060,7 +1093,7 @@
 		CD8A60BF275304060002E07D /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				CD8A60C0275306C10002E07D /* GetProfileImageDataManager.swift */,
+				CD14C7B527546CBA0067B390 /* GetProfileImageDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1485,6 +1518,7 @@
 				CDBCD36D274E98A000995897 /* ReportTableViewCell.swift in Sources */,
 				CD15095327210DCB0020BD41 /* BaseTabBarController.swift in Sources */,
 				CD12A52C274A322F005B399F /* RequestMatchingDataManager.swift in Sources */,
+				CD14C7B627546CBA0067B390 /* GetProfileImageDataManager.swift in Sources */,
 				CD48D56C2753ECB600F69061 /* ProfileOpenResponse.swift in Sources */,
 				CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */,
 				CD15094C272063E60020BD41 /* LoginViewController.swift in Sources */,
@@ -1497,6 +1531,7 @@
 				CDD149DD273185EF002B2897 /* UITextField.swift in Sources */,
 				CD12A534274A40DA005B399F /* SelectDrinkResponse.swift in Sources */,
 				CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */,
+				CD14C7B427546CA50067B390 /* GetProfileImageResponse.swift in Sources */,
 				CD6E927D2750C0F200651411 /* MatchingCancelEntity.swift in Sources */,
 				CD297185273A35F000B034F1 /* PHAsset.swift in Sources */,
 				CD79E98B272854130025CF1B /* UIColor.swift in Sources */,
@@ -1535,6 +1570,7 @@
 				CD8A60D8275393D70002E07D /* AudioTopicTableViewCell.swift in Sources */,
 				CD77568027424F9800AC699A /* InterestDataManager.swift in Sources */,
 				CD48D57D275408BB00F69061 /* ProfileAcceptViewController.swift in Sources */,
+				CD14C7AF275411060067B390 /* GetPartnerProfileResponse.swift in Sources */,
 				CD8A917E2747B2CD008C8E4D /* AudioSendingTableViewCell.swift in Sources */,
 				CD0C06B7272D85AB0020E858 /* InitInterestViewController.swift in Sources */,
 				CD6E92652750B97400651411 /* Leave1ViewController.swift in Sources */,
@@ -1552,6 +1588,7 @@
 				CD6E924B274FA8F100651411 /* MatchedChattingViewController.swift in Sources */,
 				CD6E92692750B98200651411 /* Leave2ViewController.swift in Sources */,
 				CD79E99C272BF9C30025CF1B /* AppleLoginDataManager.swift in Sources */,
+				CD14C7B12754118A0067B390 /* GetPartnerProfileDataManager.swift in Sources */,
 				CDC51705274D26780063AA3B /* RegionCollectionViewCell.swift in Sources */,
 				CD6E92712750B9B300651411 /* ReportLeave2ViewController.swift in Sources */,
 				CD77567527413C6100AC699A /* ImageSendingTableViewCell.swift in Sources */,
@@ -1560,7 +1597,6 @@
 				CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */,
 				CDD149D027317800002B2897 /* UIFont.swift in Sources */,
 				CD297180273A1DB100B034F1 /* albumListTableViewCell.swift in Sources */,
-				CD8A60C1275306C10002E07D /* GetProfileImageDataManager.swift in Sources */,
 				CD693B31273F4C140035C8D2 /* InitDetailInterestViewController.swift in Sources */,
 				CDC516FA274B0CC20063AA3B /* LeaveRoomResponse.swift in Sources */,
 				CD79E98F27291DA40025CF1B /* KakaoLoginDataManager.swift in Sources */,

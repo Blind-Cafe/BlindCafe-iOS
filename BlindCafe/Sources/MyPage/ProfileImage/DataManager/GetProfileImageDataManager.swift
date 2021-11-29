@@ -2,16 +2,16 @@
 //  GetProfileImageDataManager.swift
 //  BlindCafe
 //
-//  Created by 권하은 on 2021/11/28.
+//  Created by 권하은 on 2021/11/29.
 //
 
 import Alamofire
 
 class GetProfileImageDataManager {
     func getProfileImage(viewController: ProfileImageViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user/profile", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/image", method: .get, headers: Constant.HEADERS)
             .validate()
-            .responseDecodable(of: GetProfileResponse.self) { response in
+            .responseDecodable(of: GetProfileImageResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     viewController.getImages(result: response)

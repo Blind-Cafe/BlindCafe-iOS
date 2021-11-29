@@ -15,29 +15,32 @@ class ProfileImageViewController: BaseViewController, GetImage {
     func getImage(selectedField: Int, profileImage: UIImage){
         switch selectedField {
         case 1:
-            profileImage1.image = profileImage
+            profileImages[0].image = profileImage
         case 2:
-            profileImage2.image = profileImage
+            profileImages[1].image = profileImage
         case 3:
-            profileImage3.image = profileImage
+            profileImages[2].image = profileImage
         default:
             print("uploaded!")
         }
         
     }
     
-    @IBOutlet weak var profileImage1: UIImageView!
-    @IBOutlet weak var profileButton1: UIButton!
+    @IBOutlet var profileImages: [UIImageView]!
+    @IBOutlet var profileButtons: [UIButton]!
     @IBAction func profileButton1(_ sender: UIButton) {
-        let vc = ProfilePhotoViewController()
-        vc.selectedfield = 1
-        vc.modalPresentationStyle = .pageSheet
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
+        if !sender.isSelected {
+            let vc = ProfilePhotoViewController()
+            vc.selectedfield = 1
+            vc.modalPresentationStyle = .pageSheet
+            vc.delegate = self
+            present(vc, animated: true, completion: nil)
+        } else {
+            
+        }
+        
     }
     
-    @IBOutlet weak var profileImage2: UIImageView!
-    @IBOutlet weak var profileButton2: UIButton!
     @IBAction func profileButton2(_ sender: Any) {
         let vc = ProfilePhotoViewController()
         vc.selectedfield = 2
@@ -46,8 +49,6 @@ class ProfileImageViewController: BaseViewController, GetImage {
         present(vc, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var profileImage3: UIImageView!
-    @IBOutlet weak var profileButton3: UIButton!
     @IBAction func profileButton3(_ sender: Any) {
         let vc = ProfilePhotoViewController()
         vc.selectedfield = 3
@@ -83,50 +84,18 @@ class ProfileImageViewController: BaseViewController, GetImage {
 }
 
 extension ProfileImageViewController {
-    func getImages(result: GetProfileResponse) {
+    func getImages(result: GetProfileImageResponse) {
         dismissIndicator()
-        if result.images != nil {
-            if result.images!.count == 3 {
-                let url = URL(string: result.images![0])
+        for i in 0...2 {
+            if result.images![i] != "" {
+                let url = URL(string: result.images![i])
                 let data = try? Data(contentsOf: url!)
-                profileImage1.image = UIImage(data: data!)
-                profileButton1.isSelected = true
-                
-                let url2 = URL(string: result.images![1])
-                let data2 = try? Data(contentsOf: url2!)
-                profileImage2.image = UIImage(data: data2!)
-                profileButton2.isSelected = true
-                
-                let url3 = URL(string: result.images![2])
-                let data3 = try? Data(contentsOf: url3!)
-                profileImage3.image = UIImage(data: data3!)
-                profileButton3.isSelected = true
+                profileImages[i].image = UIImage(data: data!)
+                profileButtons[i].isSelected = true
             }
-            else if result.images!.count == 2 {
-                let url = URL(string: result.images![0])
-                let data = try? Data(contentsOf: url!)
-                profileImage1.image = UIImage(data: data!)
-                profileButton1.isSelected = true
-                
-                let url2 = URL(string: result.images![1])
-                let data2 = try? Data(contentsOf: url2!)
-                profileImage2.image = UIImage(data: data2!)
-                profileButton2.isSelected = true
-                
-                profileImage3.image = UIImage(named: "profileimagefield")
-                profileButton3.isSelected = false
-            }
-            else if result.images!.count == 1 {
-                let url = URL(string: result.images![0])
-                let data = try? Data(contentsOf: url!)
-                profileImage1.image = UIImage(data: data!)
-                profileButton1.isSelected = true
-                
-                profileImage2.image = UIImage(named: "profileimagefield")
-                profileButton2.isSelected = false
-                
-                profileImage3.image = UIImage(named: "profileimagefield")
-                profileButton3.isSelected = false
+            else {
+                profileImages[i].image = UIImage(named: "profileimagefield")
+                profileButtons[i].isSelected = false
             }
         }
         

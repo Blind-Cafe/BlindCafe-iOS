@@ -15,13 +15,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileImageViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
-                <outlet property="profileButton1" destination="l08-Yd-DdS" id="k8x-Ln-Zud"/>
-                <outlet property="profileButton2" destination="Dnb-MD-pb3" id="Xlq-du-TFf"/>
-                <outlet property="profileButton3" destination="TNx-3F-mkc" id="23K-7B-Yea"/>
-                <outlet property="profileImage1" destination="OOc-cT-7UG" id="I51-J1-6X3"/>
-                <outlet property="profileImage2" destination="jer-SO-0Wr" id="tPf-Lg-QhY"/>
-                <outlet property="profileImage3" destination="yPa-JI-r7f" id="yLR-2M-RRT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="profileImages" destination="OOc-cT-7UG" collectionClass="NSMutableArray" id="eM9-qA-s97"/>
+                <outletCollection property="profileImages" destination="jer-SO-0Wr" collectionClass="NSMutableArray" id="dUv-G8-9Ta"/>
+                <outletCollection property="profileImages" destination="yPa-JI-r7f" collectionClass="NSMutableArray" id="l2v-1r-8PT"/>
+                <outletCollection property="profileButtons" destination="l08-Yd-DdS" collectionClass="NSMutableArray" id="CL7-q4-XUj"/>
+                <outletCollection property="profileButtons" destination="Dnb-MD-pb3" collectionClass="NSMutableArray" id="TAS-IX-fVo"/>
+                <outletCollection property="profileButtons" destination="TNx-3F-mkc" collectionClass="NSMutableArray" id="QCm-8G-24n"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

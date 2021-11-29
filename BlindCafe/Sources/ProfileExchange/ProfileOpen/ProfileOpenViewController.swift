@@ -7,14 +7,19 @@
 
 import UIKit
 
-class ProfileOpenViewController: BaseViewController {
+class ProfileOpenViewController: BaseViewController, regionProtocol {
+    func passRegion(region: String, state: String) {
+        regionButton.setTitle("\(region) \(state)", for: .normal)
+    }
     
     @IBOutlet weak var openLabel1: UILabel!
     @IBOutlet weak var openLabel2: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBAction func cameraButton(_ sender: Any) {
-        
+        let vc = ProfileImageViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBOutlet weak var nicknameTextField: UITextField!
@@ -26,12 +31,36 @@ class ProfileOpenViewController: BaseViewController {
     
     @IBOutlet weak var regionButton: UIButton!
     @IBAction func regionButton(_ sender: Any) {
+        let vc = RegionChangeViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBOutlet var interestButtons: [UIButton]!
     
     @IBOutlet weak var openButton: UIButton!
     @IBAction func openButton(_ sender: Any) {
+        let count = nicknameTextField.text?.count ?? 0
+        
+        if count < 1 || count > 9 {
+            nicknameAlert.textColor = .coral
+            nicknameView.backgroundColor = .coral
+        }
+        else {
+            showIndicator()
+            ProfileOpenDataManager().getProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+            
+            if fill {
+                let strArr = regionButton.title(for: .normal)!.split(separator: " ")
+                UserDefaults.standard.set(nicknameTextField.text, forKey: "UserNickname")
+                showIndicator()
+                let input = PostProfileInput(nickname: nicknameTextField.text!, state: String(strArr[0]), region: String(strArr[1]))
+                PostProfileDataManager().putProfile(input, id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
+            } else {
+                self.presentBottomAlert(name: "profilefirst")
+            }
+        }
+        
     }
     
     var fill: Bool!
