@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class HomeViewController: BaseViewController {
-
+    @IBOutlet weak var alarmView: UIView!
+    @IBOutlet weak var alarmLabel: UILabel!
+    
     @IBOutlet weak var statusLabel1: UILabel!
     @IBOutlet weak var statusLabel2: UILabel!
     
@@ -18,9 +21,13 @@ class HomeViewController: BaseViewController {
     var start: String = ""
     var reason: String = ""
     
+    var newMessages: [String] = []
+    
     var date: Date!
     
     var isButton = false
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -47,6 +54,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        alarmView.isHidden = true
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor = .mainBlack
         
@@ -55,10 +63,22 @@ class HomeViewController: BaseViewController {
         titleImage.center = (navigationController?.navigationBar.center)!
         navigationController?.navigationBar.topItem?.titleView = titleImage
         
+        
+        
         print(Token.jwtToken)
-    
+        loadMessages()
+        
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
+        
+    }
+    
+    @objc func bellButtonAction(_ sender: UIButton) {
+        if alarmView.isHidden {
+            alarmView.isHidden = false
+        } else {
+            alarmView.isHidden = true
+        }
     }
     
     func refresh() {
@@ -89,6 +109,44 @@ extension HomeViewController {
             }
         }
     }
+    
+    func loadMessages() {
+        db.collection("Rooms/\(matchingId)/Messages")
+            .order(by: "timestamp")
+            .addSnapshotListener { (querySnapshot, error) in
+                self.newMessages = []
+                
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        snapshotDocuments.forEach { (doc) in
+                            let data = doc.data()
+                            if let id = data["id"] as? String {
+                                self.newMessages.append(id)
+                                if self.newMessages.count > UserDefaults.standard.integer(forKey: "LastIndex") {
+                                    self.alarmLabel.text = "\(self.newMessages.count - UserDefaults.standard.integer(forKey: "LastIndex"))건의 메세지가 도착했습니다."
+                                    let bellButton: UIButton = UIButton()
+                                    bellButton.setImage(UIImage(named: "homebellselected"), for: .normal)
+                                    bellButton.addTarget(self, action: #selector(self.bellButtonAction), for: .touchUpInside)
+                                    let addButton = UIBarButtonItem(customView: bellButton)
+                                    self.navigationItem.rightBarButtonItem = addButton
+                                } else {
+                                    self.alarmLabel.text = "0건의 메세지가 도착했습니다."
+                                    let bellButton: UIButton = UIButton()
+                                    bellButton.setImage(UIImage(named: "homebell"), for: .normal)
+                                    bellButton.addTarget(self, action: #selector(self.bellButtonAction), for: .touchUpInside)
+                                    let addButton = UIBarButtonItem(customView: bellButton)
+                                    self.navigationItem.rightBarButtonItem = addButton
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+
+    }
 }
 
 extension HomeViewController {
@@ -112,6 +170,7 @@ extension HomeViewController {
             statusLabel2.isHidden = false
             statusLabel1.text = "매칭하기"
             statusLabel2.text = "\n하트를 눌러 매칭을 시작하세요"
+            UserDefaults.standard.set(0,forKey: "LastIndex")
         case "WAIT":
             backgroundImage.image = UIImage(named: "nonebackground")
             homeButton.setImage(UIImage(named: "waithomebutton"), for: .normal)
@@ -143,6 +202,8 @@ extension HomeViewController {
             let hours = elapsedTimeSeconds / 3600
             let minutes = (elapsedTimeSeconds % 3600) / 60
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
+            
+            loadMessages()
             
             statusLabel1.isHidden = false
             statusLabel2.isHidden = false

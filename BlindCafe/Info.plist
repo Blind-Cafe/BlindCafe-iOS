@@ -42,9 +42,9 @@
 		<true/>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>녹음 사용</string>
+	<string>음성 메세지를 전송하기 위해 녹음 권한이 필요합니다.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>앨범 사용</string>
+	<string>채팅방에서 사진을 전송하기 위해 앨범 권한이 필요합니다.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>

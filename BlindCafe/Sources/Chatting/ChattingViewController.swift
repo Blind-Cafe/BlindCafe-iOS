@@ -195,9 +195,12 @@ class ChattingViewController: BaseViewController {
         removeKeyboardNotification()
         audioPlayer?.stop()
         
+        
+        
         showIndicator()
         let input = RequestMatchingInput()
         ChattingLogPostDataManager().log(input, id: matchingId, viewController: self)
+        
     }
     
     @objc func buttonDown() {
@@ -824,6 +827,7 @@ extension ChattingViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
+                                    UserDefaults.standard.set(self.messages.count + 1, forKey: "LastIndex")
                                     if self.messages.count != 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
                                     }

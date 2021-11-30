@@ -671,6 +671,7 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
         } else if message.type == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Type8TableViewCell", for: indexPath) as! Type8TableViewCell
             cell.badgeLabel.text = "프로필 교환에 성공하셨으니 \(message.body) 뱃지를 획득하셨습니다.\n홈에서 새로운 매칭을 하실 수 있어요!"
+            cell.backgroundColor = .lightchat
             return cell
         } else {
             return UITableViewCell()

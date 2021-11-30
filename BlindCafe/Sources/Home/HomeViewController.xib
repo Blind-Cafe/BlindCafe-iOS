@@ -15,6 +15,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
+                <outlet property="alarmLabel" destination="ies-N8-Z3P" id="41Z-tI-B8v"/>
+                <outlet property="alarmView" destination="t09-pN-Ufn" id="qlz-Ff-4QI"/>
                 <outlet property="backgroundImage" destination="1h0-7e-8Nh" id="1d6-c8-DcZ"/>
                 <outlet property="homeButton" destination="Z43-DO-HJX" id="LJ9-FT-n7i"/>
                 <outlet property="progressBar" destination="0NU-Ia-Br4" id="gJn-Zm-wnO"/>
@@ -72,6 +74,25 @@
                     <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t09-pN-Ufn">
+                    <rect key="frame" x="325" y="0.0" width="50" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ies-N8-Z3P">
+                            <rect key="frame" x="8" y="8" width="34" height="19"/>
+                            <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                            <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="31B-NU-tdF"/>
+                        <constraint firstItem="ies-N8-Z3P" firstAttribute="leading" secondItem="t09-pN-Ufn" secondAttribute="leading" constant="8" id="Jg8-Jn-Uul"/>
+                        <constraint firstAttribute="bottom" secondItem="ies-N8-Z3P" secondAttribute="bottom" constant="8" id="uKG-aL-oHu"/>
+                        <constraint firstItem="ies-N8-Z3P" firstAttribute="top" secondItem="t09-pN-Ufn" secondAttribute="top" constant="8" id="xhg-Fn-jNM"/>
+                        <constraint firstAttribute="trailing" secondItem="ies-N8-Z3P" secondAttribute="trailing" constant="8" id="yTj-en-OMe"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72c-87-kAJ">
                     <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
@@ -92,9 +113,11 @@
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="bottom" secondItem="Z43-DO-HJX" secondAttribute="bottom" constant="-42" id="NGf-gu-2dr"/>
                 <constraint firstItem="0NU-Ia-Br4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Noj-ez-ae3"/>
                 <constraint firstItem="72c-87-kAJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qft-sz-eqr"/>
+                <constraint firstItem="t09-pN-Ufn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="X7S-vg-P85"/>
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="centerX" secondItem="Z43-DO-HJX" secondAttribute="centerX" id="dsk-Md-Muv"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n6C-25-2xb"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q0M-iB-Wyo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t09-pN-Ufn" secondAttribute="trailing" constant="15" id="x9e-bh-ijY"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yiG-dQ-FWj"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
