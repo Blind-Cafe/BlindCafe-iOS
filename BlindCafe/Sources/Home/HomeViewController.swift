@@ -9,6 +9,9 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var statusLabel1: UILabel!
+    @IBOutlet weak var statusLabel2: UILabel!
+    
     var status: String = ""
     var matchingId: Int = 0
     var partnerName: String = ""
@@ -105,11 +108,18 @@ extension HomeViewController {
             homeButton.isHidden = false
             homeButton.setImage(UIImage(named: "homebutton"), for: .normal)
             timeLabel.isHidden = true
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "매칭하기"
+            statusLabel2.text = "\n하트를 눌러 매칭을 시작하세요"
         case "WAIT":
             backgroundImage.image = UIImage(named: "nonebackground")
             homeButton.setImage(UIImage(named: "waithomebutton"), for: .normal)
             progressBar.isHidden = true
             timeLabel.isHidden = true
+            statusLabel1.isHidden = true
+            statusLabel2.isHidden = false
+            statusLabel2.text = "대화 상대방을 찾고 있습니다.\n잠시만 기다려주세요."
         case "FOUND":
             backgroundImage.image = UIImage(named: "matchingbackground")
             progressBar.isHidden = false
@@ -117,6 +127,10 @@ extension HomeViewController {
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
             timeLabel.isHidden = false
             timeLabel.text = "72:00"
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "대화하기"
+            statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
         case "MATCHING":
             backgroundImage.image = UIImage(named: "matchingbackground")
             progressBar.isHidden = false
@@ -129,6 +143,11 @@ extension HomeViewController {
             let hours = elapsedTimeSeconds / 3600
             let minutes = (elapsedTimeSeconds % 3600) / 60
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
+            
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "대화하기"
+            statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
         case "FAILED_LEAVE_ROOM":
             reason = result.reason ?? ""
             let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
@@ -139,6 +158,11 @@ extension HomeViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             present(vc, animated: false, completion: nil)
+            
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "대화하기"
+            statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
         case "FAILED_REPORT":
             reason = result.reason ?? ""
             let str = "\(partnerName)님이 불편함을 느껴 대화를 종료했습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓으러 가볼까요?"
@@ -147,6 +171,11 @@ extension HomeViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             present(vc, animated: false, completion: nil)
+            
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "대화하기"
+            statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
         case "FAILED_WONT_EXCHANGE":
             reason = result.reason ?? ""
             let str = "\(partnerName)님이 \"\(reason)\"라는 이유로 대화를 진행하지 못하게 되었습니다.\n\n아쉽지만 새로운 손님과 또 다른 추억을 쌓을 수 있습니다."
@@ -157,6 +186,11 @@ extension HomeViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             present(vc, animated: false, completion: nil)
+            
+            statusLabel1.isHidden = false
+            statusLabel2.isHidden = false
+            statusLabel1.text = "대화하기"
+            statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
         default:
             break
         }

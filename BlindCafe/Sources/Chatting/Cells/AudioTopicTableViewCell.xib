@@ -53,8 +53,8 @@
                                 <color key="minimumTrackTintColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="maximumTrackTintColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00/00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-gg-gdI">
-                                <rect key="frame" x="292" y="52.5" width="62" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-gg-gdI">
+                                <rect key="frame" x="302" y="52.5" width="52" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="XeS-yn-HQc"/>
                                 </constraints>
@@ -70,7 +70,7 @@
                             <constraint firstAttribute="trailing" secondItem="pLT-gg-gdI" secondAttribute="trailing" constant="17" id="7Vk-1i-DkF"/>
                             <constraint firstItem="ts5-wH-Yti" firstAttribute="top" secondItem="TYK-Wd-7qh" secondAttribute="top" constant="14" id="9bB-xs-I6g"/>
                             <constraint firstItem="DSv-JL-qtj" firstAttribute="leading" secondItem="qi9-d0-Nsb" secondAttribute="trailing" constant="14" id="BIg-Kb-mxM"/>
-                            <constraint firstItem="pLT-gg-gdI" firstAttribute="leading" secondItem="DSv-JL-qtj" secondAttribute="trailing" constant="20" id="HcY-Le-nG0"/>
+                            <constraint firstItem="pLT-gg-gdI" firstAttribute="leading" secondItem="DSv-JL-qtj" secondAttribute="trailing" constant="30" id="HcY-Le-nG0"/>
                             <constraint firstItem="ts5-wH-Yti" firstAttribute="leading" secondItem="TYK-Wd-7qh" secondAttribute="leading" constant="14" id="Unb-4N-l9A"/>
                             <constraint firstItem="qi9-d0-Nsb" firstAttribute="leading" secondItem="TYK-Wd-7qh" secondAttribute="leading" constant="14" id="duU-ox-qx1"/>
                             <constraint firstItem="qi9-d0-Nsb" firstAttribute="top" secondItem="ts5-wH-Yti" secondAttribute="bottom" constant="7" id="ohg-ib-vh1"/>

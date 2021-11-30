@@ -653,7 +653,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row != audioPlayingIndex {
                 cell.playStopButton.isSelected = false
                 cell.audioSlider.value = 0
-                cell.audioTimeLabel.text = "00:00/00:00"
+                cell.audioTimeLabel.text = "00:00"
             } else {
                 cell.playStopButton.isSelected = true
                 if audioPlayer != nil {

@@ -18,6 +18,8 @@
                 <outlet property="backgroundImage" destination="1h0-7e-8Nh" id="1d6-c8-DcZ"/>
                 <outlet property="homeButton" destination="Z43-DO-HJX" id="LJ9-FT-n7i"/>
                 <outlet property="progressBar" destination="0NU-Ia-Br4" id="gJn-Zm-wnO"/>
+                <outlet property="statusLabel1" destination="QDV-l8-0Qg" id="1J4-px-lKR"/>
+                <outlet property="statusLabel2" destination="72c-87-kAJ" id="CET-P1-ogp"/>
                 <outlet property="timeLabel" destination="aa0-dz-b4j" id="wR9-Dy-o8D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -64,23 +66,32 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDV-l8-0Qg">
-                    <rect key="frame" x="168" y="457" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDV-l8-0Qg">
+                    <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                    <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72c-87-kAJ">
+                    <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="QDV-l8-0Qg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1DH-ml-8xT"/>
                 <constraint firstItem="Z43-DO-HJX" firstAttribute="top" secondItem="1h0-7e-8Nh" secondAttribute="top" constant="167" id="Dcz-DB-Wrt"/>
                 <constraint firstItem="Z43-DO-HJX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E0u-gh-k3E"/>
+                <constraint firstItem="72c-87-kAJ" firstAttribute="top" secondItem="QDV-l8-0Qg" secondAttribute="bottom" id="Fd4-mQ-H5H"/>
+                <constraint firstItem="QDV-l8-0Qg" firstAttribute="top" secondItem="0NU-Ia-Br4" secondAttribute="bottom" constant="55" id="HKf-cc-qaZ"/>
                 <constraint firstItem="Z43-DO-HJX" firstAttribute="centerY" secondItem="0NU-Ia-Br4" secondAttribute="centerY" id="LW9-Dy-900"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-44" id="Mes-1a-6fO"/>
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="bottom" secondItem="Z43-DO-HJX" secondAttribute="bottom" constant="-42" id="NGf-gu-2dr"/>
                 <constraint firstItem="0NU-Ia-Br4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Noj-ez-ae3"/>
+                <constraint firstItem="72c-87-kAJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qft-sz-eqr"/>
                 <constraint firstItem="aa0-dz-b4j" firstAttribute="centerX" secondItem="Z43-DO-HJX" secondAttribute="centerX" id="dsk-Md-Muv"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n6C-25-2xb"/>
                 <constraint firstItem="1h0-7e-8Nh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q0M-iB-Wyo"/>

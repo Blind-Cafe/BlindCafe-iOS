@@ -638,7 +638,7 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
             if indexPath.row != audioPlayingIndex {
                 cell.playStopButton.isSelected = false
                 cell.audioSlider.value = 0
-                cell.audioTimeLabel.text = "00:00/00:00"
+                cell.audioTimeLabel.text = "00:00"
             } else {
                 cell.playStopButton.isSelected = true
                 if audioPlayer != nil {
@@ -670,6 +670,7 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
             return cell
         } else if message.type == 8 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Type8TableViewCell", for: indexPath) as! Type8TableViewCell
+            cell.badgeLabel.text = "프로필 교환에 성공하셨으니 \(message.body) 뱃지를 획득하셨습니다.\n홈에서 새로운 매칭을 하실 수 있어요!"
             return cell
         } else {
             return UITableViewCell()
@@ -784,7 +785,9 @@ extension MatchedChattingViewController {
                             let data = doc.data()
                             if let sender = data["senderUid"] as? String, let body = data["contents"] as? String, let timestamp = data["timestamp"] as? Timestamp, let type = data["type"] as? Int {
                                 let time = self.timeFormatter(timestamp: timestamp)
-                                self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
+                                if !(type == 8 && sender != UserDefaults.standard.string(forKey: "UserID")! ){
+                                    self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
+                                }
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
