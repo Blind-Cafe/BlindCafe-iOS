@@ -75,13 +75,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
+        
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, error in
             if granted {
                 print("알림 등록이 완료되었습니다.")
             }
         }
+        
         application.registerForRemoteNotifications()
+        if UserDefaults.standard.bool(forKey: "Setting1") == true {
+            application.unregisterForRemoteNotifications()
+        }
         
         return true
     }
@@ -109,12 +114,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        // Print message ID.
-        if let messageID = userInfo["gcm.message_id"] {
-            print("Message ID: \(messageID)")
-        }
-        
+        let userInfo = response.notification.request.content.body
+        print(userInfo)
     }
 }
 

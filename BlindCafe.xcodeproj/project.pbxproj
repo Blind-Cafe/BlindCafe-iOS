@@ -47,6 +47,8 @@
 		CD15095927215B570020BD41 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15095827215B570020BD41 /* Key.swift */; };
 		CD18B83D27557D7700A61C9B /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18B83B27557D7600A61C9B /* LogoutViewController.swift */; };
 		CD18B83E27557D7700A61C9B /* LogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD18B83C27557D7600A61C9B /* LogoutViewController.xib */; };
+		CD18B8412755C36500A61C9B /* Type8TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18B83F2755C36500A61C9B /* Type8TableViewCell.swift */; };
+		CD18B8422755C36500A61C9B /* Type8TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD18B8402755C36500A61C9B /* Type8TableViewCell.xib */; };
 		CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2971752739F46500B034F1 /* PhotoViewController.swift */; };
 		CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2971762739F46500B034F1 /* PhotoViewController.xib */; };
 		CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */; };
@@ -276,6 +278,8 @@
 		CD15095827215B570020BD41 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		CD18B83B27557D7600A61C9B /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		CD18B83C27557D7600A61C9B /* LogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutViewController.xib; sourceTree = "<group>"; };
+		CD18B83F2755C36500A61C9B /* Type8TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type8TableViewCell.swift; sourceTree = "<group>"; };
+		CD18B8402755C36500A61C9B /* Type8TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Type8TableViewCell.xib; sourceTree = "<group>"; };
 		CD2971752739F46500B034F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CD2971762739F46500B034F1 /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 		CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1493,6 +1497,8 @@
 		CDFB481C275503A100ECDC03 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CD18B83F2755C36500A61C9B /* Type8TableViewCell.swift */,
+				CD18B8402755C36500A61C9B /* Type8TableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1560,6 +1566,7 @@
 				CD6AA9F52724486200DA6013 /* MyPageViewController.xib in Resources */,
 				CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */,
 				CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */,
+				CD18B8422755C36500A61C9B /* Type8TableViewCell.xib in Resources */,
 				CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */,
 				CDC51706274D26780063AA3B /* RegionCollectionViewCell.xib in Resources */,
 				CDBD4DAD2755456A00DDFEBB /* PartnerProfileImageViewController.xib in Resources */,
@@ -1691,6 +1698,7 @@
 				CDBD4DB02755494600DDFEBB /* Policy2ViewController.swift in Sources */,
 				CDFB480D2754C6D600ECDC03 /* Policy1ViewController.swift in Sources */,
 				CD6E927F2750C10500651411 /* MatchingCancelDataManager.swift in Sources */,
+				CD18B8412755C36500A61C9B /* Type8TableViewCell.swift in Sources */,
 				CDBCD35C274E6CC500995897 /* UserDeleteDataManager.swift in Sources */,
 				CD6E92752750BE7C00651411 /* MatchingCancelViewController.swift in Sources */,
 				CD2AA3D22743F19F0088FE49 /* IndicatorView.swift in Sources */,

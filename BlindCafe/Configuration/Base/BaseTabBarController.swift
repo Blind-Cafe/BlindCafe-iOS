@@ -61,14 +61,5 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate  {
         self.delegate = self
     }
     
-    /*override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.tag == 1 {
-            UITabBar.appearance().backgroundColor = .brownGray
-        }
-        else {
-            UITabBar.appearance().backgroundColor = .white
-        }
-    }*/
 
 }
-

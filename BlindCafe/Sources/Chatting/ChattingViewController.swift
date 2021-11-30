@@ -796,7 +796,6 @@ extension ChattingViewController {
         recordButton.isHidden = false
         chattingFieldConstraint.constant = 112
         
-        
     }
     
     func loadMessages() {
@@ -819,7 +818,7 @@ extension ChattingViewController {
                                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
                                 let date = Date()
                                 
-                                if dateFormatter.string(from: date) > self.timeFormatter2(timestamp: timestamp) {
+                                if dateFormatter.string(from: date) >= self.timeFormatter2(timestamp: timestamp) {
                                     self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
                                 }
                                 
@@ -855,9 +854,6 @@ extension ChattingViewController {
         let date = timestamp.dateValue()
         return dateFormatter.string(from: date)
     }
-    
-    
-
 }
 
 //MARK: KeyboardToolbar

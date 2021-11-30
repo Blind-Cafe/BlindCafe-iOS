@@ -145,6 +145,7 @@ class MatchedChattingViewController: BaseViewController {
         chatTableView.register(UINib(nibName: "TextTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TextTopicTableViewCell")
         chatTableView.register(UINib(nibName: "ImageTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "ImageTopicTableViewCell")
         chatTableView.register(UINib(nibName: "AudioTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "AudioTopicTableViewCell")
+        chatTableView.register(UINib(nibName: "Type8TableViewCell", bundle: nil), forCellReuseIdentifier: "Type8TableViewCell")
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -666,6 +667,9 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
             } else {
                 cell.descriptionLabel.text = message.body
             }
+            return cell
+        } else if message.type == 8 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Type8TableViewCell", for: indexPath) as! Type8TableViewCell
             return cell
         } else {
             return UITableViewCell()

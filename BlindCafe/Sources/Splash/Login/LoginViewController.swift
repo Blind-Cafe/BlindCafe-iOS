@@ -128,11 +128,8 @@ extension LoginViewController {
         else {
             let vc = AgreementViewController()
             let navController = UINavigationController(rootViewController: vc)
-            //navController.modalPresentationStyle = .fullScreen
-            //navController.modalTransitionStyle = .crossDissolve
             navController.view.backgroundColor = .mainBlack
             navController.navigationBar.isTranslucent = false
-            //self.present(navController, animated: true)
             changeRootViewController(navController)
         }
     }

@@ -22,18 +22,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var controller: UIViewController
         
+       
+        
         if Token.jwtToken == "" {
             controller = OnboardingViewController()
             let navController = UINavigationController(rootViewController: controller)
+            navController.view.backgroundColor = .mainBlack
             win.rootViewController = navController
             win.makeKeyAndVisible()
             window = win
         }
         else {
-            controller = BaseTabBarController()
-            win.rootViewController = controller
-            win.makeKeyAndVisible()
-            window = win
+            if  UserDefaults.standard.string(forKey: "UserStatus") == "990" {
+                controller = BaseTabBarController()
+                win.rootViewController = controller
+                win.makeKeyAndVisible()
+                window = win
+            } else {
+                controller = AgreementViewController()
+                let navController = UINavigationController(rootViewController: controller)
+                navController.view.backgroundColor = .mainBlack
+                navController.navigationBar.isTranslucent = false
+                win.rootViewController = navController
+                win.makeKeyAndVisible()
+                window = win
+            }
         }
         
         

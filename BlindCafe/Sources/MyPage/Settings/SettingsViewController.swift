@@ -13,10 +13,13 @@ class SettingsViewController: BaseViewController {
     @IBAction func settingButton1(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
+            UIApplication.shared.registerForRemoteNotifications()
         }
         else {
             sender.isSelected = true
+            UIApplication.shared.unregisterForRemoteNotifications()
         }
+        UserDefaults.standard.set(settingButton1.isSelected, forKey: "Setting1")
     }
     
     @IBOutlet weak var settingbutton2: UIButton!
@@ -27,6 +30,7 @@ class SettingsViewController: BaseViewController {
         else {
             sender.isSelected = true
         }
+        UserDefaults.standard.set(settingbutton2.isSelected, forKey: "Setting2")
     }
     
     @IBAction func toLogout(_ sender: Any) {
@@ -64,6 +68,9 @@ class SettingsViewController: BaseViewController {
         titleLabel.textAlignment = .center
         titleview.addSubview(titleLabel)
         self.navigationItem.titleView = titleview
+        
+        settingButton1.isSelected = UserDefaults.standard.bool(forKey: "Setting1")
+        settingbutton2.isSelected = UserDefaults.standard.bool(forKey: "Setting2")
     }
 
 }

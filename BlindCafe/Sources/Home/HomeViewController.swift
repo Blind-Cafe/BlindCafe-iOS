@@ -79,10 +79,10 @@ extension HomeViewController {
                 }
                 self?.progressBar.progress = min(0.00000386 * CGFloat(elapsedTimeSeconds), 1)
                 
-                let elapsedTimeSecond = Int(Date().timeIntervalSince((self?.date)!))
+                let elapsedTimeSecond = Int(Date().timeIntervalSince(self?.date ?? Date()))
                 let hours = elapsedTimeSecond / 3600
                 let minutes = (elapsedTimeSecond % 3600) / 60
-                self!.timeLabel.text = String(format: "%02d : %02d", hours, minutes)
+                self?.timeLabel.text = String(format: "%02d : %02d", hours, minutes)
             }
         }
     }

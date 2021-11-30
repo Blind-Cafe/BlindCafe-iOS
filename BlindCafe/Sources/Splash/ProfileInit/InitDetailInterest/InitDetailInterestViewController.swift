@@ -193,6 +193,7 @@ extension InitDetailInterestViewController {
     
     func requested() {
         dismissIndicator()
+        UserDefaults.standard.set("990", forKey: "UserStatus")
         navigationController?.pushViewController(DoneSignUpViewController(), animated: true)
     }
     

@@ -74,9 +74,8 @@
                         <action selector="reasonButtons:" destination="-1" eventType="touchUpInside" id="h87-x9-JGA"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N7-4x-dAe">
-                    <rect key="frame" x="18" y="655" width="356" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N7-4x-dAe">
+                    <rect key="frame" x="17" y="655" width="356" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="deletebuttonenabled"/>
                     <state key="disabled" image="deletebutton"/>
@@ -155,6 +154,7 @@
             <constraints>
                 <constraint firstItem="5b5-sw-Hmi" firstAttribute="centerY" secondItem="J1w-y9-1Vw" secondAttribute="centerY" id="4IZ-CA-Tv2"/>
                 <constraint firstItem="mJ4-Up-hOK" firstAttribute="top" secondItem="0zt-fh-Tat" secondAttribute="bottom" constant="35" id="5t0-8a-w6D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4N7-4x-dAe" secondAttribute="bottom" constant="17" id="7sS-BS-Q9w"/>
                 <constraint firstItem="BuK-gC-Xjr" firstAttribute="top" secondItem="mJ4-Up-hOK" secondAttribute="bottom" constant="27" id="8Zh-Rw-ZMt"/>
                 <constraint firstItem="g1v-ip-R13" firstAttribute="top" secondItem="BuK-gC-Xjr" secondAttribute="bottom" constant="27" id="9nc-qd-u8W"/>
                 <constraint firstItem="KS8-Vx-WSy" firstAttribute="top" secondItem="g1v-ip-R13" secondAttribute="bottom" constant="27" id="Cgq-uf-RLa"/>
@@ -164,6 +164,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fLF-zE-TtP" secondAttribute="trailing" constant="17" id="Po7-iH-HYK"/>
                 <constraint firstItem="mJ4-Up-hOK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="U0t-2c-ysN"/>
                 <constraint firstItem="Hlv-c3-8KT" firstAttribute="centerY" secondItem="BuK-gC-Xjr" secondAttribute="centerY" id="VAq-SZ-f0X"/>
+                <constraint firstItem="4N7-4x-dAe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W3X-CL-2oV"/>
                 <constraint firstItem="BuK-gC-Xjr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="XvC-rr-QNc"/>
                 <constraint firstItem="fLF-zE-TtP" firstAttribute="centerY" secondItem="mJ4-Up-hOK" secondAttribute="centerY" id="YBn-rJ-tGM"/>
                 <constraint firstItem="1Tl-Ak-6ho" firstAttribute="centerY" secondItem="KS8-Vx-WSy" secondAttribute="centerY" id="aWF-Op-fga"/>

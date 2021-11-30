@@ -37,7 +37,15 @@ class OnboardingViewController: BaseOnboardingViewController {
         
         self.navigationController?.navigationBar.barTintColor = .mainBlack
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.SpoqaSans(.bold, size: 16), NSAttributedString.Key.foregroundColor: UIColor.veryLightPink]
-        self.title = "블라인드 카페 규칙"
+        
+        let titleview = UIView(frame: CGRect(x: 0, y: 0, width: 130, height: 44))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 44))
+        titleLabel.text = "블라인드 카페 규칙"
+        titleLabel.font = .SpoqaSans(.bold, size: 16)
+        titleLabel.textColor = .white2
+        titleLabel.textAlignment = .center
+        titleview.addSubview(titleLabel)
+        self.navigationItem.titleView = titleview
         
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self

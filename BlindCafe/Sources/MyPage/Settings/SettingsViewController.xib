@@ -46,8 +46,8 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-Kn-DGF">
                             <rect key="frame" x="320" y="14.666666666666657" width="44" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="toggleleft"/>
-                            <state key="selected" image="toggleright"/>
+                            <state key="normal" image="toggleright"/>
+                            <state key="selected" image="toggleleft"/>
                             <connections>
                                 <action selector="settingButton1:" destination="-1" eventType="touchUpInside" id="pl1-Xi-bih"/>
                             </connections>
@@ -55,8 +55,8 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9O-Qj-2wj">
                             <rect key="frame" x="320" y="71.666666666666657" width="44" height="44"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="toggleleft"/>
-                            <state key="selected" image="toggleright"/>
+                            <state key="normal" image="toggleright"/>
+                            <state key="selected" image="toggleleft"/>
                             <connections>
                                 <action selector="settingButton2:" destination="-1" eventType="touchUpInside" id="FoW-mN-xZ6"/>
                             </connections>

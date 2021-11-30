@@ -15,7 +15,10 @@ class LogoutViewController: BaseViewController {
     
     @IBAction func logoutButton(_ sender: Any) {
         UserDefaults.standard.set("", forKey: "UserJwt")
-        changeRootViewController(OnboardingViewController())
+        UserDefaults.standard.set("", forKey: "UserStatus")
+        let navController = UINavigationController(rootViewController: OnboardingViewController())
+        navController.view.backgroundColor = .mainBlack
+        changeRootViewController(navController)
     }
     
     override func viewDidLoad() {
