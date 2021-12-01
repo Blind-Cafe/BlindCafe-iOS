@@ -49,6 +49,7 @@
 		CD18B83E27557D7700A61C9B /* LogoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD18B83C27557D7600A61C9B /* LogoutViewController.xib */; };
 		CD18B8412755C36500A61C9B /* Type8TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18B83F2755C36500A61C9B /* Type8TableViewCell.swift */; };
 		CD18B8422755C36500A61C9B /* Type8TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD18B8402755C36500A61C9B /* Type8TableViewCell.xib */; };
+		CD18B84427566F5300A61C9B /* GetMatchedRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18B84327566F5200A61C9B /* GetMatchedRoomDataManager.swift */; };
 		CD2971772739F46500B034F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2971752739F46500B034F1 /* PhotoViewController.swift */; };
 		CD2971782739F46500B034F1 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2971762739F46500B034F1 /* PhotoViewController.xib */; };
 		CD29717C273A157500B034F1 /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */; };
@@ -280,6 +281,7 @@
 		CD18B83C27557D7600A61C9B /* LogoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutViewController.xib; sourceTree = "<group>"; };
 		CD18B83F2755C36500A61C9B /* Type8TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type8TableViewCell.swift; sourceTree = "<group>"; };
 		CD18B8402755C36500A61C9B /* Type8TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Type8TableViewCell.xib; sourceTree = "<group>"; };
+		CD18B84327566F5200A61C9B /* GetMatchedRoomDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMatchedRoomDataManager.swift; sourceTree = "<group>"; };
 		CD2971752739F46500B034F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CD2971762739F46500B034F1 /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
 		CD29717A273A157500B034F1 /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */,
+				CD18B84327566F5200A61C9B /* GetMatchedRoomDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1830,6 +1833,7 @@
 				CD48D5712753F88A00F69061 /* PostProfileInput.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
+				CD18B84427566F5300A61C9B /* GetMatchedRoomDataManager.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
 				CD8A60E12753B24D0002E07D /* ErrorResponse.swift in Sources */,
 				CD48D5732753F89B00F69061 /* PostProfileResponse.swift in Sources */,

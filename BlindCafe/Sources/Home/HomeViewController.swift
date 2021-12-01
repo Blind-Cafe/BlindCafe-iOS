@@ -58,19 +58,31 @@ class HomeViewController: BaseViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barTintColor = .mainBlack
         
+        let bellButton: UIButton = UIButton()
+        bellButton.setImage(UIImage(named: "homebell"), for: .normal)
+        bellButton.addTarget(self, action: #selector(self.bellButtonAction), for: .touchUpInside)
+        let addButton = UIBarButtonItem(customView: bellButton)
+        self.navigationItem.rightBarButtonItem = addButton
+        alarmLabel.text = "0건의 메세지가 도착했습니다."
+        
         view.backgroundColor = .mainBlack
         let titleImage = UIImageView(image: UIImage(named: "blindcafe"))
         titleImage.center = (navigationController?.navigationBar.center)!
         navigationController?.navigationBar.topItem?.titleView = titleImage
         
-        
+        dismissWhenTappedAround()
         
         print(Token.jwtToken)
         loadMessages()
         
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
-        
     }
     
     @objc func bellButtonAction(_ sender: UIButton) {
@@ -87,6 +99,16 @@ class HomeViewController: BaseViewController {
                 HomeDataManager().requestHome(viewController: self!)
             }
         }
+    }
+    
+    func dismissWhenTappedAround() {
+        let tap: UITapGestureRecognizer =
+            UITapGestureRecognizer(target: self, action: #selector(self.dismissAll))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissAll() {
+        self.alarmView.isHidden = true
     }
 }
 
@@ -153,6 +175,7 @@ extension HomeViewController {
     func requestData(result: HomeResponse){
         self.dismissIndicator()
         
+        //print(result.matchingId)
         status = result.matchingStatus ?? ""
         matchingId = result.matchingId ?? -1
         UserDefaults.standard.set(matchingId, forKey: "MatchingId")
@@ -201,6 +224,7 @@ extension HomeViewController {
             let elapsedTimeSeconds = Int(Date().timeIntervalSince(date))
             let hours = elapsedTimeSeconds / 3600
             let minutes = (elapsedTimeSeconds % 3600) / 60
+            timeLabel.isHidden = false
             timeLabel.text = String(format: "%02d : %02d", hours, minutes)
             
             loadMessages()
@@ -362,6 +386,14 @@ extension HomeViewController {
             present(vc, animated: true, completion: nil)
         }
         
+    }
+    
+    func stopUser(){
+        dismissIndicator()
+        let vc = StopUserViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     func failedToRequest(message: String) {

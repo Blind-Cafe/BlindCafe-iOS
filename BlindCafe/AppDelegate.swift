@@ -114,9 +114,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.body
-        print(userInfo)
+        let userInfo = response.notification.request.content.title
+        print(response.notification)
+        print(response)
+        completionHandler()
     }
+    
+    
 }
 
 extension AppDelegate: MessagingDelegate {
@@ -125,4 +129,5 @@ extension AppDelegate: MessagingDelegate {
         print("FCM Token: \(fcmToken ?? "")")
         UserDefaults.standard.setValue(fcmToken, forKey: "FCMToken")
     }
+    
 }

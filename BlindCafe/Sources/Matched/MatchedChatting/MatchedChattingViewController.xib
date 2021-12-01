@@ -62,7 +62,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRb-jH-aBc">
-                    <rect key="frame" x="201" y="0.0" width="173" height="184"/>
+                    <rect key="frame" x="201" y="0.0" width="173" height="140"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLF-He-BLA">
                             <rect key="frame" x="52.000000000000007" y="18" width="80.666666666666686" height="18"/>
@@ -103,7 +103,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-7s-SUz">
-                            <rect key="frame" x="2" y="135" width="140" height="44"/>
+                            <rect key="frame" x="2" y="91" width="140" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="140" id="vzB-MZ-tBL"/>
                             </constraints>
@@ -134,7 +134,7 @@
                         <constraint firstItem="JuA-ax-Q12" firstAttribute="top" secondItem="iRb-jH-aBc" secondAttribute="top" constant="19" id="CjM-YJ-5C3"/>
                         <constraint firstItem="kLF-He-BLA" firstAttribute="leading" secondItem="JuA-ax-Q12" secondAttribute="trailing" constant="18" id="PSm-rj-DYc"/>
                         <constraint firstItem="JuA-ax-Q12" firstAttribute="leading" secondItem="iRb-jH-aBc" secondAttribute="leading" constant="18" id="cVK-6M-Vvx"/>
-                        <constraint firstAttribute="height" constant="184" id="cug-OY-9OK"/>
+                        <constraint firstAttribute="height" constant="140" id="cug-OY-9OK"/>
                         <constraint firstAttribute="width" constant="173" id="l6d-AL-svK"/>
                         <constraint firstItem="KLf-7s-SUz" firstAttribute="leading" secondItem="iRb-jH-aBc" secondAttribute="leading" constant="2" id="snh-R7-7MW"/>
                         <constraint firstItem="kLF-He-BLA" firstAttribute="centerY" secondItem="JuA-ax-Q12" secondAttribute="centerY" id="wbB-97-aWe"/>

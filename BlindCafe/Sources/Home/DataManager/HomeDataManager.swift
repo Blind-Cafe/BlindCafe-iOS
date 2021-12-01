@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 class HomeDataManager {
     func requestHome(viewController: HomeViewController) {
@@ -17,11 +18,20 @@ class HomeDataManager {
                     if response.code == "1000" {
                         viewController.requestData(result: response)
                     }
-                    else if response.code == "1007" {
-                        viewController.failedToRequest(message: response.message)
-                    }
                 case .failure(let error):
                     print(error.localizedDescription)
+                    if response.response!.statusCode >= 400 && response.response!.statusCode < 500 {
+                        viewController.dismissIndicator()
+                        if let data = response.data {
+                            let json = try? JSON(data: data)
+                            
+                            if let code: String = json?["code"].stringValue {
+                                if code == "1007" {
+                                    viewController.stopUser()
+                                }
+                            }
+                        }
+                    }
                 }
             }
     }

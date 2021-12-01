@@ -11,6 +11,8 @@ class LeaveRoom2ViewController: UIViewController {
 
     @IBOutlet var leaveRoomButtons: [UIButton]!
     
+    var matchingId : Int = 0
+    
     var reasonList: [Int] = []
     @IBAction func leaveRoomButton(_ sender: UIButton) {
         if sender.isSelected {
@@ -43,7 +45,7 @@ class LeaveRoom2ViewController: UIViewController {
         }
         print(str.dropLast())
         showIndicator()
-        LeaveRoomDataManager().leaveRoom(id: String(str.dropLast()), viewController: self)
+        LeaveRoomDataManager().leaveRoom(id: String(str.dropLast()), matchingId: matchingId, viewController: self)
     }
     
     override func viewDidLoad() {

@@ -79,7 +79,7 @@ class ChattingViewController: BaseViewController {
         let vc = ReportViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        
+        vc.matchingId = matchingId
         present(vc, animated: false)
         
     }
@@ -88,6 +88,7 @@ class ChattingViewController: BaseViewController {
         let vc = LeaveRoomViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.matchingId = matchingId
         vc.partnerName = partnerName
         
         present(vc, animated: false)
@@ -194,8 +195,6 @@ class ChattingViewController: BaseViewController {
         super.viewWillDisappear(animated)
         removeKeyboardNotification()
         audioPlayer?.stop()
-        
-        
         
         showIndicator()
         let input = RequestMatchingInput()
@@ -671,7 +670,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
-        else if message.type == 7 {
+        else if message.type == 7 || message.type == 9 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             if message.body.contains("<") {
                 let strArr = message.body.components(separatedBy: CharacterSet(charactersIn: "<>"))
@@ -690,7 +689,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return UITableViewCell()
         }
-        
     }
     
     @objc func topicPlayStop(_ sender: UIButton){

@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 class PartnerImagesDataManager {
     func requestHome(id: Int, viewController: PartnerProfileImageViewController) {

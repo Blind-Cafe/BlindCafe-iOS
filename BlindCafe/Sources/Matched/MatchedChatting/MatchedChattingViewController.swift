@@ -16,6 +16,8 @@ import AVFoundation
 
 class MatchedChattingViewController: BaseViewController {
 
+    var delegate: MyTable?
+    
     @IBOutlet weak var topView: UIView!
     
     var startTime: String = ""
@@ -67,7 +69,7 @@ class MatchedChattingViewController: BaseViewController {
         let vc = ReportViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        
+        vc.matchingId = matchingId
         present(vc, animated: false)
         
     }
@@ -76,6 +78,7 @@ class MatchedChattingViewController: BaseViewController {
         let vc = LeaveRoomViewController()
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.matchingId = matchingId
         vc.partnerName = partnerName
         
         present(vc, animated: false)
@@ -240,6 +243,7 @@ class MatchedChattingViewController: BaseViewController {
     }
     
     @objc func popToHome(){
+        delegate?.getTable()
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -653,7 +657,7 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
             
             return cell
         }
-        else if message.type == 7 {
+        else if message.type == 7 || message.type == 9 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell", for: indexPath) as! DescriptionTableViewCell
             cell.backgroundColor = .lightchat
             if message.body.contains("<") {

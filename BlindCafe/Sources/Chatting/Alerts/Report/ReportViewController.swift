@@ -10,6 +10,7 @@ import UIKit
 class ReportViewController: UIViewController {
     
     @IBOutlet var reportButtons: [UIButton]!
+    var matchingId: Int = 0
     
     var indexOfOneAndOnly: Int?
     @IBAction func reportButtonSelected(_ sender: UIButton) {
@@ -41,8 +42,7 @@ class ReportViewController: UIViewController {
     
     @IBOutlet weak var reportNextButton: UIButton!
     @IBAction func reportNextButton(_ sender: Any) {
-        let matchingId = UserDefaults.standard.string(forKey: "MatchingId") ?? ""
-        let input = ReportInput(matchingId: Int(matchingId)!, reason: self.indexOfOneAndOnly! + 1)
+        let input = ReportInput(matchingId: matchingId, reason: self.indexOfOneAndOnly! + 1)
         showIndicator()
         ReportDataManager().report(input, viewController: self)
         

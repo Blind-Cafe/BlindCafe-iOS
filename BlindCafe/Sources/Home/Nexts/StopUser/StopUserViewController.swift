@@ -7,23 +7,15 @@
 
 import UIKit
 
-class StopUserViewController: UIViewController {
+class StopUserViewController: BaseViewController {
 
+    @IBOutlet weak var stopLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        stopLabel.text = "\(UserDefaults.standard.string(forKey: "UserNickname") ?? "")님은 5번 이상의 신고를 받아 현재 정지계정으로 전환되었습니다.\n\n계정을 활성화하려면 블라인드카페 이메일(blindcafeapp@gmail.com)로 문의주시길 바랍니다."
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

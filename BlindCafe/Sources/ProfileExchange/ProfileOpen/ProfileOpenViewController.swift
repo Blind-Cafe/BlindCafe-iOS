@@ -14,6 +14,7 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
     
     @IBOutlet weak var openLabel1: UILabel!
     @IBOutlet weak var openLabel2: UILabel!
+    @IBOutlet weak var openLabel3: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBAction func cameraButton(_ sender: Any) {
@@ -61,7 +62,6 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
                 self.presentBottomAlert(name: "profilefirst")
             }
         }
-        
     }
     
     var fill: Bool!
@@ -111,6 +111,7 @@ extension ProfileOpenViewController {
         dismissIndicator()
         openLabel1.text = "72시간의 대화가 종료되었습니다.\n그 동안 \(result.partnerNickname)님과의 만남이 즐거우셨나요?"
         openLabel2.text = "내 프로필을 멋지게 채우고 \(result.partnerNickname)님의 프로필을 받아보세요!"
+        openLabel3.text = "7시간 뒤 자동으로 프로필이 발송됩니다.\n프로필이 완성될수록 \(result.partnerNickname)님과 대화할 수 있는 기능이 높아져요!"
         
         if result.profileImage != nil {
             let url = URL(string: result.profileImage!)
@@ -135,6 +136,12 @@ extension ProfileOpenViewController {
         interestButtons[2].setImage(getInterestImage(id: result.interests[2]), for: .normal)
         
         fill = result.fill
+        
+        if fill {
+            openButton.isSelected = true
+        } else {
+            openButton.isSelected = false
+        }
     }
     
     func postprofile(result: PostProfileResponse) {

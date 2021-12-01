@@ -61,11 +61,13 @@ class MyPageViewController: BaseViewController, GetInfo {
         badgeCollectionView.register(UINib(nibName: "BadgeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BadgeCollectionViewCell")
         badgeCollectionView.delegate = self
         badgeCollectionView.dataSource = self
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showIndicator()
         MyPageDataManager().requestMyPage(viewController: self)
     }
-    
     func setNavigation() {
         let titleview = UIView(frame: CGRect(x: 0, y: 10, width: 100, height: 22))
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 22))

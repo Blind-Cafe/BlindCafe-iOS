@@ -24,6 +24,7 @@
                 <outlet property="openButton" destination="aPJ-qh-sSv" id="eWo-Dh-WP7"/>
                 <outlet property="openLabel1" destination="cGf-sx-2Be" id="12u-MV-baJ"/>
                 <outlet property="openLabel2" destination="MTI-mB-XPE" id="x4I-kJ-6dm"/>
+                <outlet property="openLabel3" destination="H9J-39-hNz" id="ese-qf-jmk"/>
                 <outlet property="profileImageView" destination="Bch-sU-q86" id="TGU-Od-wsI"/>
                 <outlet property="regionButton" destination="EOg-IP-FCW" id="62U-ab-Vqe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

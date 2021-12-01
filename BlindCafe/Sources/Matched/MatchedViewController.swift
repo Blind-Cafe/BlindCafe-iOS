@@ -7,8 +7,19 @@
 
 import UIKit
 
-class MatchedViewController: BaseViewController {
+protocol MyTable {
+    func getTable()
+}
 
+class MatchedViewController: BaseViewController, MyTable {
+
+    func getTable() {
+        showIndicator()
+        MatchingDataManager().getMatchings(viewController: self)
+    }
+    
+    var indexrow: Int = 0
+    
     @IBOutlet weak var matchedTableView: UITableView!
     @IBOutlet weak var matchedView: UIView!
     @IBOutlet weak var navigationView: UIView!
@@ -29,7 +40,10 @@ class MatchedViewController: BaseViewController {
         matchedTableView.dataSource = self
         matchedTableView.backgroundColor = .brownGray
         matchedTableView.separatorStyle = .none
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showIndicator()
         MatchingDataManager().getMatchings(viewController: self)
     }
@@ -65,9 +79,9 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
             if matchedData!.matchings![indexPath.row].received {
-                cell.lastMessageImage.isHidden = false
-            } else {
                 cell.lastMessageImage.isHidden = true
+            } else {
+                cell.lastMessageImage.isHidden = false
             }
         }
         
@@ -75,12 +89,10 @@ extension MatchedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = MatchedChattingViewController()
-        vc.matchingId =  matchedData?.matchings![indexPath.row].matchingId ?? 0
-        vc.partnerName = (matchedData?.matchings![indexPath.row].partner.nickname)!
-        vc.matchingId = (matchedData?.matchings![indexPath.row].matchingId)!
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: false)
+        indexrow = indexPath.row
+        
+        showIndicator()
+        GetMatchedRoomDataManager().getRoom(id: matchedData?.matchings![indexrow].matchingId ?? 0, viewController: self)
     }
     
 }
@@ -102,6 +114,18 @@ extension MatchedViewController {
         }
         
         matchedTableView.reloadData()
+    }
+    
+    func getroom(result: GetMatchingResponse) {
+        dismissIndicator()
+        let vc = MatchedChattingViewController()
+        vc.matchingId =  matchedData?.matchings![indexrow].matchingId ?? 0
+        vc.partnerName = (matchedData?.matchings![indexrow].partner.nickname)!
+        vc.matchingId = (matchedData?.matchings![indexrow].matchingId)!
+        vc.startTime = result.startTime
+        
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     func failedToRequest(message: String) {

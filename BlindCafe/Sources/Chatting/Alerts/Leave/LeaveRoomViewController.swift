@@ -11,6 +11,7 @@ class LeaveRoomViewController: BaseViewController {
 
     @IBOutlet weak var leaveLabel: UILabel!
     var partnerName: String = ""
+    var matchingId : Int = 0
     
     @IBAction func dismissButton(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
@@ -22,6 +23,7 @@ class LeaveRoomViewController: BaseViewController {
         self.dismiss(animated: false, completion: {
             let childVC2 = LeaveRoom2ViewController()
             childVC2.modalPresentationStyle = .overCurrentContext
+            childVC2.matchingId = self.matchingId
             rootView?.present(childVC2, animated: false, completion: nil)
         })
 
