@@ -132,7 +132,6 @@ extension ProfilePhotoViewController: UICollectionViewDelegate, UICollectionView
         let cell = collectionView.cellForItem(at: indexPath) as! ProfilePhotoCollectionViewCell
         
         UploadProfileImage().uploadImage(priority: selectedfield, image: cell.imageView.image ?? UIImage())
-        print(cell.imageView.image)
         self.delegate?.getImage(selectedField: selectedfield, profileImage: cell.imageView.image ?? UIImage())
         self.dismiss(animated: true, completion: nil)
     }

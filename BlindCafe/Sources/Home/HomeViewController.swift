@@ -158,7 +158,6 @@ extension HomeViewController {
                                     let addButton = UIBarButtonItem(customView: bellButton)
                                     self.navigationItem.rightBarButtonItem = addButton
                                 }
-                                print("dkdkdkdkkk")
                             }
                         }
                     }
@@ -206,7 +205,7 @@ extension HomeViewController {
             progressBar.removeForegroundLayer()
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
             timeLabel.isHidden = false
-            timeLabel.text = "72:00"
+            timeLabel.text = "00:00"
             statusLabel1.isHidden = false
             statusLabel2.isHidden = false
             statusLabel1.text = "대화하기"
@@ -349,7 +348,7 @@ extension HomeViewController {
             progressBar.removeForegroundLayer()
             homeButton.setImage(UIImage(named: "matchinghomebutton"), for: .normal)
             timeLabel.isHidden = false
-            timeLabel.text = "72:00"
+            timeLabel.text = "00:00"
         default:
             break
         }

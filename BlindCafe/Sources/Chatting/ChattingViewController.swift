@@ -562,7 +562,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingImageView.sd_setImage(with: image)
                 
                 cell.sendingTime.text = message.time
-                cell.layoutIfNeeded()
                 
                 chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
@@ -575,7 +574,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.receivingImageView.sd_setImage(with: image)
                 
                 cell.receivingTime.text = message.time
-                cell.layoutIfNeeded()
                 chatTableView.reloadRows(at: [indexPath], with: .automatic)
                 return cell
             }

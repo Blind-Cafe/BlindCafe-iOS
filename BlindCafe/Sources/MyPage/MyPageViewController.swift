@@ -102,8 +102,6 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BadgeCollectionViewCell", for: indexPath) as! BadgeCollectionViewCell
         
-        let count = drinksData.count
-        
         cell.badgeImageView.image = UIImage(named: "badge")
         
         if drinksData.count != 0 {

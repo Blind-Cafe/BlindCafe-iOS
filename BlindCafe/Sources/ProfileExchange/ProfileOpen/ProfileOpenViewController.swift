@@ -48,10 +48,7 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
             nicknameView.backgroundColor = .coral
         }
         else {
-            showIndicator()
-            ProfileOpenDataManager().getProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
-            
-            if fill {
+            if profileImageView.image != UIImage(named: "profileimagedefault") && regionButton.title(for: .normal) != "지역을 설정해주세요" {
                 let strArr = regionButton.title(for: .normal)!.split(separator: " ")
                 UserDefaults.standard.set(nicknameTextField.text, forKey: "UserNickname")
                 showIndicator()
@@ -131,7 +128,9 @@ extension ProfileOpenViewController {
             genderLabel.text = "남자"
         }
         
-        regionButton.setTitle(result.region, for: .normal)
+        if result.region != nil {
+            regionButton.setTitle(result.region, for: .normal)
+        }
         
         
         interestButtons[0].setImage(getInterestImage(id: result.interests[0]), for: .normal)
@@ -140,11 +139,15 @@ extension ProfileOpenViewController {
         
         fill = result.fill
         
+        
+        
         if fill {
             openButton.isSelected = true
         } else {
             openButton.isSelected = false
         }
+        
+        
     }
     
     func postprofile(result: PostProfileResponse) {
