@@ -94,10 +94,34 @@ class MatchedChattingViewController: BaseViewController {
     
     @IBOutlet weak var photoButton: UIButton!
     @IBAction func photoButton(_ sender: Any) {
-        let vc = PhotoViewController()
-        vc.modalPresentationStyle = .pageSheet
-        vc.matchingId = matchingId
-        present(vc, animated: true)
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .authorized, .limited:
+                let fetchOptions = PHFetchOptions()
+                fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                fetchOptions.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+                allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                photocount = allPhotos?.count ?? 0
+                
+                DispatchQueue.main.async {
+                    let vc = PhotoViewController()
+                    vc.modalPresentationStyle = .pageSheet
+                    vc.matchingId = self.matchingId
+                    self.present(vc, animated: true)
+                }
+                    
+            case .denied, .restricted:
+                DispatchQueue.main.async {
+                    self.presentAlert(message: "설정에서 사진 권한을 허용해주세요")
+                }
+            case .notDetermined:
+                DispatchQueue.main.async {
+                    self.presentAlert(message: "설정에서 사진 권한을 허용해주세요")
+                }
+            @unknown default:
+                print("error")
+            }
+        }
     }
     @IBOutlet weak var recordButton: UIButton!
 
@@ -197,13 +221,25 @@ class MatchedChattingViewController: BaseViewController {
     }
     
     @objc func buttonDown() {
-        recordView.isHidden = false
-        record()
+        requestMicrophoneAccess { [weak self] allowed in
+            if allowed {
+                self?.recordView.isHidden = false
+                self?.record()
+            } else {
+                self?.presentAlert(message: "설정에서 마이크 권한을 허용해주세요")
+            }
+        }
+        
     }
     
     @objc func buttonUp() {
-        recordView.isHidden = true
-        stopRecord()
+        requestMicrophoneAccess { [weak self] allowed in
+            if allowed {
+                self?.recordView.isHidden = true
+                self?.stopRecord()
+            }
+        }
+        
     }
     
     //MARK: NavigationBar

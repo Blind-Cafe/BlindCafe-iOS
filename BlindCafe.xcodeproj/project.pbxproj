@@ -1991,7 +1991,7 @@
 				BlindCafe_BundleName = BlindCafe;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2016,7 +2016,7 @@
 				BlindCafe_BundleName = BlindCafe;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2102,7 +2102,7 @@
 				BlindCafe_BundleName = BlindCafe_Inhouse;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
