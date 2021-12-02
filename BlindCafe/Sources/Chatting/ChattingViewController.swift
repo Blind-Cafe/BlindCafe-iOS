@@ -187,8 +187,9 @@ class ChattingViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         loadMessages()
+        super.viewDidAppear(animated)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -825,7 +826,7 @@ extension ChattingViewController {
                                 
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
-                                    UserDefaults.standard.set(self.messages.count + 1, forKey: "LastIndex")
+                                    UserDefaults.standard.set(self.messages.count, forKey: "LastIndex")
                                     if self.messages.count != 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
                                     }

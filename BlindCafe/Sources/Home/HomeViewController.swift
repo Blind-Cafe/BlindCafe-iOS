@@ -158,6 +158,7 @@ extension HomeViewController {
                                     let addButton = UIBarButtonItem(customView: bellButton)
                                     self.navigationItem.rightBarButtonItem = addButton
                                 }
+                                print("dkdkdkdkkk")
                             }
                         }
                     }
