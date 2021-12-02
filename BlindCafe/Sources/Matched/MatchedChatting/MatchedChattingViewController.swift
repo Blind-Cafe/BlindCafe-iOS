@@ -229,7 +229,6 @@ class MatchedChattingViewController: BaseViewController {
                 self?.presentAlert(message: "설정에서 마이크 권한을 허용해주세요")
             }
         }
-        
     }
     
     @objc func buttonUp() {
@@ -239,7 +238,6 @@ class MatchedChattingViewController: BaseViewController {
                 self?.stopRecord()
             }
         }
-        
     }
     
     //MARK: NavigationBar
