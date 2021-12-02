@@ -22,8 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var controller: UIViewController
         
-       
-        
         if Token.jwtToken == "" {
             controller = OnboardingViewController()
             let navController = UINavigationController(rootViewController: controller)
@@ -33,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = win
         }
         else {
-            if  UserDefaults.standard.string(forKey: "UserStatus") == "990" {
+            if  UserDefaults.standard.string(forKey: "Status") == "990" {
                 controller = BaseTabBarController()
                 win.rootViewController = controller
                 win.makeKeyAndVisible()

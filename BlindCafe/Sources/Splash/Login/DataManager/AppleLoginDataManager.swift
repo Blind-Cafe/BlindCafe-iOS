@@ -16,7 +16,7 @@ class AppleLoginDataManager {
                 case .success(let response):
                     if response.code == "990" || response.code == "991" || response.code == "992" {
                         viewController.didLogin(result: response)
-                        UserDefaults.standard.set(response.code, forKey: "UserStatus")
+                        UserDefaults.standard.set(response.code, forKey: "Status")
                     }
                     else {
                         viewController.failedToRequest(message: response.message)

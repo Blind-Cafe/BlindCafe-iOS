@@ -70,7 +70,10 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
         nicknameView.backgroundColor = .white2
         nicknameAlert.textColor = .veryLightPink
         setNavigation()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showIndicator()
         ProfileOpenDataManager().getProfile(id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
     }

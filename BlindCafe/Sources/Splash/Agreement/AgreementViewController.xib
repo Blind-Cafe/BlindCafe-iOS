@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgreementViewController" customModule="BlindCafe" customModuleProvider="target">
             <connections>
@@ -52,7 +57,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-jo-vmg">
-                    <rect key="frame" x="326" y="335" width="44" height="44"/>
+                    <rect key="frame" x="326" y="334.66666666666669" width="44" height="44"/>
                     <state key="normal" image="checkbutton"/>
                     <state key="selected" image="selectedcheckbutton"/>
                     <connections>
@@ -60,7 +65,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-1b-Le4">
-                    <rect key="frame" x="17" y="627" width="356" height="75"/>
+                    <rect key="frame" x="17" y="652" width="356" height="50"/>
                     <state key="normal" image="enablenextbutton"/>
                     <state key="disabled" image="agreenextbutton"/>
                     <connections>
@@ -76,42 +81,76 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement1" translatesAutoresizingMaskIntoConstraints="NO" id="phV-F3-wHX">
                     <rect key="frame" x="24" y="109" width="260" height="47"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement2" translatesAutoresizingMaskIntoConstraints="NO" id="kSM-Fh-khf">
-                    <rect key="frame" x="24" y="184" width="259" height="47"/>
-                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement3" translatesAutoresizingMaskIntoConstraints="NO" id="XV3-8V-9B6">
                     <rect key="frame" x="24" y="259" width="260" height="47"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreement4" translatesAutoresizingMaskIntoConstraints="NO" id="9aW-2j-PPz">
-                    <rect key="frame" x="24" y="345" width="225" height="24"/>
-                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두가 성적 농담을 즐기는 건 아닙니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MW-1q-IOz">
+                    <rect key="frame" x="24" y="184" width="258.33333333333331" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="VIe-sh-ytg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                    <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성추행 및 성희롱 등의 발언은 삼가해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMZ-8p-GuS">
+                    <rect key="frame" x="24" y="210" width="233" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="jNl-Eq-ksH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부드럽게, 매너있는 대화해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaA-eP-BDm">
+                    <rect key="frame" x="24" y="331" width="221" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="s2I-n1-SoR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐겁게 대화하세요 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzW-n9-Rnm">
+                    <rect key="frame" x="24.000000000000007" y="359" width="101.66666666666669" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="AdU-HU-D0Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
+                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="WMc-4p-kYY" firstAttribute="top" secondItem="QWY-kv-8Hd" secondAttribute="bottom" constant="31.000000000000028" id="0p4-1I-r9l"/>
+                <constraint firstItem="xDn-aX-CzB" firstAttribute="top" secondItem="WMc-4p-kYY" secondAttribute="bottom" constant="31" id="1jN-7X-ym7"/>
+                <constraint firstItem="vNa-jo-vmg" firstAttribute="top" secondItem="xDn-aX-CzB" secondAttribute="bottom" constant="30.329999999999998" id="8bd-L0-2iM"/>
                 <constraint firstItem="gfd-1b-Le4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9JB-89-S64"/>
+                <constraint firstItem="7MW-1q-IOz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Jo9-dL-6mo"/>
                 <constraint firstItem="phV-F3-wHX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="LVz-e4-OI2"/>
                 <constraint firstItem="xDn-aX-CzB" firstAttribute="centerY" secondItem="XV3-8V-9B6" secondAttribute="centerY" id="O7a-AY-84J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vNa-jo-vmg" secondAttribute="trailing" constant="20" id="OdM-H2-kSi"/>
+                <constraint firstItem="XV3-8V-9B6" firstAttribute="top" secondItem="QMZ-8p-GuS" secondAttribute="bottom" constant="30" id="Q7w-h0-HUX"/>
                 <constraint firstItem="CHw-IM-lxm" firstAttribute="top" secondItem="l7S-rh-QOj" secondAttribute="bottom" constant="17" id="Qyo-X0-Kz8"/>
-                <constraint firstItem="9aW-2j-PPz" firstAttribute="top" secondItem="XV3-8V-9B6" secondAttribute="bottom" constant="39" id="SIv-Ma-4K2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gfd-1b-Le4" secondAttribute="bottom" constant="20" id="UVV-5j-rkV"/>
+                <constraint firstItem="nzW-n9-Rnm" firstAttribute="top" secondItem="VaA-eP-BDm" secondAttribute="bottom" constant="4" id="UiI-Of-cNH"/>
                 <constraint firstItem="l7S-rh-QOj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Xg8-mT-gvj"/>
-                <constraint firstItem="9aW-2j-PPz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Xsz-y2-KRx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WMc-4p-kYY" secondAttribute="trailing" constant="20" id="YJd-s0-p3o"/>
-                <constraint firstItem="WMc-4p-kYY" firstAttribute="centerY" secondItem="kSM-Fh-khf" secondAttribute="centerY" id="bL7-jM-kQK"/>
-                <constraint firstItem="vNa-jo-vmg" firstAttribute="centerY" secondItem="9aW-2j-PPz" secondAttribute="centerY" id="c4a-XS-GEE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xDn-aX-CzB" secondAttribute="trailing" constant="20" id="e41-UW-Ss1"/>
-                <constraint firstItem="gfd-1b-Le4" firstAttribute="top" relation="lessThanOrEqual" secondItem="9aW-2j-PPz" secondAttribute="bottom" constant="258" id="ecF-jh-Wtt"/>
-                <constraint firstItem="kSM-Fh-khf" firstAttribute="top" secondItem="phV-F3-wHX" secondAttribute="bottom" constant="28" id="fvv-ec-QVA"/>
+                <constraint firstItem="VaA-eP-BDm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="fZ3-J4-LnE"/>
                 <constraint firstItem="XV3-8V-9B6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="gTS-2y-HAX"/>
                 <constraint firstItem="CHw-IM-lxm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iDj-US-AQV"/>
                 <constraint firstItem="QWY-kv-8Hd" firstAttribute="centerY" secondItem="phV-F3-wHX" secondAttribute="centerY" id="kBM-3i-0dC"/>
-                <constraint firstItem="XV3-8V-9B6" firstAttribute="top" secondItem="kSM-Fh-khf" secondAttribute="bottom" constant="28" id="kdL-l6-BdM"/>
                 <constraint firstItem="l7S-rh-QOj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mF4-4b-2Su"/>
+                <constraint firstItem="VaA-eP-BDm" firstAttribute="top" secondItem="XV3-8V-9B6" secondAttribute="bottom" constant="25" id="nV9-1S-YJj"/>
+                <constraint firstItem="QMZ-8p-GuS" firstAttribute="top" secondItem="7MW-1q-IOz" secondAttribute="bottom" constant="2" id="o3g-Bw-ywX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QWY-kv-8Hd" secondAttribute="trailing" constant="20" id="oIV-mB-utq"/>
-                <constraint firstItem="kSM-Fh-khf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="qoH-ZE-uT7"/>
+                <constraint firstItem="QMZ-8p-GuS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="rNe-IO-bI7"/>
                 <constraint firstItem="phV-F3-wHX" firstAttribute="top" secondItem="CHw-IM-lxm" secondAttribute="bottom" constant="29" id="ryV-7m-lui"/>
+                <constraint firstItem="7MW-1q-IOz" firstAttribute="top" secondItem="phV-F3-wHX" secondAttribute="bottom" constant="28" id="u7h-EF-E5e"/>
+                <constraint firstItem="nzW-n9-Rnm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="w8l-86-hse"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="139" y="76"/>
@@ -119,9 +158,7 @@
     </objects>
     <resources>
         <image name="agreement1" width="260" height="47"/>
-        <image name="agreement2" width="259" height="47"/>
         <image name="agreement3" width="260" height="47"/>
-        <image name="agreement4" width="225" height="24"/>
         <image name="agreementtitle" width="179" height="62"/>
         <image name="agreenextbutton" width="356" height="50"/>
         <image name="checkbutton" width="44" height="44"/>

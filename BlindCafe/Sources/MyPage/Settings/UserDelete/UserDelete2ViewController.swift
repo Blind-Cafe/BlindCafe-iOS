@@ -31,13 +31,10 @@ class UserDelete2ViewController: UIViewController {
 extension UserDelete2ViewController {
     func deleted(){
         dismissIndicator()
-        let controller = OnboardingViewController()
-        let navController = UINavigationController(rootViewController: controller)
-        navController.view.backgroundColor = .mainBlack
-        navController.navigationBar.barTintColor = .mainBlack
-        navController.modalPresentationStyle = .fullScreen
-        navController.modalTransitionStyle = .crossDissolve
-        present(navController, animated: true, completion: nil)
+        let vc = LastViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     func failedToRequest(message: String) {
         dismissIndicator()

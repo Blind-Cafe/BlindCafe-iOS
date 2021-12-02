@@ -53,9 +53,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ls-oo-urf">
-                        <rect key="frame" x="217" y="10.5" width="56" height="17"/>
+                        <rect key="frame" x="210" y="10.5" width="70" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="56" id="8It-Nt-DP9"/>
+                            <constraint firstAttribute="width" constant="70" id="8It-Nt-DP9"/>
                             <constraint firstAttribute="height" constant="17" id="xZg-HJ-1Bv"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
@@ -69,8 +69,8 @@
                 <color key="backgroundColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="5Ls-oo-urf" firstAttribute="centerY" secondItem="u4z-rm-AaW" secondAttribute="centerY" id="6aQ-rf-Uvb"/>
-                    <constraint firstItem="BPK-fQ-ihp" firstAttribute="centerX" secondItem="5Ls-oo-urf" secondAttribute="centerX" id="7rQ-xl-xNR"/>
                     <constraint firstItem="u4z-rm-AaW" firstAttribute="leading" secondItem="3ZN-i6-Kl7" secondAttribute="trailing" constant="11" id="8HQ-g5-mWr"/>
+                    <constraint firstItem="5Ls-oo-urf" firstAttribute="centerX" secondItem="BPK-fQ-ihp" secondAttribute="centerX" id="9gb-Wg-m9X"/>
                     <constraint firstAttribute="bottom" secondItem="ZOr-yB-ZsJ" secondAttribute="bottom" constant="13" id="BFF-ZO-QAD"/>
                     <constraint firstItem="3ZN-i6-Kl7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="BU5-Wh-LIB"/>
                     <constraint firstItem="3ZN-i6-Kl7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DRs-4J-pKE"/>
@@ -78,7 +78,7 @@
                     <constraint firstItem="ZOr-yB-ZsJ" firstAttribute="leading" secondItem="3ZN-i6-Kl7" secondAttribute="trailing" constant="15" id="GXm-1D-nQg"/>
                     <constraint firstAttribute="bottom" secondItem="3ZN-i6-Kl7" secondAttribute="bottom" constant="8" id="InG-Kc-4DO"/>
                     <constraint firstItem="BPK-fQ-ihp" firstAttribute="top" secondItem="5Ls-oo-urf" secondAttribute="bottom" constant="12" id="SYe-UZ-RUd"/>
-                    <constraint firstAttribute="trailing" secondItem="5Ls-oo-urf" secondAttribute="trailing" constant="14" id="mli-8d-EDP"/>
+                    <constraint firstAttribute="trailing" secondItem="BPK-fQ-ihp" secondAttribute="trailing" constant="38" id="U7w-OG-A15"/>
                     <constraint firstItem="u4z-rm-AaW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="rBM-eD-jnj"/>
                 </constraints>
             </tableViewCellContentView>

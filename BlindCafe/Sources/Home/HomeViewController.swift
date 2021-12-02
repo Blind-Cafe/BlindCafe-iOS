@@ -73,16 +73,13 @@ class HomeViewController: BaseViewController {
         dismissWhenTappedAround()
         
         print(Token.jwtToken)
-        loadMessages()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showIndicator()
         HomeDataManager().requestHome(viewController: self)
+        loadMessages()
     }
     
     @objc func bellButtonAction(_ sender: UIButton) {

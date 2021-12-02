@@ -69,6 +69,8 @@
 		CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2AA3DB2744B2AE0088FE49 /* MatchedTableViewCell.xib */; };
 		CD2AA3E12744F0F00088FE49 /* MatchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */; };
 		CD2AA3E32745162E0088FE49 /* MatchingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */; };
+		CD35140827573786003C0505 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35140627573786003C0505 /* LastViewController.swift */; };
+		CD35140927573786003C0505 /* LastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35140727573786003C0505 /* LastViewController.xib */; };
 		CD386CA2273E8F29002D5187 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */; };
 		CD3A7B7627462FA4007800B0 /* BadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */; };
 		CD3A7B7727462FA4007800B0 /* BadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */; };
@@ -301,6 +303,8 @@
 		CD2AA3DB2744B2AE0088FE49 /* MatchedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchedTableViewCell.xib; sourceTree = "<group>"; };
 		CD2AA3E02744F0EF0088FE49 /* MatchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResponse.swift; sourceTree = "<group>"; };
 		CD2AA3E22745162E0088FE49 /* MatchingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingDataManager.swift; sourceTree = "<group>"; };
+		CD35140627573786003C0505 /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
+		CD35140727573786003C0505 /* LastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastViewController.xib; sourceTree = "<group>"; };
 		CD386CA1273E8F28002D5187 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
 		CD3A7B7427462FA4007800B0 /* BadgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD3A7B7527462FA4007800B0 /* BadgeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1240,6 +1244,8 @@
 				CDBCD350274E62C800995897 /* UserDeleteViewController.xib */,
 				CDBCD353274E673400995897 /* UserDelete2ViewController.swift */,
 				CDBCD354274E673400995897 /* UserDelete2ViewController.xib */,
+				CD35140627573786003C0505 /* LastViewController.swift */,
+				CD35140727573786003C0505 /* LastViewController.xib */,
 			);
 			path = UserDelete;
 			sourceTree = "<group>";
@@ -1572,6 +1578,7 @@
 				CD18B8422755C36500A61C9B /* Type8TableViewCell.xib in Resources */,
 				CD2AA3DD2744B2AE0088FE49 /* MatchedTableViewCell.xib in Resources */,
 				CDC51706274D26780063AA3B /* RegionCollectionViewCell.xib in Resources */,
+				CD35140927573786003C0505 /* LastViewController.xib in Resources */,
 				CDBD4DAD2755456A00DDFEBB /* PartnerProfileImageViewController.xib in Resources */,
 				CDC51701274D226D0063AA3B /* RegionChangeViewController.xib in Resources */,
 				CD0C06BE272FBFFB0020E858 /* InitAgeGenderViewController.xib in Resources */,
@@ -1831,6 +1838,7 @@
 				CD8A60DF2753A4540002E07D /* GetTopicDataManager.swift in Sources */,
 				CDC51709274D285A0063AA3B /* StateCollectionViewCell.swift in Sources */,
 				CD48D5712753F88A00F69061 /* PostProfileInput.swift in Sources */,
+				CD35140827573786003C0505 /* LastViewController.swift in Sources */,
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD18B84427566F5300A61C9B /* GetMatchedRoomDataManager.swift in Sources */,
@@ -1983,6 +1991,7 @@
 				BlindCafe_BundleName = BlindCafe;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2007,6 +2016,7 @@
 				BlindCafe_BundleName = BlindCafe;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2092,6 +2102,7 @@
 				BlindCafe_BundleName = BlindCafe_Inhouse;
 				CODE_SIGN_ENTITLEMENTS = BlindCafe/BlindCafe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = BlindCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

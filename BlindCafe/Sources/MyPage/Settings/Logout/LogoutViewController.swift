@@ -14,8 +14,11 @@ class LogoutViewController: BaseViewController {
     }
     
     @IBAction func logoutButton(_ sender: Any) {
+        Token.jwtToken = ""
         UserDefaults.standard.set("", forKey: "UserJwt")
-        UserDefaults.standard.set("", forKey: "UserStatus")
+        UserDefaults.standard.set("", forKey: "UserID")
+        UserDefaults.standard.set("", forKey: "Status")
+        UserDefaults.standard.set("", forKey: "UserNickname")
         let navController = UINavigationController(rootViewController: OnboardingViewController())
         navController.view.backgroundColor = .mainBlack
         changeRootViewController(navController)

@@ -22,17 +22,6 @@ class SettingsViewController: BaseViewController {
         UserDefaults.standard.set(settingButton1.isSelected, forKey: "Setting1")
     }
     
-    @IBOutlet weak var settingbutton2: UIButton!
-    @IBAction func settingButton2(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.isSelected = false
-        }
-        else {
-            sender.isSelected = true
-        }
-        UserDefaults.standard.set(settingbutton2.isSelected, forKey: "Setting2")
-    }
-    
     @IBAction func toLogout(_ sender: Any) {
         let vc = LogoutViewController()
         vc.modalPresentationStyle = .overCurrentContext
@@ -70,7 +59,6 @@ class SettingsViewController: BaseViewController {
         self.navigationItem.titleView = titleview
         
         settingButton1.isSelected = UserDefaults.standard.bool(forKey: "Setting1")
-        settingbutton2.isSelected = UserDefaults.standard.bool(forKey: "Setting2")
     }
 
 }
