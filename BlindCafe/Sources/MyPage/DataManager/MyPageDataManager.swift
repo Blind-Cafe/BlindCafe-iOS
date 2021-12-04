@@ -9,7 +9,7 @@ import Alamofire
 
 class MyPageDataManager {
     func requestMyPage(viewController: MyPageViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user", method: .get, parameters: nil, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user", method: .get, parameters: nil, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: MyPageResponse.self) { response in
                 switch response.result {

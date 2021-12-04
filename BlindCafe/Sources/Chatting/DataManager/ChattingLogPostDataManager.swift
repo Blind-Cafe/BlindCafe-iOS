@@ -9,7 +9,7 @@ import Alamofire
 
 class ChattingLogPostDataManager {
     func log(_ parameters: RequestMatchingInput, id: Int, viewController: ChattingViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/log", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/log", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .response() { response in
                 switch response.result {

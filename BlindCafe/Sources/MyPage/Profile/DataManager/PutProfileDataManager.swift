@@ -9,7 +9,7 @@ import Alamofire
 
 class PutProfileDataManager {
     func putProfile(_ parameters: PutProfileInput, viewController: ProfileViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user", method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user", method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: PutProfileResponse.self) { response in
                 switch response.result {

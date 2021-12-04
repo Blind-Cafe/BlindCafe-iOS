@@ -9,7 +9,7 @@ import Alamofire
 
 class RequestMatchingDataManager {
     func requestMatching(_ parameters: RequestMatchingInput, viewController: HomeViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: RequestMatchingResponse.self) { response in
                 switch response.result {

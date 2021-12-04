@@ -9,7 +9,7 @@ import Alamofire
 
 class ProfileReadyDataManager {
     func getPartnerProfile(id: Int, viewController: HomeViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/partner", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/partner", method: .get, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: GetPartnerProfileResponse.self) { response in
                 switch response.result {

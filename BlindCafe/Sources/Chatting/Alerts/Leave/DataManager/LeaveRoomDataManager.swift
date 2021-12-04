@@ -9,7 +9,7 @@ import Alamofire
 
 class LeaveRoomDataManager {
     func leaveRoom(id: String, matchingId: Int, viewController: LeaveRoom2ViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(matchingId)?\(id)", method: .delete, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(matchingId)?\(id)", method: .delete, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: LeaveRoomResponse.self) { response in
                 switch response.result {

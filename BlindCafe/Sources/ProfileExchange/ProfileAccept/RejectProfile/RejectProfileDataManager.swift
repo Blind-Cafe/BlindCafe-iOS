@@ -9,7 +9,7 @@ import Alamofire
 
 class RejectProfileDataManager {
     func rejectProfile(id: Int, reason: Int, viewController: RejectReasonViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/partner?reason=\(reason)", method: .delete, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/partner?reason=\(reason)", method: .delete, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .response() { response in
                 switch response.result {

@@ -9,7 +9,7 @@ import Alamofire
 
 class ReportListDataManager {
     func getReportList(viewController: ReportListViewController) {
-        AF.request("\(Constant.BASE_URL)/api/report", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/report", method: .get, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: ReportListResponse.self) { response in
                 switch response.result {

@@ -10,7 +10,7 @@ import SwiftyJSON
 
 class HomeDataManager {
     func requestHome(viewController: HomeViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user/home", method: .get, parameters: nil, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/home", method: .get, parameters: nil, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: HomeResponse.self) { response in
                 switch response.result {
@@ -28,6 +28,12 @@ class HomeDataManager {
                             if let code: String = json?["code"].stringValue {
                                 if code == "1007" {
                                     viewController.stopUser()
+                                }
+                                else if code == "4000" || code == "4001" || code == "4002" || code == "4003" {
+                                    let controller = OnboardingViewController()
+                                    let navController = UINavigationController(rootViewController: controller)
+                                    navController.view.backgroundColor = .mainBlack
+                                    viewController.changeRootViewController(navController)
                                 }
                             }
                         }

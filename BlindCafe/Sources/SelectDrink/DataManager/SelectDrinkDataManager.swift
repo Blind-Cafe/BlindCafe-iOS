@@ -9,7 +9,7 @@ import Alamofire
 
 class SelectDrinkDataManager {
     func requestDrink (id: Int, _ parameters: SelectDrinkInput, viewController: SelectDrinkViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/drink", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/drink", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: SelectDrinkResponse.self) { response in
                 switch response.result {

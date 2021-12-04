@@ -9,7 +9,7 @@ import Alamofire
 
 class DeleteProfileImageDataManager {
     func deleteProfileImage(id: Int, viewController: ProfileImageViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user/image?priority=\(id)", method: .delete, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/image?priority=\(id)", method: .delete, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .response() { response in
                 switch response.result {

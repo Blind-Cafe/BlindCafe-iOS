@@ -9,7 +9,7 @@ import Alamofire
 
 class GetProfileImageDataManager {
     func getProfileImage(viewController: ProfileImageViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user/image", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/image", method: .get, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: GetProfileImageResponse.self) { response in
                 switch response.result {

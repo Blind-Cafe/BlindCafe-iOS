@@ -9,7 +9,7 @@ import Alamofire
 
 class GetTopicDataManager {
     func getTopic(id: Int, viewController: ChattingViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/topic", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/topic", method: .get, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate(statusCode: 200..<300)
             .responseDecodable(of: GetTopicResponse.self) { response in
                 switch response.result {

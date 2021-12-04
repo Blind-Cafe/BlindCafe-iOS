@@ -9,7 +9,7 @@ import Alamofire
 
 class PostUserInfoDataManager {
     func postUserInfo(_ parameters: PostUserInfoInput, viewController: InitDetailInterestViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: PostUserInfoResponse.self) { response in
                 switch response.result {

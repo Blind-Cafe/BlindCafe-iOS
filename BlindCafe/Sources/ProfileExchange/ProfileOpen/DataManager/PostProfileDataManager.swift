@@ -9,7 +9,7 @@ import Alamofire
 
 class PostProfileDataManager {
     func putProfile(_ parameters: PostProfileInput, id: Int, viewController: ProfileOpenViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/profile", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)/profile", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: PostProfileResponse.self) { response in
                 switch response.result {

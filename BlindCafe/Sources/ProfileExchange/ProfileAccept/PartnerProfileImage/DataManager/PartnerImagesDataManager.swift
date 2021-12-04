@@ -10,7 +10,7 @@ import SwiftyJSON
 
 class PartnerImagesDataManager {
     func requestHome(id: Int, viewController: PartnerProfileImageViewController) {
-        AF.request("\(Constant.BASE_URL)/api/user/\(id)/image", method: .get, parameters: nil, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/user/\(id)/image", method: .get, parameters: nil, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: PartnerImageResponse.self) { response in
                 switch response.result {

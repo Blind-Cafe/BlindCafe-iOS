@@ -9,7 +9,7 @@ import Alamofire
 
 class GetMatchedRoomDataManager {
     func getRoom(id: Int, viewController: MatchedViewController) {
-        AF.request("\(Constant.BASE_URL)/api/matching/\(id)", method: .get, headers: Constant.HEADERS)
+        AF.request("\(Constant.BASE_URL)/api/matching/\(id)", method: .get, headers: ["x-access-token": UserDefaults.standard.string(forKey: "UserJwt") ?? ""])
             .validate()
             .responseDecodable(of: GetMatchingResponse.self) { response in
                 switch response.result {
