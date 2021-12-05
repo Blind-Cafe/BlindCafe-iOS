@@ -111,7 +111,6 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 }
             }
         }
-        
         return cell
     }
     
