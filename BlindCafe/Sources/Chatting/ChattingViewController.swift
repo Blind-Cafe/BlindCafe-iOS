@@ -548,6 +548,11 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .mainBlack
             
+            cell.receivingMessageLabel.text = ""
+            cell.receivingMessageLabel.sizeToFit()
+            cell.sendingMessageLabel.text = ""
+            cell.sendingMessageLabel.sizeToFit()
+            
             if message.senderId == UserDefaults.standard.string(forKey: "UserID")! {
                 cell.receivingMessageView.isHidden = true
                 cell.receivingStackView.isHidden = true
@@ -557,6 +562,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.sendingTime.isHidden = false
                 
                 cell.sendingMessageLabel.text = message.body
+                
                 cell.sendingTime.text = message.time
                 
                 if isAfter {
