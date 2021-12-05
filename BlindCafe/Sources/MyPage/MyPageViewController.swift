@@ -125,6 +125,8 @@ extension MyPageViewController {
             let url = URL(string: result.profileImage!)
             let data = try? Data(contentsOf: url!)
             profileImage.image = UIImage(data: data!)
+        } else {
+            profileImage.image = UIImage(named: "profileimagedefault")
         }
         
         drinksData = result.drinks
