@@ -21,13 +21,6 @@ struct Message {
     let type: Int
 }
 
-struct AudioModel {
-    var url: String
-    var index: Int
-    var duration: Int
-    var isSending: Bool
-}
-
 class ChattingViewController: BaseViewController {
     
     var startTime: String = ""
@@ -41,8 +34,6 @@ class ChattingViewController: BaseViewController {
     let db = Firestore.firestore()
     
     var messages: [Message] = []
-    
-    var audioPlaying: AudioModel?
     
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()
@@ -191,7 +182,6 @@ class ChattingViewController: BaseViewController {
         recordButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
         recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
         
-        recordInit()
         let date = Date(timeIntervalSince1970: TimeInterval(Int(startTime) ?? 0).rounded())
         let elapsedTimeSeconds = Int(Date().timeIntervalSince(date))
         let hours = elapsedTimeSeconds / 3600
@@ -213,7 +203,6 @@ class ChattingViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadMessages()
         super.viewDidAppear(animated)
         
     }
@@ -333,7 +322,9 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.playAndRecord, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            //try audioSession.setCategory(.playAndRecord, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            try? audioSession.setCategory(.ambient)
+            try? audioSession.setActive(true)
         } catch _ {
             
         }
@@ -365,6 +356,7 @@ extension ChattingViewController: AVAudioRecorderDelegate, AVAudioPlayerDelegate
     }
     
     func record() {
+        recordInit()
         pencil.removeAllPoints()
         waveLayer.removeFromSuperlayer()
         writeWaves(0, false)
@@ -571,6 +563,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 else {
                     cell.sendingTopConstraint.constant = 12
                 }
+                
+                cell.sendingMessageLabel.sizeToFit()
             }
             else {
                 cell.sendingMessageView.isHidden = true
@@ -589,6 +583,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 else {
                     cell.receivingTopConstraint.constant = 12
                 }
+                
+                cell.receivingMessageLabel.sizeToFit()
             }
             return cell
         }
@@ -818,9 +814,9 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
                 let indexPath: IndexPath = [0, tag]
                 self.chatTableView.reloadRows(at: [indexPath], with: .none)
             }
-            
         }
     }
+    
 }
 
 //MARK: Firestore 채팅
@@ -841,7 +837,7 @@ extension ChattingViewController {
     
     func loadMessages() {
         db.collection("Rooms/\(matchingId)/Messages")
-            .order(by: "timestamp")
+            .order(by: "timestamp", descending: true)
             .addSnapshotListener { (querySnapshot, error) in
                 self.messages = []
                 
@@ -860,7 +856,7 @@ extension ChattingViewController {
                                 let date = Date()
                                 
                                 if dateFormatter.string(from: date) >= self.timeFormatter2(timestamp: timestamp) {
-                                    self.messages.append(Message(senderId: sender, body: body, time: time, type: type))
+                                    self.messages.insert(Message(senderId: sender, body: body, time: time, type: type), at: 0)
                                 }
                                 
                                 DispatchQueue.main.async {
@@ -875,9 +871,7 @@ extension ChattingViewController {
                     }
                 }
             }
-
     }
-    
     
     func timeFormatter(timestamp: Timestamp) -> String {
         let dateFormatter = DateFormatter()

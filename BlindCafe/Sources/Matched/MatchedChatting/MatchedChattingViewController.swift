@@ -32,7 +32,6 @@ class MatchedChattingViewController: BaseViewController {
     
     var messages: [Message] = []
     
-    var audioPlaying: AudioModel?
     
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()
@@ -195,7 +194,6 @@ class MatchedChattingViewController: BaseViewController {
         recordButton.addTarget(self, action: #selector(buttonDown), for: .touchDown)
         recordButton.addTarget(self, action: #selector(buttonUp), for: [.touchUpInside, .touchUpOutside])
         
-        recordInit()
         let date = Date(timeIntervalSince1970: TimeInterval(Int(startTime) ?? 0).rounded())
         let elapsedTimeSeconds = Int(Date().timeIntervalSince(date))
         let hours = elapsedTimeSeconds / 3600
@@ -307,6 +305,7 @@ class MatchedChattingViewController: BaseViewController {
 
 }
 
+//MARK: Audio
 extension MatchedChattingViewController : AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     func recordInit() {
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
@@ -315,7 +314,8 @@ extension MatchedChattingViewController : AVAudioRecorderDelegate, AVAudioPlayer
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.playAndRecord, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            try audioSession.setCategory(.playAndRecord, options: [.mixWithOthers, .allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            try audioSession.setActive(false)
         } catch _ {
             
         }
@@ -347,6 +347,7 @@ extension MatchedChattingViewController : AVAudioRecorderDelegate, AVAudioPlayer
     }
     
     func record() {
+        recordInit()
         pencil.removeAllPoints()
         waveLayer.removeFromSuperlayer()
         writeWaves(0, false)
