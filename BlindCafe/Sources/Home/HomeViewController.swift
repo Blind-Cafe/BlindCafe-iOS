@@ -273,6 +273,8 @@ extension HomeViewController {
             statusLabel2.isHidden = false
             statusLabel1.text = "대화하기"
             statusLabel2.text = "\n하트를 눌러 상대방과 대화를 시작하세요"
+        case "PPROFILE_OPEN", "PROFILE_READY", "PROFILE_ACCEPT", "MATCHING_CONTINUE":
+            timeLabel.text = "72:00"
         default:
             break
         }
