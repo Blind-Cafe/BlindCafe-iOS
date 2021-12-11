@@ -39,8 +39,11 @@ class InterestChangeViewController: BaseViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
-        if selectedButtons != 3 {
-            self.presentBottomAlert(message: "관심사를 먼저 선택해주세요")
+        if selectedButtons > 0 && selectedButtons < 3{
+            self.presentBottomAlert(message: "관심사를 3개 선택해주세요.")
+        }
+        else if selectedButtons == 0 {
+            self.presentBottomAlert(message: "관심사를 먼저 선택해주세요.")
         }
         else if selectedButtons == 3 {
             let vc = InterestDetailChangeViewController()
@@ -51,7 +54,7 @@ class InterestChangeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nextButton.setImage(UIImage(named: "interestnextbutton"), for: .normal)
         setNavigation()
         
         for i in 0...8 {
