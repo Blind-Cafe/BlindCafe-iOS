@@ -56,7 +56,7 @@ class ProfileOpenViewController: BaseViewController, regionProtocol {
                 print(input)
                 PostProfileDataManager().putProfile(input, id: UserDefaults.standard.integer(forKey: "MatchingId"), viewController: self)
             } else {
-                self.presentBottomAlert(name: "profilefirst")
+                self.presentBottomAlert(message: "프로필을 먼저 작성해주세요.")
             }
         }
     }

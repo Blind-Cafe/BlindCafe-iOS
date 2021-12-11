@@ -73,25 +73,41 @@ extension UIViewController {
     }
     
     // MARK: 커스텀 하단 경고창
-    func presentBottomAlert(name: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
-        let alertView = UIImageView(image: UIImage(named: name))
-        alertView.isHidden = true
+    func presentBottomAlert(message: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
+        let alertSuperview = UIView()
+        alertSuperview.backgroundColor = .black2
+        alertSuperview.layer.cornerRadius = 4
+        alertSuperview.isHidden = true
         
-        self.view.addSubview(alertView)
-        alertView.snp.makeConstraints { make in
-            make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-82)
+        let alertLabel = UILabel()
+        alertLabel.font = .SpoqaSans(.regular, size: 16)
+        alertLabel.textColor = .white2
+        
+        self.view.addSubview(alertSuperview)
+        alertSuperview.snp.makeConstraints { make in
+            //make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-12)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-70)
             make.centerX.equalToSuperview()
         }
         
-        alertView.alpha = 1.0
-        alertView.isHidden = false
-        UIImageView.animate(
+        alertSuperview.addSubview(alertLabel)
+        alertLabel.snp.makeConstraints { make in
+            make.top.equalTo(12)
+            make.bottom.equalTo(-12)
+            make.leading.equalTo(18)
+            make.trailing.equalTo(-18)
+        }
+        
+        alertLabel.text = message
+        alertSuperview.alpha = 1.0
+        alertSuperview.isHidden = false
+        UIView.animate(
             withDuration: 2.0,
             delay: 1.0,
             options: .curveEaseIn,
-            animations: { alertView.alpha = 0 },
+            animations: { alertSuperview.alpha = 0 },
             completion: { _ in
-                alertView.removeFromSuperview()
+                alertSuperview.removeFromSuperview()
             }
         )
     }

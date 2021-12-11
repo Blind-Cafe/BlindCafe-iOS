@@ -40,7 +40,7 @@ class InterestChangeViewController: BaseViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         if selectedButtons != 3 {
-            self.presentBottomAlert(name: "profile1error")
+            self.presentBottomAlert(message: "관심사를 먼저 선택해주세요")
         }
         else if selectedButtons == 3 {
             let vc = InterestDetailChangeViewController()

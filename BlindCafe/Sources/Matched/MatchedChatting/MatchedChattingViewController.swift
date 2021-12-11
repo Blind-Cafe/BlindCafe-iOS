@@ -717,10 +717,6 @@ extension MatchedChattingViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
-    
     @objc func topicPlayStop(_ sender: UIButton){
         if  sender.isSelected == true {
             sender.isSelected = false

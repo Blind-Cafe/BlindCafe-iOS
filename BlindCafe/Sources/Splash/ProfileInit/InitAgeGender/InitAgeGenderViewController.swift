@@ -50,14 +50,14 @@ class InitAgeGenderViewController: BaseOnboardingViewController {
     @IBAction func nextButton(_ sender: Any) {
         let age: String = ageTextField.text ?? ""
         if age == "" {
-             presentBottomAlert(name: "agefirst")
+             presentBottomAlert(message: "나이를 먼저 설정해주세요.")
         }
         else if Int(age)! < 18 {
             agealert.isHidden = false
             ageImage.image = UIImage(named: "ageerror")
         }
         else if femaleButton.isSelected == false && maleButton.isSelected == false {
-            presentBottomAlert(name: "genderfirst")
+            presentBottomAlert(message: "성별을 먼저 선택해주세요.")
         }
         else {
             UserDefaults.standard.set(Int(ageTextField.text!), forKey: "UserAge")

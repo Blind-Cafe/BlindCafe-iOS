@@ -40,7 +40,7 @@ class InitInterestViewController: BaseOnboardingViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButtonTapped(_ sender: Any) {
         if selectedButtons == 0 {
-            self.presentBottomAlert(name: "profile1error")
+            self.presentBottomAlert(message: "관심사를 먼저 설정해주세요.")
         }
         else if selectedButtons == 3 {
             let vc = InitDetailInterestViewController()

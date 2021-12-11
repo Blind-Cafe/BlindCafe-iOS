@@ -54,14 +54,14 @@ class InitNicknameViewController: BaseOnboardingViewController {
         }
         let count = nicknameTextField.text?.count ?? 0
         if nicknameTextField.text == "" {
-            presentBottomAlert(name: "nicknameerror")
+            presentBottomAlert(message: "닉네임을 먼저 선택해주세요.")
         }
         else if count < 1 || count > 9 {
             LetterCount.image = UIImage(named: "nicknamealert")
             nicknameImage.image = UIImage(named: "nicknameerrorfield")
         }
         else if isSelected == false {
-            presentBottomAlert(name: "genderfirst")
+            presentBottomAlert(message: "성별을 먼저 선택해주세요.")
         }
         else {
             UserDefaults.standard.set(nicknameTextField.text, forKey: "UserNickname")

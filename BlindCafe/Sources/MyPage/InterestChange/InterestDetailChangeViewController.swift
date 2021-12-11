@@ -52,7 +52,7 @@ class InterestDetailChangeViewController: BaseViewController {
             PutInterestDataManager().putInterest(input, viewController: self)
         }
         else {
-            self.presentBottomAlert(name: "morethan1")
+            self.presentBottomAlert(message: "1개 이상 선택해주세요.")
         }
     }
 
