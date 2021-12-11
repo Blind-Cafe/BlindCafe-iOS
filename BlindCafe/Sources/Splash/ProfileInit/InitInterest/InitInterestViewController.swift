@@ -22,10 +22,12 @@ class InitInterestViewController: BaseOnboardingViewController {
             selectedList.removeAll(where: { $0 == String(sender.tag) })
         }
         else {
-            sender.isSelected = true
-            sender.tintColor = .mainGreen
-            selectedButtons += 1
-            selectedList.append("\(sender.tag)")
+            if selectedButtons < 3 {
+                sender.isSelected = true
+                sender.tintColor = .mainGreen
+                selectedButtons += 1
+                selectedList.append("\(sender.tag)")
+            }
         }
 
         if selectedButtons == 3 {

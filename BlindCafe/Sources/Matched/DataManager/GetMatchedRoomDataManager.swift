@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 class GetMatchedRoomDataManager {
     func getRoom(id: Int, viewController: MatchedViewController) {
@@ -18,6 +19,24 @@ class GetMatchedRoomDataManager {
                     print(response)
                 case .failure(let error):
                     print(error.localizedDescription)
+                    if response.response!.statusCode >= 400 && response.response!.statusCode < 500 {
+                        viewController.dismissIndicator()
+                        if let data = response.data {
+                            let json = try? JSON(data: data)
+                            
+                            if let code: String = json?["code"].stringValue {
+                                if code == "1032" {
+                                    viewController.presentAlert(message: "탈퇴한 회원입니다.")
+                                }
+                                else if code == "4000" || code == "4001" || code == "4002" || code == "4003" {
+                                    let controller = OnboardingViewController()
+                                    let navController = UINavigationController(rootViewController: controller)
+                                    navController.view.backgroundColor = .mainBlack
+                                    viewController.changeRootViewController(navController)
+                                }
+                            }
+                        }
+                    }
                 }
             }
     }

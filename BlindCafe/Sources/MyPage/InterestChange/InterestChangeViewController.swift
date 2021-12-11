@@ -20,12 +20,13 @@ class InterestChangeViewController: BaseViewController {
             sender.tintColor = .buttonTint
             selectedButtons -= 1
             selectedList.removeAll(where: { $0 == String(sender.tag) })
-        }
-        else {
-            sender.isSelected = true
-            sender.tintColor = .mainGreen
-            selectedButtons += 1
-            selectedList.append("\(sender.tag)")
+        } else {
+            if selectedButtons < 3 {
+                sender.isSelected = true
+                sender.tintColor = .mainGreen
+                selectedButtons += 1
+                selectedList.append("\(sender.tag)")
+            }
         }
 
         if selectedButtons == 3 {
@@ -35,6 +36,7 @@ class InterestChangeViewController: BaseViewController {
             nextButton.setImage(UIImage(named: "interestnextbutton"), for: .normal)
         }
         print(selectedList)
+        
     }
     
     @IBOutlet weak var nextButton: UIButton!

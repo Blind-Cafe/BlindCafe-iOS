@@ -29,6 +29,9 @@ class HomeDataManager {
                                 if code == "1007" {
                                     viewController.stopUser()
                                 }
+                                else if code == "1032" {
+                                    viewController.presentAlert(message: "탈퇴한 회원입니다.")
+                                }
                                 else if code == "4000" || code == "4001" || code == "4002" || code == "4003" {
                                     let controller = OnboardingViewController()
                                     let navController = UINavigationController(rootViewController: controller)
