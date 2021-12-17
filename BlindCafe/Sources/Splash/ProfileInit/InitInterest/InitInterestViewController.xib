@@ -161,7 +161,6 @@
                         <constraint firstItem="ocW-Gc-E3L" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="bottom" constant="34" id="S2K-W9-eB3"/>
                         <constraint firstItem="p6e-hv-OFg" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="14" id="T9r-c4-6Za"/>
                         <constraint firstItem="LeJ-hV-PVG" firstAttribute="leading" secondItem="Wxy-ek-24y" secondAttribute="leading" constant="17" id="TgR-kA-IFR"/>
-                        <constraint firstAttribute="width" constant="352" id="XID-nq-3mH"/>
                         <constraint firstItem="sZx-Hx-i3l" firstAttribute="top" secondItem="LeJ-hV-PVG" secondAttribute="top" id="acO-js-wP4"/>
                         <constraint firstItem="qXi-Fs-EyC" firstAttribute="top" secondItem="bKH-M0-JTU" secondAttribute="bottom" constant="1" id="d0a-V2-1aA"/>
                         <constraint firstItem="LeJ-hV-PVG" firstAttribute="top" secondItem="qXi-Fs-EyC" secondAttribute="bottom" constant="45" id="fUX-4H-86O"/>
@@ -192,10 +191,12 @@
             <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Wxy-ek-24y" secondAttribute="bottom" id="0AG-3r-9yL"/>
+                <constraint firstItem="Wxy-ek-24y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="19" id="9Sq-sf-MDZ"/>
                 <constraint firstItem="Wxy-ek-24y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ARu-sY-K7b"/>
                 <constraint firstItem="Wxy-ek-24y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Clx-H8-gpI"/>
                 <constraint firstItem="YWI-3X-fBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DS0-Wv-Haj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="18" id="eTg-T8-iMG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wxy-ek-24y" secondAttribute="trailing" constant="19" id="fnH-AT-Oqs"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="YWI-3X-fBj" secondAttribute="bottom" constant="52" id="lgK-5I-Wsn"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

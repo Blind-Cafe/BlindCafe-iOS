@@ -132,22 +132,17 @@ extension ProfileOpenViewController {
             regionButton.setTitle(result.region, for: .normal)
         }
         
-        
         interestButtons[0].setImage(getInterestImage(id: result.interests[0]), for: .normal)
         interestButtons[1].setImage(getInterestImage(id: result.interests[1]), for: .normal)
         interestButtons[2].setImage(getInterestImage(id: result.interests[2]), for: .normal)
         
         fill = result.fill
         
-        
-        
         if fill {
             openButton.isSelected = true
         } else {
             openButton.isSelected = false
         }
-        
-        
     }
     
     func postprofile(result: PostProfileResponse) {

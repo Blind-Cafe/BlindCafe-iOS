@@ -86,7 +86,7 @@ extension UIViewController {
         self.view.addSubview(alertSuperview)
         alertSuperview.snp.makeConstraints { make in
             //make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-12)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-75)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-80)
             make.centerX.equalToSuperview()
         }
         

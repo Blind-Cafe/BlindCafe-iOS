@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-yB-ZsJ">
-                        <rect key="frame" x="84" y="37" width="34" height="19"/>
+                        <rect key="frame" x="84" y="37" width="33.5" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="oke-VB-MxU"/>
                         </constraints>
@@ -80,6 +80,7 @@
                     <constraint firstItem="BPK-fQ-ihp" firstAttribute="top" secondItem="5Ls-oo-urf" secondAttribute="bottom" constant="12" id="SYe-UZ-RUd"/>
                     <constraint firstAttribute="trailing" secondItem="BPK-fQ-ihp" secondAttribute="trailing" constant="38" id="U7w-OG-A15"/>
                     <constraint firstItem="u4z-rm-AaW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="rBM-eD-jnj"/>
+                    <constraint firstItem="BPK-fQ-ihp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOr-yB-ZsJ" secondAttribute="trailing" constant="20" id="wh2-cq-8mv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

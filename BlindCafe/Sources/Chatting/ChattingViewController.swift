@@ -862,7 +862,7 @@ extension ChattingViewController {
                                 DispatchQueue.main.async {
                                     self.chatTableView.reloadData()
                                     UserDefaults.standard.set(self.messages.count, forKey: "LastIndex")
-                                    if self.messages.count != 0 {
+                                    if self.messages.count > 0 {
                                         self.chatTableView.scrollToRow(at: [0, self.messages.count - 1], at: .bottom, animated: false)
                                     }
                                 }
@@ -936,7 +936,6 @@ extension ChattingViewController {
         toolbarBottomConstraint.constant = 0
         chatTableView.frame.origin.y = 0
         self.view.layoutSubviews()
-        
     }
     
     

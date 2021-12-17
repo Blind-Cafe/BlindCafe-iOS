@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        //let appleIDProvider = ASAuthorizationAppleIDProvider()
 
         /*appleIDProvider.getCredentialState(forUserID: "haeunk1029@naver.com") { (credentialState, error) in
             switch credentialState {
@@ -114,7 +114,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.title
+        //let userInfo = response.notification.request.content.title
         print(response.notification)
         print(response)
         completionHandler()
