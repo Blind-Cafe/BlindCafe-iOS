@@ -21,7 +21,7 @@ class AgreementViewController: BaseOnboardingViewController {
             okayButton.isEnabled = false
         } else {
             sender.isSelected = true
-            if checkbox1.isSelected && checkbox2.isSelected && checkbox4.isSelected && checkbox4.isSelected {
+            if checkbox1.isSelected && checkbox2.isSelected && checkbox3.isSelected && checkbox4.isSelected {
                 okayButton.isEnabled = true
             }
         }
