@@ -20,7 +20,7 @@ class HomeDataManager {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    if response.response!.statusCode >= 400 && response.response!.statusCode < 500 {
+                    if response.response?.statusCode ?? 200 >= 400 && response.response!.statusCode < 500 {
                         viewController.dismissIndicator()
                         if let data = response.data {
                             let json = try? JSON(data: data)

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var controller: UIViewController
         
-        /*if Token.jwtToken == "" {
+        if Token.jwtToken == "" {
             controller = OnboardingViewController()
             let navController = UINavigationController(rootViewController: controller)
             navController.view.backgroundColor = .mainBlack
@@ -45,12 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 win.makeKeyAndVisible()
                 window = win
             }
-        }*/
-        
-        controller = DetailProfileViewController()
-        win.rootViewController = controller
-        win.makeKeyAndVisible()
-        window = win
+        }
         
     }
 
