@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.ttf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,29 +28,28 @@
                             <constraint firstAttribute="width" secondItem="eIq-ty-5qP" secondAttribute="height" multiplier="390:468" id="nBt-Be-UJg"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-t5-g3V">
-                        <rect key="frame" x="0.0" y="495" width="390" height="96"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="96" id="Ek3-tI-Mos"/>
-                            <constraint firstAttribute="width" constant="390" id="WVk-RW-wgo"/>
-                        </constraints>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6c-LL-vef">
+                        <rect key="frame" x="17" y="494" width="356" height="19.5"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                        <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="K6c-LL-vef" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="1pD-ih-iA5"/>
                 <constraint firstAttribute="trailing" secondItem="eIq-ty-5qP" secondAttribute="trailing" id="1vr-b9-SiR"/>
                 <constraint firstItem="eIq-ty-5qP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5WQ-A8-7WB"/>
-                <constraint firstAttribute="trailing" secondItem="i7C-t5-g3V" secondAttribute="trailing" id="IFc-n6-lcv"/>
+                <constraint firstAttribute="trailing" secondItem="K6c-LL-vef" secondAttribute="trailing" constant="17" id="RCW-hE-XIh"/>
                 <constraint firstItem="eIq-ty-5qP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bAL-yw-nC2"/>
                 <constraint firstItem="eIq-ty-5qP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cfL-X4-1CQ"/>
-                <constraint firstItem="i7C-t5-g3V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="it2-lQ-LzQ"/>
-                <constraint firstItem="i7C-t5-g3V" firstAttribute="top" secondItem="eIq-ty-5qP" secondAttribute="bottom" constant="27" id="qOx-oX-apT"/>
+                <constraint firstItem="K6c-LL-vef" firstAttribute="top" secondItem="eIq-ty-5qP" secondAttribute="bottom" constant="26" id="o6g-mm-fNQ"/>
             </constraints>
             <size key="customSize" width="404" height="591"/>
             <connections>
                 <outlet property="onboardingImage" destination="eIq-ty-5qP" id="rfB-h9-0JX"/>
-                <outlet property="textImage" destination="i7C-t5-g3V" id="bx0-bf-5wP"/>
+                <outlet property="onboardingLabel" destination="K6c-LL-vef" id="4ET-wS-cb1"/>
             </connections>
             <point key="canvasLocation" x="327.536231884058" y="289.62053571428572"/>
         </collectionViewCell>

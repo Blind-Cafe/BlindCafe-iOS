@@ -32,7 +32,6 @@ class MatchedChattingViewController: BaseViewController {
     
     var messages: [Message] = []
     
-    
     let storageRef = Storage.storage().reference()
     let storage = Storage.storage()
     

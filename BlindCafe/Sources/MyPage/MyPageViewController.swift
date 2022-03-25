@@ -217,7 +217,7 @@ extension MyPageViewController {
         case 8:
             drinkName = "greenteabadge"
         case 9:
-            drinkName = "grapefruitteabadge"
+            drinkName = "grapefruitbadge"
         default:
             break
         }

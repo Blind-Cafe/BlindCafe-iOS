@@ -222,6 +222,8 @@
 		CDD149DA27317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */; };
 		CDD149DB27317E8B002B2897 /* GHANACHOCOLATE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */; };
 		CDD149DD273185EF002B2897 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD149DC273185EF002B2897 /* UITextField.swift */; };
+		CDD84744277D693100AE9448 /* DetailProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD84742277D693100AE9448 /* DetailProfileViewController.swift */; };
+		CDD84745277D693100AE9448 /* DetailProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD84743277D693100AE9448 /* DetailProfileViewController.xib */; };
 		CDE9B5B8273FF7DE0098AF11 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9B5B7273FF7DE0098AF11 /* UIStackView.swift */; };
 		CDF8A0C1273238A0008367F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */; };
 		CDF8A0C52732478C008367F3 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8A0C32732478C008367F3 /* ChattingViewController.swift */; };
@@ -458,6 +460,8 @@
 		CDD149D527317E8B002B2897 /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Bold.ttf"; path = "../../../../../../../Downloads/SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
 		CDD149D627317E8B002B2897 /* GHANACHOCOLATE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = GHANACHOCOLATE.TTF; path = ../../../../../../../Downloads/GHANACHOCOLATE.TTF; sourceTree = "<group>"; };
 		CDD149DC273185EF002B2897 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		CDD84742277D693100AE9448 /* DetailProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileViewController.swift; sourceTree = "<group>"; };
+		CDD84743277D693100AE9448 /* DetailProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailProfileViewController.xib; sourceTree = "<group>"; };
 		CDE9B5B7273FF7DE0098AF11 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		CDF8A0C0273238A0008367F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDF8A0C32732478C008367F3 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
@@ -956,6 +960,7 @@
 		CD6AA9ED2724468000DA6013 /* Matched */ = {
 			isa = PBXGroup;
 			children = (
+				CDD84741277D691500AE9448 /* DetailProfile */,
 				CD6E9248274FA87B00651411 /* MatchedChatting */,
 				CD2AA3DE2744F09F0088FE49 /* Entity */,
 				CD2AA3DF2744F0BA0088FE49 /* DataManager */,
@@ -1447,6 +1452,15 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		CDD84741277D691500AE9448 /* DetailProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CDD84742277D693100AE9448 /* DetailProfileViewController.swift */,
+				CDD84743277D693100AE9448 /* DetailProfileViewController.xib */,
+			);
+			path = DetailProfile;
+			sourceTree = "<group>";
+		};
 		CDF8A0C227324772008367F3 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
@@ -1648,6 +1662,7 @@
 				CD83C41A2762480800B5B7C6 /* MatchedTextReceivingTableViewCell.xib in Resources */,
 				CD693B32273F4C140035C8D2 /* InitDetailInterestViewController.xib in Resources */,
 				CD6AA9E6272163C500DA6013 /* HomeViewController.xib in Resources */,
+				CDD84745277D693100AE9448 /* DetailProfileViewController.xib in Resources */,
 				CD6AA9FA27266B1B00DA6013 /* OnboardingViewController.xib in Resources */,
 				CDBCD352274E62C800995897 /* UserDeleteViewController.xib in Resources */,
 				CD6FE406274AB4FE004698B2 /* LeaveRoomViewController.xib in Resources */,
@@ -1850,6 +1865,7 @@
 				CD12A536274A40E5005B399F /* SelectDrinkDataManager.swift in Sources */,
 				CD79E989272853130025CF1B /* UIViewController.swift in Sources */,
 				CD18B84427566F5300A61C9B /* GetMatchedRoomDataManager.swift in Sources */,
+				CDD84744277D693100AE9448 /* DetailProfileViewController.swift in Sources */,
 				CD693B3C273F763E0035C8D2 /* SelectDrinkViewController.swift in Sources */,
 				CD8A60E12753B24D0002E07D /* ErrorResponse.swift in Sources */,
 				CD48D5732753F89B00F69061 /* PostProfileResponse.swift in Sources */,

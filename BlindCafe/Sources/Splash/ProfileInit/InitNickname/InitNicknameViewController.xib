@@ -92,7 +92,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-mW-Gnl">
-                    <rect key="frame" x="51" y="326.66666666666669" width="261" height="17"/>
+                    <rect key="frame" x="51" y="327" width="261" height="20"/>
                     <color key="tintColor" red="0.73333333329999995" green="0.82352941180000006" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
@@ -111,6 +111,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Kcm-mW-Gnl" firstAttribute="top" secondItem="ee0-gG-p1H" secondAttribute="top" constant="12" id="5dI-Rb-X3A"/>
                 <constraint firstItem="WOr-yh-fmw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B06-JO-8lf"/>
                 <constraint firstItem="pUh-bw-a3u" firstAttribute="leading" secondItem="jJo-IS-Thw" secondAttribute="leading" constant="17" id="CSj-x3-UfP"/>
                 <constraint firstItem="ee0-gG-p1H" firstAttribute="leading" secondItem="GZJ-LO-Nhn" secondAttribute="leading" id="DrB-pX-6A6"/>
@@ -133,7 +134,7 @@
                 <constraint firstItem="oGi-uQ-ghH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gyJ-Y9-RQD"/>
                 <constraint firstAttribute="bottom" secondItem="WOr-yh-fmw" secondAttribute="bottom" constant="50" id="hQ0-b6-bL9"/>
                 <constraint firstItem="jJo-IS-Thw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jGy-NW-bX1"/>
-                <constraint firstItem="Kcm-mW-Gnl" firstAttribute="centerY" secondItem="ee0-gG-p1H" secondAttribute="centerY" constant="-2" id="m0r-sC-dcK"/>
+                <constraint firstItem="Kcm-mW-Gnl" firstAttribute="centerY" secondItem="ee0-gG-p1H" secondAttribute="centerY" id="m0r-sC-dcK"/>
                 <constraint firstAttribute="bottom" secondItem="jJo-IS-Thw" secondAttribute="bottom" id="nL2-Pl-kgG"/>
                 <constraint firstItem="1va-QN-2Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="53" id="pYm-5D-C7T"/>
                 <constraint firstItem="oGi-uQ-ghH" firstAttribute="top" secondItem="pUh-bw-a3u" secondAttribute="top" id="sJU-5X-Ygm"/>

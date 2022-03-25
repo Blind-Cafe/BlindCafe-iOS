@@ -13,7 +13,7 @@ class RejectProfileDataManager {
             .validate()
             .response() { response in
                 switch response.result {
-                case .success(let response):
+                case .success(_):
                     viewController.reject()
                 case .failure(let error):
                     print(error.localizedDescription)

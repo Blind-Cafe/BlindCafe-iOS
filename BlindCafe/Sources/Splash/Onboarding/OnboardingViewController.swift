@@ -31,9 +31,28 @@ class OnboardingViewController: BaseOnboardingViewController {
     }
     
     var images = ["onboarding1", "onboarding2", "onboarding3", "onboarding4"]
-    var textImages = ["onboardingtext1", "onboardingtext2", "onboardingtext3", "onboardingtext4"]
+    
+    var texts: [NSAttributedString] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let text1 = "3일간의 대화로 설렘을 느껴보세요.\n언제든지 새로운 상대와 대화를 시작할 수 있습니다.\n단, 한 번에 한 사람과 대화할 수 있습니다."
+        let attributed1 = NSMutableAttributedString(string: text1)
+        attributed1.addAttribute(.foregroundColor, value: UIColor.mainGreen, range: (text1 as NSString).range(of: "3일"))
+        attributed1.addAttribute(.foregroundColor, value: UIColor.mainGreen, range: (text1 as NSString).range(of: "한 번에 한 사람"))
+        
+        let text2 = "시간이 흐를수록 대화의 제약이 풀려갑니다.\n첫째날엔 대화를 둘째날엔 사진을 셋째날엔 음성을 전송할 수 있습니다."
+        let attributed2 = NSMutableAttributedString(string: text2)
+        attributed2.addAttribute(.foregroundColor, value: UIColor.mainGreen, range: (text2 as NSString).range(of: "첫째 날에 대화를 둘째 날엔 사진을 셋째날엔 음성을 전송"))
+        
+        let text3 = "72시간의 대화 후 프로필을 교환해 상대방을 확인해보세요.\n당신의 정보는 프로필 교환 전까지 공개되지 않습니다."
+        let attributed3 = NSMutableAttributedString(string: text3)
+        attributed3.addAttribute(.foregroundColor, value: UIColor.mainGreen, range: (text3 as NSString).range(of: "72시간의 대화 후 프로필을 교환"))
+        
+        let text4 = NSMutableAttributedString(string: "프로필을 교환한 상대는 이제 추억을 쌓은 친구가 됐습니다. 대화 테이블에서 친구와 자유롭게 대화하세요.")
+        
+        texts = [attributed1, attributed2, attributed3, text4]
         
         self.navigationController?.navigationBar.barTintColor = .mainBlack
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.SpoqaSans(.bold, size: 16), NSAttributedString.Key.foregroundColor: UIColor.veryLightPink]
@@ -73,7 +92,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCollectionViewCell", for: indexPath) as! OnboardingCollectionViewCell
         cell.onboardingImage.image = UIImage(named: images[indexPath.row])
-        cell.textImage.image = UIImage(named: textImages[indexPath.row])
+        cell.onboardingLabel.attributedText = texts[indexPath.row]
         return cell
     }
     

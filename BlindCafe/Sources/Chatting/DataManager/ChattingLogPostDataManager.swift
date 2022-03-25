@@ -13,7 +13,7 @@ class ChattingLogPostDataManager {
             .validate()
             .response() { response in
                 switch response.result {
-                case .success(let response):
+                case .success(_):
                     viewController.chatLog()
                 case .failure(let error):
                     print(error.localizedDescription)

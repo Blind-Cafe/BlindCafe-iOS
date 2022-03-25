@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaveroomimage" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-GH-fLm">
-                    <rect key="frame" x="0.0" y="143.66666666666663" width="390" height="431"/>
+                    <rect key="frame" x="20" y="143.66666666666663" width="390" height="431"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M34-mh-G34">
                     <rect key="frame" x="17" y="574.66666666666663" width="356" height="18"/>
@@ -45,15 +45,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ew4-GH-fLm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LiU-5r-EVP"/>
                 <constraint firstItem="Ew4-GH-fLm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-63" id="aDV-w0-Pcl"/>
                 <constraint firstItem="fhv-u9-y2M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cOF-KM-DLB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M34-mh-G34" secondAttribute="trailing" constant="17" id="dLp-gm-osX"/>
                 <constraint firstAttribute="bottom" secondItem="fhv-u9-y2M" secondAttribute="bottom" constant="50" id="hxt-4e-c0x"/>
                 <constraint firstItem="M34-mh-G34" firstAttribute="top" secondItem="Ew4-GH-fLm" secondAttribute="bottom" id="iJA-9v-4DO"/>
-                <constraint firstItem="Ew4-GH-fLm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lKe-zo-kJn"/>
+                <constraint firstItem="Ew4-GH-fLm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="20" id="lKe-zo-kJn"/>
                 <constraint firstItem="M34-mh-G34" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="scX-y6-Uzy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ew4-GH-fLm" secondAttribute="trailing" id="udG-p3-c0A"/>
             </constraints>
             <point key="canvasLocation" x="139" y="98"/>
         </view>

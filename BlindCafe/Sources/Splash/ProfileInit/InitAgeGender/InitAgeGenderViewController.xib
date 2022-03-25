@@ -71,6 +71,9 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hlx-pC-eRf">
                     <rect key="frame" x="36" y="459" width="155" height="98"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hlx-pC-eRf" secondAttribute="height" multiplier="155:98" id="Bk6-tF-i8K"/>
+                    </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="femalebutton"/>
                     <state key="selected" image="femaleselected"/>
@@ -110,9 +113,11 @@
                 <constraint firstItem="ZEP-Jj-MQc" firstAttribute="centerY" secondItem="Hlx-pC-eRf" secondAttribute="centerY" id="5Eu-df-Swk"/>
                 <constraint firstAttribute="bottom" secondItem="fov-zm-23R" secondAttribute="bottom" id="5SM-Pb-RMQ"/>
                 <constraint firstItem="DQg-1h-edJ" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="6FG-MU-vMV"/>
+                <constraint firstItem="fov-zm-23R" firstAttribute="trailing" secondItem="ZEP-Jj-MQc" secondAttribute="trailing" constant="17" id="7CO-S4-WOo"/>
                 <constraint firstItem="Y3Z-7n-pja" firstAttribute="centerX" secondItem="OMO-9S-sGw" secondAttribute="centerX" id="8Ov-zN-M5u"/>
                 <constraint firstItem="Cr4-3q-dKC" firstAttribute="top" secondItem="OMO-9S-sGw" secondAttribute="bottom" constant="44" id="8qG-jk-xlQ"/>
                 <constraint firstItem="bZ2-bw-ktI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hlx-pC-eRf" secondAttribute="bottom" constant="10" id="9bh-cc-X8l"/>
+                <constraint firstItem="ZEP-Jj-MQc" firstAttribute="height" secondItem="Hlx-pC-eRf" secondAttribute="height" multiplier="1.0102" id="DAJ-YR-4Jx"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="xXs-MC-cpV" secondAttribute="bottom" constant="50" id="DKo-s0-UsY"/>
                 <constraint firstItem="MNc-cA-gHW" firstAttribute="top" secondItem="DQg-1h-edJ" secondAttribute="bottom" constant="10" id="DcA-qN-iv9"/>
                 <constraint firstItem="xXs-MC-cpV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Dm4-S3-Dah"/>
@@ -124,9 +129,11 @@
                 <constraint firstItem="vc8-gC-gkW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="250" constant="53" id="YVK-DY-4Iv"/>
                 <constraint firstItem="bZ2-bw-ktI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a7b-ip-OrB"/>
                 <constraint firstItem="F6v-an-SXX" firstAttribute="top" secondItem="OMO-9S-sGw" secondAttribute="bottom" constant="3" id="at6-Zc-HPL"/>
+                <constraint firstItem="Hlx-pC-eRf" firstAttribute="leading" secondItem="fov-zm-23R" secondAttribute="leading" constant="17" id="bAX-b7-YeO"/>
                 <constraint firstItem="vc8-gC-gkW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bcz-Ga-L1R"/>
                 <constraint firstItem="DQg-1h-edJ" firstAttribute="top" secondItem="jhg-9w-Tka" secondAttribute="bottom" constant="16" id="caf-Pa-Y69"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xXs-MC-cpV" secondAttribute="bottom" constant="16" id="eIJ-Oh-Ob3"/>
+                <constraint firstItem="ZEP-Jj-MQc" firstAttribute="width" secondItem="Hlx-pC-eRf" secondAttribute="width" multiplier="0.987097" id="gM7-CS-CBL"/>
                 <constraint firstItem="Cr4-3q-dKC" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="hay-Vm-hiD"/>
                 <constraint firstItem="Hlx-pC-eRf" firstAttribute="leading" secondItem="jhg-9w-Tka" secondAttribute="leading" id="iX9-jy-M13"/>
                 <constraint firstItem="fov-zm-23R" firstAttribute="top" secondItem="vc8-gC-gkW" secondAttribute="bottom" id="lnr-wE-vf8"/>

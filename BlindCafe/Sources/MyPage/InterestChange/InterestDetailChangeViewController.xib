@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -28,104 +28,146 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svf-2v-uxZ">
-                    <rect key="frame" x="18" y="16" width="41" height="24"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8K-e3-r23">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRK-zz-kjT">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="807"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svf-2v-uxZ">
+                                    <rect key="frame" x="18" y="24" width="41" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="C4t-D7-N2s"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Px-jh-FOq">
+                                    <rect key="frame" x="17" y="48" width="136.66666666666666" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="YVL-GF-a9i"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-Ls-wr3">
+                                    <rect key="frame" x="16" y="81" width="358" height="142"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="142" id="oPT-74-PGI"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="yRb-uJ-ZQN">
+                                        <size key="itemSize" width="100" height="42"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZQ-LH-a5j">
+                                    <rect key="frame" x="17" y="240" width="41" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="iUg-Io-sMe"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-P2-LWQ">
+                                    <rect key="frame" x="17" y="264" width="136.66666666666666" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="4sj-WL-NG2"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="i2d-hu-gWp">
+                                    <rect key="frame" x="16" y="298" width="358" height="142"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="142" id="y2h-ff-ALa"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="AvC-Vd-cCy">
+                                        <size key="itemSize" width="100" height="42"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GK-Nb-af8">
+                                    <rect key="frame" x="17" y="457" width="41" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="JYB-4u-u8B"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-Ht-9vz">
+                                    <rect key="frame" x="17" y="481" width="136.66666666666666" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="sdL-4u-CQz"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
+                                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-ws-CSM">
+                                    <rect key="frame" x="16" y="515" width="358" height="142"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="142" id="juT-nm-6tR"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="oeL-Yj-P4k">
+                                        <size key="itemSize" width="100" height="42"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="PZQ-LH-a5j" firstAttribute="top" secondItem="bOL-Ls-wr3" secondAttribute="bottom" constant="17" id="2Tr-tw-7KX"/>
+                                <constraint firstItem="i2d-hu-gWp" firstAttribute="top" secondItem="Udf-P2-LWQ" secondAttribute="bottom" constant="17" id="6wX-b0-o93"/>
+                                <constraint firstItem="bOL-Ls-wr3" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="16" id="8sX-Cg-uOu"/>
+                                <constraint firstItem="Svf-2v-uxZ" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="18" id="EwO-Xa-Kvq"/>
+                                <constraint firstItem="Udf-P2-LWQ" firstAttribute="top" secondItem="PZQ-LH-a5j" secondAttribute="bottom" id="FfD-84-hGJ"/>
+                                <constraint firstItem="bOL-Ls-wr3" firstAttribute="top" secondItem="9Px-jh-FOq" secondAttribute="bottom" constant="16" id="MDf-qg-XYF"/>
+                                <constraint firstItem="Svf-2v-uxZ" firstAttribute="top" secondItem="LRK-zz-kjT" secondAttribute="top" constant="24" id="MV2-bw-Juf"/>
+                                <constraint firstAttribute="trailing" secondItem="bOL-Ls-wr3" secondAttribute="trailing" constant="16" id="Pl8-kr-Mmo"/>
+                                <constraint firstItem="9GK-Nb-af8" firstAttribute="top" secondItem="i2d-hu-gWp" secondAttribute="bottom" constant="17" id="QLt-fr-rf8"/>
+                                <constraint firstItem="QwP-Ht-9vz" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="17" id="aN4-Ts-X5M"/>
+                                <constraint firstItem="1mh-ws-CSM" firstAttribute="top" secondItem="QwP-Ht-9vz" secondAttribute="bottom" constant="17" id="dah-Bc-anl"/>
+                                <constraint firstItem="i2d-hu-gWp" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="16" id="dyS-bs-rIN"/>
+                                <constraint firstItem="9GK-Nb-af8" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="17" id="f7S-ao-qpB"/>
+                                <constraint firstItem="Udf-P2-LWQ" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="17" id="iJl-a5-hfQ"/>
+                                <constraint firstAttribute="trailing" secondItem="i2d-hu-gWp" secondAttribute="trailing" constant="16" id="ifT-Ca-ilo"/>
+                                <constraint firstAttribute="bottom" secondItem="1mh-ws-CSM" secondAttribute="bottom" constant="150" id="jn0-CS-WMB"/>
+                                <constraint firstAttribute="trailing" secondItem="1mh-ws-CSM" secondAttribute="trailing" constant="16" id="kBj-yx-a1h"/>
+                                <constraint firstItem="QwP-Ht-9vz" firstAttribute="top" secondItem="9GK-Nb-af8" secondAttribute="bottom" id="knh-7B-SRp"/>
+                                <constraint firstItem="9Px-jh-FOq" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="17" id="q9v-9D-GXs"/>
+                                <constraint firstItem="PZQ-LH-a5j" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="17" id="qkv-oR-yA7"/>
+                                <constraint firstItem="9Px-jh-FOq" firstAttribute="top" secondItem="Svf-2v-uxZ" secondAttribute="bottom" id="wZE-v8-Nsb"/>
+                                <constraint firstItem="1mh-ws-CSM" firstAttribute="leading" secondItem="LRK-zz-kjT" secondAttribute="leading" constant="16" id="zHt-do-bgl"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="C4t-D7-N2s"/>
+                        <constraint firstItem="LRK-zz-kjT" firstAttribute="width" secondItem="k8K-e3-r23" secondAttribute="width" id="A9H-Pw-Mj4"/>
+                        <constraint firstItem="LRK-zz-kjT" firstAttribute="top" secondItem="k8K-e3-r23" secondAttribute="top" id="RPM-eE-drP"/>
+                        <constraint firstAttribute="bottom" secondItem="LRK-zz-kjT" secondAttribute="bottom" id="TBc-dh-0xN"/>
+                        <constraint firstAttribute="trailing" secondItem="LRK-zz-kjT" secondAttribute="trailing" id="ZJa-yl-7c5"/>
+                        <constraint firstItem="LRK-zz-kjT" firstAttribute="leading" secondItem="k8K-e3-r23" secondAttribute="leading" id="bcy-U6-5B9"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Px-jh-FOq">
-                    <rect key="frame" x="18" y="40" width="136.5" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="YVL-GF-a9i"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
-                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-Ls-wr3">
-                    <rect key="frame" x="18" y="73" width="378" height="142"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="142" id="oPT-74-PGI"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="yRb-uJ-ZQN">
-                        <size key="itemSize" width="100" height="42"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZQ-LH-a5j">
-                    <rect key="frame" x="18" y="232" width="41" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="iUg-Io-sMe"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udf-P2-LWQ">
-                    <rect key="frame" x="18" y="256" width="136.5" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="4sj-WL-NG2"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
-                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="i2d-hu-gWp">
-                    <rect key="frame" x="18" y="289" width="378" height="142"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="142" id="y2h-ff-ALa"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="AvC-Vd-cCy">
-                        <size key="itemSize" width="100" height="42"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GK-Nb-af8">
-                    <rect key="frame" x="18" y="447" width="41" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="JYB-4u-u8B"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아하는 키워드를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwP-Ht-9vz">
-                    <rect key="frame" x="18" y="471" width="136.5" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="sdL-4u-CQz"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="11"/>
-                    <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-ws-CSM">
-                    <rect key="frame" x="18" y="504" width="378" height="142"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="142" id="juT-nm-6tR"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="9" id="oeL-Yj-P4k">
-                        <size key="itemSize" width="100" height="42"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-AN-0SZ">
-                    <rect key="frame" x="29" y="705" width="356" height="50"/>
+                    <rect key="frame" x="17" y="656" width="356" height="50"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="interestnextbutton"/>
                     <connections>
@@ -136,32 +178,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Udf-P2-LWQ" firstAttribute="leading" secondItem="PZQ-LH-a5j" secondAttribute="leading" id="15g-sJ-1OB"/>
-                <constraint firstItem="1mh-ws-CSM" firstAttribute="top" secondItem="QwP-Ht-9vz" secondAttribute="bottom" constant="16" id="3gq-qC-yWD"/>
-                <constraint firstItem="PZQ-LH-a5j" firstAttribute="top" secondItem="bOL-Ls-wr3" secondAttribute="bottom" constant="17" id="3z2-EP-jq0"/>
-                <constraint firstItem="Udf-P2-LWQ" firstAttribute="top" secondItem="PZQ-LH-a5j" secondAttribute="bottom" id="ASn-IS-ikW"/>
-                <constraint firstItem="i2d-hu-gWp" firstAttribute="top" secondItem="Udf-P2-LWQ" secondAttribute="bottom" constant="16" id="GpQ-JE-SxQ"/>
-                <constraint firstItem="bOL-Ls-wr3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="KLL-Lg-j20"/>
-                <constraint firstItem="9Px-jh-FOq" firstAttribute="leading" secondItem="Svf-2v-uxZ" secondAttribute="leading" id="L7v-iq-Eo5"/>
-                <constraint firstItem="1mh-ws-CSM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="PyD-HD-5ZK"/>
-                <constraint firstItem="9GK-Nb-af8" firstAttribute="top" secondItem="i2d-hu-gWp" secondAttribute="bottom" constant="16" id="SQt-6s-MiK"/>
-                <constraint firstItem="QwP-Ht-9vz" firstAttribute="leading" secondItem="9GK-Nb-af8" secondAttribute="leading" id="ZJ5-0u-AEr"/>
-                <constraint firstItem="Svf-2v-uxZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="eEf-JV-26c"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bOL-Ls-wr3" secondAttribute="trailing" constant="18" id="gtK-AH-DqK"/>
-                <constraint firstItem="i2d-hu-gWp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="hEQ-Fj-rBE"/>
-                <constraint firstItem="PZQ-LH-a5j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="icS-Fe-bfs"/>
-                <constraint firstItem="BEJ-AN-0SZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kfl-yJ-Ve8"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i2d-hu-gWp" secondAttribute="trailing" constant="18" id="lmw-Nb-NwX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BEJ-AN-0SZ" secondAttribute="bottom" constant="19" id="ofo-VW-B2x"/>
-                <constraint firstItem="Svf-2v-uxZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="oqh-Qp-utH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1mh-ws-CSM" secondAttribute="trailing" constant="18" id="p1d-aF-kGR"/>
-                <constraint firstItem="QwP-Ht-9vz" firstAttribute="top" secondItem="9GK-Nb-af8" secondAttribute="bottom" id="vlC-LO-5JU"/>
-                <constraint firstItem="9Px-jh-FOq" firstAttribute="top" secondItem="Svf-2v-uxZ" secondAttribute="bottom" id="xIP-X4-gQs"/>
-                <constraint firstItem="9GK-Nb-af8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="zaz-S0-tpQ"/>
-                <constraint firstItem="bOL-Ls-wr3" firstAttribute="top" secondItem="9Px-jh-FOq" secondAttribute="bottom" constant="16" id="zek-bR-rIu"/>
+                <constraint firstItem="BEJ-AN-0SZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IGb-1w-Wf3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BEJ-AN-0SZ" secondAttribute="bottom" constant="16" id="O0a-KD-ocP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k8K-e3-r23" secondAttribute="trailing" id="W1Y-P7-g5A"/>
+                <constraint firstItem="k8K-e3-r23" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f4c-OO-Uz1"/>
+                <constraint firstItem="k8K-e3-r23" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uKA-hH-qcQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="k8K-e3-r23" secondAttribute="bottom" id="v3o-Oe-pMm"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <point key="canvasLocation" x="139" y="97"/>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </view>
     </objects>
     <resources>

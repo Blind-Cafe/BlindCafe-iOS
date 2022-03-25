@@ -19,11 +19,6 @@ class ProgressBar: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        //let width = rect.width
-        //let height = rect.height
-        
-        //self.backgroundColor = .clear
-        //let lineWidth = 0.1 * min(width, height)
         let lineWidth: CGFloat = 12
         
         backgroundLayer = createCircularLayer(rect: rect, strokeColor: UIColor.black2.cgColor, fillColor: UIColor.clear.cgColor, lineWidth: lineWidth)

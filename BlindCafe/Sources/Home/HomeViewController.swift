@@ -172,7 +172,6 @@ extension HomeViewController {
     func requestData(result: HomeResponse){
         self.dismissIndicator()
         
-        //print(result.matchingId)
         status = result.matchingStatus ?? ""
         matchingId = result.matchingId ?? -1
         UserDefaults.standard.set(matchingId, forKey: "MatchingId")

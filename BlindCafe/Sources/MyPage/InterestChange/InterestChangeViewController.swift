@@ -20,12 +20,13 @@ class InterestChangeViewController: BaseViewController {
             sender.tintColor = .buttonTint
             selectedButtons -= 1
             selectedList.removeAll(where: { $0 == String(sender.tag) })
-        }
-        else {
-            sender.isSelected = true
-            sender.tintColor = .mainGreen
-            selectedButtons += 1
-            selectedList.append("\(sender.tag)")
+        } else {
+            if selectedButtons < 3 {
+                sender.isSelected = true
+                sender.tintColor = .mainGreen
+                selectedButtons += 1
+                selectedList.append("\(sender.tag)")
+            }
         }
 
         if selectedButtons == 3 {
@@ -35,12 +36,16 @@ class InterestChangeViewController: BaseViewController {
             nextButton.setImage(UIImage(named: "interestnextbutton"), for: .normal)
         }
         print(selectedList)
+        
     }
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
-        if selectedButtons != 3 {
-            self.presentBottomAlert(message: "관심사를 먼저 선택해주세요")
+        if selectedButtons > 0 && selectedButtons < 3{
+            self.presentBottomAlert(message: "관심사를 3개 선택해주세요.")
+        }
+        else if selectedButtons == 0 {
+            self.presentBottomAlert(message: "관심사를 먼저 선택해주세요.")
         }
         else if selectedButtons == 3 {
             let vc = InterestDetailChangeViewController()
@@ -51,7 +56,7 @@ class InterestChangeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nextButton.setImage(UIImage(named: "interestnextbutton"), for: .normal)
         setNavigation()
         
         for i in 0...8 {

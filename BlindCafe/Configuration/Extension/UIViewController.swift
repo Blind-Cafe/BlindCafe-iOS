@@ -80,13 +80,13 @@ extension UIViewController {
         alertSuperview.isHidden = true
         
         let alertLabel = UILabel()
-        alertLabel.font = .SpoqaSans(.regular, size: 16)
+        alertLabel.font = .SpoqaSans(.regular, size: 14)
         alertLabel.textColor = .white2
         
         self.view.addSubview(alertSuperview)
         alertSuperview.snp.makeConstraints { make in
             //make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-12)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-70)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-80)
             make.centerX.equalToSuperview()
         }
         
@@ -94,8 +94,8 @@ extension UIViewController {
         alertLabel.snp.makeConstraints { make in
             make.top.equalTo(12)
             make.bottom.equalTo(-12)
-            make.leading.equalTo(18)
-            make.trailing.equalTo(-18)
+            make.leading.equalTo(12)
+            make.trailing.equalTo(-12)
         }
         
         alertLabel.text = message

@@ -20,7 +20,7 @@ class HomeDataManager {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    if response.response!.statusCode >= 400 && response.response!.statusCode < 500 {
+                    if response.response?.statusCode ?? 200 >= 400 && response.response!.statusCode < 500 {
                         viewController.dismissIndicator()
                         if let data = response.data {
                             let json = try? JSON(data: data)
@@ -28,6 +28,9 @@ class HomeDataManager {
                             if let code: String = json?["code"].stringValue {
                                 if code == "1007" {
                                     viewController.stopUser()
+                                }
+                                else if code == "1032" {
+                                    viewController.presentAlert(message: "탈퇴한 회원입니다.")
                                 }
                                 else if code == "4000" || code == "4001" || code == "4002" || code == "4003" {
                                     let controller = OnboardingViewController()
