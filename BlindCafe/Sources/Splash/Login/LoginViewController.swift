@@ -52,8 +52,8 @@ class LoginViewController: BaseOnboardingViewController {
                 print("loginWithKakaoAccount() success.")
                 
                 self.showIndicator()
-                let input = LoginInput(token: oauthToken!.accessToken, deviceId: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
-                KakaoLoginDataManager().kakaoLogin(input, viewController: self)
+                let input = LoginInput(platform: "IOS", social: "KAKAO", accessToken: oauthToken!.accessToken, deviceToken: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
+                LoginDataManager().login(input, viewController: self)
                 
                 print(input)
                 print(oauthToken!.accessToken, "액세스 토큰")
@@ -81,8 +81,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 print("authString: \(authString)")
                 print("tokenString: \(tokenString)")
                 self.showIndicator()
-                let input = LoginInput(token: tokenString, deviceId: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
-                AppleLoginDataManager().appleLogin(input, viewController: self)
+                let input = LoginInput(platform: "IOS", social: "APPLE", accessToken: tokenString, deviceToken: UserDefaults.standard.string(forKey: "FCMToken") ?? "")
+                LoginDataManager().login(input, viewController: self)
                 print(input)
             }
             
@@ -115,18 +115,20 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 }
 
 extension LoginViewController {
-    func didLogin(result: LoginResponse){
+    func didLogin(result: LoginResponse, code: Int){
         self.dismissIndicator()
-        Token.jwtToken = result.jwt!
-        UserDefaults.standard.setValue(result.jwt, forKey: "UserJwt")
-        UserDefaults.standard.setValue(result.id, forKey: "UserID")
-        UserDefaults.standard.set(result.code, forKey: "Status")
+        Token.jwtToken = result.accessToken!
+        UserDefaults.standard.setValue(result.accessToken, forKey: "UserJwt")
+        UserDefaults.standard.setValue(result.refreshToken, forKey: "UserRefresh")
+        UserDefaults.standard.setValue(result.uid, forKey: "UserID")
         UserDefaults.standard.set(result.nickname, forKey: "UserNickname")
-        if result.code == "990" {
+        if code == 200 {
+            UserDefaults.standard.setValue(1, forKey: "Status")
             changeRootViewController(BaseTabBarController())
         }
         else {
-            let vc = AgreementViewController()
+            UserDefaults.standard.setValue(0, forKey: "Status")
+            let vc = InitNicknameViewController()
             let navController = UINavigationController(rootViewController: vc)
             navController.view.backgroundColor = .mainBlack
             navController.navigationBar.isTranslucent = false
