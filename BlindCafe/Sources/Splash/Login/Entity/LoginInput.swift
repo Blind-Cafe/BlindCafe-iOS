@@ -6,6 +6,8 @@
 //
 
 struct LoginInput: Encodable {
-    var token: String
-    var deviceId: String
+    var platform: String
+    var social: String
+    var accessToken: String
+    var deviceToken: String
 }
