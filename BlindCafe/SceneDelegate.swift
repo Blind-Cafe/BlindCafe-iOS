@@ -31,13 +31,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = win
         }
         else {
-            if  UserDefaults.standard.string(forKey: "Status") == "990" {
+            if  UserDefaults.standard.integer(forKey: "Status") == 1 {
                 controller = BaseTabBarController()
                 win.rootViewController = controller
                 win.makeKeyAndVisible()
                 window = win
             } else {
-                controller = AgreementViewController()
+                controller = LoginViewController()
                 let navController = UINavigationController(rootViewController: controller)
                 navController.view.backgroundColor = .mainBlack
                 navController.navigationBar.isTranslucent = false
